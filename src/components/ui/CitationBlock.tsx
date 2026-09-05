@@ -1,0 +1,36 @@
+interface CitationBlockProps {
+  authors?: string;
+  title: string;
+  date: string;
+  url?: string;
+  version?: string;
+}
+
+export function CitationBlock({
+  authors = "Reviews_CXO Research Lab",
+  title,
+  date,
+  url = "https://reviews-cxo.com",
+  version,
+}: CitationBlockProps) {
+  return (
+    <div className="rounded-xl border border-border bg-surface-alt/60 p-5 shadow-sm">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-bold uppercase tracking-wider text-muted font-mono">
+          How to Cite This Research
+        </p>
+        {version && (
+          <span className="rounded bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-mono text-primary">
+            {version}
+          </span>
+        )}
+      </div>
+      <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-foreground/90 font-mono">
+        {authors}. &ldquo;{title}.&rdquo; <em>Reviews_CXO Enterprise Research</em>, {date}. Available at:{" "}
+        <a href={url} className="text-primary hover:underline break-all">
+          {url}
+        </a>
+      </p>
+    </div>
+  );
+}
