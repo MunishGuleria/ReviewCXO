@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { subscribeToNewsletter, isEmailSubscribed } from "@/lib/db-queries";
 
 export async function POST(request: Request) {
   try {
@@ -12,13 +13,26 @@ export async function POST(request: Request) {
       );
     }
 
-    // In a production setup, this would push to an ESP (e.g. Resend, Mailchimp, Loops)
-    console.log(`[Reviews_CXO Newsletter Signup] ${email} subscribed at ${new Date().toISOString()}`);
+    if (isEmailSubscribed(email)) {
+      return NextResponse.json(
+        { error: "This email is already subscribed." },
+        { status: 409 }
+      );
+    }
 
-    return NextResponse.json({
-      success: true,
-      message: "Subscription confirmed. You will receive the next quarterly research dispatch.",
-    });
+    const success = subscribeToNewsletter(email);
+
+    if (success) {
+      return NextResponse.json({
+        success: true,
+        message: "Subscription confirmed. You will receive the next quarterly research dispatch.",
+      });
+    } else {
+      return NextResponse.json(
+        { error: "Failed to subscribe. Please try again." },
+        { status: 500 }
+      );
+    }
   } catch {
     return NextResponse.json(
       { error: "Invalid request payload. Please submit a valid JSON body with an enterprise email." },

@@ -10,20 +10,20 @@ interface CardProps {
 
 export function Card({ href, title, description, badge, meta }: CardProps) {
   const content = (
-    <div className="group flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition-all hover:border-primary/30 hover:shadow-md">
+    <div className="group flex h-full flex-col rounded-xl border border-border bg-surface p-5 card-hover">
       {badge && (
-        <span className="mb-2 inline-block w-fit rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary">
+        <span className="mb-3 inline-block w-fit rounded-md bg-primary/8 border border-primary/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
           {badge}
         </span>
       )}
-      <h3 className="text-lg font-bold text-foreground group-hover:text-primary">
+      <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
         {title}
       </h3>
       <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
         {description}
       </p>
       {meta && (
-        <p className="mt-3 text-xs font-medium text-muted/70">{meta}</p>
+        <p className="mt-3 pt-3 border-t border-border text-xs font-medium text-muted/70">{meta}</p>
       )}
     </div>
   );

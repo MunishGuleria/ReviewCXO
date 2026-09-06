@@ -1,0 +1,52 @@
+import { Metadata } from "next";
+import { ResearchLayout } from "@/components/layout/ResearchLayout";
+import { getPublishedCaseStudies } from "@/lib/reviews";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { PageToolbar } from "@/components/ui/PageToolbar";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Case Studies — AI Project Reviews | Reviews_CXO",
+  description: "Real-world AI project case studies with outcomes, ROI, and CxO reviews. Published after independent verification.",
+};
+
+const caseStudies = getPublishedCaseStudies();
+
+export default function CaseStudiesPage() {
+  return (
+    <ResearchLayout
+      badge="Case Studies"
+      title="AI Project Case Studies"
+      description="Published project reviews with verified outcomes, ROI data, and CxO assessments."
+      backHref="/"
+      backLabel="Home"
+    >
+      <div className="space-y-6">
+        <PageToolbar count={caseStudies.length} label="published case studies" />
+
+        <div className="space-y-4">
+          {caseStudies.map((cs) => (
+            <Link
+              key={cs.id}
+              href={`/case-studies/${cs.slug}`}
+              className="group block rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
+            >
+              <div className="flex items-start justify-between mb-2">
+                <h3 className="text-base font-black text-foreground group-hover:text-primary transition-colors leading-snug pr-4">
+                  {cs.metaTitle.replace(" | Reviews_CXO", "")}
+                </h3>
+                {cs.isFeatured && <StatusBadge variant="featured">Featured</StatusBadge>}
+              </div>
+              <p className="text-xs text-muted leading-relaxed mb-3">{cs.metaDescription}</p>
+              <div className="flex items-center gap-4 text-[11px] text-muted">
+                <span>{cs.viewsCount.toLocaleString()} views</span>
+                <span>{cs.likesCount} likes</span>
+                <span>{new Date(cs.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </ResearchLayout>
+  );
+}

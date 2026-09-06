@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import { ResearchLayout } from "@/components/layout/ResearchLayout";
-import { getPublishedQuestions, QUESTION_CATEGORIES } from "@/lib/questions";
+import { getPublishedQuestions } from "@/lib/questions";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { TagList } from "@/components/ui/TagList";
+import { SectionCard } from "@/components/ui/SectionCard";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,16 +23,16 @@ export default function QuestionsPage() {
       backHref="/"
       backLabel="Home"
     >
-      <div className="space-y-8">
+      <div className="space-y-6">
         <DisclosureBanner />
 
-        <InfoCard title="How It Works">
+        <SectionCard title="How It Works">
           <p className="text-xs sm:text-sm text-muted leading-relaxed">
             We identify real questions from public technology communities — Stack Exchange, Reddit, LinkedIn, and industry forums — and produce independent, evidence-based analysis. Each question includes the original source, attribution to the person who asked it, and our research response. We do not fabricate questions or sources.
           </p>
-        </InfoCard>
+        </SectionCard>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {questions.length === 0 ? (
             <div className="rounded-xl border border-border bg-surface p-12 text-center">
               <p className="text-muted text-sm">No published questions yet.</p>
@@ -38,21 +41,12 @@ export default function QuestionsPage() {
             questions.map((q) => (
               <article
                 key={q.id}
-                className="group rounded-xl border border-border bg-surface p-6 transition-all hover:border-primary/40 hover:shadow-sm"
+                className="group rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
               >
                 <div className="flex flex-col gap-3">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[11px] font-bold text-primary uppercase tracking-wider">
-                      {q.category}
-                    </span>
-                    {q.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded bg-surface-alt border border-border px-2 py-0.5 text-[10px] font-medium text-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <StatusBadge variant="category">{q.category}</StatusBadge>
+                    <TagList tags={q.tags} maxVisible={3} />
                   </div>
 
                   <h2 className="text-lg font-black text-foreground group-hover:text-primary transition-colors leading-snug">
@@ -87,14 +81,5 @@ export default function QuestionsPage() {
         </div>
       </div>
     </ResearchLayout>
-  );
-}
-
-function InfoCard({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-xl border border-border bg-surface p-5">
-      <h3 className="text-sm font-black text-foreground mb-2">{title}</h3>
-      {children}
-    </div>
   );
 }

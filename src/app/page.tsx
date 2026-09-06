@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { VENDORS, getTopAscsVendors } from "@/lib/vendors";
-import { ASCS_DIMENSIONS } from "@/lib/site";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 
 const topAscs = getTopAscsVendors(8);
@@ -14,6 +13,8 @@ const workloadArchetypes = [
     examples: ["Salezx", "Microsoft Dynamics 365"],
     href: "/compare/salezx-vs-salesforce-erp-scenarios",
     tag: "Next-Gen Architecture",
+    accentColor: "from-emerald-400 to-teal-500",
+    borderColor: "border-t-emerald-400",
   },
   {
     title: "Enterprise CRM Ecosystem Monoliths",
@@ -23,6 +24,8 @@ const workloadArchetypes = [
     examples: ["Salesforce (Agentforce)", "Salesforce Einstein"],
     href: "/vendors/salesforce",
     tag: "Ecosystem Standard",
+    accentColor: "from-blue-400 to-indigo-500",
+    borderColor: "border-t-blue-400",
   },
   {
     title: "Revenue & Conversation Intelligence",
@@ -32,6 +35,8 @@ const workloadArchetypes = [
     examples: ["Gong", "Clari"],
     href: "/compare/gong-vs-clari",
     tag: "Deal Inspection",
+    accentColor: "from-amber-400 to-orange-500",
+    borderColor: "border-t-amber-400",
   },
   {
     title: "High-Velocity Inbound & Mid-Market",
@@ -41,6 +46,8 @@ const workloadArchetypes = [
     examples: ["HubSpot", "Creatio"],
     href: "/vendors/hubspot",
     tag: "Velocity & Agility",
+    accentColor: "from-violet-400 to-purple-500",
+    borderColor: "border-t-violet-400",
   },
 ];
 
@@ -56,41 +63,47 @@ const featuredComparisons = [
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-surface to-surface-alt/40 pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.12),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(56,189,248,0.15),rgba(9,13,22,0))] pointer-events-none" />
+      {/* ═══════════════════════ HERO ═══════════════════════ */}
+      <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
+        {/* Gradient orbs background */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-hero)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-              Enterprise AI Sales Research Lab · 2026 Evaluation
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent">
+              <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+              Enterprise AI Sales Research Lab · 2026
             </div>
 
-            <h1 className="mt-6 text-3xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1]">
-              Architecture Analysis & Benchmarks on <span className="text-primary">AI Sales Platforms</span>
+            <h1 className="mt-7 text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.08]">
+              Architecture Analysis & Benchmarks on{" "}
+              <span className="bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent animate-gradient">
+                AI Sales Platforms
+              </span>
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-muted font-normal">
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-muted max-w-2xl">
               Empirical, evidence-based research evaluating CRM, ERP-grounded autonomous agents, and revenue intelligence engines scored via the reproducible 12-dimension ASCS framework.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/rankings"
-                className="rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="group rounded-lg bg-gradient-to-r from-primary to-primary-light px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98]"
               >
-                Explore ASCS 2026 Index →
+                Explore ASCS 2026 Index
+                <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
               <Link
                 href="/compare"
-                className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-bold text-foreground transition-all hover:border-primary/40 hover:bg-surface-alt shadow-sm"
+                className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-bold text-foreground shadow-sm transition-all hover:border-primary/30 hover:shadow-md card-hover"
               >
                 Head-to-Head Comparisons
               </Link>
               <Link
                 href="/benchmarks/crm-erp-at-risk-accounts-v1"
-                className="rounded-lg border border-primary/20 bg-primary/5 px-5 py-3 text-sm font-bold text-primary transition-all hover:bg-primary/10"
+                className="rounded-lg border border-accent/20 bg-accent/5 px-5 py-3 text-sm font-bold text-accent transition-all hover:bg-accent/10 hover:border-accent/30"
               >
                 Lab Benchmark #1: At-Risk Accounts
               </Link>
@@ -99,51 +112,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EMPIRICAL METRICS STRIP (NO FABRICATION) */}
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
-            <div className="p-2">
-              <p className="text-2xl font-black text-primary font-mono">{VENDORS.length}</p>
-              <p className="text-xs font-medium text-muted">Platforms Evaluated</p>
-            </div>
-            <div className="p-2">
-              <p className="text-2xl font-black text-primary font-mono">12</p>
-              <p className="text-xs font-medium text-muted">ASCS Evaluation Dimensions</p>
-            </div>
-            <div className="p-2">
-              <p className="text-2xl font-black text-primary font-mono">7 Tiers</p>
-              <p className="text-xs font-medium text-muted">Evidence Classification Hierarchy</p>
-            </div>
-            <div className="p-2">
-              <p className="text-2xl font-black text-primary font-mono">100%</p>
-              <p className="text-xs font-medium text-muted">Disclosed Methodology & Governance</p>
-            </div>
+      {/* ═══════════════════════ STATS STRIP ═══════════════════════ */}
+      <section className="relative border-y border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { value: VENDORS.length, label: "Platforms Evaluated" },
+              { value: "12", label: "ASCS Dimensions" },
+              { value: "7 Tiers", label: "Evidence Hierarchy" },
+              { value: "100%", label: "Disclosed Methodology" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3 p-2 rounded-lg">
+                <div className="h-10 w-10 shrink-0 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <span className="text-sm font-black font-mono text-primary">{stat.value}</span>
+                </div>
+                <p className="text-xs font-medium text-muted leading-tight">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ASCS LEADERBOARD HIGHLIGHT */}
-      <section id="ascs-leaderboard" className="py-16 sm:py-20">
+      {/* ═══════════════════════ ASCS LEADERBOARD ═══════════════════════ */}
+      <section id="ascs-leaderboard" className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="text-xs font-bold uppercase tracking-widest text-accent">
                 Normalized Scoring Matrix
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-2 tracking-tight">
                 ASCS 2026 Enterprise Index
               </h2>
-              <p className="mt-2 text-sm text-muted max-w-2xl">
+              <p className="mt-2 text-sm text-muted max-w-2xl leading-relaxed">
                 Ranked by weighted composite score (0–10) across ERP connectivity, reasoning accuracy, autonomous workflow execution, and governance.
               </p>
             </div>
 
             <Link
               href="/rankings"
-              className="text-sm font-bold text-primary hover:underline flex items-center gap-1 shrink-0"
+              className="group text-sm font-bold text-primary hover:text-primary-dark flex items-center gap-1 shrink-0 transition-colors"
             >
-              View Full 30-Vendor Rankings →
+              View Full Rankings
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
 
@@ -152,25 +163,30 @@ export default function Home() {
               <Link
                 key={v.slug}
                 href={`/vendors/${v.slug}`}
-                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
+                className="group card-hover flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-border bg-surface p-5"
               >
                 <div className="flex items-start sm:items-center gap-4 min-w-0">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-surface-alt border border-border font-mono text-sm font-black text-foreground group-hover:border-primary/40 group-hover:text-primary transition-colors">
-                    0{i + 1}
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-mono text-sm font-black text-white shadow-sm ${
+                    i === 0 ? "bg-gradient-to-br from-amber-400 to-amber-600" :
+                    i === 1 ? "bg-gradient-to-br from-slate-300 to-slate-500" :
+                    i === 2 ? "bg-gradient-to-br from-orange-400 to-orange-600" :
+                    "bg-gradient-to-br from-primary/80 to-primary-dark"
+                  }`}>
+                    {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="font-extrabold text-foreground group-hover:text-primary transition-colors text-base">
                         {v.name}
                       </h3>
-                      <span className="rounded bg-surface-alt border border-border px-2 py-0.5 text-[11px] font-medium text-muted">
+                      <span className="rounded-md bg-surface-alt border border-border px-2 py-0.5 text-[11px] font-medium text-muted">
                         {v.category}
                       </span>
-                      <span className="rounded bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-mono text-primary">
+                      <span className="rounded-md bg-primary/8 border border-primary/15 px-2 py-0.5 text-[10px] font-mono font-bold text-primary">
                         {v.architectureProfile.agenticTier}
                       </span>
                     </div>
-                    <p className="text-xs text-muted mt-1 truncate max-w-xl">{v.workloadFit.idealDeployment}</p>
+                    <p className="text-xs text-muted mt-1.5 truncate max-w-xl">{v.workloadFit.idealDeployment}</p>
                   </div>
                 </div>
 
@@ -180,7 +196,7 @@ export default function Home() {
                       <span className="text-2xl font-black font-mono text-primary">{v.ascsComposite}</span>
                       <span className="text-xs font-mono text-muted">/10</span>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">ASCS Composite</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">ASCS</span>
                   </div>
 
                   <span className="text-xs font-bold text-muted group-hover:text-primary group-hover:translate-x-1 transition-all">
@@ -193,36 +209,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WORKLOAD FIT & ARCHITECTURAL PROFILES (REPLACING BIASED TOP PICKS) */}
-      <section className="border-t border-border bg-surface-alt/40 py-16 sm:py-20">
+      {/* ═══════════════════════ WORKLOAD ARCHETYPES ═══════════════════════ */}
+      <section className="relative py-20 sm:py-24 bg-surface-alt/50">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent">
               Workload Archetypes
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-2 tracking-tight">
               Architectural Fit & Workload Profiles
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-sm text-muted leading-relaxed">
               We reject arbitrary &quot;best overall&quot; awards. Enterprise software selection depends entirely on existing back-office systems, latency tolerances, and data integration architecture.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {workloadArchetypes.map((arch) => (
               <Link
                 key={arch.title}
                 href={arch.href}
-                className="group flex flex-col justify-between rounded-xl border border-border bg-surface p-6 transition-all hover:border-primary/40 hover:shadow-md"
+                className={`group card-hover flex flex-col justify-between rounded-xl border border-border border-t-2 ${arch.borderColor} bg-surface p-6`}
               >
                 <div>
-                  <span className="rounded bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
+                  <span className="rounded-md bg-primary/8 border border-primary/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
                     {arch.tag}
                   </span>
-                  <h3 className="text-lg font-black text-foreground mt-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-base font-black text-foreground mt-3 group-hover:text-primary transition-colors leading-snug">
                     {arch.title}
                   </h3>
-                  <p className="text-xs font-bold text-muted mt-1 uppercase tracking-wider">
+                  <p className="text-[11px] font-bold text-muted mt-1.5 uppercase tracking-wider">
                     {arch.archetype}
                   </p>
                   <p className="text-xs leading-relaxed text-muted mt-3">
@@ -233,8 +252,9 @@ export default function Home() {
                 <div className="mt-6 pt-4 border-t border-border">
                   <p className="text-[11px] text-muted">Representative Vendors:</p>
                   <p className="text-xs font-bold text-foreground mt-0.5">{arch.examples.join(", ")}</p>
-                  <span className="mt-3 inline-block text-xs font-bold text-primary group-hover:underline">
-                    View Architecture Analysis →
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:underline">
+                    View Analysis
+                    <span className="transition-transform group-hover:translate-x-0.5">→</span>
                   </span>
                 </div>
               </Link>
@@ -243,27 +263,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* POPULAR COMPARISONS */}
-      <section className="py-16 sm:py-20">
+      {/* ═══════════════════════ COMPARISONS ═══════════════════════ */}
+      <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="text-xs font-bold uppercase tracking-widest text-accent">
                 Head-to-Head Research
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1">
+              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-2 tracking-tight">
                 Platform Architecture Comparisons
               </h2>
-              <p className="mt-2 text-sm text-muted">
+              <p className="mt-2 text-sm text-muted leading-relaxed">
                 Direct technical evaluations of competing vendors across all 12 ASCS dimensions.
               </p>
             </div>
 
             <Link
               href="/compare"
-              className="text-sm font-bold text-primary hover:underline shrink-0"
+              className="group text-sm font-bold text-primary hover:text-primary-dark flex items-center gap-1 shrink-0 transition-colors"
             >
-              Browse All Platform Matchups →
+              Browse All Matchups
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
 
@@ -272,22 +293,23 @@ export default function Home() {
               <Link
                 key={c.slug}
                 href={`/compare/${c.slug}`}
-                className="group rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
+                className="group card-hover rounded-xl border border-border bg-surface p-5"
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-muted">{c.q}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="text-base font-black text-foreground group-hover:text-primary transition-colors">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-muted leading-relaxed">{c.q}</p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  <span className="text-base font-black text-foreground group-hover:text-primary transition-colors truncate">
                     {c.a}
                   </span>
-                  <span className="rounded-full bg-surface-alt border border-border px-2 py-0.5 text-[10px] font-mono font-bold text-muted">
+                  <span className="shrink-0 rounded-full bg-accent/10 border border-accent/20 px-2.5 py-0.5 text-[10px] font-mono font-black text-accent">
                     VS
                   </span>
-                  <span className="text-base font-black text-foreground group-hover:text-primary transition-colors">
+                  <span className="text-base font-black text-foreground group-hover:text-primary transition-colors truncate text-right">
                     {c.b}
                   </span>
                 </div>
-                <span className="mt-4 block text-xs font-bold text-primary group-hover:underline border-t border-border pt-3">
-                  Inspect ASCS Deltas →
+                <span className="mt-5 flex items-center gap-1 text-xs font-bold text-primary group-hover:underline border-t border-border pt-3">
+                  Inspect ASCS Deltas
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </span>
               </Link>
             ))}
@@ -295,76 +317,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EMPIRICAL RESEARCH METHODOLOGY */}
-      <section className="border-t border-border bg-surface-alt/40 py-16 sm:py-20">
+      {/* ═══════════════════════ METHODOLOGY ═══════════════════════ */}
+      <section className="relative py-20 sm:py-24 bg-surface-alt/50">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent">
               Scientific Rigor
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-2 tracking-tight">
               How Reviews_CXO Evaluates Platforms
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-sm text-muted leading-relaxed">
               Our evaluation methodology is designed for enterprise CTOs, CIOs, and revenue leaders who require reproducible technical facts rather than promotional claims.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-              <span className="font-mono text-2xl font-black text-primary">01</span>
-              <h3 className="mt-3 font-bold text-foreground text-base">12-Dimension ASCS Rubric</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Every platform is graded across 12 weighted dimensions—from ERP connectivity depth to multi-agent autonomy and auditability.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-              <span className="font-mono text-2xl font-black text-primary">02</span>
-              <h3 className="mt-3 font-bold text-foreground text-base">7-Tier Evidence Hierarchy</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Every score explicitly cites its evidence class: Observed (lab-tested), Documented, Third-Party Confirmed, Simulated, or Inferred.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-              <span className="font-mono text-2xl font-black text-primary">03</span>
-              <h3 className="mt-3 font-bold text-foreground text-base">Reproducible Lab Tests</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Synthetic workloads (such as our CRM+ERP At-Risk Accounts protocol) allow standardized, apples-to-apples performance comparisons.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-              <span className="font-mono text-2xl font-black text-primary">04</span>
-              <h3 className="mt-3 font-bold text-foreground text-base">Editorial Transparency</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Full disclosure of financial sponsorship and governance policies. Sponsors cannot alter scores, benchmarks, or editorial conclusions.
-              </p>
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                num: "01",
+                title: "12-Dimension ASCS Rubric",
+                desc: "Every platform is graded across 12 weighted dimensions—from ERP connectivity depth to multi-agent autonomy and auditability.",
+              },
+              {
+                num: "02",
+                title: "7-Tier Evidence Hierarchy",
+                desc: "Every score explicitly cites its evidence class: Observed (lab-tested), Documented, Third-Party Confirmed, Simulated, or Inferred.",
+              },
+              {
+                num: "03",
+                title: "Reproducible Lab Tests",
+                desc: "Synthetic workloads (such as our CRM+ERP At-Risk Accounts protocol) allow standardized, apples-to-apples performance comparisons.",
+              },
+              {
+                num: "04",
+                title: "Editorial Transparency",
+                desc: "Full disclosure of financial sponsorship and governance policies. Sponsors cannot alter scores, benchmarks, or editorial conclusions.",
+              },
+            ].map((step) => (
+              <div key={step.num} className="card-hover rounded-xl border border-border bg-surface p-6">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/15 font-mono text-lg font-black text-primary">
+                  {step.num}
+                </span>
+                <h3 className="mt-4 font-bold text-foreground text-sm">{step.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted">{step.desc}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <Link
               href="/about/methodology"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-5 py-2.5 text-xs font-bold text-foreground hover:border-primary/40 transition-colors shadow-sm"
+              className="group inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-6 py-3 text-xs font-bold text-foreground shadow-sm transition-all hover:border-primary/30 hover:shadow-md card-hover"
             >
-              Read Complete ASCS Methodology Specification →
+              Read Complete ASCS Methodology Specification
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* RESEARCH DISPATCH (REAL NEWSLETTER, NO FABRICATION) */}
-      <section className="border-t border-border bg-surface py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <span className="rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+      {/* ═══════════════════════ NEWSLETTER CTA ═══════════════════════ */}
+      <section className="relative overflow-hidden py-20 sm:py-24">
+        {/* Gradient bg */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+
+        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 border border-accent/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent">
             Research Dispatch
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl font-black text-foreground">
+          <h2 className="mt-5 text-2xl sm:text-3xl font-black text-foreground tracking-tight">
             Quarterly Architecture Reports & Benchmark Releases
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
+          <p className="mt-4 text-sm leading-relaxed text-muted max-w-xl mx-auto">
             Delivered quarterly: In-depth technical teardowns of enterprise AI architectures, benchmark test datasets, and updated ASCS platform scorecards. Zero marketing spam.
           </p>
 
@@ -372,7 +400,7 @@ export default function Home() {
             <NewsletterForm buttonText="Subscribe to Research Dispatch" />
           </div>
 
-          <p className="mt-4 text-[11px] text-muted">
+          <p className="mt-5 text-[11px] text-muted/70">
             Independent enterprise research. Disclosures and methodology published in full under editorial policy.
           </p>
         </div>

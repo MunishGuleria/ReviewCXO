@@ -12,9 +12,16 @@ export function InfoCard({ title, children, variant = "default" }: InfoCardProps
         ? "border-warning/30 bg-warning/5"
         : "border-border bg-surface";
 
+  const titleClass =
+    variant === "primary"
+      ? "text-primary"
+      : variant === "warning"
+        ? "text-warning"
+        : "text-muted";
+
   return (
-    <div className={`rounded-xl border p-6 ${borderClass}`}>
-      <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-foreground/80">
+    <div className={`rounded-xl border p-5 ${borderClass}`}>
+      <h3 className={`mb-3 text-[11px] font-bold uppercase tracking-wider ${titleClass}`}>
         {title}
       </h3>
       {children}

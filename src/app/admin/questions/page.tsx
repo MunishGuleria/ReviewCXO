@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { getAllQuestions } from "@/lib/questions";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { PageToolbar } from "@/components/ui/PageToolbar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,35 +22,19 @@ export default function AdminQuestionsPage() {
       backLabel="Admin"
     >
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-muted">
-            {questions.length} question{questions.length !== 1 ? "s" : ""} total
-          </p>
-          <Link
-            href="/admin/questions/new"
-            className="rounded-lg border border-primary bg-primary px-4 py-2 text-xs font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            + New Question
-          </Link>
-        </div>
+        <PageToolbar count={questions.length} label={`question${questions.length !== 1 ? "s" : ""} total`} actionLabel="+ New Question" actionHref="/admin/questions/new" />
 
         <div className="space-y-3">
           {questions.map((q) => (
             <div
               key={q.id}
-              className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+              className="rounded-xl border border-border bg-surface p-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span
-                    className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                      q.status === "published"
-                        ? "bg-green-500/10 border border-green-500/20 text-green-500"
-                        : "bg-yellow-500/10 border border-yellow-500/20 text-yellow-500"
-                    }`}
-                  >
+                  <StatusBadge variant={q.status === "published" ? "published" : "draft"}>
                     {q.status}
-                  </span>
+                  </StatusBadge>
                   <span className="rounded bg-surface-alt border border-border px-2 py-0.5 text-[10px] font-medium text-muted">
                     {q.category}
                   </span>
@@ -62,7 +48,7 @@ export default function AdminQuestionsPage() {
                 {q.status === "published" && (
                   <Link
                     href={`/questions/${q.slug}`}
-                    className="rounded-lg border border-border bg-surface-alt px-3 py-1.5 text-[11px] font-bold text-foreground hover:border-primary/40 transition-colors"
+                    className="rounded-lg border border-border bg-surface-alt px-3.5 py-2 text-xs font-bold text-foreground hover:border-primary/40 transition-colors"
                   >
                     View Live →
                   </Link>

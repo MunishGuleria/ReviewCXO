@@ -9,7 +9,7 @@ export function StarRating({ rating, size = "md", showNumber = true, reviewCount
   const stars = [];
   const fullStars = Math.floor(rating);
   const hasHalf = rating - fullStars >= 0.3 && rating - fullStars <= 0.8;
-  const gradientId = `half-star-grad-${Math.random().toString(36).substr(2, 9)}`;
+  const gradientId = `half-star-grad-${rating.toString().replace(".", "-")}`;
 
   for (let i = 1; i <= 5; i++) {
     const filled = i <= fullStars;

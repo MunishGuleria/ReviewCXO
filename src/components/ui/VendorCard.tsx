@@ -8,16 +8,23 @@ interface VendorCardProps {
 }
 
 export function VendorCard({ vendor, rank }: VendorCardProps) {
+  const getRankStyle = (r: number) => {
+    if (r === 1) return "bg-gradient-to-br from-amber-400 to-amber-600 text-white";
+    if (r === 2) return "bg-gradient-to-br from-slate-300 to-slate-500 text-white";
+    if (r === 3) return "bg-gradient-to-br from-orange-400 to-orange-600 text-white";
+    return "bg-surface-alt border border-border text-muted group-hover:border-primary/30 group-hover:text-primary";
+  };
+
   return (
     <Link
       href={`/vendors/${vendor.slug}`}
-      className="group flex flex-col justify-between rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-md"
+      className="group flex flex-col justify-between rounded-xl border border-border bg-surface p-5 card-hover"
     >
       <div>
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-3 min-w-0">
             {rank !== undefined && (
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface-alt border border-border font-mono text-xs font-black text-muted group-hover:border-primary/40 group-hover:text-primary transition-colors">
+              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-black transition-colors ${getRankStyle(rank)}`}>
                 {rank < 10 ? `0${rank}` : rank}
               </span>
             )}
@@ -30,7 +37,7 @@ export function VendorCard({ vendor, rank }: VendorCardProps) {
           </div>
 
           <div className="text-right shrink-0">
-            <div className="inline-flex items-baseline gap-0.5 rounded-lg bg-primary/10 border border-primary/20 px-2 py-0.5 font-mono">
+            <div className="inline-flex items-baseline gap-0.5 rounded-lg bg-primary/8 border border-primary/15 px-2 py-0.5 font-mono">
               <span className="text-xs font-black text-primary">{vendor.ascsComposite}</span>
               <span className="text-[10px] text-muted">/10</span>
             </div>
@@ -50,8 +57,9 @@ export function VendorCard({ vendor, rank }: VendorCardProps) {
 
       <div className="mt-4 flex items-center justify-between pt-2 border-t border-border">
         <span className="text-[11px] font-semibold text-muted">Deployment: {vendor.deployment[0]}</span>
-        <span className="text-xs font-bold text-primary group-hover:underline">
-          Scorecard →
+        <span className="text-xs font-bold text-primary group-hover:underline flex items-center gap-0.5">
+          Scorecard
+          <span className="transition-transform group-hover:translate-x-0.5">→</span>
         </span>
       </div>
     </Link>

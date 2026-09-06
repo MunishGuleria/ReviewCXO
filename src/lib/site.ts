@@ -22,12 +22,22 @@ export const NAVIGATION = [
   {
     label: "Platforms",
     href: "/vendors",
-    description: "All 25+ platforms evaluated",
+    description: "All 30+ platforms evaluated",
   },
   {
     label: "Benchmarks",
     href: "/benchmarks",
     description: "Reproducible evaluations",
+  },
+  {
+    label: "IT Companies",
+    href: "/it-companies",
+    description: "AI project delivery reviews",
+  },
+  {
+    label: "Case Studies",
+    href: "/case-studies",
+    description: "Published AI project reviews",
   },
   {
     label: "Questions",
@@ -38,6 +48,72 @@ export const NAVIGATION = [
     label: "Methodology",
     href: "/about/methodology",
     description: "ASCS 12-dimension framework",
+  },
+] as const;
+
+export const NAV_GROUPS = [
+  {
+    label: "Research",
+    items: [
+      {
+        label: "Rankings",
+        href: "/rankings",
+        description: "ASCS 2026 Enterprise Index — top platforms ranked",
+        icon: "chart",
+      },
+      {
+        label: "Benchmarks",
+        href: "/benchmarks",
+        description: "Reproducible lab tests & evaluations",
+        icon: "flask",
+      },
+      {
+        label: "Compare",
+        href: "/compare",
+        description: "Head-to-head platform architecture comparisons",
+        icon: "scale",
+      },
+    ],
+  },
+  {
+    label: "Explore",
+    items: [
+      {
+        label: "Platforms",
+        href: "/vendors",
+        description: "All 30+ AI sales platforms evaluated",
+        icon: "grid",
+      },
+      {
+        label: "IT Companies",
+        href: "/it-companies",
+        description: "AI project delivery partner reviews",
+        icon: "building",
+      },
+      {
+        label: "Case Studies",
+        href: "/case-studies",
+        description: "Published enterprise AI project reviews",
+        icon: "file",
+      },
+    ],
+  },
+  {
+    label: "Community",
+    items: [
+      {
+        label: "Questions",
+        href: "/questions",
+        description: "Community questions with expert analysis",
+        icon: "chat",
+      },
+      {
+        label: "Methodology",
+        href: "/about/methodology",
+        description: "ASCS 12-dimension evaluation framework",
+        icon: "book",
+      },
+    ],
   },
 ] as const;
 
