@@ -1,0 +1,71 @@
+# Reviews_CXO
+
+> Independent enterprise AI research — benchmarks, architecture analysis, and CXO insights on AI sales platforms.
+
+Reviews_CXO is an independently operated research initiative focused on AI for enterprise sales. We provide evidence-based evaluations of AI sales platforms using the ASCS (Architecture, Security, Connectivity, Scalability) 12-dimension framework.
+
+## What We Do
+
+- Evaluate enterprise AI sales platforms using a rigorous 12-dimension methodology
+- Publish benchmarks with reproducible, controlled evaluations
+- Provide architecture analysis for enterprise buyers
+- Host verified CXO reviews of AI project deliveries by IT companies
+- Research IT company capabilities across the ecosystem
+
+## Key Sections
+
+- **Rankings**: /rankings — ASCS 2026 platform rankings
+- **Vendors**: /vendors — 30+ enterprise AI sales platform profiles
+- **Comparisons**: /compare — Head-to-head platform comparisons
+- **Benchmarks**: /benchmarks — Reproducible capability evaluations
+- **Indexes**: /indexes — Composite scores and dimension-level analysis
+- **IT Companies**: /it-companies — AI project delivery company profiles
+- **Case Studies**: /case-studies — Real-world AI project outcomes
+- **Questions**: /questions — Community questions with research analysis
+- **Methodology**: /about/methodology — ASCS framework documentation
+
+## Data Model
+
+Reviews_CXO distinguishes between:
+
+1. **CXO Reviews** — Verified reviews submitted by CxOs through our verification flow
+2. **Public Research** — Evidence gathered from public sources (company websites, press releases, case studies)
+3. **Third-Party Citations** — Summarized evidence from G2, Capterra, Clutch, and similar platforms
+
+All research records retain source provenance. Third-party reviews are never presented as Reviews_CXO reviews.
+
+## Methodology
+
+The ASCS (Architecture, Security, Connectivity, Scalability) framework evaluates platforms across 12 dimensions:
+
+1. ERP Connectivity & Integration Depth
+2. CRM Data Grounding Quality
+3. Data Freshness & Real-Time Access
+4. AI Reasoning Accuracy
+5. Agentic Autonomy Level
+6. Cross-System Orchestration
+7. Security Architecture
+8. Governance & Compliance
+9. Scalability & Performance
+10. Implementation Complexity
+11. Ecosystem Maturity
+12. Pricing Transparency
+
+Each dimension is scored 0-10 and weighted according to enterprise workload requirements.
+
+## Principles
+
+- Evidence-based rankings — no pay-to-play
+- Source provenance required for all research records
+- Missing data is never fabricated
+- All companies evaluated using the same evidence principles
+- Public-source evidence is distinguishable from CXO reviews
+
+## Contact
+
+- Website: https://reviews-cxo.com
+- Email: research@reviews-cxo.com
+
+## Last Updated
+
+September 2026
