@@ -10,6 +10,15 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IT Companies — AI Project Reviews | Reviews_CXO",
   description: "Browse IT companies evaluated on their AI project delivery. Real CxO reviews of AI implementations by TCS, Infosys, Accenture, SalesX, and more.",
+  alternates: { canonical: "https://reviews-cxo.com/it-companies" },
+  openGraph: {
+    title: "IT Companies — AI Project Reviews",
+    description: "Browse IT companies evaluated on their AI project delivery.",
+    url: "https://reviews-cxo.com/it-companies",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const companies = getAllITCompanies();

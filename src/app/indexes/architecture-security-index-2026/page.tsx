@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Architecture & Security Index 2026",
   description:
     "12-dimension evaluation of enterprise AI platforms on architecture, security, and governance maturity.",
+  alternates: { canonical: "https://reviews-cxo.com/indexes/architecture-security-index-2026" },
+  openGraph: {
+    title: "Architecture & Security Index 2026",
+    description: "12-dimension evaluation of enterprise AI platforms.",
+    url: "https://reviews-cxo.com/indexes/architecture-security-index-2026",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "article",
+  },
 };
 
 export default function ArchitectureSecurityIndexPage() {

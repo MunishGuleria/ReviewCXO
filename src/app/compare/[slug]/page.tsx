@@ -49,6 +49,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${vendorA.name} vs ${vendorB.name} — ASCS Architecture & Benchmark Comparison (2026)`,
     description: `Detailed enterprise evaluation of ${vendorA.name} (ASCS ${vendorA.ascsComposite}/10) vs ${vendorB.name} (ASCS ${vendorB.ascsComposite}/10). Benchmarks across ERP connectivity, agentic autonomy, and reasoning quality.`,
+    alternates: { canonical: `https://reviews-cxo.com/compare/${vendorA.slug}-vs-${vendorB.slug}` },
+    openGraph: {
+      title: `${vendorA.name} vs ${vendorB.name} — Comparison`,
+      description: `Enterprise evaluation of ${vendorA.name} vs ${vendorB.name}.`,
+      url: `https://reviews-cxo.com/compare/${vendorA.slug}-vs-${vendorB.slug}`,
+      siteName: "Reviews_CXO",
+      locale: "en_US",
+      type: "website",
+    },
   };
 }
 

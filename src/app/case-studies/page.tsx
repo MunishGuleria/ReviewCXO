@@ -8,6 +8,15 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Case Studies — AI Project Reviews | Reviews_CXO",
   description: "Real-world AI project case studies with outcomes, ROI, and CxO reviews. Published after independent verification.",
+  alternates: { canonical: "https://reviews-cxo.com/case-studies" },
+  openGraph: {
+    title: "AI Project Case Studies",
+    description: "Real-world AI project case studies with outcomes and ROI.",
+    url: "https://reviews-cxo.com/case-studies",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const caseStudies = getPublishedCaseStudies();

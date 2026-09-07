@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Methodology",
   description:
     "The ASCS (AI Sales Capability Score) framework — our 12-dimension evaluation methodology for AI enterprise sales platforms.",
+  alternates: { canonical: "https://reviews-cxo.com/about/methodology" },
+  openGraph: {
+    title: "ASCS Research Methodology",
+    description: "12-dimension evaluation methodology for AI enterprise sales platforms.",
+    url: "https://reviews-cxo.com/about/methodology",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "article",
+  },
 };
 
 export default function MethodologyPage() {

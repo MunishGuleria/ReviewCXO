@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Corrections",
   description:
     "How Reviews_CXO handles errors, updates, and score recalculations.",
+  alternates: { canonical: "https://reviews-cxo.com/about/corrections" },
+  openGraph: {
+    title: "Corrections & Retractions — Reviews_CXO",
+    description: "How we handle errors, updates, and score recalculations.",
+    url: "https://reviews-cxo.com/about/corrections",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "article",
+  },
 };
 
 export default function CorrectionsPage() {

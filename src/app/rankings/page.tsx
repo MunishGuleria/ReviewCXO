@@ -8,7 +8,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ASCS 2026 Platform Rankings — Top Enterprise AI Sales Engines",
-  description: "Enterprise AI sales platforms ranked by ASCS composite score across 12 technical dimensions: ERP connectivity, reasoning accuracy, and autonomous execution.",
+  description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS architecture framework. Evidence-based rankings for enterprise buyers.",
+  alternates: { canonical: "https://reviews-cxo.com/rankings" },
+  openGraph: {
+    title: "ASCS 2026 Platform Rankings",
+    description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS framework.",
+    url: "https://reviews-cxo.com/rankings",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const rankedVendors = [...VENDORS].sort((a, b) => b.ascsComposite - a.ascsComposite);

@@ -10,6 +10,15 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IT Company Rankings — AI Project Delivery | Reviews_CXO",
   description: "IT companies ranked by AI project delivery quality, ROI, and CxO satisfaction. Based on verified project reviews.",
+  alternates: { canonical: "https://reviews-cxo.com/rankings/it-companies" },
+  openGraph: {
+    title: "IT Company Rankings — AI Project Delivery",
+    description: "IT companies ranked by AI project delivery quality and CxO satisfaction.",
+    url: "https://reviews-cxo.com/rankings/it-companies",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const companies = getAllITCompanies()

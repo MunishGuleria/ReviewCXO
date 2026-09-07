@@ -27,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: cs.metaTitle,
     description: cs.metaDescription,
-    openGraph: { title: cs.metaTitle, description: cs.metaDescription, type: "article" },
+    alternates: { canonical: `https://reviews-cxo.com/case-studies/${cs.slug}` },
+    openGraph: { title: cs.metaTitle, description: cs.metaDescription, type: "article", url: `https://reviews-cxo.com/case-studies/${cs.slug}`, siteName: "Reviews_CXO", locale: "en_US" },
   };
 }
 

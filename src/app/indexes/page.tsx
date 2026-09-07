@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Indexes",
   description:
     "Composite scores and rankings using the ASCS 12-dimension framework.",
+  alternates: { canonical: "https://reviews-cxo.com/indexes" },
+  openGraph: {
+    title: "AI Sales Platform Indexes",
+    description: "Composite scores and rankings using the ASCS 12-dimension framework.",
+    url: "https://reviews-cxo.com/indexes",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function IndexesPage() {

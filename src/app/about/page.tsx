@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "About Reviews_CXO — an independently operated research initiative focused on AI for enterprise sales.",
+  alternates: { canonical: "https://reviews-cxo.com/about" },
+  openGraph: {
+    title: "About Reviews_CXO",
+    description: "Independent research initiative focused on AI for enterprise sales.",
+    url: "https://reviews-cxo.com/about",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

@@ -19,6 +19,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${vendor.name} Evaluation — ASCS Scorecard (${vendor.ascsComposite}/10) & Architecture Review`,
     description: `Independent research evaluation of ${vendor.name}: ${vendor.tagline}. Scored ${vendor.ascsComposite}/10 on the ASCS enterprise architecture framework.`,
+    alternates: { canonical: `https://reviews-cxo.com/vendors/${vendor.slug}` },
+    openGraph: {
+      title: `${vendor.name} Evaluation — ASCS Scorecard`,
+      description: `Independent research evaluation of ${vendor.name}. Scored ${vendor.ascsComposite}/10.`,
+      url: `https://reviews-cxo.com/vendors/${vendor.slug}`,
+      siteName: "Reviews_CXO",
+      locale: "en_US",
+      type: "website",
+    },
   };
 }
 

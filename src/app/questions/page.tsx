@@ -10,6 +10,15 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Community Questions — AI Sales Platform Research",
   description: "Real-world questions from technology communities, examined through independent research and evidence. Expert analysis on AI sales platforms, ERP integration, and enterprise AI.",
+  alternates: { canonical: "https://reviews-cxo.com/questions" },
+  openGraph: {
+    title: "Community Questions — AI Sales Platform Research",
+    description: "Real-world questions examined through independent research.",
+    url: "https://reviews-cxo.com/questions",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const questions = getPublishedQuestions();

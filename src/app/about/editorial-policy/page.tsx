@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Editorial Policy",
   description:
     "Reviews_CXO editorial independence policy — how we ensure research integrity and independence.",
+  alternates: { canonical: "https://reviews-cxo.com/about/editorial-policy" },
+  openGraph: {
+    title: "Editorial Policy — Reviews_CXO",
+    description: "How we ensure research integrity and independence.",
+    url: "https://reviews-cxo.com/about/editorial-policy",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "article",
+  },
 };
 
 export default function EditorialPolicyPage() {

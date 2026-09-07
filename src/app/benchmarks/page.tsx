@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Benchmarks",
   description:
     "Reproducible, controlled evaluations of AI sales platform capabilities on specific enterprise tasks.",
+  alternates: { canonical: "https://reviews-cxo.com/benchmarks" },
+  openGraph: {
+    title: "AI Sales Platform Benchmarks",
+    description: "Reproducible evaluations of AI sales platform capabilities.",
+    url: "https://reviews-cxo.com/benchmarks",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function BenchmarksPage() {

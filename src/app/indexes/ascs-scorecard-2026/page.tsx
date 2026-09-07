@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "ASCS Scorecard 2026",
   description:
     "Composite ASCS scores for all evaluated enterprise AI sales platforms.",
+  alternates: { canonical: "https://reviews-cxo.com/indexes/ascs-scorecard-2026" },
+  openGraph: {
+    title: "ASCS Scorecard 2026",
+    description: "Composite ASCS scores for all evaluated platforms.",
+    url: "https://reviews-cxo.com/indexes/ascs-scorecard-2026",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "article",
+  },
 };
 
 export default function ASCSScorecardPage() {

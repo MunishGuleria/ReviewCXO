@@ -1,6 +1,29 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { VENDORS, getTopAscsVendors } from "@/lib/vendors";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  alternates: { canonical: SITE.url },
+  openGraph: {
+    title: SITE.title,
+    description: SITE.description,
+    url: SITE.url,
+    siteName: SITE.name,
+    locale: "en_US",
+    type: "website",
+    images: [{ url: SITE.ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: [SITE.ogImage],
+  },
+};
 
 const topAscs = getTopAscsVendors(8);
 

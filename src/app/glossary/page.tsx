@@ -4,6 +4,15 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Glossary",
   description: "Enterprise AI terminology defined with evidence-backed explanations.",
+  alternates: { canonical: "https://reviews-cxo.com/glossary" },
+  openGraph: {
+    title: "Enterprise AI Glossary",
+    description: "Enterprise AI terminology defined with evidence-backed explanations.",
+    url: "https://reviews-cxo.com/glossary",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const terms = [

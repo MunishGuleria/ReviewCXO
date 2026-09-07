@@ -5,6 +5,15 @@ import { NewsletterForm } from "@/components/ui/NewsletterForm";
 export const metadata: Metadata = {
   title: "Newsletter",
   description: "Get new research delivered to your inbox.",
+  alternates: { canonical: "https://reviews-cxo.com/newsletter" },
+  openGraph: {
+    title: "Reviews_CXO Newsletter",
+    description: "Get new AI enterprise sales research delivered to your inbox.",
+    url: "https://reviews-cxo.com/newsletter",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function NewsletterPage() {

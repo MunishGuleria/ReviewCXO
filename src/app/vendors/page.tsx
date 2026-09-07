@@ -7,6 +7,15 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: `All ${VENDORS.length} Enterprise AI Sales Platforms — Directory & ASCS Scores`,
   description: `Directory of ${VENDORS.length} enterprise AI sales platforms. Architectural analysis, ASCS benchmarks, and integration capabilities.`,
+  alternates: { canonical: "https://reviews-cxo.com/vendors" },
+  openGraph: {
+    title: `All ${VENDORS.length} Enterprise AI Sales Platforms`,
+    description: `Directory of ${VENDORS.length} enterprise AI sales platforms with ASCS scores.`,
+    url: "https://reviews-cxo.com/vendors",
+    siteName: "Reviews_CXO",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function VendorsPage() {
