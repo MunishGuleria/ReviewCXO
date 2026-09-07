@@ -30,9 +30,9 @@ export const NAVIGATION = [
     description: "Reproducible evaluations",
   },
   {
-    label: "IT Companies",
-    href: "/it-companies",
-    description: "AI project delivery reviews",
+    label: "Submit Review",
+    href: "/submit-review",
+    description: "Verified CXO platform reviews",
   },
   {
     label: "Case Studies",
@@ -85,9 +85,9 @@ export const NAV_GROUPS = [
         icon: "grid",
       },
       {
-        label: "IT Companies",
-        href: "/it-companies",
-        description: "AI project delivery partner reviews",
+        label: "Submit Review",
+        href: "/submit-review",
+        description: "Submit verified CXO implementation review",
         icon: "building",
       },
       {

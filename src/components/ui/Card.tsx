@@ -10,9 +10,9 @@ interface CardProps {
 
 export function Card({ href, title, description, badge, meta }: CardProps) {
   const content = (
-    <div className="group flex h-full flex-col rounded-xl border border-border bg-surface p-5 card-hover">
+    <div className="group flex h-full flex-col rounded-xl border border-border bg-surface p-5 shadow-sm card-hover">
       {badge && (
-        <span className="mb-3 inline-block w-fit rounded-md bg-primary/8 border border-primary/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
+        <span className="mb-3 inline-block w-fit rounded-full bg-primary/8 border border-primary/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
           {badge}
         </span>
       )}

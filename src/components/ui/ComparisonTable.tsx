@@ -17,23 +17,23 @@ export function ComparisonTable({
   vendorB: string;
 }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto rounded border border-border bg-surface">
+      <table className="data-table">
         <thead>
-          <tr className="border-b border-border bg-surface-alt">
-            <th className="px-4 py-3 text-left font-semibold">Feature</th>
-            <th className="px-4 py-3 text-left font-semibold">{vendorA}</th>
-            <th className="px-4 py-3 text-left font-semibold">{vendorB}</th>
+          <tr>
+            <th>Feature</th>
+            <th>{vendorA}</th>
+            <th>{vendorB}</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.feature} className="border-b border-border last:border-0">
-              <td className="px-4 py-3 font-medium">{row.feature}</td>
-              <td className={`px-4 py-3 ${row.winner === "a" ? "font-semibold text-success" : ""}`}>
+            <tr key={row.feature}>
+              <td className="font-medium text-secondary-foreground">{row.feature}</td>
+              <td className={`${row.winner === "a" ? "font-semibold text-foreground bg-primary/5" : "text-muted-foreground"}`}>
                 {row.vendorA}
               </td>
-              <td className={`px-4 py-3 ${row.winner === "b" ? "font-semibold text-success" : ""}`}>
+              <td className={`${row.winner === "b" ? "font-semibold text-foreground bg-primary/5" : "text-muted-foreground"}`}>
                 {row.vendorB}
               </td>
             </tr>
@@ -53,21 +53,21 @@ interface VerdictBoxProps {
 
 export function VerdictBox({ winner, summary, bestForA, bestForB }: VerdictBoxProps) {
   return (
-    <div className="rounded-xl border-2 border-primary/20 bg-primary/5 p-6">
-      <div className="mb-2 flex items-center gap-2">
-        <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase text-white">
+    <div className="rounded border border-border bg-surface-alt p-6">
+      <div className="mb-3 flex items-center gap-2">
+        <span className="rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
           Verdict
         </span>
       </div>
-      <p className="text-lg font-bold text-foreground">{summary}</p>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <div className="rounded-lg border border-border bg-surface p-4">
-          <p className="text-xs font-bold uppercase tracking-wider text-muted">Best For</p>
-          <p className="mt-1 text-sm font-medium text-foreground">{bestForA}</p>
+      <p className="text-lg font-semibold text-foreground leading-snug">{summary}</p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="rounded border border-border bg-surface p-4">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Best For</p>
+          <p className="text-sm font-medium text-secondary-foreground">{bestForA}</p>
         </div>
-        <div className="rounded-lg border border-border bg-surface p-4">
-          <p className="text-xs font-bold uppercase tracking-wider text-muted">Best For</p>
-          <p className="mt-1 text-sm font-medium text-foreground">{bestForB}</p>
+        <div className="rounded border border-border bg-surface p-4">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Best For</p>
+          <p className="text-sm font-medium text-secondary-foreground">{bestForB}</p>
         </div>
       </div>
     </div>
@@ -84,15 +84,15 @@ interface QuickPickProps {
 
 export function QuickPickCard({ title, winner, score, reason, href }: QuickPickProps) {
   return (
-    <Link href={href} className="group block rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/30 hover:shadow-md">
-      <p className="text-xs font-bold uppercase tracking-wider text-muted">{title}</p>
-      <div className="mt-2 flex items-baseline gap-2">
-        <span className="text-2xl font-extrabold text-primary">{winner}</span>
-        <span className="rounded-full bg-success/10 px-2 py-0.5 text-xs font-bold text-success">{score}</span>
+    <Link href={href} className="group block rounded border border-border bg-surface p-6 transition-colors hover:border-border-strong">
+      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{title}</p>
+      <div className="mt-3 flex items-baseline gap-3">
+        <span className="text-2xl font-bold text-foreground group-hover:text-primary-text transition-colors">{winner}</span>
+        <span className="rounded bg-success/10 border border-success/20 px-2 py-0.5 text-xs font-bold text-success">{score}</span>
       </div>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{reason}</p>
-      <span className="mt-3 inline-block text-xs font-semibold text-primary group-hover:underline">
-        See full comparison →
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{reason}</p>
+      <span className="mt-4 inline-block text-xs font-medium text-primary-text group-hover:underline">
+        Read Comparison →
       </span>
     </Link>
   );

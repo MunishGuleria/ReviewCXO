@@ -20,7 +20,7 @@ export function CitationBlock({
           How to Cite This Research
         </p>
         {version && (
-          <span className="rounded bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-mono text-primary">
+          <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[10px] font-mono font-bold text-primary">
             {version}
           </span>
         )}

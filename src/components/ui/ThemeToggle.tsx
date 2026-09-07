@@ -31,7 +31,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-9 rounded-lg border border-border bg-surface/50 p-2" />
+      <div className="h-9 w-9 rounded-md border border-border bg-surface/50 p-2" />
     );
   }
 
@@ -39,14 +39,14 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface text-foreground transition-colors hover:border-primary/40 hover:bg-surface-alt focus:outline-none"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface text-foreground transition-colors hover:border-primary/40 hover:bg-surface-alt focus:outline-none"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? (
         // Sun icon
         <svg
-          className="h-4 w-4 text-accent"
+          className="h-4 w-4 text-amber-400"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}

@@ -47,6 +47,9 @@ export function submitProjectReview(data: {
   would_recommend?: boolean
   overall_rating?: number
   is_anonymous?: boolean
+  review_type?: 'case_study' | 'community' | 'research'
+  source_url?: string
+  source_type?: 'verified' | 'public-research' | 'self-reported'
 }): string {
   const id = `review-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
   db.prepare(`
@@ -57,8 +60,9 @@ export function submitProjectReview(data: {
       team_size, timeline_months, budget_range, outcomes_description,
       roi_percentage, efficiency_gain_percentage, adoption_rate, challenges_faced,
       delivery_quality_rating, ai_effectiveness_rating, communication_rating,
-      value_for_money_rating, would_recommend, overall_rating, is_anonymous
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      value_for_money_rating, would_recommend, overall_rating, is_anonymous,
+      review_type, source_url, source_type
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
     id, data.cxo_full_name, data.cxo_title, data.cxo_company_name, data.cxo_email,
     data.cxo_linkedin_url || null, data.it_company_id || null, data.it_company_name,
@@ -70,7 +74,8 @@ export function submitProjectReview(data: {
     data.challenges_faced || null, data.delivery_quality_rating || null,
     data.ai_effectiveness_rating || null, data.communication_rating || null,
     data.value_for_money_rating || null, data.would_recommend ? 1 : 0,
-    data.overall_rating || null, data.is_anonymous ? 1 : 0
+    data.overall_rating || null, data.is_anonymous ? 1 : 0,
+    data.review_type || 'community', data.source_url || null, data.source_type || null
   )
   return id
 }
@@ -83,10 +88,66 @@ export function getApprovedSubmittedReviews() {
   return db.prepare("SELECT * FROM submitted_reviews WHERE status = 'approved' ORDER BY created_at DESC").all()
 }
 
+export function getApprovedSubmittedReviewsForVendor(vendorSlugOrId: string): any[] {
+  try {
+    return db.prepare(`
+      SELECT * FROM submitted_reviews
+      WHERE status = 'approved'
+        AND (it_company_id = ? OR it_company_name = ?)
+      ORDER BY created_at DESC
+    `).all(vendorSlugOrId, vendorSlugOrId)
+  } catch {
+    return []
+  }
+}
+
+
 export function approveSubmittedReview(id: string) {
   db.prepare("UPDATE submitted_reviews SET status = 'approved', updated_at = CURRENT_TIMESTAMP WHERE id = ?").run(id)
 }
 
 export function rejectSubmittedReview(id: string, adminNotes: string) {
   db.prepare("UPDATE submitted_reviews SET status = 'rejected', admin_notes = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?").run(adminNotes, id)
+}
+
+export function addEvidenceRecord(data: {
+  entity_type: 'it_company' | 'vendor' | 'review'
+  entity_id: string
+  claim: string
+  source_url?: string
+  source_name?: string
+  source_type?: 'verified' | 'public-research' | 'self-reported'
+  retrieved_date?: string
+  verification_status?: 'verified' | 'unverified' | 'disputed'
+  notes?: string
+}): string {
+  const id = `evidence-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
+  db.prepare(`
+    INSERT INTO evidence_records (
+      id, entity_type, entity_id, claim, source_url, source_name,
+      source_type, retrieved_date, verification_status, notes
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(
+    id, data.entity_type, data.entity_id, data.claim,
+    data.source_url || null, data.source_name || null,
+    data.source_type || null, data.retrieved_date || null,
+    data.verification_status || 'unverified', data.notes || null
+  )
+  return id
+}
+
+export function getEvidenceRecords(entityType: string, entityId: string) {
+  return db.prepare(
+    "SELECT * FROM evidence_records WHERE entity_type = ? AND entity_id = ? ORDER BY created_at DESC"
+  ).all(entityType, entityId)
+}
+
+export function updateEvidenceVerification(id: string, status: 'verified' | 'unverified' | 'disputed', notes?: string) {
+  db.prepare(
+    "UPDATE evidence_records SET verification_status = ?, notes = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?"
+  ).run(status, notes || null, id)
+}
+
+export function getAllEvidenceRecords() {
+  return db.prepare("SELECT * FROM evidence_records ORDER BY created_at DESC").all()
 }

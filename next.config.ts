@@ -4,6 +4,25 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/rankings/it-companies",
+        destination: "/rankings",
+        permanent: true,
+      },
+      {
+        source: "/it-companies",
+        destination: "/vendors",
+        permanent: true,
+      },
+      {
+        source: "/it-companies/:slug",
+        destination: "/vendors/:slug",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

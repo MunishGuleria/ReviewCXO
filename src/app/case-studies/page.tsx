@@ -31,6 +31,21 @@ export default function CaseStudiesPage() {
       backLabel="Home"
     >
       <div className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5">
+          <div>
+            <h4 className="text-sm font-bold text-foreground">Have You Deployed an Enterprise Sales or CRM Platform?</h4>
+            <p className="text-xs text-muted mt-1 max-w-xl">
+              Share your project telemetry, implementation timelines, and ROI metrics with peer enterprise executives. Submissions undergo independent verification.
+            </p>
+          </div>
+          <Link
+            href="/submit-review"
+            className="btn-primary text-xs py-2.5 px-4 shrink-0 shadow-xs"
+          >
+            Submit Project Review →
+          </Link>
+        </div>
+
         <PageToolbar count={caseStudies.length} label="published case studies" />
 
         <div className="space-y-4">

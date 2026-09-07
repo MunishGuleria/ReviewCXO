@@ -20,104 +20,98 @@ export default function EditorialPolicyPage() {
   return (
     <>
       <PageHeader
+        badge="Standards & Governance"
         title="Editorial Policy"
-        description="Our commitment to independent, evidence-based research."
+        description="Our institutional commitment to independent, evidence-based research, transparency, and data integrity."
       />
 
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="prose">
-          <section>
-            <h2>Editorial Independence</h2>
-            <p>
-              Reviews_CXO maintains editorial independence in all research
-              conclusions, vendor scores, benchmark methodology, and
-              publication decisions. No sponsor, advertiser, or vendor
-              controls the content.
-            </p>
-          </section>
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 space-y-10">
+        {/* Core Independence Card */}
+        <div className="rounded-2xl border border-primary/20 bg-surface p-8 shadow-sm">
+          <span className="text-xs font-bold uppercase tracking-wider text-primary">Foundational Rule</span>
+          <h2 className="mt-2 text-2xl font-black text-foreground">Editorial Independence</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted">
+            Reviews_CXO maintains strict editorial independence in all research conclusions, vendor scores, benchmark methodology, and publication decisions. No sponsor, advertiser, or commercial vendor controls our evaluation findings.
+          </p>
+        </div>
 
-          <section>
-            <h2>Research Integrity</h2>
-            <ul>
-              <li>
-                All research follows the published ASCS methodology without
-                exception.
+        {/* 2x2 Grid of Core Policies */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm">
+            <h3 className="section-heading text-lg font-bold text-foreground">Research Integrity</h3>
+            <ul className="mt-4 space-y-3 text-sm text-muted">
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>All research adheres to the published 12-dimension ASCS methodology without exception.</span>
               </li>
-              <li>
-                Vendor scores are determined by evidence, not business
-                relationships.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Vendor scores are determined solely by empirical evidence, never commercial relationships.</span>
               </li>
-              <li>
-                Negative findings are published alongside positive ones.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Negative findings and system bottlenecks are published with equal prominence to strengths.</span>
               </li>
-              <li>
-                Limitations and caveats are always disclosed prominently.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Limitations, caveats, and test environments are documented openly in every report.</span>
               </li>
             </ul>
-          </section>
+          </div>
 
-          <section>
-            <h2>Conflict of Interest</h2>
-            <ul>
-              <li>
-                All researchers must disclose personal or financial
-                relationships with evaluated vendors.
+          <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm">
+            <h3 className="section-heading text-lg font-bold text-foreground">Conflict of Interest</h3>
+            <ul className="mt-4 space-y-3 text-sm text-muted">
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>All analysts must formally disclose personal, financial, or consulting relationships with evaluated vendors.</span>
               </li>
-              <li>
-                The sponsoring company is evaluated using the same methodology
-                as all other vendors.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Sponsoring entities are evaluated under the exact same standardized methodology as all peers.</span>
               </li>
-              <li>
-                Any dimension where the sponsor scores unusually high or low
-                receives additional advisory board scrutiny.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Any dimension where a sponsor scores exceptionally undergoes mandatory secondary advisory review.</span>
               </li>
             </ul>
-          </section>
+          </div>
 
-          <section>
-            <h2>Vendor Communication</h2>
-            <ul>
-              <li>
-                Vendors may be invited to review factual accuracy of their
-                profile pages before publication.
+          <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm">
+            <h3 className="section-heading text-lg font-bold text-foreground">Vendor Communication</h3>
+            <ul className="mt-4 space-y-3 text-sm text-muted">
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Vendors may review technical specs for factual accuracy prior to final scorecard publishing.</span>
               </li>
-              <li>
-                Vendor feedback does not obligate Reviews_CXO to change
-                scores, conclusions, or framing.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Vendor feedback never obligates Reviews_CXO to alter editorial ratings or critical teardowns.</span>
               </li>
-              <li>All vendor communication is documented.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>AI-Generated Content</h2>
-            <ul>
-              <li>
-                AI tools may assist with data analysis, visualization, and
-                draft generation.
-              </li>
-              <li>
-                All AI-assisted content is reviewed and validated by human
-                researchers.
-              </li>
-              <li>
-                AI-generated content is disclosed when it constitutes a
-                substantial portion of the output.
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>All vendor communications, challenges, and clarifications are archived for audit.</span>
               </li>
             </ul>
-          </section>
+          </div>
 
-          <section>
-            <h2>Data Integrity</h2>
-            <ul>
-              <li>All datasets are versioned and checksummed.</li>
-              <li>Raw data is preserved and available for audit.</li>
-              <li>
-                Methodology changes between versions are documented in
-                changelogs.
+          <div className="rounded-2xl border border-border bg-surface p-7 shadow-sm">
+            <h3 className="section-heading text-lg font-bold text-foreground">Data Integrity & Versioning</h3>
+            <ul className="mt-4 space-y-3 text-sm text-muted">
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>All benchmark datasets and synthetic workload generators are cryptographically checksummed.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Raw evaluation logs and scoring telemetry are retained for reproducible peer inspection.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-primary font-bold">▪</span>
+                <span>Methodology modifications across quarterly releases are tracked in public changelogs.</span>
               </li>
             </ul>
-          </section>
+          </div>
         </div>
       </div>
     </>

@@ -175,16 +175,16 @@ export default async function ComparisonDetailPage({ params }: Props) {
         </div>
 
         <div className="overflow-x-auto rounded-xl border border-border bg-surface shadow-sm">
-          <table className="w-full text-left text-sm">
-            <thead className="border-b border-border bg-surface-alt text-xs font-bold uppercase tracking-wider text-muted">
+          <table className="data-table">
+            <thead>
               <tr>
-                <th className="px-6 py-4">Dimension & Weight</th>
-                <th className="px-6 py-4 w-48 text-right">{vA.name}</th>
-                <th className="px-6 py-4 w-48 text-right">{vB.name}</th>
-                <th className="px-6 py-4 w-32 text-center">Lead Delta</th>
+                <th>Dimension & Weight</th>
+                <th className="w-48 text-right">{vA.name}</th>
+                <th className="w-48 text-right">{vB.name}</th>
+                <th className="w-32 text-center">Lead Delta</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-border">
+            <tbody>
               {ASCS_DIMENSIONS.map((dim) => {
                 const scoreA = vA.ascsScores[dim.number] ?? 0;
                 const scoreB = vB.ascsScores[dim.number] ?? 0;

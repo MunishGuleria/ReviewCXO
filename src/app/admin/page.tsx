@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { getAllQuestions } from "@/lib/questions";
 import { getPendingReviews, getApprovedReviews } from "@/lib/reviews";
-import { getAllITCompanies } from "@/lib/it-companies";
+import { VENDORS } from "@/lib/vendors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ const publishedCount = questions.filter((q) => q.status === "published").length;
 const draftCount = questions.filter((q) => q.status === "draft").length;
 const pendingReviews = getPendingReviews();
 const approvedReviews = getApprovedReviews();
-const companies = getAllITCompanies();
+const vendors = VENDORS;
 
 export default function AdminPage() {
   return (
@@ -44,8 +44,8 @@ export default function AdminPage() {
         </Link>
 
         <Link href="/admin/companies" className="rounded-xl border border-border bg-surface p-5 hover:border-primary/40 hover:shadow-sm transition-all">
-          <h3 className="text-sm font-black text-foreground mb-2">IT Companies</h3>
-          <p className="text-xs text-muted"><span className="font-bold text-foreground">{companies.length}</span> companies in directory</p>
+          <h3 className="text-sm font-black text-foreground mb-2">Vendors & Platforms</h3>
+          <p className="text-xs text-muted"><span className="font-bold text-foreground">{vendors.length}</span> platforms in directory</p>
         </Link>
       </div>
     </ResearchLayout>

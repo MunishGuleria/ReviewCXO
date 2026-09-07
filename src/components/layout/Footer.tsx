@@ -3,20 +3,14 @@ import { SITE, NAVIGATION, ABOUT_LINKS } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-surface-alt/60 dark:bg-surface">
-      {/* Gradient top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
+    <footer className="relative border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-4">
-            <Link href="/" className="group inline-flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary-dark font-mono text-[9px] font-black text-white">
-                CXO
-              </span>
-              <span className="text-base font-black text-foreground">
-                Reviews<span className="text-primary">_CXO</span>
+            <Link href="/" className="inline-flex items-center gap-2">
+              <span className="text-xl font-black tracking-tight text-foreground">
+                Reviews_CXO
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
@@ -27,7 +21,7 @@ export function Footer() {
             <div className="mt-5 flex items-center gap-3">
               <a
                 href="https://github.com/reviews-cxo"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-primary/30 hover:text-primary hover:bg-primary/5"
+                className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-surface text-muted transition-all hover:border-primary/30 hover:text-primary hover:bg-primary/5"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -38,7 +32,7 @@ export function Footer() {
               </a>
               <a
                 href="https://linkedin.com/company/reviews-cxo"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-primary/30 hover:text-primary hover:bg-primary/5"
+                className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-surface text-muted transition-all hover:border-primary/30 hover:text-primary hover:bg-primary/5"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -49,7 +43,7 @@ export function Footer() {
               </a>
               <Link
                 href="/rss.xml"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-all hover:border-accent/30 hover:text-accent hover:bg-accent/5"
+                className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-surface text-muted transition-all hover:border-primary/30 hover:text-primary hover:bg-primary/5"
                 aria-label="RSS Feed"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -61,7 +55,7 @@ export function Footer() {
 
           {/* Research Links */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-accent">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-l-4 border-primary pl-3">
               Research
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -80,7 +74,7 @@ export function Footer() {
 
           {/* About Links */}
           <div className="md:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-accent">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-l-4 border-primary pl-3">
               About
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -99,7 +93,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-accent">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-l-4 border-primary pl-3">
               Contact
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -113,16 +107,17 @@ export function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 rounded-lg border border-border bg-surface p-4">
+            <div className="mt-6 rounded-xl border border-border bg-surface p-4 shadow-sm">
               <p className="text-xs font-bold text-foreground">Research Dispatch</p>
               <p className="mt-1 text-[11px] leading-relaxed text-muted">
                 Quarterly architecture reports & benchmark releases. Zero marketing spam.
               </p>
               <Link
                 href="/newsletter"
-                className="mt-3 inline-block rounded-md bg-primary/10 border border-primary/20 px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary/15"
+                className="mt-3 inline-flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-white transition-all hover:bg-primary-dark shadow-sm"
               >
-                Subscribe →
+                Subscribe
+                <span className="text-white/70">→</span>
               </Link>
             </div>
           </div>

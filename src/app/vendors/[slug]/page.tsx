@@ -1,10 +1,16 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { VENDORS, getVendorBySlug, getVendorDocumentationSources } from "@/lib/vendors";
+import { getReviewsByVendor, getCxOById, EVIDENCE_TYPE_LABELS, CASE_STUDIES, ProjectReview, CxOProfile } from "@/lib/reviews";
+import { getApprovedSubmittedReviewsForVendor } from "@/lib/db-queries";
 import { ASCS_DIMENSIONS, SITE } from "@/lib/site";
+
 import { StarRating } from "@/components/ui/StarRating";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { CitationBlock } from "@/components/ui/CitationBlock";
+import { CXOAttribution } from "@/components/ui/CXOAttribution";
+import { StatRowGrid } from "@/components/ui/StatCard";
+import { RatingDisplay } from "@/components/ui/RatingDisplay";
 import { JsonLd } from "@/components/ui/JsonLd";
 import Link from "next/link";
 
@@ -31,12 +37,74 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+const evidenceTypeColors: Record<string, string> = {
+  verified_cxo_review: "bg-green-500/10 text-green-600 border-green-500/20",
+  public_review_evidence: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+  public_customer_evidence: "bg-purple-500/10 text-purple-600 border-purple-500/20",
+  vendor_provided_evidence: "bg-yellow-500/10 text-yellow-600 border-yellow-500/20",
+  third_party_research: "bg-orange-500/10 text-orange-600 border-orange-500/20",
+  observed_evidence: "bg-cyan-500/10 text-cyan-600 border-cyan-500/20",
+  inferred: "bg-gray-500/10 text-gray-600 border-gray-500/20",
+};
+
 export default async function VendorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const vendor = getVendorBySlug(slug);
   if (!vendor) notFound();
 
+  const dbApprovedReviews = getApprovedSubmittedReviewsForVendor(vendor.slug);
+
+  const mappedDbReviews: ProjectReview[] = dbApprovedReviews.map((r: any) => ({
+    id: r.id,
+    cxoId: `db_${r.id}`,
+    vendorId: vendor.slug,
+    projectTitle: r.project_title,
+    projectCategory: r.project_category,
+    problemStatement: r.problem_statement || "",
+    aiSolutionDescription: r.ai_solution_description || "",
+    techStack: r.tech_stack ? (() => { try { return JSON.parse(r.tech_stack); } catch { return []; } })() : [],
+    teamSize: r.team_size || 0,
+    timelineMonths: r.timeline_months || 0,
+    budgetRange: r.budget_range || "",
+    startDate: "",
+    completionDate: "",
+    outcomesDescription: r.outcomes_description || "",
+    roiPercentage: r.roi_percentage || 0,
+    efficiencyGainPercentage: r.efficiency_gain_percentage || 0,
+    adoptionRate: (r.adoption_rate as "High" | "Medium" | "Low") || "High",
+    challengesFaced: r.challenges_faced || "",
+    deliveryQualityRating: r.delivery_quality_rating || 5,
+    aiEffectivenessRating: r.ai_effectiveness_rating || 5,
+    communicationRating: r.communication_rating || 5,
+    valueForMoneyRating: r.value_for_money_rating || 5,
+    wouldRecommend: Boolean(r.would_recommend),
+    overallRating: r.overall_rating || 5,
+    status: "approved",
+    isAnonymous: Boolean(r.is_anonymous),
+    evidenceType: "verified_cxo_review",
+    createdAt: r.created_at,
+    updatedAt: r.updated_at,
+  }));
+
+  const dbCxoProfiles: Record<string, CxOProfile> = {};
+  for (const r of dbApprovedReviews) {
+    dbCxoProfiles[`db_${r.id}`] = {
+      id: `db_${r.id}`,
+      fullName: r.cxo_full_name,
+      title: r.cxo_title,
+      companyName: r.cxo_company_name,
+      companyDomain: "",
+      linkedinUrl: r.cxo_linkedin_url || undefined,
+      isVerified: true,
+      verificationMethod: "company_email",
+      reviewCount: 1,
+    };
+  }
+
+  const staticReviews = getReviewsByVendor(vendor.slug);
+  const vendorReviews = [...mappedDbReviews, ...staticReviews];
   const docSources = getVendorDocumentationSources(vendor);
+
 
   const competitors = VENDORS
     .filter((v) => v.category === vendor.category && v.slug !== vendor.slug)
@@ -110,6 +178,43 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
                   <span className="font-mono text-base font-black text-primary">{vendor.ascsComposite}/10</span>
                 </div>
               </div>
+
+              {vendor.parentCompany && (
+                <div className="mt-5 rounded-xl border border-primary/20 bg-primary/5 p-4 text-xs">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-md bg-primary/20 px-2 py-0.5 text-[10px] font-mono font-bold text-primary">
+                        Parent Lineage
+                      </span>
+                      <span className="font-bold text-foreground">
+                        {vendor.name} is an enterprise platform venture of{" "}
+                        <a
+                          href={vendor.parentCompany.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline font-extrabold"
+                        >
+                          {vendor.parentCompany.name} ↗
+                        </a>
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-semibold text-muted">
+                      {vendor.parentCompany.relationship}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-muted leading-relaxed">
+                    {vendor.parentCompany.description}
+                  </p>
+                  <div className="mt-2.5 flex flex-wrap gap-1.5 pt-2 border-t border-primary/10">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted mr-1 self-center">Parent Capabilities:</span>
+                    {vendor.parentCompany.services.map((service) => (
+                      <span key={service} className="rounded bg-surface px-2 py-0.5 text-[10px] font-medium text-muted border border-border">
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* QUICK STATS */}
@@ -183,7 +288,13 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
                         <div className="flex items-center gap-2 w-28">
                           <div className="h-2 flex-1 rounded-full bg-border overflow-hidden">
                             <div
-                              className="h-full rounded-full bg-primary"
+                              className={`h-full rounded-full ${
+                                score >= 8
+                                  ? "bg-accent"
+                                  : score >= 6
+                                  ? "bg-primary"
+                                  : "bg-warning"
+                              }`}
                               style={{ width: `${(score / 10) * 100}%` }}
                             />
                           </div>
@@ -314,6 +425,121 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
               </div>
             </section>
 
+            {/* ENTERPRISE REVIEWS & PROJECT EVIDENCE */}
+            <section className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-4 mb-6">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">Field Evidence & Customer Stories</span>
+                  <h2 className="text-xl sm:text-2xl font-black text-foreground mt-1">Enterprise Project Evidence & Case Studies</h2>
+                </div>
+                <Link
+                  href="/submit-review"
+                  className="rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-bold text-primary hover:bg-primary/20 transition-colors self-start sm:self-center"
+                >
+                  Submit Review +
+                </Link>
+              </div>
+
+              {vendorReviews.length > 0 ? (
+                <div className="space-y-6">
+                  {vendorReviews.map((review) => {
+                    const cxo = dbCxoProfiles[review.cxoId] || getCxOById(review.cxoId);
+                    const isVerifiedWorkflowReview = review.evidenceType === "verified_cxo_review";
+                    const evidenceLabel = isVerifiedWorkflowReview
+                      ? "Verified CXO Review"
+                      : "Public Customer Evidence";
+                    const evidenceColor = isVerifiedWorkflowReview
+                      ? "bg-green-500/10 text-green-600 border-green-500/20"
+                      : "bg-primary/10 text-primary border-primary/20";
+                    const linkedCaseStudy = CASE_STUDIES.find((cs) => cs.projectReviewId === review.id);
+
+                    return (
+                      <div key={review.id} className="rounded-xl border border-border bg-surface-alt/40 p-5">
+                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
+                          <div>
+                            <h4 className="text-sm font-bold text-foreground">{review.projectTitle}</h4>
+                            <p className="text-xs text-muted mt-0.5">
+                              {review.projectCategory} · {review.teamSize} team · {review.timelineMonths} months · {review.budgetRange}
+                            </p>
+                          </div>
+                          <RatingDisplay value={review.overallRating} size="sm" />
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                          <span className={`inline-block rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider border ${evidenceColor}`}>
+                            {evidenceLabel}
+                          </span>
+                          {review.sourceName && (
+                            <a
+                              href={review.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline"
+                            >
+                              Source: {review.sourceName} ↗
+                            </a>
+                          )}
+                        </div>
+
+                        <StatRowGrid items={[
+                          { label: "ROI", value: `${review.roiPercentage}%`, color: "text-green-500" },
+                          { label: "Efficiency Gain", value: `${review.efficiencyGainPercentage}%`, color: "text-green-500" },
+                          { label: "Adoption", value: review.adoptionRate },
+                          { label: "Recommend", value: review.wouldRecommend ? "Yes" : "No", color: review.wouldRecommend ? "text-green-500" : "text-red-500" },
+                        ]} />
+
+                        <p className="text-xs text-muted leading-relaxed mt-3 mb-3">{review.outcomesDescription}</p>
+
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-border mt-3">
+                          {isVerifiedWorkflowReview && cxo && !review.isAnonymous ? (
+                            <CXOAttribution cxo={cxo} size="sm" />
+                          ) : cxo && !review.isAnonymous ? (
+                            <div className="text-xs text-muted flex items-center gap-2">
+                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold text-primary">
+                                {cxo.fullName.split(" ").map((n) => n[0]).join("")}
+                              </span>
+                              <div>
+                                <span className="font-bold text-foreground">{cxo.fullName}</span>
+                                <span className="text-muted"> · {cxo.title}, {cxo.companyName}</span>
+                              </div>
+                            </div>
+                          ) : (
+                            <span className="text-[11px] text-muted italic">
+                              {isVerifiedWorkflowReview ? "Verified Enterprise CXO Review" : "Documented Enterprise Customer Evidence"}
+                            </span>
+                          )}
+
+                          {linkedCaseStudy && (
+                            <Link
+                              href={`/case-studies/${linkedCaseStudy.slug}`}
+                              className="text-xs font-bold text-primary hover:underline flex items-center gap-1 shrink-0"
+                            >
+                              Read Full Case Study →
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="rounded-xl border border-dashed border-border bg-surface-alt/30 p-8 text-center space-y-3">
+                  <p className="text-sm font-semibold text-foreground">No Community Reviews Yet</p>
+                  <p className="text-xs text-muted max-w-md mx-auto leading-relaxed">
+                    All current scores for {vendor.name} are derived from official documentation, technical audit specifications, and laboratory ASCS benchmark tests. Have you implemented or evaluated {vendor.name}?
+                  </p>
+                  <div className="pt-2">
+                    <Link
+                      href="/submit-review"
+                      className="btn-primary inline-flex text-xs py-2.5 px-5"
+                    >
+                      Submit a Verified CXO Review →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </section>
+
             {/* CITATION */}
             <CitationBlock
               title={`Reviews_CXO Vendor Architecture Evaluation: ${vendor.name}`}
@@ -359,7 +585,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
                   href={vendor.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white hover:bg-primary-dark transition-colors shadow-sm"
+                  className="btn-primary w-full text-center text-xs py-2.5"
                 >
                   Visit Vendor Site ↗
                 </a>

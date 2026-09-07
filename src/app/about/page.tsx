@@ -22,118 +22,112 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
+        badge="Independent Research Initiative"
         title="About Reviews_CXO"
-        description="An independently operated research initiative focused on AI for enterprise sales."
+        description="The premier global research hub where verified CxOs evaluate enterprise AI sales platforms and implementation architectures."
       />
 
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="prose">
-          <section>
-            <h2>Our Mission</h2>
-            <p>
-              Reviews_CXO exists to fill a critical gap in the enterprise AI
-              landscape: credible, independent, evidence-based research on AI
-              platforms for sales. We are not a competitor-bashing site, fake
-              review aggregator, or disguised product landing page. We are a
-              serious, evidence-based research hub that earns credibility
-              through transparent methodology, reproducible benchmarks, and
-              genuine CXO intelligence.
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
+        {/* Mission & Inflection Grid */}
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-surface p-8 shadow-sm">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Core Directive</span>
+            <h2 className="mt-2 text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
+              Our Mission
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              Reviews_CXO exists to fill a critical gap in the enterprise AI landscape: credible, independent, evidence-based research on AI platforms for sales.
             </p>
-          </section>
-
-          <section>
-            <h2>Why Now</h2>
-            <p>
-              The enterprise AI sales market in 2026 is at an inflection point.
-              Organizations are moving out of &ldquo;pilot purgatory&rdquo;
-              and need evidence-based guidance, not more hype. With 82% of
-              tech B2B queries now triggering AI Overviews, original research
-              is the most citable content format.
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              We are not a competitor-bashing site, fake review aggregator, or disguised product landing page. We earn credibility through transparent methodology, reproducible benchmarks, and genuine CxO intelligence.
             </p>
-            <p>
-              There is no credible, independent research hub focused on AI for
-              enterprise sales. Reviews_CXO fills that gap.
+          </div>
+
+          <div className="rounded-2xl border border-border bg-surface p-8 shadow-sm">
+            <span className="text-xs font-bold uppercase tracking-wider text-accent">Market Landscape</span>
+            <h2 className="mt-2 text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
+              Why Evidence Matters Now
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              The enterprise AI sales market is moving out of &ldquo;pilot purgatory&rdquo; into multi-million dollar core system replacements. Procurement leaders need architectural facts, not marketing hype.
             </p>
-          </section>
-
-          <section>
-            <h2>Our Approach</h2>
-            <ul>
-              <li>
-                <strong>Transparent methodology:</strong> Every score is backed
-                by a documented evidence classification.
-              </li>
-              <li>
-                <strong>Reproducible benchmarks:</strong> Datasets, code, and
-                environment specifications are published on GitHub.
-              </li>
-              <li>
-                <strong>Evidence-based positioning:</strong> We never make
-                unsupported &ldquo;best&rdquo; or &ldquo;worst&rdquo; claims.
-              </li>
-              <li>
-                <strong>Editorial independence:</strong> Sponsors do not
-                control research conclusions, vendor scores, or editorial
-                decisions.
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Strategic Rules</h2>
-            <ol>
-              <li>Do not fabricate research, interviews, benchmark results, or customer outcomes.</li>
-              <li>Do not present simulated vendor configurations as official vendor tests.</li>
-              <li>Clearly separate observed, documented, simulated, inferred, and unavailable evidence.</li>
-              <li>Use the same evaluation methodology across ALL vendors.</li>
-              <li>Do not create content whose primary purpose is attacking competitors.</li>
-              <li>Do not make unsupported &ldquo;best&rdquo; or &ldquo;worst&rdquo; claims.</li>
-              <li>Focus on task-level evidence and highlight specialization/trade-offs.</li>
-              <li>Make research reproducible wherever possible.</li>
-              <li>Use synthetic data when real customer data is unavailable.</li>
-              <li>Clearly disclose material sponsorship/conflicts.</li>
-              <li>Optimize for long-term credibility rather than short-term SEO.</li>
-              <li>Every major claim should have evidence.</li>
-            </ol>
-          </section>
-
-          <DisclosureBanner className="my-8" />
-
-          <section>
-            <h2>Policies</h2>
-            <ul>
-              <li>
-                <Link href="/about/methodology">Methodology</Link> — Our
-                research framework and ASCS scoring system
-              </li>
-              <li>
-                <Link href="/about/editorial-policy">
-                  Editorial Policy
-                </Link>{" "}
-                — How we ensure independence and accuracy
-              </li>
-              <li>
-                <Link href="/about/disclosure">Disclosure</Link> —
-                Sponsorship and conflict of interest transparency
-              </li>
-              <li>
-                <Link href="/about/corrections">Corrections</Link> — How we
-                handle errors and updates
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Contact</h2>
-            <p>
-              For research inquiries, partnership discussions, or corrections,
-              contact us at{" "}
-              <a href="mailto:research@reviews-cxo.com">
-                research@reviews-cxo.com
-              </a>
-              .
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              With over 80% of B2B evaluations factoring in autonomous execution depth and security postures, reproducible technical benchmarks are the gold standard for procurement decisions.
             </p>
-          </section>
+          </div>
+        </div>
+
+        {/* 4 Pillars of Our Approach */}
+        <div>
+          <div className="mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Pillars</span>
+            <h2 className="mt-1 text-2xl font-black text-foreground">Our Research Methodology</h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: "01",
+                title: "Transparent Rubric",
+                desc: "Every score is calculated across 12 explicit, weighted dimensions—from ERP grounding to auditability.",
+              },
+              {
+                step: "02",
+                title: "Reproducible Benchmarks",
+                desc: "Synthetic test datasets, evaluation code, and environment specs are open and inspectable.",
+              },
+              {
+                step: "03",
+                title: "Strict Evidence Tiers",
+                desc: "Every claim cites its tier: Observed (lab-tested), Documented, Third-Party Confirmed, or Inferred.",
+              },
+              {
+                step: "04",
+                title: "Zero Editorial Control",
+                desc: "Sponsors cannot alter rankings, scores, methodology weights, or critical teardowns.",
+              },
+            ].map((pillar) => (
+              <div key={pillar.step} className="card-hover rounded-2xl border border-border bg-surface p-6 shadow-sm">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 font-mono text-lg font-black text-primary">
+                  {pillar.step}
+                </span>
+                <h3 className="mt-4 font-bold text-foreground">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Disclosure Banner */}
+        <DisclosureBanner />
+
+        {/* Policies Grid */}
+        <div>
+          <div className="mb-6">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Governance</span>
+            <h2 className="mt-1 text-2xl font-black text-foreground">Editorial & Operational Policies</h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "Methodology", desc: "12-dimension rubric & evidence hierarchy", href: "/about/methodology" },
+              { title: "Editorial Policy", desc: "Standards for independence & accuracy", href: "/about/editorial-policy" },
+              { title: "Disclosure", desc: "Funding transparency & sponsor boundaries", href: "/about/disclosure" },
+              { title: "Corrections", desc: "Protocol for dispute resolution & updates", href: "/about/corrections" },
+            ].map((p) => (
+              <Link
+                key={p.title}
+                href={p.href}
+                className="card-hover group block rounded-xl border border-border bg-surface p-5 shadow-sm"
+              >
+                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors flex items-center justify-between">
+                  {p.title}
+                  <span className="text-xs text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
+                </h3>
+                <p className="mt-1.5 text-xs text-muted leading-relaxed">{p.desc}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </>

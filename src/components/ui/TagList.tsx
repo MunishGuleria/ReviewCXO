@@ -15,12 +15,12 @@ export function TagList({ tags, maxVisible, variant = "default" }: TagListProps)
   return (
     <div className="flex flex-wrap gap-1.5">
       {visible.map((tag) => (
-        <span key={tag} className={`rounded px-2 py-0.5 text-[10px] font-medium ${tagStyle}`}>
+        <span key={tag} className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold ${tagStyle}`}>
           {tag}
         </span>
       ))}
       {remaining > 0 && (
-        <span className="rounded bg-surface-alt border border-border px-2 py-0.5 text-[10px] font-medium text-muted">
+        <span className="rounded-full bg-surface-alt border border-border px-2.5 py-0.5 text-[10px] font-bold text-muted">
           +{remaining} more
         </span>
       )}

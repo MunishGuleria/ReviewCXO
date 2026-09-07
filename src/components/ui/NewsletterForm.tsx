@@ -65,12 +65,12 @@ export function NewsletterForm({
           placeholder={placeholder}
           required
           aria-label="Enterprise email address"
-          className="flex-1 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50"
+          className="flex-1 rounded-md border border-border bg-surface px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50"
         />
         <button
           type="submit"
           disabled={status === "loading" || status === "success"}
-          className="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50 flex items-center justify-center gap-2 shrink-0"
+          className="btn-primary text-sm shrink-0 disabled:opacity-50"
         >
           {status === "loading" ? (
             <>

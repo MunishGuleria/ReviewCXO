@@ -60,98 +60,115 @@ export default function ASCSScorecardPage() {
         description="Composite ASCS scores for all evaluated enterprise AI sales platforms with dimension-level breakdowns."
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="prose max-w-none">
-          <section>
-            <h2>Composite Scores</h2>
-            <div className="not-prose overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="px-4 py-3 text-left font-semibold">
-                      Vendor
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-12">
+        {/* Scorecard Table Card */}
+        <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6 mb-6">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">Master Matrix</span>
+              <h2 className="mt-1 text-2xl font-black text-foreground">12-Dimension Evaluation Scorecard</h2>
+            </div>
+            <span className="rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-mono font-bold text-primary">
+              6 Core Benchmark Platforms
+            </span>
+          </div>
+
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Vendor</th>
+                  <th className="text-center">Composite</th>
+                  {ASCS_DIMENSIONS.map((d) => (
+                    <th key={d.number} className="text-center text-xs" title={d.name}>
+                      D{d.number}
                     </th>
-                    <th className="px-4 py-3 text-center font-semibold">
-                      Composite
-                    </th>
-                    {ASCS_DIMENSIONS.map((d) => (
-                      <th
-                        key={d.number}
-                        className="px-2 py-3 text-center text-xs font-semibold"
-                        title={d.name}
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {vendorScores.map((v) => (
+                  <tr key={v.name}>
+                    <td className="font-bold">
+                      <Link
+                        href={`/vendors/${v.name.toLowerCase()}`}
+                        className="text-foreground hover:text-primary transition-colors"
                       >
-                        D{d.number}
-                      </th>
+                        {v.name}
+                      </Link>
+                    </td>
+                    <td className="text-center">
+                      <span className="inline-block rounded-lg bg-primary/10 px-2 py-0.5 font-mono font-black text-primary">
+                        {v.composite}
+                      </span>
+                    </td>
+                    {v.scores.map((s, i) => (
+                      <td key={i} className="text-center font-mono text-xs">
+                        <span className={s >= 8 ? "font-bold text-accent" : s >= 6 ? "text-foreground" : "text-muted"}>
+                          {s}
+                        </span>
+                      </td>
                     ))}
                   </tr>
-                </thead>
-                <tbody>
-                  {vendorScores.map((v) => (
-                    <tr key={v.name} className="border-b border-border">
-                      <td className="px-4 py-3 font-medium">
-                        <Link
-                          href={`/vendors/${v.name.toLowerCase()}`}
-                          className="text-primary hover:underline"
-                        >
-                          {v.name}
-                        </Link>
-                      </td>
-                      <td className="px-4 py-3 text-center font-bold text-primary">
-                        {v.composite}
-                      </td>
-                      {v.scores.map((s, i) => (
-                        <td
-                          key={i}
-                          className="px-2 py-3 text-center text-xs"
-                        >
-                          {s}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-sm text-muted">
-              D1=ERP Connectivity, D2=CRM Grounding, D3=Cross-System
-              Reasoning, D4=AI Reasoning, D5=Workflow Automation,
-              D6=Agentic, D7=Data Accessibility, D8=Security, D9=Explainability,
-              D10=Deployment, D11=Integrations, D12=Market Adoption
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-6 rounded-xl border border-border bg-surface-alt/40 p-4">
+            <p className="text-xs leading-relaxed text-muted font-mono">
+              <strong className="text-foreground">Dimension Key:</strong> D1=ERP Connectivity, D2=CRM Grounding, D3=Cross-System Reasoning, D4=AI Reasoning, D5=Workflow Automation, D6=Agentic Depth, D7=Data Accessibility, D8=Security & Compliance, D9=Explainability, D10=Deployment, D11=Integrations, D12=Market Adoption
             </p>
-          </section>
+          </div>
+        </div>
 
-          <section>
-            <h2>Key Insights</h2>
-            <ul>
-              <li>
-                <strong>Salezx</strong> leads in ERP Connectivity and
-                Cross-System Reasoning — the defining capabilities for
-                cross-system sales AI.
-              </li>
-              <li>
-                <strong>Salesforce</strong> excels in CRM Data Grounding,
-                Security &amp; Governance, and Integrations Ecosystem — the
-                strongest CRM-native platform.
-              </li>
-              <li>
-                <strong>SAP</strong> matches Salezx on ERP Connectivity but
-                lags in Agentic Capability and AI Reasoning Quality.
-              </li>
-              <li>
-                <strong>HubSpot</strong> offers strong CRM capabilities at a
-                lower complexity tier, suitable for SMB/mid-market.
-              </li>
-            </ul>
-          </section>
+        {/* Key Insights Grid */}
+        <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
+          <span className="text-xs font-bold uppercase tracking-wider text-primary">Analysis</span>
+          <h3 className="mt-1 text-xl font-black text-foreground">Strategic Architectural Takeaways</h3>
 
-          <section className="mt-8">
-            <Link
-              href="/indexes"
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              ← Back to all indexes
-            </Link>
-          </section>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">01. ERP Grounding Lead</span>
+              <h4 className="mt-1 font-bold text-foreground">Salezx</h4>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
+                Leads in ERP Connectivity and Cross-System Reasoning (Score 9.0) — the defining capabilities for autonomous execution across SAP, Oracle, and NetSuite.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">02. CRM Ecosystem Monolith</span>
+              <h4 className="mt-1 font-bold text-foreground">Salesforce</h4>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
+                Excels in CRM Data Grounding (9.0), Security & Governance (9.0), and Integrations Ecosystem (9.0) — the gold standard for global CRM consolidation.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">03. Native ERP Backbone</span>
+              <h4 className="mt-1 font-bold text-foreground">SAP</h4>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
+                Matches top-tier marks on native ERP Connectivity (9.0) but demonstrates lower agility in multi-step Agentic Autonomy (5.0) and CRM-native reasoning.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">04. High Velocity Inbound</span>
+              <h4 className="mt-1 font-bold text-foreground">HubSpot</h4>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
+                Provides strong usability and fast time-to-value for inbound SMB/Mid-market pipelines, with lower architectural overhead than monolithic ERP platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <Link
+            href="/indexes"
+            className="btn-secondary text-xs"
+          >
+            ← Back to All Indexes
+          </Link>
         </div>
       </div>
     </>

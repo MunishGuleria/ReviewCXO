@@ -1,0 +1,35 @@
+# Reviews_CXO — Independent Enterprise AI & Software Vendor Research
+
+> Reviews_CXO is an independent research platform providing architectural evaluations, ASCS benchmark indices, and verified CXO project reviews for enterprise AI sales platforms and software vendors.
+
+## What This Site Contains
+
+- 30 canonical enterprise AI & software vendors evaluated across 12 ASCS dimensions
+- 12 head-to-head architectural comparisons (Salesforce, Microsoft Dynamics, HubSpot, Gong, Clari, Salezx, etc.)
+- Empirical benchmark protocols and reproducible test suites
+- Verified CXO project reviews and enterprise customer evidence
+- Published real-world case studies
+- Community Q&A with deep architectural analysis
+
+## Data Model & Research Framework
+
+- **Vendors**: 12-dimension ASCS framework (ERP Transaction Grounding, Multi-Hop Context, Retrieval Latency, Margin Guardrails, Role-Based ACL, Deterministic Auditing, Autonomous Agentic Scope, Vector Telemetry Isolation, Ecosystem Scalability, Benchmark Reproducibility, Production Fault Tolerance, Deployment Sovereignty)
+- **Evidence Weighting**: Observed (1.0x), Documented (0.9x), Third-Party Confirmed (0.85x), Simulated (0.75x), Inferred (0.5x), Not Tested (0x)
+- **Reviews**: 4-axis evaluations (Delivery Quality, AI Effectiveness, Communication, Value for Money) with cryptographic verification
+- **Source Provenance**: All scores and claims are grounded in vendor technical documentation, API specifications, compliance registries, and lab tests
+
+## Key Pages
+
+- /vendors — Master directory of all evaluated enterprise software & AI platforms
+- /rankings — ASCS 2026 Enterprise Index rankings
+- /compare — Head-to-head architectural evaluations
+- /case-studies — Published enterprise case studies
+- /submit-review — Corporate email verified CXO review submission
+- /about/methodology — 12-dimension ASCS framework rubric
+
+## Technical Details
+
+- Next.js 16.3.4 (App Router) + TypeScript + Tailwind CSS
+- SQLite database (better-sqlite3) for review submissions with cryptographic verification
+- Static Site Generation (SSG) with full canonical schema markup
+- SEO optimized with JSON-LD SoftwareApplication schemas

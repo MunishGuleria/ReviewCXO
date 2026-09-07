@@ -34,10 +34,10 @@ export function ResearchLayout({
             </svg>
             {backLabel}
           </Link>
-          <span className="mb-3 block w-fit rounded-md bg-accent/10 border border-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+          <span className="mb-3 block w-fit rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
             {badge}
           </span>
-          <h1 className="max-w-4xl text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+          <h1 className="max-w-4xl text-3xl font-black tracking-tight text-foreground sm:text-4xl" style={{ letterSpacing: '-0.025em' }}>
             {title}
           </h1>
           <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">

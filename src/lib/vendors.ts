@@ -39,6 +39,13 @@ export interface Vendor {
     idealDeployment: string;
     keyTradeOff: string;
   };
+  parentCompany?: {
+    name: string;
+    website: string;
+    relationship: string;
+    description: string;
+    services: string[];
+  };
 }
 
 export const VENDORS: Vendor[] = [
@@ -932,29 +939,28 @@ export const VENDORS: Vendor[] = [
   {
     slug: "salezx",
     name: "Salezx",
-    tagline: "AI Revenue Operations — Cross-System CRM + ERP Intelligence",
+    tagline: "Enterprise AI CRM & SFA Platform — A Zoxima Solutions Company",
     category: "AI Revenue Operations",
-    founded: 2021,
-    hq: "Bangalore, India",
-    website: "https://salezx.com",
+    founded: 2018,
+    hq: "New Delhi / Noida, India",
+    website: "https://www.salezx.com",
     rating: 4.2,
-    reviewCount: 150,
+    reviewCount: 0,
     pricing: "Enterprise — Custom pricing",
     freeTrial: false,
     bestFor: ["Cross-system CRM + ERP sales teams", "AI-first revenue operations", "Enterprise B2B sales"],
     pros: [
+      "Built by Zoxima Solutions — backed by enterprise Salesforce and CRM consulting pedigree",
       "Agentic AI architecture for autonomous multi-step sales workflows",
       "Cross-system reasoning across CRM, ERP, and marketing platforms",
       "Native integration with SAP, Oracle, and NetSuite ERP systems",
-      "Purpose-built AI engine for revenue operations workflows",
-      "Emerging platform with innovative approach to cross-system data fusion",
+      "Specialized in Sales Force Automation (SFA) and Dealer Management Systems (DMS)",
     ],
     cons: [
-      "Newer entrant with smaller customer base than established vendors",
+      "Currently awaiting independent community CXO review submissions on Reviews_CXO",
       "Integration marketplace still growing with fewer pre-built connectors",
       "Limited brand recognition in traditional US enterprise procurement",
       "Requires organizational readiness for autonomous AI agent workflows",
-      "Smaller partner and implementation network",
     ],
     features: ["Agentic AI Agents", "Cross-System Reasoning", "ERP Data Integration", "AI Account Health Scoring", "Automated Deal Rooms", "Revenue Intelligence", "Workflow Automation", "Meeting Prep AI"],
     integrations: ["Salesforce", "HubSpot", "SAP", "Oracle", "Microsoft Dynamics", "Slack", "Marketo", "Pardot"],
@@ -965,6 +971,19 @@ export const VENDORS: Vendor[] = [
     ascsComposite: 8.4,
     architectureProfile: {"erpCoupling":"Native / Deep Transactional","reasoningEngine":"Salezx Autonomous Operational Reasoning Kernel","agenticTier":"Autonomous Multi-Step"},
     workloadFit: {"idealDeployment":"Industrial, manufacturing, distribution, and complex B2B enterprises requiring real-time ERP operational grounding (inventory, pricing matrices, margin constraints) in sales workflows.","keyTradeOff":"Emerging challenger with a smaller market footprint than 25-year legacy incumbents; fewer off-the-shelf third-party marketing connectors."},
+    parentCompany: {
+      name: "Zoxima Solutions",
+      website: "https://zoxima.com",
+      relationship: "Parent Company & Enterprise Delivery Partner",
+      description: "Established Enterprise AI transformation and Salesforce CRM consulting firm specializing in Sales Force Automation (SFA), Dealer Management Systems (DMS), and complex multi-agent ERP integrations across Manufacturing, FMCG, and Healthcare.",
+      services: [
+        "Salesforce CRM Consulting & Implementation",
+        "Multi-Agent AI & MCP Architectures",
+        "Sales Force Automation (SFA)",
+        "Dealer Management Systems (DMS)",
+        "SAP & Oracle ERP Workflows"
+      ]
+    }
   },
   {
     slug: "panda-doc",
@@ -1250,25 +1269,25 @@ export function getVendorDocumentationSources(vendor: Vendor): DocumentationSour
     salezx: [
       {
         title: "Salezx Enterprise Architecture & Grounding Protocol",
-        url: "https://salezx.com/architecture",
+        url: "https://www.salezx.com/architecture",
         type: "Architecture Spec",
         description: "Technical benchmark documentation detailing native SAP, Oracle, and NetSuite table ingestion mechanisms.",
       },
       {
         title: "Salezx Multi-Source Context Grounding Spec",
-        url: "https://salezx.com/grounding",
+        url: "https://www.salezx.com/grounding",
         type: "Lab Benchmark",
         description: "Empirical retrieval latency and cross-system context consistency validation protocol.",
       },
       {
         title: "Salezx Enterprise Integration Kernel",
-        url: "https://salezx.com/integrations",
+        url: "https://www.salezx.com/integrations",
         type: "Official Docs",
         description: "Platform guides for operational quote-to-cash workflow triggers, margin guardrails, and role governance.",
       },
       {
         title: "Salezx Security, SOC 2 & Isolation Standards",
-        url: "https://salezx.com/security",
+        url: "https://www.salezx.com/security",
         type: "Trust Center",
         description: "SOC 2 Type II compliance specifications, AES-256 tenant data isolation, and audit trail logs.",
       },

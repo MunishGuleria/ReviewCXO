@@ -14,7 +14,7 @@ export function CXOAttribution({ cxo, size = "md" }: CXOAttributionProps) {
 
   return (
     <div className={`flex items-center gap-2 ${size === "md" ? "pt-3 border-t border-border" : ""}`}>
-      <div className={`${avatarSize} rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary`}>
+      <div className={`${avatarSize} rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-bold text-primary`}>
         {initials}
       </div>
       <div>

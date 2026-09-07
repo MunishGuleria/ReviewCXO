@@ -19,7 +19,7 @@ export function StarRating({ rating, size = "md", showNumber = true, reviewCount
       <svg
         key={i}
         className={`${size === "sm" ? "h-4 w-4" : size === "lg" ? "h-6 w-6" : "h-5 w-5"} ${
-          filled ? "text-accent" : half ? "text-accent" : "text-border"
+          filled ? "text-amber-400" : half ? "text-amber-400" : "text-border"
         }`}
         fill={filled ? "currentColor" : half ? `url(#${gradientId})` : "none"}
         viewBox="0 0 24 24"

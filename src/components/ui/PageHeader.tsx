@@ -13,11 +13,11 @@ export function PageHeader({ title, description, badge }: PageHeaderProps) {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {badge && (
-          <span className="mb-3 inline-block rounded-md bg-accent/10 border border-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+          <span className="mb-3 inline-block rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
             {badge}
           </span>
         )}
-        <h1 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+        <h1 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl" style={{ letterSpacing: '-0.025em' }}>
           {title}
         </h1>
         {description && (

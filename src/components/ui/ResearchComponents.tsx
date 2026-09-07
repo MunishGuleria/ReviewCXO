@@ -14,13 +14,13 @@ export function InfoCard({ title, children, variant = "default" }: InfoCardProps
 
   const titleClass =
     variant === "primary"
-      ? "text-primary"
+      ? "text-primary border-l-4 border-primary pl-3"
       : variant === "warning"
-        ? "text-warning"
-        : "text-muted";
+        ? "text-warning border-l-4 border-warning pl-3"
+        : "text-muted border-l-4 border-border pl-3";
 
   return (
-    <div className={`rounded-xl border p-5 ${borderClass}`}>
+    <div className={`rounded-xl border p-5 shadow-sm ${borderClass}`}>
       <h3 className={`mb-3 text-[11px] font-bold uppercase tracking-wider ${titleClass}`}>
         {title}
       </h3>
@@ -37,12 +37,12 @@ interface DataTableProps {
 
 export function DataTable({ headers, rows, highlightCol }: DataTableProps) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-border">
+    <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-border bg-surface-alt">
+          <tr className="bg-[#1E293B]">
             {headers.map((h) => (
-              <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-muted">
+              <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-white">
                 {h}
               </th>
             ))}
@@ -50,7 +50,7 @@ export function DataTable({ headers, rows, highlightCol }: DataTableProps) {
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} className="border-b border-border last:border-0">
+            <tr key={i} className={`border-b border-border last:border-0 ${i % 2 === 1 ? 'bg-surface-alt/50' : ''}`}>
               {row.map((cell, j) => (
                 <td
                   key={j}
@@ -81,7 +81,7 @@ interface ProsConsProps {
 export function ProsCons({ pros, cons }: ProsConsProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      <div className="rounded-xl border border-success/20 bg-success/5 p-5">
+      <div className="rounded-xl border border-success/20 bg-success/5 p-5 shadow-sm">
         <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-success">
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -97,7 +97,7 @@ export function ProsCons({ pros, cons }: ProsConsProps) {
           ))}
         </ul>
       </div>
-      <div className="rounded-xl border border-danger/20 bg-danger/5 p-5">
+      <div className="rounded-xl border border-danger/20 bg-danger/5 p-5 shadow-sm">
         <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-danger">
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -123,8 +123,8 @@ interface BestForProps {
 
 export function BestFor({ scenarios }: BestForProps) {
   return (
-    <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
-      <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-primary">
+    <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 shadow-sm">
+      <h4 className="mb-3 text-sm font-bold uppercase tracking-wider text-primary border-l-4 border-primary pl-3">
         Best For
       </h4>
       <div className="grid gap-3 sm:grid-cols-2">

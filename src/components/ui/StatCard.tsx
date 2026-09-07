@@ -20,16 +20,16 @@ const bgMap = {
 };
 
 const sizeMap = {
-  sm: { value: "text-base", label: "text-[11px]" },
-  md: { value: "text-2xl", label: "text-xs" },
-  lg: { value: "text-3xl", label: "text-xs" },
+  sm: { value: "text-lg font-black", label: "text-[10px]" },
+  md: { value: "text-2xl font-black", label: "text-[10px]" },
+  lg: { value: "text-3xl font-black", label: "text-xs" },
 };
 
 export function StatCard({ label, value, color = "primary", size = "md" }: StatCardProps) {
   return (
-    <div className={`rounded-xl border ${bgMap[color]} p-4 text-center card-hover`}>
-      <div className={`${sizeMap[size].value} font-black font-mono ${colorMap[color]}`}>{value}</div>
-      <p className={`${sizeMap[size].label} text-muted mt-1`}>{label}</p>
+    <div className={`rounded-xl border ${bgMap[color]} p-4 text-center shadow-sm card-hover`}>
+      <div className={`${sizeMap[size].value} font-mono ${colorMap[color]}`}>{value}</div>
+      <p className={`${sizeMap[size].label} font-bold uppercase tracking-wider text-muted mt-1.5`}>{label}</p>
     </div>
   );
 }
@@ -59,8 +59,8 @@ interface StatRowProps {
 export function StatRow({ label, value, color = "text-foreground" }: StatRowProps) {
   return (
     <div>
-      <span className="text-muted text-xs block">{label}</span>
-      <span className={`font-bold ${color}`}>{value}</span>
+      <span className="text-muted text-[10px] font-bold uppercase tracking-wider block">{label}</span>
+      <span className={`font-black ${color}`}>{value}</span>
     </div>
   );
 }
