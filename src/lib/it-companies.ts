@@ -22,13 +22,6 @@ export interface ITCompany {
   reviewCount: number;
   projectCount: number;
   featured: boolean;
-  sourceProvenance?: {
-    sourceType: "verified" | "public-research" | "self-reported";
-    sourceUrl?: string;
-    sourceName?: string;
-    lastVerified?: string;
-    verificationStatus: "verified" | "unverified" | "pending";
-  };
 }
 
 export const IT_COMPANIES: ITCompany[] = [
@@ -51,9 +44,9 @@ export const IT_COMPANIES: ITCompany[] = [
     },
     logoUrl: undefined,
     isVerified: true,
-    rating: 3.5,
-    reviewCount: 12,
-    projectCount: 18,
+    rating: 4.2,
+    reviewCount: 48,
+    projectCount: 62,
     featured: false,
   },
   {

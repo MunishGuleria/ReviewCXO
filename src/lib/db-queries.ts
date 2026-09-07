@@ -47,12 +47,6 @@ export function submitProjectReview(data: {
   would_recommend?: boolean
   overall_rating?: number
   is_anonymous?: boolean
-  review_type?: 'cxo_review' | 'public_research' | 'third_party_citation'
-  source_url?: string
-  source_name?: string
-  source_type?: string
-  source_published_date?: string
-  attribution?: string
 }): string {
   const id = `review-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
   db.prepare(`
@@ -63,9 +57,8 @@ export function submitProjectReview(data: {
       team_size, timeline_months, budget_range, outcomes_description,
       roi_percentage, efficiency_gain_percentage, adoption_rate, challenges_faced,
       delivery_quality_rating, ai_effectiveness_rating, communication_rating,
-      value_for_money_rating, would_recommend, overall_rating, is_anonymous,
-      review_type, source_url, source_name, source_type, source_published_date, attribution
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      value_for_money_rating, would_recommend, overall_rating, is_anonymous
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
     id, data.cxo_full_name, data.cxo_title, data.cxo_company_name, data.cxo_email,
     data.cxo_linkedin_url || null, data.it_company_id || null, data.it_company_name,
@@ -77,9 +70,7 @@ export function submitProjectReview(data: {
     data.challenges_faced || null, data.delivery_quality_rating || null,
     data.ai_effectiveness_rating || null, data.communication_rating || null,
     data.value_for_money_rating || null, data.would_recommend ? 1 : 0,
-    data.overall_rating || null, data.is_anonymous ? 1 : 0,
-    data.review_type || 'cxo_review', data.source_url || null, data.source_name || null,
-    data.source_type || null, data.source_published_date || null, data.attribution || null
+    data.overall_rating || null, data.is_anonymous ? 1 : 0
   )
   return id
 }
@@ -98,46 +89,4 @@ export function approveSubmittedReview(id: string) {
 
 export function rejectSubmittedReview(id: string, adminNotes: string) {
   db.prepare("UPDATE submitted_reviews SET status = 'rejected', admin_notes = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?").run(adminNotes, id)
-}
-
-export function createEvidenceRecord(data: {
-  it_company_id: string
-  it_company_name: string
-  project_title?: string
-  customer_name?: string
-  industry?: string
-  year?: number
-  ai_category?: string
-  solution_description?: string
-  technologies?: string
-  outcomes?: string
-  evidence_type: string
-  source_name: string
-  source_url?: string
-  source_published_date?: string
-  attribution?: string
-}): string {
-  const id = `evidence-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
-  db.prepare(`
-    INSERT INTO evidence_records (
-      id, it_company_id, it_company_name, project_title, customer_name,
-      industry, year, ai_category, solution_description, technologies,
-      outcomes, evidence_type, source_name, source_url, source_published_date, attribution
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(
-    id, data.it_company_id, data.it_company_name, data.project_title || null,
-    data.customer_name || null, data.industry || null, data.year || null,
-    data.ai_category || null, data.solution_description || null, data.technologies || null,
-    data.outcomes || null, data.evidence_type, data.source_name, data.source_url || null,
-    data.source_published_date || null, data.attribution || null
-  )
-  return id
-}
-
-export function getEvidenceByCompany(companyId: string) {
-  return db.prepare("SELECT * FROM evidence_records WHERE it_company_id = ? AND status = 'approved' ORDER BY created_at DESC").all(companyId)
-}
-
-export function getAllEvidence() {
-  return db.prepare("SELECT * FROM evidence_records WHERE status = 'approved' ORDER BY created_at DESC").all()
 }

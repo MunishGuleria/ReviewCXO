@@ -37,12 +37,6 @@ export interface ProjectReview {
   overallRating: number;
   status: "pending" | "approved" | "rejected";
   isAnonymous: boolean;
-  reviewType?: "cxo_review" | "public_research" | "third_party_citation";
-  sourceUrl?: string;
-  sourceName?: string;
-  sourceType?: string;
-  attribution?: string;
-  verificationStatus?: "verified" | "unverified" | "pending";
   adminNotes?: string;
   createdAt: string;
   updatedAt: string;
