@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { CitationBlock } from "@/components/ui/CitationBlock";
+import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,14 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function ArchitectureSecurityIndexPage() {
-  const vendors = [
-    { name: "Salezx", score: "8.2", category: "Specialized ERP-AI" },
-    { name: "Salesforce", score: "7.8", category: "CRM-Native AI" },
-    { name: "Microsoft", score: "7.5", category: "Productivity-Stack AI" },
-    { name: "SAP", score: "7.9", category: "ERP-Native AI" },
-    { name: "HubSpot", score: "6.4", category: "SMB/Mid-Market CRM AI" },
-    { name: "Oracle", score: "7.1", category: "ERP/CX AI" },
-  ];
+  const visibleVendors = getVisibleVendors();
+  const sortedVendors = [...visibleVendors].sort((a, b) => b.ascsComposite - a.ascsComposite);
 
   return (
     <>
@@ -43,7 +38,7 @@ export default function ArchitectureSecurityIndexPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">Executive Summary</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Architecture & Security Governance</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            This index evaluates 6 enterprise AI sales platforms across 12 architecture, security, and governance dimensions. Every score is backed by documented evidence from public sources, official vendor documentation, and controlled laboratory testing.
+            This index evaluates {visibleVendors.length} enterprise AI platforms across 12 architecture, security, and governance dimensions. Every score is backed by documented evidence from public sources, official vendor documentation, and controlled laboratory testing.
           </p>
         </div>
 
@@ -72,11 +67,11 @@ export default function ArchitectureSecurityIndexPage() {
                 </tr>
               </thead>
               <tbody>
-                {vendors.map((v) => (
-                  <tr key={v.name}>
+                {sortedVendors.map((v) => (
+                  <tr key={v.slug}>
                     <td className="font-bold">
                       <Link
-                        href={`/vendors/${v.name.toLowerCase()}`}
+                        href={`/vendors/${v.slug}`}
                         className="text-foreground hover:text-primary transition-colors"
                       >
                         {v.name}
@@ -85,7 +80,7 @@ export default function ArchitectureSecurityIndexPage() {
                     <td className="text-muted text-xs">{v.category}</td>
                     <td className="text-center">
                       <span className="inline-block rounded-lg bg-primary/10 px-2.5 py-0.5 font-mono font-black text-primary">
-                        {v.score}/10
+                        {v.ascsComposite}/10
                       </span>
                     </td>
                     <td className="text-right">

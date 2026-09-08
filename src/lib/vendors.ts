@@ -7,6 +7,14 @@ export type EvidenceClassification =
   | "inferred"
   | "not-tested";
 
+
+export interface AnalystEvaluation {
+  editorialNarrative: string;
+  idealEnterpriseWorkloads: string[];
+  knownLimitations: string[];
+  coreStrengths: string[];
+}
+
 export interface Vendor {
   slug: string;
   name: string;
@@ -26,6 +34,7 @@ export interface Vendor {
   integrations: string[];
   certifications: string[];
   deployment: string[];
+  hidden?: boolean; // If true, vendor is excluded from public listings
   // ASCS 12-Dimension Research Evaluation
   ascsScores: Record<number, number>;
   ascsEvidence: Record<number, EvidenceClassification>;
@@ -39,6 +48,7 @@ export interface Vendor {
     idealDeployment: string;
     keyTradeOff: string;
   };
+  analystEvaluation?: AnalystEvaluation;
   parentCompany?: {
     name: string;
     website: string;
@@ -53,7 +63,7 @@ export const VENDORS: Vendor[] = [
     slug: "salesforce",
     name: "Salesforce",
     tagline: "The #1 AI CRM — Einstein AI, Agentforce, Data Cloud",
-    category: "CRM",
+    category: "Enterprise CRM & Ecosystem",
     founded: 1999,
     hq: "San Francisco, CA",
     website: "https://salesforce.com",
@@ -80,6 +90,12 @@ export const VENDORS: Vendor[] = [
     integrations: ["Microsoft 365", "Google Workspace", "Slack", "SAP", "Oracle", "HubSpot", "Marketo", "DocuSign", "Zoom", "LinkedIn"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR", "CSA STAR"],
     deployment: ["Cloud (SaaS)", "Hyperforce"],
+    analystEvaluation: {
+      editorialNarrative: "Pending independent analyst evaluation and synthesis.",
+      idealEnterpriseWorkloads: ["Enterprise Data Sync", "Automated Workflows"],
+      knownLimitations: ["High total cost of ownership", "Complex implementation"],
+      coreStrengths: ["Extensive ecosystem", "Deep architectural coupling"]
+    },
     ascsScores: {"1":7.2,"2":9.8,"3":8.2,"4":8.8,"5":9.4,"6":8.8,"7":7.5,"8":9.9,"9":8.2,"10":7.8,"11":9.9,"12":9.9},
     ascsEvidence: {"1":"documented","2":"observed","3":"documented","4":"observed","5":"observed","6":"observed","7":"documented","8":"observed","9":"documented","10":"documented","11":"observed","12":"observed"},
     ascsComposite: 8.7,
@@ -90,7 +106,7 @@ export const VENDORS: Vendor[] = [
     slug: "microsoft-dynamics-365",
     name: "Microsoft Dynamics 365",
     tagline: "AI-Powered Business Applications — Copilot Across ERP & CRM",
-    category: "CRM + ERP",
+    category: "CRM + ERP / Enterprise Operations",
     founded: 2016,
     hq: "Redmond, WA",
     website: "https://dynamics.microsoft.com",
@@ -116,6 +132,12 @@ export const VENDORS: Vendor[] = [
     integrations: ["Microsoft 365", "Teams", "Azure", "Power Platform", "LinkedIn", "SAP", "Oracle", "Adobe", "DocuSign"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid", "On-Prem (limited)"],
+    analystEvaluation: {
+      editorialNarrative: "Pending independent analyst evaluation and synthesis.",
+      idealEnterpriseWorkloads: ["Enterprise Data Sync", "Automated Workflows"],
+      knownLimitations: ["High total cost of ownership", "Complex implementation"],
+      coreStrengths: ["Extensive ecosystem", "Deep architectural coupling"]
+    },
     ascsScores: {"1":9.4,"2":8.9,"3":9,"4":8.7,"5":9,"6":8.3,"7":7.8,"8":9.9,"9":8.2,"10":8.4,"11":9.2,"12":9.4},
     ascsEvidence: {"1":"observed","2":"observed","3":"observed","4":"observed","5":"observed","6":"documented","7":"documented","8":"observed","9":"documented","10":"documented","11":"observed","12":"observed"},
     ascsComposite: 8.9,
@@ -125,6 +147,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "hubspot",
     name: "HubSpot",
+    hidden: true,
     tagline: "Free CRM + Marketing + Sales + Service — AI-Powered with Breeze",
     category: "CRM",
     founded: 2006,
@@ -162,6 +185,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "zoho-crm",
     name: "Zoho CRM",
+    hidden: true,
     tagline: "45+ Integrated Business Apps — Zia AI Assistant",
     category: "CRM",
     founded: 1996,
@@ -199,6 +223,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "gong",
     name: "Gong",
+    hidden: true,
     tagline: "Revenue Intelligence — AI-Powered Conversation & Deal Analytics",
     category: "Revenue Intelligence",
     founded: 2015,
@@ -236,6 +261,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "outreach",
     name: "Outreach",
+    hidden: true,
     tagline: "Sales Execution Platform — Sequences, AI, and Pipeline Management",
     category: "Sales Engagement",
     founded: 2014,
@@ -273,6 +299,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "salesloft",
     name: "Salesloft",
+    hidden: true,
     tagline: "Sales Engagement Platform — Rhythm AI for Smarter Outreach",
     category: "Sales Engagement",
     founded: 2011,
@@ -310,6 +337,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "clari",
     name: "Clari",
+    hidden: true,
     tagline: "Revenue Platform — AI Forecasting, Pipeline Inspection, Revenue Cadence",
     category: "Revenue Intelligence",
     founded: 2016,
@@ -347,6 +375,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "zoominfo",
     name: "ZoomInfo",
+    hidden: true,
     tagline: "B2B Data & Intelligence — Contact, Company, and Intent Data",
     category: "Sales Intelligence",
     founded: 2000,
@@ -384,6 +413,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "6sense",
     name: "6sense",
+    hidden: true,
     tagline: "Revenue AI — Account Identification, Intent Data, ABM Orchestration",
     category: "ABM + Revenue AI",
     founded: 2013,
@@ -421,6 +451,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "demandbase",
     name: "Demandbase",
+    hidden: true,
     tagline: "Account-Based GTM Platform — AI-Powered ABM & Advertising",
     category: "ABM + Revenue AI",
     founded: 2009,
@@ -458,6 +489,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "seismic",
     name: "Seismic",
+    hidden: true,
     tagline: "Sales Enablement & Content Management — Seismic AI",
     category: "Sales Enablement",
     founded: 2010,
@@ -495,6 +527,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "highspot",
     name: "Highspot",
+    hidden: true,
     tagline: "AI-Powered Sales Enablement — Content Recommendations & Buyer Engagement",
     category: "Sales Enablement",
     founded: 2012,
@@ -532,6 +565,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "freshsales",
     name: "Freshsales (Freshworks)",
+    hidden: true,
     tagline: "AI-Powered CRM — Freddy AI for Sales, Marketing & Support",
     category: "CRM",
     founded: 2010,
@@ -569,6 +603,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "apollo-io",
     name: "Apollo.io",
+    hidden: true,
     tagline: "Sales Intelligence & Engagement — B2B Data, Sequences, AI Scoring",
     category: "Sales Intelligence + Engagement",
     founded: 2015,
@@ -606,6 +641,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "pipedrive",
     name: "Pipedrive",
+    hidden: true,
     tagline: "CRM Built by Salespeople — AI Sales Assistant & Pipeline Management",
     category: "CRM",
     founded: 2010,
@@ -643,6 +679,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "creatio",
     name: "Creatio",
+    hidden: true,
     tagline: "No-Code Platform for Workflow Automation & CRM",
     category: "CRM + Workflow",
     founded: 2014,
@@ -680,6 +717,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "intercom",
     name: "Intercom",
+    hidden: true,
     tagline: "AI-First Customer Platform — Fin AI Agent for Support & Sales",
     category: "Customer Messaging",
     founded: 2011,
@@ -717,6 +755,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "drift",
     name: "Drift (now Salesloft)",
+    hidden: true,
     tagline: "Conversational AI — AI Chat for Website Lead Qualification",
     category: "Conversational AI",
     founded: 2014,
@@ -754,6 +793,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "showpad",
     name: "Showpad",
+    hidden: true,
     tagline: "Revenue Enablement — Content, Training & Coaching in One Platform",
     category: "Sales Enablement",
     founded: 2011,
@@ -791,6 +831,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "terminus",
     name: "Terminus",
+    hidden: true,
     tagline: "ABM Platform — Multi-Channel Account-Based Marketing",
     category: "ABM + Revenue AI",
     founded: 2014,
@@ -828,6 +869,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "copper",
     name: "Copper CRM",
+    hidden: true,
     tagline: "Google Workspace CRM — Built for Google Ecosystem Users",
     category: "CRM",
     founded: 2013,
@@ -865,6 +907,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "close",
     name: "Close",
+    hidden: true,
     tagline: "CRM Built for Startups & SMBs — Built-in Calling, Email & SMS",
     category: "CRM",
     founded: 2013,
@@ -902,6 +945,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "nutshell",
     name: "Nutshell",
+    hidden: true,
     tagline: "All-in-One CRM & Marketing — Built for Growing B2B Teams",
     category: "CRM",
     founded: 2010,
@@ -939,6 +983,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "salezx",
     name: "Salezx",
+    hidden: true,
     tagline: "Enterprise AI CRM & SFA Platform — A Zoxima Solutions Company",
     category: "AI Revenue Operations",
     founded: 2018,
@@ -988,6 +1033,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "panda-doc",
     name: "PandaDoc",
+    hidden: true,
     tagline: "Document Automation — Proposals, Contracts, eSign with AI",
     category: "Document Automation",
     founded: 2013,
@@ -1025,6 +1071,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "calendly",
     name: "Calendly",
+    hidden: true,
     tagline: "Scheduling Automation — AI-Powered Meeting Scheduling for Sales",
     category: "Scheduling",
     founded: 2013,
@@ -1063,7 +1110,7 @@ export const VENDORS: Vendor[] = [
     slug: "salesforce-einstein",
     name: "Salesforce Einstein AI",
     tagline: "AI for CRM — Einstein GPT, Copilot, Trust Layer",
-    category: "AI Platform (CRM Embedded)",
+    category: "AI Platform / CRM Embedded",
     founded: 2016,
     hq: "San Francisco, CA",
     website: "https://salesforce.com/products/einstein/overview",
@@ -1089,6 +1136,12 @@ export const VENDORS: Vendor[] = [
     integrations: ["Salesforce ecosystem", "MuleSoft", "Slack", "Tableau"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA"],
     deployment: ["Cloud (SaaS)", "Hyperforce"],
+    analystEvaluation: {
+      editorialNarrative: "Pending independent analyst evaluation and synthesis.",
+      idealEnterpriseWorkloads: ["Enterprise Data Sync", "Automated Workflows"],
+      knownLimitations: ["High total cost of ownership", "Complex implementation"],
+      coreStrengths: ["Extensive ecosystem", "Deep architectural coupling"]
+    },
     ascsScores: {"1":7,"2":9.8,"3":8,"4":8.6,"5":9,"6":8.6,"7":7.2,"8":9.9,"9":8,"10":7.6,"11":9.8,"12":9.8},
     ascsEvidence: {"1":"documented","2":"observed","3":"documented","4":"observed","5":"observed","6":"observed","7":"documented","8":"observed","9":"documented","10":"documented","11":"observed","12":"observed"},
     ascsComposite: 8.6,
@@ -1099,7 +1152,7 @@ export const VENDORS: Vendor[] = [
     slug: "microsoft-copilot",
     name: "Microsoft Copilot for Sales",
     tagline: "AI Companion for Sales — Embedded Across Microsoft 365 & Dynamics",
-    category: "AI Platform (Productivity Embedded)",
+    category: "AI Platform / Productivity Embedded",
     founded: 2023,
     hq: "Redmond, WA",
     website: "https://www.microsoft.com/en-us/microsoft-365/copilot/sales",
@@ -1125,6 +1178,12 @@ export const VENDORS: Vendor[] = [
     integrations: ["Microsoft 365", "Dynamics 365", "Azure", "Power Platform", "LinkedIn", "Teams"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid"],
+    analystEvaluation: {
+      editorialNarrative: "Pending independent analyst evaluation and synthesis.",
+      idealEnterpriseWorkloads: ["Enterprise Data Sync", "Automated Workflows"],
+      knownLimitations: ["High total cost of ownership", "Complex implementation"],
+      coreStrengths: ["Extensive ecosystem", "Deep architectural coupling"]
+    },
     ascsScores: {"1":9.1,"2":8.6,"3":8.8,"4":8.6,"5":8.6,"6":8.2,"7":7.6,"8":9.8,"9":8.1,"10":8,"11":9,"12":9.2},
     ascsEvidence: {"1":"observed","2":"observed","3":"observed","4":"observed","5":"observed","6":"documented","7":"documented","8":"observed","9":"documented","10":"documented","11":"observed","12":"observed"},
     ascsComposite: 8.7,
@@ -1135,7 +1194,7 @@ export const VENDORS: Vendor[] = [
     slug: "sap-joule",
     name: "SAP Joule",
     tagline: "AI Copilot for the Intelligent Enterprise — Embedded Across SAP",
-    category: "AI Platform (ERP Embedded)",
+    category: "AI Platform / ERP Embedded",
     founded: 2023,
     hq: "Walldorf, Germany",
     website: "https://sap.com/products/artificial-intelligence.html",
@@ -1160,6 +1219,12 @@ export const VENDORS: Vendor[] = [
     integrations: ["SAP ecosystem", "Microsoft 365", "Salesforce"],
     certifications: ["SOC 2 Type II", "ISO 27001", "C5", "FedRAMP"],
     deployment: ["Cloud (SAP Cloud)", "Hybrid", "On-Prem"],
+    analystEvaluation: {
+      editorialNarrative: "Pending independent analyst evaluation and synthesis.",
+      idealEnterpriseWorkloads: ["Enterprise Data Sync", "Automated Workflows"],
+      knownLimitations: ["High total cost of ownership", "Complex implementation"],
+      coreStrengths: ["Extensive ecosystem", "Deep architectural coupling"]
+    },
     ascsScores: {"1":9.8,"2":7,"3":8.8,"4":8.4,"5":8.8,"6":7.9,"7":6.5,"8":9.9,"9":8,"10":8.6,"11":7.8,"12":9.4},
     ascsEvidence: {"1":"observed","2":"observed","3":"observed","4":"documented","5":"observed","6":"documented","7":"documented","8":"observed","9":"documented","10":"observed","11":"documented","12":"observed"},
     ascsComposite: 8.5,
@@ -1177,22 +1242,11 @@ export function getVendorsByCategory(category: string): Vendor[] {
 }
 
 export const VENDOR_CATEGORIES = [
-  "CRM",
-  "CRM + ERP",
-  "Revenue Intelligence",
-  "Sales Engagement",
-  "Sales Intelligence",
-  "ABM + Revenue AI",
-  "Sales Enablement",
-  "Conversational AI",
-  "Customer Messaging",
-  "Document Automation",
-  "Scheduling",
-  "CRM + Workflow",
-  "AI Revenue Operations",
-  "AI Platform (CRM Embedded)",
-  "AI Platform (Productivity Embedded)",
-  "AI Platform (ERP Embedded)",
+  "CRM + ERP / Enterprise Operations",
+  "Enterprise CRM & Ecosystem",
+  "AI Platform / Productivity Embedded",
+  "AI Platform / CRM Embedded",
+  "AI Platform / ERP Embedded"
 ] as const;
 
 export function computeAscsComposite(scores: Record<number, number>): number {
@@ -1208,7 +1262,7 @@ export function computeAscsComposite(scores: Record<number, number>): number {
 }
 
 export function getTopAscsVendors(limit = 10): Vendor[] {
-  return [...VENDORS].sort((a, b) => b.ascsComposite - a.ascsComposite).slice(0, limit);
+  return [...getVisibleVendors()].sort((a, b) => b.ascsComposite - a.ascsComposite).slice(0, limit);
 }
 
 export interface DocumentationSource {
@@ -1378,4 +1432,19 @@ export function getVendorDocumentationSources(vendor: Vendor): DocumentationSour
       description: `Verified enterprise security certifications: ${vendor.certifications.join(", ")}.`,
     },
   ];
+}
+
+/**
+ * Get only visible vendors (not marked as hidden).
+ * Use this instead of VENDORS directly for public-facing pages.
+ */
+export function getVisibleVendors(): Vendor[] {
+  return VENDORS.filter((v) => !v.hidden);
+}
+
+/**
+ * Get all vendors including hidden ones (for admin/internal use).
+ */
+export function getAllVendors(): Vendor[] {
+  return VENDORS;
 }

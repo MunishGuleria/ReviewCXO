@@ -32,7 +32,7 @@ export default function IndexesPage() {
             badge="Published"
             title="Architecture & Security Index 2026"
             description="12-dimension evaluation of 6 enterprise AI platforms on architecture, security, and governance maturity."
-            meta="Sep 2026 · 6 vendors evaluated"
+            meta="Sep 2026 · 5 platforms evaluated"
           />
           <Card
             href="/indexes/ascs-scorecard-2026"

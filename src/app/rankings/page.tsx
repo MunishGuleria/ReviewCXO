@@ -3,7 +3,7 @@ import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { InfoCard } from "@/components/ui/ResearchComponents";
 import { StarRating } from "@/components/ui/StarRating";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
-import { VENDORS } from "@/lib/vendors";
+import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const rankedVendors = [...VENDORS].sort((a, b) => b.ascsComposite - a.ascsComposite);
+const rankedVendors = [...getVisibleVendors()].sort((a, b) => b.ascsComposite - a.ascsComposite);
 
 export default function RankingsPage() {
   return (

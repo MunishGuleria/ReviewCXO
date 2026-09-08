@@ -6,11 +6,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, badge }: PageHeaderProps) {
   return (
-    <div className="relative border-b border-border bg-surface py-14 sm:py-18">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-hero)' }} />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-
+    <div className="relative py-14 sm:py-18">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {badge && (
           <span className="mb-3 inline-block rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">

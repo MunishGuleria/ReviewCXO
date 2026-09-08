@@ -4,7 +4,7 @@
 
 ## What This Site Contains
 
-- 30 canonical enterprise AI & software vendors evaluated across 12 ASCS dimensions
+- Enterprise AI & software vendors evaluated across 12 ASCS dimensions
 - 12 head-to-head architectural comparisons (Salesforce, Microsoft Dynamics, HubSpot, Gong, Clari, Salezx, etc.)
 - Empirical benchmark protocols and reproducible test suites
 - Verified CXO project reviews and enterprise customer evidence

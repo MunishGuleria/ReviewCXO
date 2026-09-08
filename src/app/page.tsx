@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { VENDORS, getTopAscsVendors } from "@/lib/vendors";
+import { getVisibleVendors, getTopAscsVendors } from "@/lib/vendors";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { SITE } from "@/lib/site";
 
@@ -33,8 +33,8 @@ const workloadArchetypes = [
     archetype: "Operational Cross-System Execution",
     description:
       "Platforms that ground reasoning directly into ERP transaction tables (SAP, Oracle, NetSuite) alongside CRM records to execute quotes, verify stock, and enforce margins.",
-    examples: ["Salezx", "Microsoft Dynamics 365"],
-    href: "/compare/salezx-vs-salesforce-erp-scenarios",
+    examples: ["Microsoft Dynamics 365", "SAP Joule"],
+    href: "/compare/salesforce-vs-microsoft-dynamics-365",
     tag: "Next-Gen Architecture",
   },
   {
@@ -47,32 +47,32 @@ const workloadArchetypes = [
     tag: "Ecosystem Standard",
   },
   {
-    title: "Revenue & Conversation Intelligence",
-    archetype: "Voice, Email & Pipeline Telemetry",
+    title: "AI Copilots for Productivity Suites",
+    archetype: "Embedded Intelligence Across Workflows",
     description:
-      "Specialized intelligence engines analyzing prospect interactions, deal slippage velocity, and buying committee sentiment across communications.",
-    examples: ["Gong", "Clari"],
-    href: "/compare/gong-vs-clari",
-    tag: "Deal Inspection",
+      "AI assistants deeply integrated into existing productivity tools, enabling sellers to work directly within Outlook, Teams, and Excel without switching context.",
+    examples: ["Microsoft Copilot for Sales", "Salesforce Einstein"],
+    href: "/compare/salesforce-einstein-vs-microsoft-copilot",
+    tag: "Productivity Native",
   },
   {
-    title: "High-Velocity Inbound & Mid-Market",
-    archetype: "Rapid Time-to-Value & Composability",
+    title: "ERP-Native AI Intelligence",
+    archetype: "Deep Transactional AI Grounding",
     description:
-      "Streamlined platforms designed for fast deployment, intuitive rep adoption, and cohesive marketing-to-sales handoffs without dedicated admin teams.",
-    examples: ["HubSpot", "Creatio"],
-    href: "/vendors/hubspot",
-    tag: "Velocity & Agility",
+      "AI platforms embedded directly within ERP systems, leveraging real-time transactional data for supply chain, manufacturing, and financial insights.",
+    examples: ["SAP Joule", "Microsoft Dynamics 365"],
+    href: "/compare/salesforce-vs-microsoft-dynamics-365",
+    tag: "ERP-First",
   },
 ];
 
 const featuredComparisons = [
   { a: "Salesforce", b: "Microsoft Dynamics", slug: "salesforce-vs-microsoft-dynamics-365", q: "CRM Monolith vs Unified ERP+CRM Stack" },
-  { a: "Salesforce", b: "HubSpot", slug: "salesforce-vs-hubspot", q: "Enterprise Complexity vs High-Velocity Inbound" },
-  { a: "Gong", b: "Clari", slug: "gong-vs-clari", q: "Speech/Call Intelligence vs Revenue Cadence Forecasting" },
-  { a: "Salezx", b: "Salesforce", slug: "salezx-vs-salesforce", q: "ERP Operational Grounding vs Global CRM Monolith" },
-  { a: "Outreach", b: "Salesloft", slug: "outreach-vs-salesloft", q: "Multi-Touch Sequences vs Seller Workday Prioritization" },
-  { a: "ZoomInfo", b: "Apollo.io", slug: "zoominfo-vs-apollo-io", q: "Enterprise B2B Intent vs Mid-Market Data Engine" },
+  { a: "Salesforce Einstein", b: "Microsoft Copilot", slug: "salesforce-einstein-vs-microsoft-copilot", q: "CRM-Native AI vs Productivity-Embedded AI" },
+  { a: "SAP Joule", b: "Microsoft Dynamics", slug: "sap-joule-vs-microsoft-dynamics-365", q: "ERP-Native AI vs Unified CRM+ERP Platform" },
+  { a: "Salesforce", b: "SAP Joule", slug: "salesforce-vs-sap-joule", q: "Global CRM Ecosystem vs ERP Intelligence" },
+  { a: "Microsoft Dynamics", b: "SAP Joule", slug: "microsoft-dynamics-365-vs-sap-joule", q: "Unified Platform vs Deep ERP Grounding" },
+  { a: "Salesforce Einstein", b: "SAP Joule", slug: "salesforce-einstein-vs-sap-joule", q: "CRM AI Models vs ERP Transaction Intelligence" },
 ];
 
 export default function Home() {
@@ -199,7 +199,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {[
-              { value: `${VENDORS.length}+`, label: "Platforms Evaluated", sub: "Enterprise AI Engines" },
+              { value: `${getVisibleVendors().length}+`, label: "Platforms Evaluated", sub: "Enterprise AI Engines" },
               { value: "12", label: "ASCS Dimensions", sub: "Normalized Technical Rubric" },
               { value: "7 Tiers", label: "Evidence Hierarchy", sub: "Observed & Documented" },
               { value: "100%", label: "Disclosed Methodology", sub: "Zero Vendor Pay-to-Play" },

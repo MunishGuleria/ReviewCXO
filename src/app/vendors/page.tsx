@@ -1,16 +1,16 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { VendorCard } from "@/components/ui/VendorCard";
-import { VENDORS, VENDOR_CATEGORIES } from "@/lib/vendors";
+import { getVisibleVendors, VENDOR_CATEGORIES } from "@/lib/vendors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: `All ${VENDORS.length} Enterprise AI Sales Platforms — Directory & ASCS Scores`,
-  description: `Directory of ${VENDORS.length} enterprise AI sales platforms. Architectural analysis, ASCS benchmarks, and integration capabilities.`,
+  title: `Enterprise AI Sales Platforms — Directory & ASCS Scores`,
+  description: `Directory of enterprise AI sales platforms. Architectural analysis, ASCS benchmarks, and integration capabilities.`,
   alternates: { canonical: "https://reviews-cxo.com/vendors" },
   openGraph: {
-    title: `All ${VENDORS.length} Enterprise AI Sales Platforms`,
-    description: `Directory of ${VENDORS.length} enterprise AI sales platforms with ASCS scores.`,
+    title: `Enterprise AI Sales Platforms`,
+    description: `Directory of enterprise AI sales platforms with ASCS scores.`,
     url: "https://reviews-cxo.com/vendors",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -19,21 +19,22 @@ export const metadata: Metadata = {
 };
 
 export default function VendorsPage() {
-  const sorted = [...VENDORS].sort((a, b) => b.ascsComposite - a.ascsComposite);
+  const visibleVendors = getVisibleVendors();
+  const sorted = [...visibleVendors].sort((a, b) => b.ascsComposite - a.ascsComposite);
 
   return (
     <>
       <PageHeader
         badge="Platform Directory"
-        title={`All ${VENDORS.length} AI Sales Platforms`}
-        description="Comprehensive architecture evaluations, deployment specs, and ASCS benchmarks across 30 enterprise platforms."
+        title="Enterprise AI Platform Directory"
+        description="Comprehensive architecture evaluations, deployment specs, and ASCS benchmarks across enterprise platforms."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
         {/* EMPIRICAL LAB STATS */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="rounded-xl border border-border bg-surface p-5 text-center shadow-sm">
-            <p className="text-3xl font-black text-primary font-mono">{VENDORS.length}</p>
+            <p className="text-3xl font-black text-primary font-mono">{visibleVendors.length}</p>
             <p className="text-xs font-medium text-muted mt-1">Evaluated Platforms</p>
           </div>
           <div className="rounded-xl border border-border bg-surface p-5 text-center shadow-sm">
@@ -76,7 +77,7 @@ export default function VendorsPage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {VENDOR_CATEGORIES.map((cat) => {
-              const catVendors = VENDORS.filter((v) => v.category === cat);
+              const catVendors = visibleVendors.filter((v) => v.category === cat);
               if (catVendors.length === 0) return null;
 
               // Immutable sort

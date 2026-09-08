@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { VENDORS } from "@/lib/vendors";
+import { getVisibleVendors } from "@/lib/vendors";
 import { getPublishedQuestions } from "@/lib/questions";
 import { getPublishedCaseStudies } from "@/lib/reviews";
 
@@ -36,18 +36,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const comparisonPages = [
-    "salezx-vs-salesforce",
-    "salezx-vs-microsoft-dynamics-365",
     "salesforce-vs-microsoft-dynamics-365",
-    "salesforce-vs-hubspot",
-    "gong-vs-clari",
-    "outreach-vs-salesloft",
-    "zoominfo-vs-apollo-io",
-    "seismic-vs-highspot",
-    "zoho-crm-vs-hubspot",
-    "pipedrive-vs-close",
-    "6sense-vs-demandbase",
-    "intercom-vs-drift",
+    "salesforce-vs-salesforce-einstein",
+    "salesforce-vs-microsoft-copilot",
+    "salesforce-vs-sap-joule",
+    "microsoft-dynamics-365-vs-salesforce-einstein",
+    "microsoft-dynamics-365-vs-microsoft-copilot",
+    "microsoft-dynamics-365-vs-sap-joule",
+    "salesforce-einstein-vs-microsoft-copilot",
+    "salesforce-einstein-vs-sap-joule",
+    "microsoft-copilot-vs-sap-joule",
+    "sap-joule-vs-microsoft-dynamics-365",
   ].map((pair) => ({
     url: `${BASE_URL}/compare/${pair}`,
     lastModified: new Date(),
@@ -55,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const vendorPages = VENDORS.map((v) => ({
+  const vendorPages = getVisibleVendors().map((v) => ({
     url: `${BASE_URL}/vendors/${v.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

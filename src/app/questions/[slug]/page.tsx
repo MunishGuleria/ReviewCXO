@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { getQuestionBySlug, getPublishedQuestions } from "@/lib/questions";
-import { VENDORS } from "@/lib/vendors";
+import { getVisibleVendors } from "@/lib/vendors";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import Link from "next/link";
 
@@ -39,7 +39,7 @@ export default async function QuestionPage({ params }: Props) {
   if (!question) notFound();
 
   const relatedVendors = (question.relatedVendors || [])
-    .map((vSlug) => VENDORS.find((v) => v.slug === vSlug))
+    .map((vSlug) => getVisibleVendors().find((v) => v.slug === vSlug))
     .filter(Boolean);
 
   return (

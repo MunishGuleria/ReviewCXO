@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { VENDORS, getVendorBySlug } from "@/lib/vendors";
+import { getAllVendors, getVendorBySlug } from "@/lib/vendors";
 import { ASCS_DIMENSIONS, EVIDENCE_TYPES } from "@/lib/site";
 import { StarRating } from "@/components/ui/StarRating";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
@@ -13,20 +13,17 @@ interface Props {
 
 export async function generateStaticParams() {
   const pairs = [
-    ["salezx", "salesforce"],
-    ["salezx", "microsoft-dynamics-365"],
     ["salesforce", "microsoft-dynamics-365"],
-    ["salesforce", "hubspot"],
-    ["gong", "clari"],
-    ["outreach", "salesloft"],
-    ["zoominfo", "apollo-io"],
-    ["seismic", "highspot"],
-    ["zoho-crm", "hubspot"],
-    ["pipedrive", "close"],
-    ["6sense", "demandbase"],
-    ["intercom", "drift"],
-    ["creatio", "salesforce"],
+    ["salesforce", "salesforce-einstein"],
+    ["salesforce", "microsoft-copilot"],
+    ["salesforce", "sap-joule"],
+    ["microsoft-dynamics-365", "salesforce-einstein"],
+    ["microsoft-dynamics-365", "microsoft-copilot"],
+    ["microsoft-dynamics-365", "sap-joule"],
     ["salesforce-einstein", "microsoft-copilot"],
+    ["salesforce-einstein", "sap-joule"],
+    ["microsoft-copilot", "sap-joule"],
+    ["sap-joule", "microsoft-dynamics-365"],
   ];
 
   return pairs.map(([a, b]) => ({

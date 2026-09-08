@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ASCS_DIMENSIONS } from "@/lib/site";
+import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -21,34 +22,29 @@ export const metadata: Metadata = {
 export default function ASCSScorecardPage() {
   const vendorScores = [
     {
-      name: "Salezx",
-      composite: "8.0",
-      scores: [9, 7, 9, 8, 8, 8, 7, 8, 7, 6, 7, 8],
+      name: "Microsoft Dynamics 365",
+      composite: "8.9",
+      scores: [9.5, 9.2, 9.0, 9.0, 8.8, 8.5, 8.5, 9.5, 8.0, 8.5, 9.0, 9.0],
     },
     {
       name: "Salesforce",
-      composite: "7.6",
-      scores: [5, 9, 7, 8, 7, 7, 8, 9, 8, 8, 9, 9],
+      composite: "8.7",
+      scores: [7.2, 9.8, 8.2, 8.8, 9.4, 8.8, 7.5, 9.9, 8.2, 7.8, 9.9, 9.9],
     },
     {
-      name: "Microsoft",
-      composite: "7.3",
-      scores: [5, 8, 7, 7, 7, 6, 8, 9, 7, 8, 8, 8],
+      name: "Microsoft Copilot for Sales",
+      composite: "8.7",
+      scores: [8.5, 9.0, 8.5, 9.0, 8.0, 7.5, 8.0, 9.5, 8.5, 9.0, 9.0, 9.0],
     },
     {
-      name: "SAP",
-      composite: "7.5",
-      scores: [9, 6, 7, 7, 6, 5, 7, 9, 6, 7, 7, 8],
+      name: "Salesforce Einstein AI",
+      composite: "8.6",
+      scores: [7.0, 9.5, 8.5, 9.0, 9.0, 8.5, 7.5, 9.5, 8.0, 7.5, 9.5, 9.5],
     },
     {
-      name: "HubSpot",
-      composite: "6.2",
-      scores: [3, 8, 5, 7, 6, 5, 7, 7, 6, 5, 8, 7],
-    },
-    {
-      name: "Oracle",
-      composite: "6.9",
-      scores: [8, 5, 6, 7, 5, 5, 6, 8, 5, 6, 6, 7],
+      name: "SAP Joule",
+      composite: "8.5",
+      scores: [9.5, 7.0, 8.0, 8.5, 7.5, 7.0, 7.0, 9.5, 7.5, 8.0, 8.0, 8.5],
     },
   ];
 
@@ -69,7 +65,7 @@ export default function ASCSScorecardPage() {
               <h2 className="mt-1 text-2xl font-black text-foreground">12-Dimension Evaluation Scorecard</h2>
             </div>
             <span className="rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-mono font-bold text-primary">
-              6 Core Benchmark Platforms
+              5 Core Benchmark Platforms
             </span>
           </div>
 
@@ -130,9 +126,9 @@ export default function ASCSScorecardPage() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
               <span className="text-xs font-bold text-primary uppercase tracking-wider">01. ERP Grounding Lead</span>
-              <h4 className="mt-1 font-bold text-foreground">Salezx</h4>
+              <h4 className="mt-1 font-bold text-foreground">Microsoft Dynamics 365</h4>
               <p className="mt-2 text-xs leading-relaxed text-muted">
-                Leads in ERP Connectivity and Cross-System Reasoning (Score 9.0) — the defining capabilities for autonomous execution across SAP, Oracle, and NetSuite.
+                Leads in ERP Connectivity and native Microsoft Graph grounding — the defining capabilities for autonomous execution across operations.
               </p>
             </div>
 
@@ -140,23 +136,23 @@ export default function ASCSScorecardPage() {
               <span className="text-xs font-bold text-primary uppercase tracking-wider">02. CRM Ecosystem Monolith</span>
               <h4 className="mt-1 font-bold text-foreground">Salesforce</h4>
               <p className="mt-2 text-xs leading-relaxed text-muted">
-                Excels in CRM Data Grounding (9.0), Security & Governance (9.0), and Integrations Ecosystem (9.0) — the gold standard for global CRM consolidation.
+                Excels in CRM Data Grounding (9.8), Security & Governance (9.9), and Integrations Ecosystem (9.9) — the gold standard for global CRM consolidation.
               </p>
             </div>
 
             <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
               <span className="text-xs font-bold text-primary uppercase tracking-wider">03. Native ERP Backbone</span>
-              <h4 className="mt-1 font-bold text-foreground">SAP</h4>
+              <h4 className="mt-1 font-bold text-foreground">SAP Joule</h4>
               <p className="mt-2 text-xs leading-relaxed text-muted">
-                Matches top-tier marks on native ERP Connectivity (9.0) but demonstrates lower agility in multi-step Agentic Autonomy (5.0) and CRM-native reasoning.
+                Matches top-tier marks on native ERP Connectivity (9.8) but demonstrates lower agility in CRM-native reasoning.
               </p>
             </div>
 
             <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">04. High Velocity Inbound</span>
-              <h4 className="mt-1 font-bold text-foreground">HubSpot</h4>
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">04. Productivity & Co-Pilot Scale</span>
+              <h4 className="mt-1 font-bold text-foreground">Microsoft Copilot</h4>
               <p className="mt-2 text-xs leading-relaxed text-muted">
-                Provides strong usability and fast time-to-value for inbound SMB/Mid-market pipelines, with lower architectural overhead than monolithic ERP platforms.
+                Provides strong usability and fast time-to-value for daily productivity, seamlessly integrated with M365 and Teams.
               </p>
             </div>
           </div>

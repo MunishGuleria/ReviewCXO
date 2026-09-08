@@ -22,22 +22,12 @@ export const NAVIGATION = [
   {
     label: "Platforms",
     href: "/vendors",
-    description: "All 30+ platforms evaluated",
+    description: "Enterprise platforms evaluated by Reviews_CXO",
   },
   {
     label: "Benchmarks",
     href: "/benchmarks",
     description: "Reproducible evaluations",
-  },
-  {
-    label: "Submit Review",
-    href: "/submit-review",
-    description: "Verified CXO platform reviews",
-  },
-  {
-    label: "Case Studies",
-    href: "/case-studies",
-    description: "Published AI project reviews",
   },
   {
     label: "Questions",
@@ -81,20 +71,8 @@ export const NAV_GROUPS = [
       {
         label: "Platforms",
         href: "/vendors",
-        description: "All 30+ AI sales platforms evaluated",
+        description: "Enterprise AI sales platforms evaluated by Reviews_CXO",
         icon: "grid",
-      },
-      {
-        label: "Submit Review",
-        href: "/submit-review",
-        description: "Submit verified CXO implementation review",
-        icon: "building",
-      },
-      {
-        label: "Case Studies",
-        href: "/case-studies",
-        description: "Published enterprise AI project reviews",
-        icon: "file",
       },
     ],
   },
@@ -190,7 +168,7 @@ export const ASCS_DIMENSIONS = [
     name: "CRM Data Grounding",
     weight: "8%",
     description:
-      "Ability to ingest, normalize, and reason over CRM data (Salesforce, HubSpot, Dynamics)",
+      "Ability to ingest, normalize, and reason over CRM data (Salesforce, Dynamics 365, etc.)",
     whyItMatters:
       "Foundation of all sales AI use cases",
   },

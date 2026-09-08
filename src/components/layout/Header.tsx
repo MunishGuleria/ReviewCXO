@@ -54,11 +54,9 @@ export function Header() {
               About
             </Link>
             <Link
-              href="/submit-review"
-              className="btn-primary"
-            >
-              Submit Review
-            </Link>
+              href="mailto:research@reviews-cxo.com"
+              className="btn-primary whitespace-nowrap"
+            >Contact Analyst</Link>
           </div>
 
           {/* ── Mobile Toggle ── */}

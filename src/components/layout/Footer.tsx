@@ -124,16 +124,17 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-border pt-6">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-xs text-muted">
-              &copy; {new Date().getFullYear()} {SITE.name}. All rights
-              reserved.
-            </p>
-            <p className="max-w-2xl text-center text-[11px] leading-relaxed text-muted/70 sm:text-right">
-              Reviews_CXO is an independently operated research initiative.
-              Sponsors do not control research conclusions, vendor scores, or editorial decisions.
-            </p>
+        <div className="mt-12 border-t border-border pt-8 pb-4">
+          <div className="flex flex-col-reverse items-start gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="flex flex-col gap-2">
+              <p className="max-w-2xl text-[11px] leading-relaxed text-muted/70">
+                Reviews_CXO is an independently operated research initiative.
+                Sponsors do not control research conclusions, vendor scores, or editorial decisions.
+              </p>
+              <p className="text-[10px] font-medium text-muted">
+                &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </div>

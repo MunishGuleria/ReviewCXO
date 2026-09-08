@@ -3,17 +3,18 @@
 import { useState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { StarRating } from "@/components/ui/StarRating";
-import { VENDORS } from "@/lib/vendors";
+import { getAllVendors } from "@/lib/vendors";
 import { ASCS_DIMENSIONS } from "@/lib/site";
 
-const sortedVendors = [...VENDORS].sort((a, b) => a.name.localeCompare(b.name));
+const allVendors = getAllVendors();
+const sortedVendors = [...allVendors].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function CustomComparePage() {
   const [slugA, setSlugA] = useState("");
   const [slugB, setSlugB] = useState("");
 
-  const vA = VENDORS.find((v) => v.slug === slugA);
-  const vB = VENDORS.find((v) => v.slug === slugB);
+  const vA = allVendors.find((v) => v.slug === slugA);
+  const vB = allVendors.find((v) => v.slug === slugB);
   const showComparison = vA && vB && slugA !== slugB;
 
   return (

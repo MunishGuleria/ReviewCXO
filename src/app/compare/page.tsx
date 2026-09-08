@@ -4,28 +4,23 @@ import { useState } from "react";
 import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { StarRating } from "@/components/ui/StarRating";
-import { VENDORS } from "@/lib/vendors";
+import { getAllVendors } from "@/lib/vendors";
 import { ASCS_DIMENSIONS } from "@/lib/site";
 import Link from "next/link";
 
 const platformComparisons = [
   { a: "salesforce", b: "microsoft-dynamics-365", question: "CRM Monolith vs Unified ERP+CRM Infrastructure", verdict: "Salesforce leads in CRM depth; Dynamics wins on unified ERP+CRM" },
-  { a: "salesforce", b: "hubspot", question: "Enterprise Scale vs High-Velocity Inbound Agility", verdict: "Salesforce for complex enterprise; HubSpot for speed and simplicity" },
-  { a: "gong", b: "clari", question: "Conversation Telemetry vs Pipeline Cadence Inspection", verdict: "Gong excels at call intelligence; Clari at forecast accuracy" },
-  { a: "salezx", b: "salesforce", question: "ERP Operational Execution vs Global CRM Ecosystem", verdict: "Salezx for cross-system ERP grounding; Salesforce for ecosystem scale" },
-  { a: "outreach", b: "salesloft", question: "Multi-Touch Sequences vs Rep Prioritization Engine", verdict: "Near parity — Outreach slightly stronger on sequences; Salesloft on prioritization" },
-  { a: "zoominfo", b: "apollo-io", question: "Verified Enterprise Intent vs High-Velocity B2B Data", verdict: "ZoomInfo for enterprise accuracy; Apollo for value and volume" },
-  { a: "seismic", b: "highspot", question: "Regulated Collateral Governance vs Digital Sales Rooms", verdict: "Seismic for compliance-heavy industries; Highspot for modern enablement" },
-  { a: "salezx", b: "microsoft-dynamics-365", question: "Autonomous Operational AI vs Microsoft Ecosystem", verdict: "Salezx for multi-ERP agentic workflows; Dynamics for Microsoft-native shops" },
-  { a: "zoho-crm", b: "hubspot", question: "Cost-Effective Full Suite vs Inbound Growth Engine", verdict: "Zoho for budget and breadth; HubSpot for inbound marketing power" },
-  { a: "pipedrive", b: "close", question: "Visual Kanban Simplicity vs High-Volume Inside Sales", verdict: "Pipedrive for pipeline visual simplicity; Close for built-in calling" },
-  { a: "6sense", b: "demandbase", question: "Dark Funnel Intent Signals vs ABM Orchestration", verdict: "6sense for anonymous intent; Demandbase for account-based advertising" },
-  { a: "intercom", b: "drift", question: "Autonomous Support/Sales AI vs Web Qualification", verdict: "Intercom for product-led support; Drift for live chat qualification" },
+  { a: "salesforce-einstein", b: "microsoft-copilot", question: "CRM-Native AI vs Productivity-Embedded AI", verdict: "Einstein for CRM-native intelligence; Copilot for Outlook/Teams workflows" },
+  { a: "salesforce", b: "sap-joule", question: "Global CRM Ecosystem vs ERP Intelligence", verdict: "Salesforce for ecosystem scale; SAP Joule for deep ERP grounding" },
+  { a: "microsoft-dynamics-365", b: "sap-joule", question: "Unified CRM+ERP vs Deep ERP Transactional AI", verdict: "Dynamics for Microsoft-native shops; SAP Joule for manufacturing/supply chain" },
+  { a: "salesforce-einstein", b: "sap-joule", question: "CRM AI Models vs ERP Transaction Intelligence", verdict: "Einstein for sales/marketing AI; SAP Joule for operational AI" },
+  { a: "microsoft-copilot", b: "salesforce-einstein", question: "Productivity Suite AI vs CRM Platform AI", verdict: "Copilot for sellers in Outlook/Teams; Einstein for CRM-native workflows" },
 ];
 
 function ComparisonDetail({ a, b }: { a: string; b: string }) {
-  const vA = VENDORS.find((v) => v.slug === a)!;
-  const vB = VENDORS.find((v) => v.slug === b)!;
+  const allVendors = getAllVendors();
+  const vA = allVendors.find((v) => v.slug === a)!;
+  const vB = allVendors.find((v) => v.slug === b)!;
   const aWins = vA.ascsComposite >= vB.ascsComposite;
   const leader = aWins ? vA : vB;
   const follower = aWins ? vB : vA;
@@ -141,8 +136,9 @@ export default function ComparePage() {
 
         <div className="space-y-2">
           {platformComparisons.map((c, i) => {
-            const vA = VENDORS.find((v) => v.slug === c.a)!;
-            const vB = VENDORS.find((v) => v.slug === c.b)!;
+            const allVendors = getAllVendors();
+            const vA = allVendors.find((v) => v.slug === c.a)!;
+            const vB = allVendors.find((v) => v.slug === c.b)!;
             const isOpen = openIndex === i;
             const aWins = vA.ascsComposite >= vB.ascsComposite;
 

@@ -51,7 +51,7 @@ export default async function Image() {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              backgroundColor: "#2563eb",
+              backgroundColor: "#111827",
               color: "#ffffff",
               fontSize: "20px",
               fontWeight: 900,
@@ -121,7 +121,7 @@ export default async function Image() {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: "28px", fontWeight: 900, color: "#38bdf8", fontFamily: "monospace" }}>30</span>
+            <span style={{ fontSize: "28px", fontWeight: 900, color: "#38bdf8", fontFamily: "monospace" }}>5</span>
             <span style={{ fontSize: "14px", color: "#64748b", fontWeight: 600 }}>Platforms Evaluated</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
