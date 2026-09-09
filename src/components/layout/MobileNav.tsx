@@ -39,47 +39,45 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </div>
 
         <nav className="px-6 py-6 space-y-6">
-          {NAV_GROUPS.map((group) => (
-            <div key={group.label}>
-              <p className="mb-2 text-xs font-semibold text-secondary-foreground">
-                {group.label}
-              </p>
-              <div className="space-y-1">
-                {group.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="group flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-surface-alt"
-                    onClick={onClose}
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-surface text-muted-foreground group-hover:border-primary/50 group-hover:text-primary-text transition-colors">
-                      <NavIcon name={item.icon} className="h-4 w-4" />
-                    </span>
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary-text transition-colors">
-                      {item.label}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+          {NAV_GROUPS.map((group) => {
+            if (group.directLink && group.href) {
+              return (
+                <Link
+                  key={group.label}
+                  href={group.href}
+                  className="block text-sm font-medium text-secondary-foreground hover:text-foreground transition-colors"
+                  onClick={onClose}
+                >
+                  {group.label}
+                </Link>
+              );
+            }
 
-          <div className="pt-4 border-t border-border">
-            <Link
-              href="/about"
-              className="group flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-surface-alt"
-              onClick={onClose}
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-surface text-muted-foreground group-hover:text-foreground transition-colors">
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>
-              </span>
-              <span className="text-sm font-medium text-foreground transition-colors">
-                About
-              </span>
-            </Link>
-          </div>
+            return (
+              <div key={group.label}>
+                <p className="mb-2 text-xs font-semibold text-secondary-foreground">
+                  {group.label}
+                </p>
+                <div className="space-y-1">
+                  {group.items.filter((item) => !item.hidden).map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-surface-alt"
+                      onClick={onClose}
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-surface text-muted-foreground group-hover:border-primary/50 group-hover:text-primary-text transition-colors">
+                        <NavIcon name={item.icon} className="h-4 w-4" />
+                      </span>
+                      <span className="text-sm font-medium text-foreground group-hover:text-primary-text transition-colors">
+                        {item.label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
 
           <div className="pt-2">
             <Link

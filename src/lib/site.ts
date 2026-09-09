@@ -13,57 +13,46 @@ export const NAVIGATION = [
     label: "Rankings",
     href: "/rankings",
     description: "Top platforms ranked by ASCS score",
+    hidden: false,
   },
   {
     label: "Compare",
     href: "/compare",
     description: "Head-to-head platform comparisons",
+    hidden: true,
   },
   {
     label: "Platforms",
     href: "/vendors",
     description: "Enterprise platforms evaluated by Reviews_CXO",
+    hidden: false,
   },
   {
     label: "Benchmarks",
     href: "/benchmarks",
     description: "Reproducible evaluations",
+    hidden: true,
   },
   {
     label: "Questions",
     href: "/questions",
     description: "Community questions with research analysis",
+    hidden: false,
   },
   {
     label: "Methodology",
     href: "/about/methodology",
     description: "ASCS 12-dimension framework",
+    hidden: false,
   },
 ] as const;
 
 export const NAV_GROUPS = [
   {
-    label: "Research",
-    items: [
-      {
-        label: "Rankings",
-        href: "/rankings",
-        description: "ASCS 2026 Enterprise Index — top platforms ranked",
-        icon: "chart",
-      },
-      {
-        label: "Benchmarks",
-        href: "/benchmarks",
-        description: "Reproducible lab tests & evaluations",
-        icon: "flask",
-      },
-      {
-        label: "Compare",
-        href: "/compare",
-        description: "Head-to-head platform architecture comparisons",
-        icon: "scale",
-      },
-    ],
+    label: "Rankings",
+    href: "/rankings",
+    directLink: true,
+    items: [],
   },
   {
     label: "Explore",
@@ -73,6 +62,14 @@ export const NAV_GROUPS = [
         href: "/vendors",
         description: "Enterprise AI sales platforms evaluated by Reviews_CXO",
         icon: "grid",
+        hidden: false,
+      },
+      {
+        label: "About",
+        href: "/about",
+        description: "Our mission, team, and independent research approach",
+        icon: "building",
+        hidden: false,
       },
     ],
   },
@@ -84,12 +81,14 @@ export const NAV_GROUPS = [
         href: "/questions",
         description: "Community questions with expert analysis",
         icon: "chat",
+        hidden: false,
       },
       {
         label: "Methodology",
         href: "/about/methodology",
         description: "ASCS 12-dimension evaluation framework",
         icon: "book",
+        hidden: false,
       },
     ],
   },

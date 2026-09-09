@@ -59,7 +59,7 @@ export function Footer() {
               Research
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {NAVIGATION.map((item) => (
+              {NAVIGATION.filter((item) => !item.hidden).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

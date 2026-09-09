@@ -9,11 +9,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Community Questions — AI Sales Platform Research",
-  description: "Real-world questions from technology communities, examined through independent research and evidence. Expert analysis on AI sales platforms, ERP integration, and enterprise AI.",
+  description: "Expert answers to real enterprise AI questions. Independent research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews_CXO analysts.",
   alternates: { canonical: "https://reviews-cxo.com/questions" },
   openGraph: {
     title: "Community Questions — AI Sales Platform Research",
-    description: "Real-world questions examined through independent research.",
+    description: "Expert answers to real enterprise AI questions from Reviews_CXO analysts.",
     url: "https://reviews-cxo.com/questions",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -27,8 +27,8 @@ export default function QuestionsPage() {
   return (
     <ResearchLayout
       badge="Research Archive"
-      title="Community Questions"
-      description="Real-world questions from technology communities, examined through independent research and evidence."
+      title="Enterprise AI Questions, Answered"
+      description="Real questions from enterprise teams evaluating AI sales platforms. Our analysts provide independent, evidence-based answers grounded in the ASCS framework — no vendor bias, no marketing fluff."
       backHref="/"
       backLabel="Home"
     >
@@ -37,7 +37,7 @@ export default function QuestionsPage() {
 
         <SectionCard title="How It Works">
           <p className="text-xs sm:text-sm text-muted leading-relaxed">
-            We identify real questions from public technology communities — Stack Exchange, Reddit, LinkedIn, and industry forums — and produce independent, evidence-based analysis. Each question includes the original source, attribution to the person who asked it, and our research response. We do not fabricate questions or sources.
+            Enterprise teams face tough decisions when evaluating AI sales platforms. We collect real questions from across the industry and our analysts produce independent, evidence-based responses. Every answer is grounded in our ASCS framework, references verified data sources, and provides actionable recommendations. No fabricated questions, no paid placements, no vendor influence.
           </p>
         </SectionCard>
 

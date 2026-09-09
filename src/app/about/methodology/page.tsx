@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { ASCS_DIMENSIONS, SCORING_RUBRIC, EVIDENCE_TYPES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -20,95 +19,106 @@ export const metadata: Metadata = {
 export default function MethodologyPage() {
   return (
     <>
-      <PageHeader
-        title="Research Methodology"
-        badge="ASCS Framework"
-        description="The AI Sales Capability Score (ASCS) is a 12-dimension evaluation framework designed to assess enterprise AI sales platforms on the capabilities that matter most to enterprise buyers in 2026."
-      />
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-background via-background to-surface-alt">
+        <div className="relative mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-4">
+            <span className="h-1 w-1 rounded-full bg-primary animate-pulse" />
+            ASCS Framework v3.0
+          </span>
+          <h1 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+            Research <span className="text-primary">Methodology</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
+            12-dimension evaluation framework for enterprise AI sales platforms.
+          </p>
 
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 space-y-20">
-
-        {/* SECTION 1: WHAT IS ASCS */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Core Framework</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">What is ASCS?</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              The AI Sales Capability Score (ASCS) is a standardized, evidence-based evaluation framework
-              for enterprise AI sales platforms. Every platform is scored across <strong>12 weighted dimensions</strong> on a
-              0–10 scale, backed by classified evidence sources. The result is a single composite score
-              that enables apples-to-apples comparison across vendors.
-            </p>
+          <div className="mt-8 grid grid-cols-3 gap-3 max-w-sm mx-auto">
+            <div className="rounded-lg border border-border/60 bg-surface/80 p-3">
+              <span className="font-mono text-xl font-black text-primary">12</span>
+              <p className="mt-0.5 text-[10px] font-semibold text-muted">Dimensions</p>
+            </div>
+            <div className="rounded-lg border border-border/60 bg-surface/80 p-3">
+              <span className="font-mono text-xl font-black text-primary">0–10</span>
+              <p className="mt-0.5 text-[10px] font-semibold text-muted">Scale</p>
+            </div>
+            <div className="rounded-lg border border-border/60 bg-surface/80 p-3">
+              <span className="font-mono text-xl font-black text-primary">7</span>
+              <p className="mt-0.5 text-[10px] font-semibold text-muted">Evidence Tiers</p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-border bg-surface p-5">
-              <span className="font-mono text-3xl font-black text-primary">12</span>
-              <p className="mt-1 text-sm font-bold text-foreground">Evaluation Dimensions</p>
-              <p className="mt-1 text-xs text-muted">Covering ERP connectivity, AI reasoning, security, agentic capability, and more.</p>
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+
+        {/* ── 01: What is ASCS ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">01</span>
+            <div className="h-px flex-1 bg-border/60" />
+          </div>
+          <div className="grid gap-8 lg:grid-cols-5">
+            <div className="lg:col-span-2">
+              <h2 className="text-xl font-black text-foreground tracking-tight">What is ASCS?</h2>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-5">
-              <span className="font-mono text-3xl font-black text-primary">0–10</span>
-              <p className="mt-1 text-sm font-bold text-foreground">Scoring Scale</p>
-              <p className="mt-1 text-xs text-muted">Standardized rubric applied consistently across all vendors and dimensions.</p>
-            </div>
-            <div className="rounded-xl border border-border bg-surface p-5">
-              <span className="font-mono text-3xl font-black text-primary">7</span>
-              <p className="mt-1 text-sm font-bold text-foreground">Evidence Tiers</p>
-              <p className="mt-1 text-xs text-muted">Every score cites its evidence class — from Observed (lab-tested) to Not Tested.</p>
+            <div className="lg:col-span-3 space-y-3">
+              <p className="text-sm leading-relaxed text-muted">
+                The AI Sales Capability Score (ASCS) is a standardized, evidence-based framework for enterprise AI sales platforms. Every platform is scored across <strong className="text-foreground font-semibold">12 weighted dimensions</strong> on a 0–10 scale, backed by classified evidence sources.
+              </p>
+              <div className="rounded-lg border border-primary/10 bg-primary/[0.02] p-3">
+                <p className="text-[11px] text-muted leading-relaxed">
+                  Every score cites its evidence class — from Observed (lab-tested) to Not Tested.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 2: 12 DIMENSIONS */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Evaluation Dimensions</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">The 12 ASCS Dimensions</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Each dimension measures a specific capability critical to enterprise AI sales success.
-              Dimensions are weighted by importance — cross-system reasoning and AI quality carry the
-              highest weights (12% each), while market adoption carries the lowest (5%).
-            </p>
+        {/* ── 02: 12 Dimensions ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">02</span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-2">The 12 ASCS Dimensions</h2>
+          <p className="text-sm text-muted mb-6 max-w-xl">Weighted by importance — cross-system reasoning and AI quality carry the highest weights (12% each).</p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {ASCS_DIMENSIONS.map((dim) => (
               <div
                 key={dim.number}
-                className="group rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
+                className="group rounded-lg border border-border/80 bg-surface p-4 transition-all hover:border-primary/30"
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-mono text-2xl font-black text-primary/30 group-hover:text-primary/60 transition-colors">
+                  <span className="font-mono text-xl font-black text-primary/15 group-hover:text-primary/30 transition-colors">
                     {dim.number.toString().padStart(2, "0")}
                   </span>
-                  <span className="rounded bg-primary/10 border border-primary/20 px-2 py-0.5 text-[11px] font-mono font-bold text-primary">
+                  <span className="rounded bg-primary/10 border border-primary/15 px-1.5 py-0.5 text-[9px] font-mono font-bold text-primary">
                     {dim.weight}
                   </span>
                 </div>
-                <h3 className="mt-3 text-sm font-bold text-foreground">{dim.name}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted">{dim.description}</p>
-                <div className="mt-3 pt-3 border-t border-border">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-warning">Why it matters</p>
-                  <p className="text-[11px] text-muted mt-0.5">{dim.whyItMatters}</p>
+                <h3 className="mt-2 text-xs font-bold text-foreground">{dim.name}</h3>
+                <p className="mt-1 text-[11px] leading-relaxed text-muted">{dim.description}</p>
+                <div className="mt-2 pt-2 border-t border-border/60">
+                  <p className="text-[9px] font-bold uppercase tracking-wider text-warning/80">Why it matters</p>
+                  <p className="text-[10px] text-muted mt-0.5">{dim.whyItMatters}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SECTION 3: SCORING RUBRIC */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Scoring System</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">Scoring Rubric</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Every dimension is scored on a 0–10 scale using this standardized rubric. The rubric ensures
-              consistent, comparable scoring across all vendors regardless of category or market position.
-            </p>
+        {/* ── 03: Scoring Rubric ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">03</span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-2">Scoring Rubric</h2>
+          <p className="text-sm text-muted mb-6 max-w-xl">Standardized 0–10 scale applied consistently across all vendors and dimensions.</p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {SCORING_RUBRIC.map((row) => {
               const isLow = row.range === "0" || row.range === "1–2";
               const isMid = row.range === "3–4" || row.range === "5–6";
@@ -116,56 +126,51 @@ export default function MethodologyPage() {
               return (
                 <div
                   key={row.range}
-                  className={`rounded-xl border p-5 ${
+                  className={`rounded-lg border p-4 transition-all hover:shadow-sm ${
                     isHigh
-                      ? "border-success/20 bg-success/5"
+                      ? "border-success/20 bg-success/[0.03] hover:border-success/40"
                       : isMid
-                        ? "border-warning/20 bg-warning/5"
-                        : "border-danger/20 bg-danger/5"
+                        ? "border-warning/20 bg-warning/[0.03] hover:border-warning/40"
+                        : "border-danger/20 bg-danger/[0.03] hover:border-danger/40"
                   }`}
                 >
-                  <span className={`font-mono text-2xl font-black ${
-                    isHigh ? "text-success" : isMid ? "text-warning" : "text-danger"
+                  <span className={`font-mono text-xl font-black ${
+                    isHigh ? "text-success/70" : isMid ? "text-warning/70" : "text-danger/70"
                   }`}>
                     {row.range}
                   </span>
-                  <p className="mt-2 text-sm font-medium text-foreground">{row.meaning}</p>
+                  <p className="mt-1.5 text-xs font-medium text-foreground leading-relaxed">{row.meaning}</p>
                 </div>
               );
             })}
           </div>
         </section>
 
-        {/* SECTION 4: EVIDENCE CLASSIFICATION */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Evidence System</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">Evidence Classification Taxonomy</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Every score is backed by a classified evidence source. The classification determines how much
-              weight a piece of evidence carries in the final score. This ensures transparency — you always
-              know how confident we are in a score.
-            </p>
+        {/* ── 04: Evidence Classification ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">04</span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-2">Evidence Classification</h2>
+          <p className="text-sm text-muted mb-6 max-w-xl">Every score cites its evidence class — full transparency on confidence levels.</p>
 
-          <div className="mt-8 space-y-2">
-            {EVIDENCE_TYPES.map((type) => {
+          <div className="rounded-lg border border-border/80 bg-surface overflow-hidden">
+            {EVIDENCE_TYPES.map((type, idx) => {
               const weightNum = parseFloat(type.weight) || 0;
               const barWidth = weightNum * 100;
               return (
                 <div
                   key={type.id}
-                  className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-primary/30"
+                  className={`flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-alt/50 ${
+                    idx !== EVIDENCE_TYPES.length - 1 ? "border-b border-border/50" : ""
+                  }`}
                 >
-                  <div className="flex items-center gap-3 sm:w-48 shrink-0">
-                    <span className="font-mono text-lg font-black text-primary">{type.weight}</span>
-                    <span className="text-sm font-bold text-foreground">{type.label}</span>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-xs text-muted leading-relaxed">{type.description}</p>
-                  </div>
-                  <div className="w-full sm:w-32 shrink-0">
-                    <div className="h-2 rounded-full bg-border overflow-hidden">
+                  <span className="font-mono text-sm font-black text-primary/70 w-10 shrink-0">{type.weight}</span>
+                  <span className="text-xs font-bold text-foreground w-32 shrink-0">{type.label}</span>
+                  <p className="flex-1 text-[11px] text-muted leading-relaxed min-w-0 hidden sm:block">{type.description}</p>
+                  <div className="w-24 shrink-0">
+                    <div className="h-1.5 rounded-full bg-border/60 overflow-hidden">
                       <div
                         className={`h-full rounded-full ${
                           weightNum >= 0.9 ? "bg-success" : weightNum >= 0.7 ? "bg-primary" : weightNum > 0 ? "bg-warning" : "bg-danger"
@@ -180,33 +185,28 @@ export default function MethodologyPage() {
           </div>
         </section>
 
-        {/* SECTION 5: COMPOSITE CALCULATION */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Score Calculation</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">Composite Score Calculation</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              The composite ASCS score is a weighted average of all tested dimensions. Each dimension
-              contributes according to its weight. Dimensions classified as &ldquo;Not Tested&rdquo; are
-              excluded from the average and explicitly noted in the vendor profile.
-            </p>
+        {/* ── 05: Weight Distribution ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">05</span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-2">Weight Distribution</h2>
 
-          <div className="mt-8 rounded-xl border border-border bg-surface p-6 sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-wider text-muted mb-4">Weight Distribution</p>
-            <div className="space-y-3">
+          <div className="rounded-lg border border-border/80 bg-surface p-5">
+            <div className="space-y-2.5">
               {ASCS_DIMENSIONS.map((dim) => {
                 const weightNum = parseFloat(dim.weight);
                 return (
-                  <div key={dim.number} className="flex items-center gap-3">
-                    <span className="w-40 sm:w-56 text-xs font-medium text-foreground truncate">{dim.name}</span>
-                    <div className="flex-1 h-3 rounded-full bg-border overflow-hidden">
+                  <div key={dim.number} className="group flex items-center gap-2">
+                    <span className="w-40 sm:w-48 text-[11px] font-medium text-muted group-hover:text-foreground transition-colors truncate">{dim.name}</span>
+                    <div className="flex-1 h-2 rounded-full bg-border/50 overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-primary"
+                        className="h-full rounded-full bg-gradient-to-r from-primary/80 to-primary"
                         style={{ width: `${weightNum * 10}%` }}
                       />
                     </div>
-                    <span className="font-mono text-xs font-bold text-primary w-10 text-right">{dim.weight}</span>
+                    <span className="font-mono text-[10px] font-bold text-primary/70 w-8 text-right">{dim.weight}</span>
                   </div>
                 );
               })}
@@ -214,58 +214,101 @@ export default function MethodologyPage() {
           </div>
         </section>
 
-        {/* SECTION 6: BENCHMARK PROTOCOL */}
-        <section>
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Benchmark Process</span>
-            <h2 className="text-3xl font-black text-foreground mt-2">Benchmark Protocol</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Every benchmark published by Reviews_CXO follows this 7-step protocol to ensure
-              reproducibility, transparency, and scientific rigor.
-            </p>
+        {/* ── 06: Benchmark Protocol ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">06</span>
+            <div className="h-px flex-1 bg-border/60" />
           </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-2">Benchmark Protocol</h2>
+          <p className="text-sm text-muted mb-6 max-w-xl">7-step protocol ensuring reproducibility, transparency, and scientific rigor.</p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { step: "01", title: "Research Question", desc: "A clear, buyer-oriented hypothesis that defines what we are testing." },
-              { step: "02", title: "Dataset Design", desc: "Synthetic or real data with documented ground truth labels." },
-              { step: "03", title: "Evaluation Environments", desc: "Representative lab configurations clearly labeled as such." },
-              { step: "04", title: "Metrics", desc: "Pre-defined, standardized evaluation criteria agreed before execution." },
-              { step: "05", title: "Execution", desc: "Multiple runs per environment with statistical significance testing." },
-              { step: "06", title: "Analysis", desc: "Results with confidence intervals, limitations, and reproducibility instructions." },
-              { step: "07", title: "Publication", desc: "Full report with dataset and code released under open licenses." },
+              { step: "01", title: "Research Question", desc: "Clear buyer-oriented hypothesis." },
+              { step: "02", title: "Dataset Design", desc: "Documented ground truth labels." },
+              { step: "03", title: "Environments", desc: "Representative lab configurations." },
+              { step: "04", title: "Metrics", desc: "Pre-defined evaluation criteria." },
+              { step: "05", title: "Execution", desc: "Multiple runs with significance testing." },
+              { step: "06", title: "Analysis", desc: "Confidence intervals and limitations." },
+              { step: "07", title: "Publication", desc: "Open datasets and code." },
             ].map((item) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-border bg-surface p-5 transition-all hover:border-primary/40 hover:shadow-sm"
+                className="group rounded-lg border border-border/80 bg-surface p-3 transition-all hover:border-primary/30"
               >
-                <span className="font-mono text-2xl font-black text-primary/30">{item.step}</span>
-                <h3 className="mt-2 text-sm font-bold text-foreground">{item.title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted">{item.desc}</p>
+                <span className="font-mono text-lg font-black text-primary/15 group-hover:text-primary/30 transition-colors">{item.step}</span>
+                <h3 className="mt-1 text-xs font-bold text-foreground">{item.title}</h3>
+                <p className="mt-0.5 text-[10px] text-muted">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SECTION 7: REPRODUCIBILITY & PEER REVIEW */}
-        <section>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Reproducibility</span>
-              <h2 className="text-xl font-black text-foreground mt-2">Open & Auditable</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                Any independent researcher should be able to read the ASCS specification and replicate
-                the scoring methodology. All datasets are versioned and checksummed. Raw data is preserved
-                and available for audit. Methodology changes between versions are documented in changelogs.
+        {/* ── 07: Evaluation Process ── */}
+        <section className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">07</span>
+            <div className="h-px flex-1 bg-border/60" />
+          </div>
+          <h2 className="text-xl font-black text-foreground tracking-tight mb-4">Evaluation Process</h2>
+
+          <div className="rounded-lg border border-border/80 bg-surface p-5">
+            <div className="relative">
+              <div className="absolute left-[11px] top-3 bottom-3 w-px bg-border/60" />
+              <div className="space-y-0">
+                {["Evidence Collection", "Evidence Review", "Cross-Source Analysis", "12-Dimension ASCS Evaluation", "Independent Verdict"].map((step, i, arr) => (
+                  <div key={step} className="relative flex items-center gap-3 py-2">
+                    <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary/20 bg-surface text-[9px] font-bold text-primary shrink-0">
+                      {i + 1}
+                    </span>
+                    <span className="text-xs font-semibold text-foreground">{step}</span>
+                    {i < arr.length - 1 && <span className="text-border/60 ml-auto hidden sm:inline text-[10px]">→</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 pt-3 border-t border-border/60">
+              <p className="text-[11px] text-muted leading-relaxed">
+                Reviews_CXO considers documented capabilities, architecture, enterprise fit, customer-market evidence, cost considerations, strengths, limitations, and uncertainty when forming its assessment.
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Peer Review</span>
-              <h2 className="text-xl font-black text-foreground mt-2">External Advisory Board</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                The ASCS framework is reviewed by an external advisory board of 2–3 domain experts
-                before publication. The advisory board audits for bias, ensures methodological rigor,
-                and signs off on the framework before any public release.
+          </div>
+        </section>
+
+        {/* ── 08: Reproducibility & Peer Review ── */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">08</span>
+            <div className="h-px flex-1 bg-border/60" />
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-lg border border-border/80 bg-surface p-5 transition-all hover:border-primary/30">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="flex h-6 w-6 items-center justify-center rounded bg-success/10">
+                  <svg className="h-3 w-3 text-success" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                </span>
+                <h3 className="text-sm font-bold text-foreground">Open & Auditable</h3>
+              </div>
+              <p className="text-xs leading-relaxed text-muted">
+                All datasets are versioned and checksummed. Raw data is preserved and available for audit. Methodology changes are documented in changelogs.
+              </p>
+            </div>
+
+            <div className="rounded-lg border border-border/80 bg-surface p-5 transition-all hover:border-primary/30">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10">
+                  <svg className="h-3 w-3 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </span>
+                <h3 className="text-sm font-bold text-foreground">External Advisory Board</h3>
+              </div>
+              <p className="text-xs leading-relaxed text-muted">
+                Reviewed by 2–3 domain experts before publication. Audits for bias, ensures methodological rigor, and signs off before release.
               </p>
             </div>
           </div>

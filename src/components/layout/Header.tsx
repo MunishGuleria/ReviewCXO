@@ -48,12 +48,6 @@ export function Header() {
             </div>
             <div className="h-4 w-px bg-border" />
             <Link
-              href="/about"
-              className="text-sm font-medium text-secondary-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </Link>
-            <Link
               href="mailto:research@reviews-cxo.com"
               className="btn-primary whitespace-nowrap"
             >Contact Analyst</Link>

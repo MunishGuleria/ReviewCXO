@@ -19,29 +19,29 @@ export function ResearchLayout({
 }: ResearchLayoutProps) {
   return (
     <>
-    <div className="relative py-14 sm:py-18">
+    <div className="relative py-8 sm:py-10">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href={backHref}
-            className="group mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors"
+            className="group mb-3 inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
             {backLabel}
           </Link>
-          <span className="mb-3 block w-fit rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
+          <span className="mb-2 block w-fit rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
             {badge}
           </span>
           <h1 className="max-w-4xl text-3xl font-black tracking-tight text-foreground sm:text-4xl" style={{ letterSpacing: '-0.025em' }}>
             {title}
           </h1>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-2 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
             {description}
           </p>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">{children}</div>
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">{children}</div>
     </>
   );
 }
