@@ -4,7 +4,7 @@ import { SITE, NAVIGATION, ABOUT_LINKS } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="relative border-t border-border bg-surface">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-4">
@@ -114,10 +114,10 @@ export function Footer() {
               </p>
               <Link
                 href="/newsletter"
-                className="mt-3 inline-flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-white transition-all hover:bg-primary-dark shadow-sm"
+                className="mt-3 inline-flex items-center gap-1 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground transition-all hover:opacity-90 shadow-sm"
               >
                 Subscribe
-                <span className="text-white/70">→</span>
+                <span className="text-primary-foreground/70">→</span>
               </Link>
             </div>
           </div>

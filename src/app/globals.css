@@ -5,6 +5,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-text: var(--primary-text);
+  --color-primary-foreground: var(--primary-foreground);
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
   --color-surface-elevated: var(--surface-elevated);

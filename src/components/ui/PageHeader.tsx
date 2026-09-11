@@ -6,10 +6,10 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, badge }: PageHeaderProps) {
   return (
-    <div className="relative py-14 sm:py-18">
+    <div className="relative py-6 sm:py-8">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {badge && (
-          <span className="mb-3 inline-block rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
+          <span className="mb-1.5 inline-block rounded-full bg-success/10 border border-success/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
             {badge}
           </span>
         )}
@@ -17,7 +17,7 @@ export function PageHeader({ title, description, badge }: PageHeaderProps) {
           {title}
         </h1>
         {description && (
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-1.5 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
             {description}
           </p>
         )}

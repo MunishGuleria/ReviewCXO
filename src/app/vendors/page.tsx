@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `Enterprise AI Sales Platforms — Directory & ASCS Scores`,
-  description: `Directory of enterprise AI sales platforms. Architectural analysis, ASCS benchmarks, and integration capabilities.`,
+  description: `Independent evaluations of enterprise AI platforms. Architecture analysis, ASCS scores, and integration capabilities for Salesforce, Microsoft, SAP, and more.`,
   alternates: { canonical: "https://reviews-cxo.com/vendors" },
   openGraph: {
     title: `Enterprise AI Sales Platforms`,
-    description: `Directory of enterprise AI sales platforms with ASCS scores.`,
+    description: `Independent evaluations of enterprise AI platforms with ASCS scores.`,
     url: "https://reviews-cxo.com/vendors",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -26,13 +26,13 @@ export default function VendorsPage() {
     <>
       <PageHeader
         badge="Platform Directory"
-        title="Enterprise AI Platform Directory"
-        description="Comprehensive architecture evaluations, deployment specs, and ASCS benchmarks across enterprise platforms."
+        title="Every Enterprise AI Platform, Independently Evaluated"
+        description="No vendor pays for placement. No sponsored rankings. Just architecture analysis, deployment specs, and ASCS scores across every platform that matters."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
         {/* EMPIRICAL LAB STATS */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border bg-surface p-5 text-center shadow-sm">
             <p className="text-3xl font-black text-primary font-mono">{visibleVendors.length}</p>
             <p className="text-xs font-medium text-muted mt-1">Evaluated Platforms</p>
@@ -61,7 +61,7 @@ export default function VendorsPage() {
             <span className="text-xs text-muted font-mono">{sorted.length} Platforms</span>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sorted.map((v, i) => (
               <VendorCard key={v.slug} vendor={v} rank={i + 1} />
             ))}
@@ -75,7 +75,7 @@ export default function VendorsPage() {
             <h2 className="text-2xl font-black text-foreground mt-1">Browse by Enterprise Category</h2>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {VENDOR_CATEGORIES.map((cat) => {
               const catVendors = visibleVendors.filter((v) => v.category === cat);
               if (catVendors.length === 0) return null;
@@ -100,10 +100,10 @@ export default function VendorsPage() {
                           href={`/vendors/${v.slug}`}
                           className="group flex items-center justify-between rounded-lg p-2 text-xs transition-colors hover:bg-surface-alt"
                         >
-                          <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          <span className="font-semibold text-foreground group-hover:text-primary transition-colors truncate min-w-0 flex-1 mr-2">
                             {v.name}
                           </span>
-                          <span className="font-mono text-muted group-hover:text-foreground">
+                          <span className="font-mono text-muted group-hover:text-foreground shrink-0">
                             ASCS {v.ascsComposite}/10
                           </span>
                         </Link>

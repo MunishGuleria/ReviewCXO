@@ -29,7 +29,7 @@ export default function DisclosurePage() {
         {/* Core Statement Card */}
         <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 relative overflow-hidden">
           <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white font-mono font-bold text-lg shadow-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground font-mono font-bold text-lg shadow-sm">
               §
             </div>
             <div>

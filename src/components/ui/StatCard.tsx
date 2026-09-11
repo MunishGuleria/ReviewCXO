@@ -40,7 +40,7 @@ interface StatGridProps {
 }
 
 export function StatGrid({ items, columns = 4 }: StatGridProps) {
-  const gridClass = columns === 2 ? "grid-cols-2" : columns === 3 ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-4";
+  const gridClass = columns === 2 ? "grid-cols-2" : columns === 3 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-4";
   return (
     <div className={`grid ${gridClass} gap-4`}>
       {items.map((item) => (
@@ -71,7 +71,7 @@ interface StatRowGridProps {
 }
 
 export function StatRowGrid({ items, columns = 4 }: StatRowGridProps) {
-  const gridClass = columns === 2 ? "grid-cols-2" : columns === 3 ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-4";
+  const gridClass = columns === 2 ? "grid-cols-2" : columns === 3 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-4";
   return (
     <div className={`grid ${gridClass} gap-3 text-xs`}>
       {items.map((item) => (

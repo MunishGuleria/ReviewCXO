@@ -30,9 +30,9 @@ export default function AboutPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
         {/* Mission & Inflection Grid */}
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-surface p-8 shadow-sm">
+          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">Core Directive</span>
-            <h2 className="mt-2 text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
+            <h2 className="mt-2 text-xl sm:text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
               Our Mission
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
@@ -43,9 +43,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-8 shadow-sm">
+          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
             <span className="text-xs font-bold uppercase tracking-wider text-accent">Market Landscape</span>
-            <h2 className="mt-2 text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
+            <h2 className="mt-2 text-xl sm:text-2xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
               Why Evidence Matters Now
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div>
           <div className="mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">Pillars</span>
-            <h2 className="mt-1 text-2xl font-black text-foreground">Our Research Methodology</h2>
+            <h2 className="mt-1 text-xl sm:text-2xl font-black text-foreground">Our Research Methodology</h2>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

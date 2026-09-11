@@ -45,7 +45,7 @@ export function StarRating({ rating, size = "md", showNumber = true, reviewCount
   }
 
   return (
-    <div className="flex items-center gap-1.5" aria-label={`Rating: ${rating} out of 5 stars`}>
+    <div className="flex flex-wrap items-center gap-1.5" aria-label={`Rating: ${rating} out of 5 stars`}>
       <div className="flex items-center gap-0.5">{stars}</div>
       {showNumber && (
         <span className="font-bold tabular-nums text-foreground">{rating}</span>

@@ -4,11 +4,11 @@ import { ASCS_DIMENSIONS, SCORING_RUBRIC, EVIDENCE_TYPES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Methodology",
   description:
-    "The ASCS (AI Sales Capability Score) framework — our 12-dimension evaluation methodology for AI enterprise sales platforms.",
+    "The ASCS (AI Sales Capability Score) framework — our 12-dimension evaluation methodology for enterprise AI sales platforms. No vendor influence, no pay-to-play.",
   alternates: { canonical: "https://reviews-cxo.com/about/methodology" },
   openGraph: {
     title: "ASCS Research Methodology",
-    description: "12-dimension evaluation methodology for AI enterprise sales platforms.",
+    description: "12-dimension evaluation methodology for enterprise AI sales platforms.",
     url: "https://reviews-cxo.com/about/methodology",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -21,16 +21,16 @@ export default function MethodologyPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-background via-background to-surface-alt">
-        <div className="relative mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-4">
+        <div className="relative mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-2">
             <span className="h-1 w-1 rounded-full bg-primary animate-pulse" />
             ASCS Framework v3.0
           </span>
           <h1 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-            Research <span className="text-primary">Methodology</span>
+            How We <span className="text-primary">Actually</span> Evaluate Platforms
           </h1>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
-            12-dimension evaluation framework for enterprise AI sales platforms.
+          <p className="mx-auto mt-2 max-w-xl text-sm text-muted">
+            12 dimensions. 7 evidence tiers. Zero vendor influence. Every score backed by verifiable data, not marketing claims.
           </p>
 
           <div className="mt-8 grid grid-cols-3 gap-3 max-w-sm mx-auto">
@@ -167,9 +167,9 @@ export default function MethodologyPage() {
                   }`}
                 >
                   <span className="font-mono text-sm font-black text-primary/70 w-10 shrink-0">{type.weight}</span>
-                  <span className="text-xs font-bold text-foreground w-32 shrink-0">{type.label}</span>
+                  <span className="text-xs font-bold text-foreground w-24 sm:w-32 shrink-0">{type.label}</span>
                   <p className="flex-1 text-[11px] text-muted leading-relaxed min-w-0 hidden sm:block">{type.description}</p>
-                  <div className="w-24 shrink-0">
+                  <div className="w-16 sm:w-24 shrink-0">
                     <div className="h-1.5 rounded-full bg-border/60 overflow-hidden">
                       <div
                         className={`h-full rounded-full ${

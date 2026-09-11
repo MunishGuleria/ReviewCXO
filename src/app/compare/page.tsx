@@ -76,7 +76,7 @@ function ComparisonDetail({ a, b }: { a: string; b: string }) {
 
             return (
               <div key={dim.number} className="flex items-center gap-2 text-xs">
-                <span className="w-36 truncate font-medium text-foreground">{dim.name}</span>
+                <span className="w-28 sm:w-36 truncate font-medium text-foreground">{dim.name}</span>
                 <div className="flex-1 flex items-center gap-1">
                   <span className={`font-mono font-bold w-8 text-right ${!tied && aLeads ? "text-primary" : "text-muted"}`}>
                     {scoreA}
@@ -153,7 +153,7 @@ export default function ComparePage() {
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-black ${isOpen ? "bg-primary text-white" : "bg-surface-alt border border-border text-muted"}`}>
+                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-black ${isOpen ? "bg-primary text-primary-foreground" : "bg-surface-alt border border-border text-muted"}`}>
                       {i + 1}
                     </span>
                     <div className="min-w-0">

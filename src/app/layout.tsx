@@ -53,6 +53,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: import("next").Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 const jsonLdGlobal = {
   "@context": "https://schema.org",
   "@graph": [
@@ -108,7 +114,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGlobal) }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-background text-foreground antialiased selection:bg-primary selection:text-white">
+      <body className="flex min-h-screen flex-col bg-background text-foreground antialiased overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

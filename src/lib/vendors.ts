@@ -1311,23 +1311,6 @@ export const VENDORS: Vendor[] = [
       ],
       contradictions: "Strong independent analyst ratings contrast with 77% deployment failure rate. Product capability is high but implementation risk is equally high.",
     },
-    aiCapabilities: {
-      assessment: "Einstein AI provides the broadest AI capability set among CRM platforms. Lead scoring, opportunity scoring, engagement scoring, prediction builder, natural language analytics, and Agentforce agents — the portfolio covers the full sales intelligence spectrum. The native CRM integration means no data movement is required.",
-      strengths: [
-        "Predictive Scoring — lead, opportunity, and account scoring based on historical patterns",
-        "Customer 360 Intelligence — comprehensive customer view across all Salesforce clouds",
-        "Natural Language Analytics — conversational data exploration without SQL",
-        "Agentforce — autonomous agents for sales, service, and operations",
-        "Trust Layer — enterprise-grade security framework for AI governance",
-      ],
-      weaknesses: [
-        "Data Cloud dependency — mandatory prerequisite adds cost and complexity",
-        "Hallucination management — 3-27% rates require careful guardrail configuration",
-        "Documentation — configuration guidance is reportedly vague and insufficient",
-        "Agent reliability — agents can fail silently or hallucinate details without oversight",
-      ],
-      governance: "Einstein Trust Layer provides data masking, toxicity detection, grounding, and audit trail. Uses Azure OpenAI (not OpenAI direct). All interactions logged for enterprise auditing. However, guardrail configuration requires specialized expertise and documentation is reportedly vague.",
-    },
     pricingDetails: {
       model: "Multi-layer: per-user/month for Einstein1, credit-based for Data Cloud, per-conversation for Agentforce.",
       breakdown: [
@@ -1514,24 +1497,6 @@ export const VENDORS: Vendor[] = [
         "Fiori Adoption — 'users resented being forced to abandon SAP GUI'",
       ],
       contradictions: "Strong vision for unified SAP AI contrasts with 80% GUI gap and migration failure. Joule Studio is genuinely valuable but limited by the prerequisite S/4HANA Cloud adoption.",
-    },
-    aiCapabilities: {
-      assessment: "SAP Joule provides conversational AI across the SAP portfolio. Joule Studio is the strongest capability — no-code/low-code agent building for SAP business processes is genuinely valuable. However, the 80% GUI gap and legacy architecture constraints limit practical utility for most SAP installations.",
-      strengths: [
-        "Natural Language Interface — reduces barrier to entry for non-technical SAP users",
-        "Cross-Product Consistency — unified AI experience across all SAP cloud products",
-        "Joule Studio — no-code/low-code agent building for domain experts",
-        "SAP Ecosystem Integration — direct access to SAP data without external movement",
-        "Business Process Focus — AI assistance tailored to SAP-specific processes",
-      ],
-      weaknesses: [
-        "80% GUI Gap — restricted to Fiori/ABAP Cloud, ignoring majority of SAP usage",
-        "Legacy Architecture — 15-year-old codebase limits modern AI capabilities",
-        "Migration Dependency — value contingent on S/4HANA Cloud migration which is failing",
-        "Feature Delivery — only 2 of 100+ requested launches from 2024 went GA",
-        "User Adoption — Fiori resistance limits Joule adoption",
-      ],
-      governance: "Data remains within SAP infrastructure. No external AI model training on customer data. GDPR compliance through SAP's existing framework. However, limited independent security audit information available and Joule Studio agent security requires careful configuration.",
     },
     pricingDetails: {
       model: "Included with RISE/GROW subscriptions. Joule Studio extensions via BTP credits. No public per-user pricing.",

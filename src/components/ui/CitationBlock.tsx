@@ -15,7 +15,7 @@ export function CitationBlock({
 }: CitationBlockProps) {
   return (
     <div className="rounded-xl border border-border bg-surface-alt/60 p-5 shadow-sm">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <p className="text-xs font-bold uppercase tracking-wider text-muted font-mono">
           How to Cite This Research
         </p>

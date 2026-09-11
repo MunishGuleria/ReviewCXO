@@ -11,7 +11,7 @@ export function PageToolbar({ count, label, actionLabel, actionHref }: PageToolb
   if (!count && !actionLabel) return null;
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       {label && (
         <p className="text-sm text-muted">
           {count !== undefined && <span className="font-bold text-foreground">{count}</span>} {label}

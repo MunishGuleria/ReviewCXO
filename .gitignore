@@ -97,3 +97,16 @@ TODO.*
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+# scratch / test files
+*.txt
+chal.txt
+chalbe.txt
+simple.txt
+
+# generated data
+visible_vendors.json
+SESSION-FINDINGS.md
+
+# test results
+test-results/

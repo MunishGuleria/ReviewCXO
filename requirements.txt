@@ -20,3 +20,6 @@ eslint-config-next@16.3.4
 prettier@3.9.6
 tailwindcss@4
 typescript@5
+
+# Testing
+@playwright/test@1.52.0

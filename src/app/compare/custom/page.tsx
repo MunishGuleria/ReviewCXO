@@ -67,7 +67,7 @@ export default function CustomComparePage() {
         {/* EMPTY STATE */}
         {!showComparison && (
           <div className="text-center py-16">
-            <span className="font-mono text-5xl font-black text-primary/20">VS</span>
+            <span className="font-mono text-4xl sm:text-5xl font-black text-primary/20">VS</span>
             <p className="mt-4 text-sm text-muted">Select two different platforms above to see the comparison.</p>
           </div>
         )}

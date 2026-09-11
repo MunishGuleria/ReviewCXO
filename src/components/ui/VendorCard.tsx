@@ -20,13 +20,13 @@ export function VendorCard({ vendor, rank }: VendorCardProps) {
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
-          <div className="flex items-start gap-3 min-w-0">
+          <div className="flex items-start gap-3 min-w-0 flex-1">
             {rank !== undefined && (
               <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-mono text-sm ${getRankStyle(rank)}`}>
                 {rank < 10 ? `0${rank}` : rank}
               </span>
             )}
-            <div className="min-w-0 pt-0.5">
+            <div className="min-w-0 flex-1 pt-0.5">
               <h3 className="font-bold text-lg leading-tight text-foreground group-hover:text-primary transition-colors truncate">
                 {vendor.name}
               </h3>

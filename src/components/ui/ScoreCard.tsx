@@ -36,7 +36,7 @@ export function ScoreCard({ vendorName, category, overallScore, dimensions, badg
         </div>
         <div className="text-right">
           <div className="flex items-baseline justify-end gap-1">
-            <span className="text-3xl font-bold text-foreground">{overallScore}</span>
+            <span className="text-2xl sm:text-3xl font-bold text-foreground">{overallScore}</span>
             <span className="text-sm text-muted-foreground">/10</span>
           </div>
           <div className={`mt-2 inline-block rounded border px-2 py-0.5 text-[10px] font-bold ${verdictColor} ${verdictBg}`}>

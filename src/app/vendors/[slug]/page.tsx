@@ -158,9 +158,9 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* MAIN COLUMN */}
-          <div className="space-y-10 lg:col-span-2">
+          <div className="flex flex-col h-full gap-10 lg:col-span-2">
             <DisclosureBanner />
 
             {/* PLATFORM OVERVIEW — Concise Analyst Format */}
@@ -194,7 +194,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
             </section>
 
             {/* ASCS 12-DIMENSION SCORECARD */}
-            <section className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
+            <section className="mt-auto rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-border pb-4 mb-6">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Research</span>
@@ -221,9 +221,9 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
                         </div>
                         <p className="text-xs text-muted mt-0.5">{dim.description}</p>
                       </div>
-                      <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                      <div className="flex flex-wrap items-center justify-between sm:justify-end gap-3 shrink-0">
                         <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-muted bg-surface px-2 py-0.5 rounded border border-border">{evidence}</span>
-                        <div className="flex items-center gap-2 w-28">
+                        <div className="flex items-center gap-2 w-28 shrink-0">
                           <div className="h-2 flex-1 rounded-full bg-border overflow-hidden">
                             <div className={`h-full rounded-full ${score >= 8 ? "bg-accent" : score >= 6 ? "bg-primary" : "bg-warning"}`} style={{ width: `${(score / 10) * 100}%` }} />
                           </div>
@@ -236,73 +236,24 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
               </div>
             </section>
 
-            {/* AI CAPABILITIES */}
-            {vendor.aiCapabilities ? (
-              <section className="rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
-                <div className="border-b border-border pb-4 mb-6">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Technical Deep-Dive</span>
-                  <h2 className="text-xl font-black text-foreground mt-1">AI Capabilities</h2>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">Assessment</h3>
-                    <div className="text-sm text-muted leading-relaxed border-l-2 border-primary/40 pl-4 bg-surface-alt/20 py-2 rounded-r-lg">
-                      <p>{vendor.aiCapabilities.assessment}</p>
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="rounded-xl border border-border bg-surface-alt/40 p-5">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">AI Strengths</h4>
-                      <ul className="space-y-2 text-xs text-muted leading-relaxed">
-                        {vendor.aiCapabilities.strengths.map(s => (
-                          <li key={s} className="flex items-start gap-2">
-                            <span className="text-primary font-bold mt-0.5 text-xs">-</span> {s}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="rounded-xl border border-warning/20 bg-warning/5 p-5">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-warning mb-3">AI Weaknesses</h4>
-                      <ul className="space-y-2 text-xs text-muted leading-relaxed">
-                        {vendor.aiCapabilities.weaknesses.map(w => (
-                          <li key={w} className="flex items-start gap-2">
-                            <span className="text-warning font-bold mt-0.5 text-xs">-</span> {w}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {vendor.aiCapabilities.governance && (
-                    <div className="rounded-xl border border-border bg-surface-alt/40 p-5">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">Governance & Safety</h4>
-                      <p className="text-xs text-muted leading-relaxed">{vendor.aiCapabilities.governance}</p>
-                    </div>
-                  )}
-                </div>
-              </section>
-            ) : null}
 
 
 
           </div>
 
           {/* SIDEBAR */}
-          <div className="space-y-6">
+          <div className="flex flex-col h-full gap-6">
             {/* ENTERPRISE SPECS */}
             <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
               <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">Enterprise Specs</h3>
               <dl className="space-y-3 text-xs">
-                <div className="flex justify-between items-start gap-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-2">
                   <dt className="text-muted">Pricing</dt>
-                  <dd className="font-bold text-foreground text-right">{vendor.pricing}</dd>
+                  <dd className="font-bold text-foreground sm:text-right">{vendor.pricing}</dd>
                 </div>
-                <div className="flex justify-between items-center border-t border-border pt-2.5">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-t border-border pt-2.5 gap-1 sm:gap-2">
                   <dt className="text-muted">Deployment</dt>
-                  <dd className="font-bold text-foreground">{vendor.deployment.join(", ")}</dd>
+                  <dd className="font-bold text-foreground sm:text-right">{vendor.deployment.join(", ")}</dd>
                 </div>
                 <div className="border-t border-border pt-2.5">
                   <dt className="text-muted mb-1">Certifications</dt>
@@ -377,155 +328,128 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
             </div>
 
             {/* CUSTOMER & MARKET EVIDENCE — Compact Sidebar */}
-            {vendor.customerSentiment ? (
-              <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Customer & Market Evidence</h3>
-                <div className="space-y-3">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-success mb-1">Positive Themes</p>
-                    <ul className="space-y-1 text-xs text-muted leading-relaxed">
-                      {vendor.customerSentiment.positiveThemes.slice(0, 3).map(t => (
-                        <li key={t} className="flex items-start gap-1.5">
-                          <span className="text-success font-bold mt-0.5 text-[10px]">-</span>
-                          <span className="truncate">{t.split("—")[0].trim()}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="border-t border-border pt-2">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1">Recurring Concerns</p>
-                    <ul className="space-y-1 text-xs text-muted leading-relaxed">
-                      {vendor.customerSentiment.negativeThemes.slice(0, 3).map(t => (
-                        <li key={t} className="flex items-start gap-1.5">
-                          <span className="text-warning font-bold mt-0.5 text-[10px]">-</span>
-                          <span className="truncate">{t.split("—")[0].trim()}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Customer & Market Evidence</h3>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-success mb-1">Positive Themes</p>
+                  <ul className="space-y-1 text-xs text-muted leading-relaxed">
+                    {(vendor.customerSentiment?.positiveThemes || ["Data collection in progress"]).slice(0, 3).map(t => (
+                      <li key={t} className="flex items-start gap-1.5 min-w-0">
+                        <span className="text-success font-bold mt-0.5 text-[10px] shrink-0">-</span>
+                        <span className="truncate flex-1">{t.split("—")[0].trim()}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="border-t border-border pt-2">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1">Recurring Concerns</p>
+                  <ul className="space-y-1 text-xs text-muted leading-relaxed">
+                    {(vendor.customerSentiment?.negativeThemes || ["Data collection in progress"]).slice(0, 3).map(t => (
+                      <li key={t} className="flex items-start gap-1.5 min-w-0">
+                        <span className="text-warning font-bold mt-0.5 text-[10px] shrink-0">-</span>
+                        <span className="truncate flex-1">{t.split("—")[0].trim()}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ) : null}
+            </div>
 
             {/* PRICING & TCO — Compact Sidebar */}
-            {vendor.pricingDetails ? (
-              <div className="rounded-xl border border-border bg-surface p-6 shadow-sm min-h-[500px] flex flex-col">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Pricing & TCO</h3>
-                <div className="space-y-3 flex-1 flex flex-col justify-between">
-                  <div className="rounded-lg border border-border overflow-hidden">
-                    <table className="w-full text-sm">
-                      <tbody>
-                        {vendor.pricingDetails.breakdown.slice(0, 4).map((b, i) => (
-                          <tr key={b.component} className={`border-b border-border/50 ${i % 2 === 0 ? 'bg-surface-alt/20' : ''}`}>
-                            <td className="p-3 font-medium text-foreground">{b.component}</td>
-                            <td className="p-3 font-mono font-bold text-primary text-right whitespace-nowrap">{b.price}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1">Key TCO Factors</p>
-                    <ul className="space-y-1 text-xs text-muted leading-relaxed">
-                      {vendor.pricingDetails.tcoConsiderations.slice(0, 3).map(t => (
-                        <li key={t} className="flex items-start gap-1.5">
-                          <span className="text-warning font-bold mt-0.5 text-[10px]">-</span>
-                          <span className="truncate">{t.split(":")[0].trim()}</span>
-                        </li>
+            <div className="mt-auto rounded-xl border border-border bg-surface p-6 shadow-sm flex flex-col lg:min-h-[500px]">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Pricing & TCO</h3>
+              <div className="space-y-3 flex-1 flex flex-col justify-between">
+                <div className="rounded-lg border border-border overflow-x-auto w-full max-w-full min-w-0">
+                  <table className="w-full text-sm">
+                    <tbody>
+                      {(vendor.pricingDetails?.breakdown || [{component: "Standard License", price: "Contact Sales"}, {component: "Implementation", price: "Custom"}]).slice(0, 4).map((b, i) => (
+                        <tr key={b.component} className={`border-b border-border/50 ${i % 2 === 0 ? 'bg-surface-alt/20' : ''}`}>
+                          <td className="p-3 font-medium text-foreground">{b.component}</td>
+                          <td className="p-3 font-mono font-bold text-primary text-right whitespace-nowrap">{b.price}</td>
+                        </tr>
                       ))}
-                    </ul>
-                  </div>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1">Key TCO Factors</p>
+                  <ul className="space-y-1 text-xs text-muted leading-relaxed">
+                    {(vendor.pricingDetails?.tcoConsiderations || ["Custom implementation costs", "Training and adoption", "Ongoing maintenance"]).slice(0, 3).map(t => (
+                      <li key={t} className="flex items-start gap-1.5 min-w-0">
+                        <span className="text-warning font-bold mt-0.5 text-[10px] shrink-0">-</span>
+                        <span className="truncate flex-1">{t.split(":")[0].trim()}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ) : null}
+            </div>
 
-            {/* COMPARE */}
-            {competitors.length > 0 && (
-              <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Compare Similar Platforms</h3>
-                <div className="space-y-2">
-                  {competitors.map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`/compare/${vendor.slug}-vs-${c.slug}`}
-                      className="group flex items-center justify-between rounded-lg border border-transparent p-2.5 transition-colors hover:border-border hover:bg-surface-alt"
-                    >
-                      <div>
-                        <span className="text-xs font-bold text-foreground group-hover:text-primary transition-colors block">vs {c.name}</span>
-                        <span className="text-[10px] text-muted font-mono">ASCS: {c.ascsComposite}/10</span>
-                      </div>
-                      <span className="text-xs font-bold text-primary group-hover:underline">Compare →</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
 
       {/* SYNTHESIZED ANALYST EVALUATION — Full Width */}
-      {vendor.analystEvaluation ? (
-        <section className="w-full py-10 sm:py-14">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6 shadow-sm">
-              <div className="border-b border-border pb-3 mb-4">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Research</span>
-                <h2 className="text-lg font-black text-foreground mt-1">Synthesized Analyst Evaluation</h2>
+      <section className="w-full py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6 shadow-sm">
+            <div className="border-b border-border pb-3 mb-4">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Research</span>
+              <h2 className="text-lg font-black text-foreground mt-1">Synthesized Analyst Evaluation</h2>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-1.5">Executive Assessment</h3>
+              <div className="text-sm text-muted leading-relaxed border-l-2 border-primary/40 pl-4 bg-surface-alt/20 py-1.5 rounded-r-lg">
+                <p>{vendor.analystEvaluation?.editorialNarrative || "Analyst evaluation is currently in progress. Check back soon for comprehensive insights."}</p>
               </div>
 
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-1.5">Executive Assessment</h3>
-                <div className="text-sm text-muted leading-relaxed border-l-2 border-primary/40 pl-4 bg-surface-alt/20 py-1.5 rounded-r-lg">
-                  <p>{vendor.analystEvaluation.editorialNarrative}</p>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Core Strengths</h4>
+                  <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
+                    {(vendor.analystEvaluation?.coreStrengths || ["Evaluating core capabilities..."]).map(s => (
+                      <li key={s} className="flex items-start gap-1.5">
+                        <span className="text-primary font-bold mt-0.5 text-[10px]">-</span> {s}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div className="mt-4 grid sm:grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Core Strengths</h4>
-                    <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
-                      {vendor.analystEvaluation.coreStrengths.map(s => (
-                        <li key={s} className="flex items-start gap-1.5">
-                          <span className="text-primary font-bold mt-0.5 text-[10px]">-</span> {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="rounded-xl border border-warning/20 bg-warning/5 p-3">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1.5">Known Limitations</h4>
+                  <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
+                    {(vendor.analystEvaluation?.knownLimitations || ["Evaluating current limitations..."]).map(l => (
+                      <li key={l} className="flex items-start gap-1.5">
+                        <span className="text-warning font-bold mt-0.5 text-[10px]">-</span> {l}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <div className="rounded-xl border border-warning/20 bg-warning/5 p-3">
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-warning mb-1.5">Known Limitations</h4>
-                    <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
-                      {vendor.analystEvaluation.knownLimitations.map(l => (
-                        <li key={l} className="flex items-start gap-1.5">
-                          <span className="text-warning font-bold mt-0.5 text-[10px]">-</span> {l}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Enterprise Fit</h4>
+                  <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
+                    {(vendor.analystEvaluation?.idealEnterpriseWorkloads || ["Assessing ideal workloads..."]).map(w => (
+                      <li key={w} className="flex items-start gap-1.5">
+                        <span className="text-primary font-bold mt-0.5 text-[10px]">-</span> {w}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Enterprise Fit</h4>
-                    <ul className="space-y-0.5 text-[11px] text-muted leading-relaxed">
-                      {vendor.analystEvaluation.idealEnterpriseWorkloads.map(w => (
-                        <li key={w} className="flex items-start gap-1.5">
-                          <span className="text-primary font-bold mt-0.5 text-[10px]">-</span> {w}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Potential Misfit</h4>
-                    <p className="text-[11px] text-muted leading-relaxed">
-                      Organizations seeking lower implementation complexity, lighter operational overhead, or smaller per-seat investment may prefer a more focused alternative.
-                    </p>
-                  </div>
+                <div className="rounded-xl border border-border bg-surface-alt/40 p-3">
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground mb-1.5">Potential Misfit</h4>
+                  <p className="text-[11px] text-muted leading-relaxed">
+                    Organizations seeking lower implementation complexity, lighter operational overhead, or smaller per-seat investment may prefer a more focused alternative.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      ) : null}
+        </div>
+      </section>
 
       {/* REVIEWS_CXO VERDICT — Full Width */}
       <section className="w-full py-10 sm:py-14">

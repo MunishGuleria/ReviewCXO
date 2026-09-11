@@ -2,7 +2,7 @@ export const SITE = {
   name: "Reviews_CXO",
   title: "Reviews_CXO — AI Enterprise Sales Research",
   description:
-    "Benchmarks, architecture analysis, and CXO insights on AI sales platforms. Independent, evidence-based research for enterprise buyers.",
+    "Architecture analysis, and CXO insights on AI sales platforms. Independent, evidence-based research for enterprise buyers.",
   url: "https://reviews-cxo.com",
   ogImage: "/og-image.png",
   email: "research@reviews-cxo.com",
@@ -56,6 +56,8 @@ export const NAV_GROUPS = [
   },
   {
     label: "Explore",
+    href: "",
+    directLink: false,
     items: [
       {
         label: "Platforms",
@@ -75,6 +77,8 @@ export const NAV_GROUPS = [
   },
   {
     label: "Community",
+    href: "",
+    directLink: false,
     items: [
       {
         label: "Questions",

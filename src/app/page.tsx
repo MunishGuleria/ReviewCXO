@@ -34,7 +34,7 @@ const workloadArchetypes = [
     description:
       "Platforms that ground reasoning directly into ERP transaction tables (SAP, Oracle, NetSuite) alongside CRM records to execute quotes, verify stock, and enforce margins.",
     examples: ["Microsoft Dynamics 365", "SAP Joule"],
-    href: "/compare/salesforce-vs-microsoft-dynamics-365",
+    href: "/vendors/microsoft-dynamics-365",
     tag: "Next-Gen Architecture",
   },
   {
@@ -52,7 +52,7 @@ const workloadArchetypes = [
     description:
       "AI assistants deeply integrated into existing productivity tools, enabling sellers to work directly within Outlook, Teams, and Excel without switching context.",
     examples: ["Microsoft Copilot for Sales", "Salesforce Einstein"],
-    href: "/compare/salesforce-einstein-vs-microsoft-copilot",
+    href: "/vendors/microsoft-copilot",
     tag: "Productivity Native",
   },
   {
@@ -61,27 +61,18 @@ const workloadArchetypes = [
     description:
       "AI platforms embedded directly within ERP systems, leveraging real-time transactional data for supply chain, manufacturing, and financial insights.",
     examples: ["SAP Joule", "Microsoft Dynamics 365"],
-    href: "/compare/salesforce-vs-microsoft-dynamics-365",
+    href: "/vendors/sap-joule",
     tag: "ERP-First",
   },
-];
-
-const featuredComparisons = [
-  { a: "Salesforce", b: "Microsoft Dynamics", slug: "salesforce-vs-microsoft-dynamics-365", q: "CRM Monolith vs Unified ERP+CRM Stack" },
-  { a: "Salesforce Einstein", b: "Microsoft Copilot", slug: "salesforce-einstein-vs-microsoft-copilot", q: "CRM-Native AI vs Productivity-Embedded AI" },
-  { a: "SAP Joule", b: "Microsoft Dynamics", slug: "sap-joule-vs-microsoft-dynamics-365", q: "ERP-Native AI vs Unified CRM+ERP Platform" },
-  { a: "Salesforce", b: "SAP Joule", slug: "salesforce-vs-sap-joule", q: "Global CRM Ecosystem vs ERP Intelligence" },
-  { a: "Microsoft Dynamics", b: "SAP Joule", slug: "microsoft-dynamics-365-vs-sap-joule", q: "Unified Platform vs Deep ERP Grounding" },
-  { a: "Salesforce Einstein", b: "SAP Joule", slug: "salesforce-einstein-vs-sap-joule", q: "CRM AI Models vs ERP Transaction Intelligence" },
 ];
 
 export default function Home() {
   return (
     <>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28 bg-background border-b border-border">
+      <section className="relative overflow-hidden pt-12 pb-14 sm:pt-24 sm:pb-28 bg-background border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
             {/* Left Hero Column: Bold Clean Typography */}
             <div className="lg:col-span-6 flex flex-col items-start relative z-10">
               
@@ -93,25 +84,25 @@ export default function Home() {
                 <span className="text-xs font-semibold text-secondary-foreground">ASCS 2026 Rankings Live</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 From AI Ambition<br />
                 To Empirical Truth
               </h1>
 
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-lg">
-                We independently benchmark enterprise-grade, multi-agent AI platforms that connect your transactional ERPs and CRMs into autonomous workflows.
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-lg">
+                We independently evaluate enterprise AI platforms that connect your ERPs and CRMs into autonomous workflows. Evidence-based research for CTOs, CIOs, and procurement leaders.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link href="/rankings" className="btn-primary">
                   Explore ASCS Scorecards
                 </Link>
-                <Link href="/compare" className="btn-secondary">
-                  Compare Architectures
+                <Link href="/questions" className="btn-secondary">
+                  Browse Research Questions
                 </Link>
               </div>
 
-              <div className="mt-10 pt-5 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+              <div className="mt-8 pt-5 border-t border-border flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">Verified Integration:</span>
                 <span className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
@@ -196,8 +187,8 @@ export default function Home() {
 
       {/* ═══════════════════════ STATS STRIP ═══════════════════════ */}
       <section className="bg-surface-alt border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
             {[
               { value: `${getVisibleVendors().length}+`, label: "Platforms Evaluated", sub: "Enterprise AI Engines" },
               { value: "12", label: "ASCS Dimensions", sub: "Normalized Technical Rubric" },
@@ -217,9 +208,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════ ASCS LEADERBOARD ═══════════════════════ */}
-      <section className="py-16 sm:py-20 bg-background border-b border-border">
+      <section className="py-12 sm:py-20 bg-background border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
                 ASCS 2026 Enterprise Index
@@ -277,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════ WORKLOAD ARCHETYPES ═══════════════════════ */}
-      <section className="py-16 sm:py-20 bg-surface-alt border-b border-border">
+      <section className="py-12 sm:py-20 bg-surface-alt border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
@@ -323,65 +314,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════ COMPARISONS ═══════════════════════ */}
-      <section className="py-16 sm:py-20 border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Platform Architecture Comparisons
-              </h2>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                Direct technical evaluations of competing enterprise platforms across all 12 ASCS dimensions.
-              </p>
-            </div>
-
-            <Link
-              href="/compare"
-              className="btn-secondary"
-            >
-              Browse All Matchups
-            </Link>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredComparisons.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/compare/${c.slug}`}
-                className="card-premium p-6 flex flex-col justify-between"
-              >
-                <div>
-                  <p className="text-xs font-medium text-secondary-foreground border-b border-border pb-3">
-                    {c.q}
-                  </p>
-                  <div className="mt-5 flex items-center justify-between gap-3">
-                    <span className="text-base font-bold text-foreground truncate">
-                      {c.a}
-                    </span>
-                    <span className="shrink-0 rounded bg-surface-alt border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">
-                      VS
-                    </span>
-                    <span className="text-base font-bold text-foreground truncate text-right">
-                      {c.b}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                  <span className="text-sm font-medium text-primary-text hover:underline flex items-center gap-1">
-                    Inspect Deltas →
-                  </span>
-                  <span className="text-xs text-muted-foreground">Lab Tested</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════ METHODOLOGY ═══════════════════════ */}
-      <section className="py-16 sm:py-20 bg-surface-alt border-b border-border">
+      <section className="py-12 sm:py-20 bg-surface-alt border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
@@ -439,9 +373,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════ NEWSLETTER CTA ═══════════════════════ */}
-      <section className="py-20 sm:py-24 bg-background">
+      <section className="py-14 sm:py-24 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="card-premium p-8 sm:p-12 text-center">
+          <div className="card-premium p-6 sm:p-12 text-center">
             <div className="mx-auto max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
                 Architecture Benchmarks & Quarterly Teardowns
