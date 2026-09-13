@@ -177,7 +177,7 @@ export const BUDGET_RANGES = [
 ] as const;
 
 export const EVIDENCE_TYPE_LABELS: Record<EvidenceType, string> = {
-  verified_cxo_review: "Verified CXO Review",
+  verified_cxo_review: "Email Validated Submission",
   public_review_evidence: "Public Review Evidence",
   public_customer_evidence: "Public Customer Evidence",
   vendor_provided_evidence: "Vendor-Provided Evidence",
@@ -187,11 +187,11 @@ export const EVIDENCE_TYPE_LABELS: Record<EvidenceType, string> = {
 };
 
 export const EVIDENCE_TYPE_DESCRIPTIONS: Record<EvidenceType, string> = {
-  verified_cxo_review: "Genuine submission verified through Reviews_CXO verification process",
+  verified_cxo_review: "Submission confirmed via Reviews_CXO email validation process",
   public_review_evidence: "Information from G2, Capterra, Clutch, Trustpilot, or public testimonials",
   public_customer_evidence: "Customer case studies, announcements, or public project documentation",
   vendor_provided_evidence: "Information published by the software vendor itself",
   third_party_research: "Independent publications, analyst reports, or industry research",
   observed_evidence: "Directly tested or observed by Reviews_CXO",
-  inferred: "Reasonable conclusion based on related evidence but not directly verified",
+  inferred: "Reasonable conclusion based on related evidence but not directly confirmed",
 };

@@ -4,7 +4,7 @@ const RSS_ITEMS = `
 <item>
   <title>Can AI Combine CRM Churn Signals with ERP Supply Delays?</title>
   <link>https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1</link>
-  <description>A controlled evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.</description>
+  <description>A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.</description>
   <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
   <guid>https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1</guid>
 </item>

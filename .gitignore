@@ -99,14 +99,19 @@ TODO.*
 # pnpm-lock.yaml
 
 # scratch / test files
-*.txt
 chal.txt
 chalbe.txt
 simple.txt
 
 # generated data
 visible_vendors.json
-SESSION-FINDINGS.md
 
 # test results
 test-results/
+
+# audit / analysis docs (generated, not source)
+SESSION-FINDINGS.md
+CONTENT-AUDIT-FINDINGS.md
+PROJECT-COMPREHENSIVE-ANALYSIS.md
+REVIEWS_CXO_DEEP_CODEBASE_LEGAL_AUDIT.md
+CONTENT-STATUS-REPORT.md

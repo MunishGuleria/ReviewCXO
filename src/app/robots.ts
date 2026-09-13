@@ -6,23 +6,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/admin/", "/api/"],
       },
       {
-        userAgent: "GPTBot",
+        userAgent: ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Anthropic-ai", "Google-Extended", "PerplexityBot", "cohere-ai", "Applebot-Extended"],
         allow: "/",
-      },
-      {
-        userAgent: "ClaudeBot",
-        allow: "/",
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-      },
+      }
     ],
     sitemap: "https://reviews-cxo.com/sitemap.xml",
   };

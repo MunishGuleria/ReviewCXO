@@ -31,7 +31,7 @@ export default function NewsletterPage() {
           <p className="text-sm leading-relaxed text-muted-foreground mb-6">
             We publish research-only content — benchmarks, architecture
             analysis, and CXO insights on AI for enterprise sales. No
-            spam, no marketing fluff.
+            spam, no marketing content.
           </p>
           
           <ul className="space-y-3 mb-8">

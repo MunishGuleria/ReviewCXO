@@ -90,7 +90,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-lg">
-                We independently evaluate enterprise AI platforms that connect your ERPs and CRMs into autonomous workflows. Evidence-based research for CTOs, CIOs, and procurement leaders.
+                Reviews_CXO evaluates enterprise AI platforms that connect ERPs and CRMs into autonomous workflows. Editorial research for CTOs, CIOs, and procurement leaders.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -103,7 +103,7 @@ export default function Home() {
               </div>
 
               <div className="mt-8 pt-5 border-t border-border flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Verified Integration:</span>
+                <span className="font-medium text-foreground">Integration Coverage:</span>
                 <span className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   SAP ERP
@@ -129,7 +129,7 @@ export default function Home() {
                     </span>
                   </div>
                   <span className="text-xs font-medium text-muted-foreground bg-surface-alt px-2.5 py-1 rounded">
-                    Lab Environment Active
+                    Assessment Environment
                   </span>
                 </div>
 
@@ -173,7 +173,7 @@ export default function Home() {
 
                 <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-muted-foreground">Top Platforms Validated</span>
+                    <span className="text-sm font-medium text-muted-foreground">Top Platforms Assessed</span>
                   </div>
                   <Link href="/rankings" className="text-sm font-medium text-primary-text hover:underline transition-all">
                     View Full Index →
@@ -192,7 +192,7 @@ export default function Home() {
             {[
               { value: `${getVisibleVendors().length}+`, label: "Platforms Evaluated", sub: "Enterprise AI Engines" },
               { value: "12", label: "ASCS Dimensions", sub: "Normalized Technical Rubric" },
-              { value: "7 Tiers", label: "Evidence Hierarchy", sub: "Observed & Documented" },
+              { value: "7 Tiers", label: "Evidence Hierarchy", sub: "Observed, Documented & Inferred" },
               { value: "100%", label: "Disclosed Methodology", sub: "Zero Vendor Pay-to-Play" },
             ].map((stat) => (
               <div key={stat.label}>
@@ -275,7 +275,7 @@ export default function Home() {
               Architectural Fit & Workload Profiles
             </h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              We reject arbitrary &quot;best overall&quot; awards. Enterprise software selection depends entirely on existing back-office systems, latency tolerances, and operational data integration architecture.
+              Reviews_CXO does not assign arbitrary &quot;best overall&quot; awards. Enterprise software selection depends on existing back-office systems, latency tolerances, and operational data integration architecture.
             </p>
           </div>
 
@@ -322,7 +322,7 @@ export default function Home() {
               How Reviews_CXO Evaluates Platforms
             </h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Our evaluation methodology is engineered for enterprise CTOs, CIOs, and procurement leaders who require reproducible technical facts rather than vendor promotional claims.
+              Our evaluation methodology is designed for enterprise CTOs, CIOs, and procurement leaders who require structured technical assessments rather than vendor promotional claims.
             </p>
           </div>
 
@@ -331,22 +331,22 @@ export default function Home() {
               {
                 num: "01",
                 title: "12-Dimension ASCS Rubric",
-                desc: "Every platform is systematically graded across 12 weighted dimensions—from ERP connectivity depth to multi-agent autonomy and auditability.",
+                desc: "Every platform is assessed across 12 weighted dimensions—from ERP connectivity depth to multi-agent autonomy and auditability.",
               },
               {
                 num: "02",
                 title: "7-Tier Evidence Hierarchy",
-                desc: "Every metric score explicitly cites its evidence class: Observed (lab-tested), Documented, Third-Party Confirmed, Simulated, or Inferred.",
+                desc: "Every metric score explicitly cites its evidence class: Observed, Documented, Third-Party Confirmed, Simulated, or Inferred.",
               },
               {
                 num: "03",
-                title: "Reproducible Lab Tests",
-                desc: "Synthetic workloads (such as our CRM+ERP At-Risk Accounts protocol) enforce standardized, apples-to-apples performance comparisons.",
+                title: "Structured Workload Tests",
+                desc: "Synthetic workloads (such as our CRM+ERP At-Risk Accounts protocol) enable standardized, apples-to-apples performance comparisons.",
               },
               {
                 num: "04",
                 title: "Editorial Independence",
-                desc: "Full transparency of financial sponsorship and governance. Sponsors cannot alter scores, methodology weights, or editorial verdicts.",
+                desc: "Full transparency of financial sponsorship and governance. Sponsors do not control scores, methodology weights, or editorial decisions.",
               },
             ].map((step) => (
               <div key={step.num} className="card-premium p-6 flex flex-col justify-between">
@@ -381,7 +381,7 @@ export default function Home() {
                 Architecture Benchmarks & Quarterly Teardowns
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground mx-auto">
-                Delivered quarterly to 18,000+ enterprise technology leaders: deep-dive technical evaluations of agentic architectures, benchmark test datasets, and updated ASCS platform scorecards.
+                Delivered quarterly to reported 18,000+ enterprise technology leaders: deep-dive technical evaluations of agentic architectures, benchmark test datasets, and updated ASCS platform scorecards.
               </p>
 
               <div className="mt-8 max-w-md mx-auto">

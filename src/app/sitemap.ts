@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getVisibleVendors } from "@/lib/vendors";
 import { getPublishedQuestions } from "@/lib/questions";
-import { getPublishedCaseStudies } from "@/lib/reviews";
 
 const BASE_URL = "https://reviews-cxo.com";
 
@@ -31,7 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/glossary`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${BASE_URL}/newsletter`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.4 },
     { url: `${BASE_URL}/questions`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
-    { url: `${BASE_URL}/case-studies`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${BASE_URL}/submit-review`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   ];
 
@@ -68,12 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const caseStudyPages = getPublishedCaseStudies().map((cs) => ({
-    url: `${BASE_URL}/case-studies/${cs.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
 
-  return [...staticPages, ...comparisonPages, ...vendorPages, ...questionPages, ...caseStudyPages];
+
+  return [...staticPages, ...comparisonPages, ...vendorPages, ...questionPages];
 }

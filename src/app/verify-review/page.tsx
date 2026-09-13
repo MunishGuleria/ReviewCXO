@@ -47,7 +47,7 @@ function VerifyContent() {
           <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
             <span className="text-green-500 text-xl font-bold">&#10003;</span>
           </div>
-          <h1 className="text-lg font-bold text-foreground">Email Verified!</h1>
+          <h1 className="text-lg font-bold text-foreground">Email Validated!</h1>
           <p className="text-sm text-muted mt-1 mb-6">
             Thank you for verifying your review. Our team will review it shortly.
           </p>

@@ -22,7 +22,7 @@ export default function CXOIntelligencePage() {
     <>
       <PageHeader
         title="CXO Intelligence"
-        description="Original primary research based on genuine interviews and surveys with enterprise leaders. The most citable content type for AI search engines."
+        description="Original primary research based on interviews and surveys with enterprise leaders. A primary content type for AI search engines."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

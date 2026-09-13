@@ -2,7 +2,7 @@ export const SITE = {
   name: "Reviews_CXO",
   title: "Reviews_CXO — AI Enterprise Sales Research",
   description:
-    "Architecture analysis, and CXO insights on AI sales platforms. Independent, evidence-based research for enterprise buyers.",
+    "Architecture analysis, and CXO insights on AI sales platforms. Editorial research for enterprise buyers.",
   url: "https://reviews-cxo.com",
   ogImage: "/og-image.png",
   email: "research@reviews-cxo.com",
@@ -30,7 +30,7 @@ export const NAVIGATION = [
   {
     label: "Benchmarks",
     href: "/benchmarks",
-    description: "Reproducible evaluations",
+    description: "Controlled evaluations with published methodology",
     hidden: true,
   },
   {
@@ -69,7 +69,7 @@ export const NAV_GROUPS = [
       {
         label: "About",
         href: "/about",
-        description: "Our mission, team, and independent research approach",
+        description: "Our mission, team, and research approach",
         icon: "building",
         hidden: false,
       },
@@ -83,7 +83,7 @@ export const NAV_GROUPS = [
       {
         label: "Questions",
         href: "/questions",
-        description: "Community questions with expert analysis",
+        description: "Community questions with research analysis",
         icon: "chat",
         hidden: false,
       },
@@ -111,14 +111,14 @@ export const EVIDENCE_TYPES = [
     id: "observed",
     label: "Observed",
     weight: "1.0x",
-    description: "Directly tested in controlled lab environment by Reviews_CXO",
+    description: "Assessed through structured testing methods",
   },
   {
     id: "documented",
     label: "Documented",
     weight: "0.9x",
     description:
-      "Verified through official vendor documentation, public API docs, or published specs",
+      "Confirmed through official vendor documentation, public API docs, or published specifications",
   },
   {
     id: "partially-documented",
@@ -132,27 +132,27 @@ export const EVIDENCE_TYPES = [
     label: "Third-Party Confirmed",
     weight: "0.85x",
     description:
-      "Confirmed by independent analyst reports, customer case studies, or peer-reviewed research",
+      "Reported by independent analyst reports, customer case studies, or published research",
   },
   {
     id: "simulated",
     label: "Simulated",
     weight: "0.75x",
     description:
-      "Tested using a representative configuration that mimics vendor architecture",
+      "Tested using a representative configuration based on vendor architecture documentation",
   },
   {
     id: "inferred",
     label: "Inferred",
     weight: "0.5x",
     description:
-      "Reasonable conclusion based on related evidence but not directly verified",
+      "Reasonable conclusion based on related evidence but not directly confirmed",
   },
   {
     id: "not-tested",
     label: "Not Tested",
     weight: "0x",
-    description: "Not evaluated; explicitly marked as gap",
+    description: "Not evaluated; explicitly marked as a gap in coverage",
   },
 ] as const;
 
@@ -164,7 +164,7 @@ export const ASCS_DIMENSIONS = [
     description:
       "Depth of native ERP integration (SAP, Oracle, NetSuite, etc.)",
     whyItMatters:
-      "Enterprise sales AI must reason over operational data, not just CRM records",
+      "Enterprise sales AI must reason over operational data, not just CRM records"
   },
   {
     number: 2,
@@ -173,7 +173,7 @@ export const ASCS_DIMENSIONS = [
     description:
       "Ability to ingest, normalize, and reason over CRM data (Salesforce, Dynamics 365, etc.)",
     whyItMatters:
-      "Foundation of all sales AI use cases",
+      "Foundation of all sales AI use cases"
   },
   {
     number: 3,
@@ -182,15 +182,15 @@ export const ASCS_DIMENSIONS = [
     description:
       "Ability to combine data from CRM + ERP + external sources in a single reasoning chain",
     whyItMatters:
-      "The defining capability gap in 2026 — most systems fail here",
+      "A defining capability gap in 2026 — most systems face challenges here"
   },
   {
     number: 4,
     name: "AI Reasoning Quality",
     weight: "12%",
     description:
-      "Accuracy, faithfulness, hallucination rate, chain-of-thought quality",
-    whyItMatters: "Core intelligence metric",
+      "Accuracy, faithfulness, hallucination rate, response quality and task reliability",
+    whyItMatters: "Core intelligence metric"
   },
   {
     number: 5,
@@ -198,7 +198,7 @@ export const ASCS_DIMENSIONS = [
     weight: "10%",
     description:
       "End-to-end task completion (not just recommendations, but actions taken)",
-    whyItMatters: "Separates copilots from autonomous agents",
+    whyItMatters: "Separates copilots from autonomous agents"
   },
   {
     number: 6,
@@ -207,7 +207,7 @@ export const ASCS_DIMENSIONS = [
     description:
       "Multi-step planning, tool selection, sub-agent coordination, trajectory accuracy",
     whyItMatters:
-      "Reflects the shift to agentic AI in 2026",
+      "Reflects the shift to agentic AI in 2026"
   },
   {
     number: 7,
@@ -215,7 +215,7 @@ export const ASCS_DIMENSIONS = [
     weight: "8%",
     description:
       "API-first architecture, data export, programmatic access, open standards",
-    whyItMatters: "Enterprise buyers need data portability",
+    whyItMatters: "Enterprise buyers need data portability"
   },
   {
     number: 8,
@@ -223,7 +223,7 @@ export const ASCS_DIMENSIONS = [
     weight: "10%",
     description:
       "Encryption, SSO/SAML, SCIM, SOC 2, ISO, data isolation, audit trails",
-    whyItMatters: "Non-negotiable for enterprise adoption",
+    whyItMatters: "Non-negotiable for enterprise adoption"
   },
   {
     number: 9,
@@ -231,7 +231,7 @@ export const ASCS_DIMENSIONS = [
     weight: "5%",
     description:
       "Can the system explain why it made a recommendation? Source attribution?",
-    whyItMatters: "Critical for CXO trust and regulatory compliance",
+    whyItMatters: "Critical for CXO trust and regulatory compliance"
   },
   {
     number: 10,
@@ -239,7 +239,7 @@ export const ASCS_DIMENSIONS = [
     weight: "5%",
     description:
       "Cloud, on-prem, hybrid, VPC, edge deployment options",
-    whyItMatters: "Many enterprises cannot go fully cloud",
+    whyItMatters: "Many enterprises cannot go fully cloud"
   },
   {
     number: 11,
@@ -247,7 +247,7 @@ export const ASCS_DIMENSIONS = [
     weight: "5%",
     description:
       "Breadth and depth of third-party integrations, marketplace, connectors",
-    whyItMatters: "Ecosystem maturity indicator",
+    whyItMatters: "Ecosystem maturity indicator"
   },
   {
     number: 12,
@@ -255,12 +255,12 @@ export const ASCS_DIMENSIONS = [
     weight: "5%",
     description:
       "Customer base, community, third-party analyst coverage, hiring signals",
-    whyItMatters: "Proxy for long-term viability",
+    whyItMatters: "Proxy for long-term viability"
   },
 ] as const;
 
 export const SCORING_RUBRIC = [
-  { range: "0", meaning: "Not available / no evidence" },
+  { range: "0", meaning: "Not available / no evidence found" },
   { range: "1–2", meaning: "Minimal / experimental / pre-release" },
   { range: "3–4", meaning: "Basic capability / limited documentation" },
   {
@@ -273,6 +273,6 @@ export const SCORING_RUBRIC = [
   },
   {
     range: "9–10",
-    meaning: "Industry-leading / extensive evidence / best-in-class",
+    meaning: "Recognized / extensive evidence / highly-rated",
   },
 ];

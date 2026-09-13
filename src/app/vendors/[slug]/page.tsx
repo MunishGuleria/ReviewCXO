@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const vendor = getVendorBySlug(slug);
   if (!vendor) return { title: "Not Found" };
   return {
-    title: `${vendor.name} — Reviews_CXO Independent Evaluation (${vendor.ascsComposite}/10)`,
-    description: `Reviews_CXO independent evaluation of ${vendor.name}: ${vendor.tagline}. Assessed ${vendor.ascsComposite}/10 on the ASCS enterprise framework.`,
+    title: `${vendor.name} — Reviews_CXO Assessment (${vendor.ascsComposite}/10)`,
+    description: `Reviews_CXO assessment of ${vendor.name}: ${vendor.tagline}. Assessed ${vendor.ascsComposite}/10 on the ASCS enterprise framework.`,
     alternates: { canonical: `https://reviews-cxo.com/vendors/${vendor.slug}` },
     openGraph: {
-      title: `${vendor.name} — Reviews_CXO Evaluation`,
-      description: `Reviews_CXO independent evaluation of ${vendor.name}. Assessed ${vendor.ascsComposite}/10.`,
+      title: `${vendor.name} — Reviews_CXO Assessment`,
+      description: `Reviews_CXO assessment of ${vendor.name}. Assessed ${vendor.ascsComposite}/10.`,
       url: `https://reviews-cxo.com/vendors/${vendor.slug}`,
       siteName: "Reviews_CXO",
       locale: "en_US",
@@ -456,7 +456,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-5 sm:p-6 shadow-sm">
             <div className="border-b border-primary/10 pb-4 mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Independent Verdict</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Editorial Assessment</span>
               <h2 className="text-xl font-black text-foreground mt-1">Reviews_CXO Verdict</h2>
             </div>
 

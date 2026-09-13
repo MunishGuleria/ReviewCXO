@@ -22,4 +22,4 @@ tailwindcss@4
 typescript@5
 
 # Testing
-@playwright/test@1.52.0
+@playwright/test@1.63.0

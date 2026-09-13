@@ -20,9 +20,9 @@ export default function DisclosurePage() {
   return (
     <>
       <PageHeader
-        badge="Governance & Independence"
+        badge="Governance & Transparency"
         title="Sponsorship & Conflict Disclosure"
-        description="Full transparency regarding research funding, commercial safeguards, and editorial governance policies."
+        description="Transparency regarding research funding, commercial safeguards, and editorial governance policies."
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 space-y-10">
@@ -45,7 +45,7 @@ export default function DisclosurePage() {
                   Mandatory Public Disclosure
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 border border-primary/20 shadow-xs">
-                  Applicable to all 134+ research reports & rankings
+                  Applicable to all published research reports & rankings
                 </span>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function DisclosurePage() {
                 Reviews_CXO strictly prohibits paid vendor placement in rankings, benchmarks, or search results.
               </p>
               <p>
-                Vendor claims can never overwrite verified lab observations. All evidence tiers are publicly cited in accordance with our 7-tier hierarchy.
+                Vendor claims cannot overwrite documented lab observations. All evidence tiers are publicly cited in accordance with the 7-tier hierarchy.
               </p>
             </div>
           </div>

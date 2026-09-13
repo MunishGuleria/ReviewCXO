@@ -38,7 +38,7 @@ export default function ArchitectureSecurityIndexPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">Executive Summary</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Architecture & Security Governance</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            This index evaluates {visibleVendors.length} enterprise AI platforms across 12 architecture, security, and governance dimensions. Every score is backed by documented evidence from public sources, official vendor documentation, and controlled laboratory testing.
+            This index evaluates {visibleVendors.length} enterprise AI platforms across 12 architecture, security, and governance dimensions. Every score is backed by documented evidence from public sources, official vendor documentation, and structured assessment processes.
           </p>
         </div>
 
@@ -104,15 +104,15 @@ export default function ArchitectureSecurityIndexPage() {
           <ul className="mt-4 space-y-2.5 text-xs text-muted leading-relaxed">
             <li className="flex items-start gap-2">
               <span className="text-warning font-bold">•</span>
-              <span>Scores are based on publicly available documentation and controlled lab testing, not paid vendor participation.</span>
+              <span>Scores are based on publicly available documentation and structured assessment methods, not paid vendor participation.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-warning font-bold">•</span>
-              <span>&ldquo;Not Documented&rdquo; denotes that the capability could not be verified from public sources, not necessarily that it does not exist.</span>
+              <span>&ldquo;Not Documented&rdquo; denotes that the capability could not be confirmed from public sources, not necessarily that it does not exist.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-warning font-bold">•</span>
-              <span>This index reflects architecture and security maturity as of September 2026. Vendor configurations evolve rapidly.</span>
+              <span>This index reflects architecture and security maturity as of September 2026. Vendor configurations may evolve.</span>
             </li>
           </ul>
         </div>

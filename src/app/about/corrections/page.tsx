@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://reviews-cxo.com/about/corrections" },
   openGraph: {
     title: "Corrections & Retractions — Reviews_CXO",
-    description: "How we handle errors, updates, and score recalculations.",
+    description: "How the publication handles errors, updates, and score recalculations.",
     url: "https://reviews-cxo.com/about/corrections",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -22,7 +22,7 @@ export default function CorrectionsPage() {
       <PageHeader
         badge="Accountability & Quality"
         title="Corrections & Retractions"
-        description="Our institutional commitment to precision, transparency, and rapid correction when errors are identified."
+        description="The publication's commitment to accuracy, transparency, and correction when errors are identified."
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 space-y-10">
@@ -31,7 +31,7 @@ export default function CorrectionsPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">SLA & Protocol</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Transparent Correction Policy</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            Reviews_CXO commits to prompt and auditable error rectification. When factual discrepancies or model calculation errors are verified, we update the research artifacts and provide public disclosures.
+            Reviews_CXO commits to prompt and auditable error correction. When factual discrepancies or scoring calculation errors are confirmed, the publication updates research artifacts and provides public disclosures.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -74,7 +74,7 @@ export default function CorrectionsPage() {
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-success/10 text-success text-xs font-black">✓</span>
               <p className="mt-3 text-sm font-bold text-foreground">Zero Outstanding Corrections</p>
               <p className="mt-1 text-xs text-muted max-w-xs">
-                All 134 published pages are currently validated against our 2026 ASCS benchmark cycle.
+                All published pages are currently validated against the 2026 ASCS benchmark cycle.
               </p>
             </div>
           </div>

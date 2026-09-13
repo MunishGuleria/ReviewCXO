@@ -14,8 +14,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              Independent, evidence-based research on AI for enterprise sales.
-              Benchmarks, architecture analysis, and CXO insights.
+              Editorial research on AI for enterprise sales.
+              Architecture analysis, benchmarks, and CXO insights.
             </p>
             {/* Social Icons */}
             <div className="mt-5 flex items-center gap-3">
@@ -110,7 +110,7 @@ export function Footer() {
             <div className="mt-6 rounded-xl border border-border bg-surface p-4 shadow-sm">
               <p className="text-xs font-bold text-foreground">Research Dispatch</p>
               <p className="mt-1 text-[11px] leading-relaxed text-muted">
-                Quarterly architecture reports & benchmark releases. Zero marketing spam.
+                Quarterly architecture reports & benchmark releases. Research-only publications.
               </p>
               <Link
                 href="/newsletter"

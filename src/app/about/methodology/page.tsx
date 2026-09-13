@@ -4,7 +4,7 @@ import { ASCS_DIMENSIONS, SCORING_RUBRIC, EVIDENCE_TYPES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Methodology",
   description:
-    "The ASCS (AI Sales Capability Score) framework — our 12-dimension evaluation methodology for enterprise AI sales platforms. No vendor influence, no pay-to-play.",
+    "The ASCS (AI Sales Capability Score) framework — a 12-dimension evaluation methodology for enterprise AI sales platforms.",
   alternates: { canonical: "https://reviews-cxo.com/about/methodology" },
   openGraph: {
     title: "ASCS Research Methodology",
@@ -30,7 +30,7 @@ export default function MethodologyPage() {
             How We <span className="text-primary">Actually</span> Evaluate Platforms
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-sm text-muted">
-            12 dimensions. 7 evidence tiers. Zero vendor influence. Every score backed by verifiable data, not marketing claims.
+            12 dimensions. 7 evidence tiers. Every score backed by documented evidence, not marketing claims.
           </p>
 
           <div className="mt-8 grid grid-cols-3 gap-3 max-w-sm mx-auto">
@@ -251,13 +251,13 @@ export default function MethodologyPage() {
             <span className="flex h-6 w-6 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">07</span>
             <div className="h-px flex-1 bg-border/60" />
           </div>
-          <h2 className="text-xl font-black text-foreground tracking-tight mb-4">Evaluation Process</h2>
+          <h2 className="mb-4 text-xl font-bold text-foreground">Evaluation Process</h2>
 
           <div className="rounded-lg border border-border/80 bg-surface p-5">
             <div className="relative">
               <div className="absolute left-[11px] top-3 bottom-3 w-px bg-border/60" />
               <div className="space-y-0">
-                {["Evidence Collection", "Evidence Review", "Cross-Source Analysis", "12-Dimension ASCS Evaluation", "Independent Verdict"].map((step, i, arr) => (
+                {["Evidence Collection", "Evidence Review", "Cross-Source Analysis", "12-Dimension ASCS Evaluation", "Editorial Assessment"].map((step, i, arr) => (
                   <div key={step} className="relative flex items-center gap-3 py-2">
                     <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary/20 bg-surface text-[9px] font-bold text-primary shrink-0">
                       {i + 1}
@@ -294,7 +294,7 @@ export default function MethodologyPage() {
                 <h3 className="text-sm font-bold text-foreground">Open & Auditable</h3>
               </div>
               <p className="text-xs leading-relaxed text-muted">
-                All datasets are versioned and checksummed. Raw data is preserved and available for audit. Methodology changes are documented in changelogs.
+                All datasets are versioned and checksummed. Raw data is preserved and available for audit. Methodology changes are documented in published changelogs.
               </p>
             </div>
 
@@ -305,7 +305,7 @@ export default function MethodologyPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                   </svg>
                 </span>
-                <h3 className="text-sm font-bold text-foreground">External Advisory Board</h3>
+                <h3 className="text-sm font-bold text-foreground">External Advisory Review</h3>
               </div>
               <p className="text-xs leading-relaxed text-muted">
                 Reviewed by 2–3 domain experts before publication. Audits for bias, ensures methodological rigor, and signs off before release.

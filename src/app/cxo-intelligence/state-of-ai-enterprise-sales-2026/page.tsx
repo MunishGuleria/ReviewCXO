@@ -5,11 +5,11 @@ import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 export const metadata: Metadata = {
   title: "State of AI in Enterprise Sales 2026",
   description:
-    "Original primary research based on interviews and surveys with 150+ enterprise decision-makers.",
+    "Original primary research based on interviews and surveys with enterprise decision-makers.",
   alternates: { canonical: "https://reviews-cxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026" },
   openGraph: {
     title: "State of AI in Enterprise Sales 2026",
-    description: "Original primary research with 150+ enterprise decision-makers.",
+    description: "Original primary research with enterprise decision-makers.",
     url: "https://reviews-cxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -64,7 +64,7 @@ export default function StateOfAIReportPage() {
               </li>
             </ul>
 
-            <h3>Interview Topics</h3>
+            <h3>Research Topics</h3>
             <ol>
               <li>Current state of CRM/ERP data integration</li>
               <li>AI adoption in sales workflow (stage, tools, results)</li>
@@ -108,7 +108,7 @@ export default function StateOfAIReportPage() {
               <a href="mailto:research@reviews-cxo.com">
                 research@reviews-cxo.com
               </a>{" "}
-              for interview or survey participation.
+              for research participation.
             </p>
           </section>
         </div>

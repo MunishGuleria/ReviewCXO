@@ -4,11 +4,11 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Editorial Policy",
   description:
-    "Reviews_CXO editorial independence policy — how we ensure research integrity and independence.",
+    "Reviews_CXO editorial policy — how the publication maintains research integrity and editorial independence.",
   alternates: { canonical: "https://reviews-cxo.com/about/editorial-policy" },
   openGraph: {
     title: "Editorial Policy — Reviews_CXO",
-    description: "How we ensure research integrity and independence.",
+    description: "How the publication maintains research integrity and editorial independence.",
     url: "https://reviews-cxo.com/about/editorial-policy",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -22,7 +22,7 @@ export default function EditorialPolicyPage() {
       <PageHeader
         badge="Standards & Governance"
         title="Editorial Policy"
-        description="Our institutional commitment to independent, evidence-based research, transparency, and data integrity."
+        description="The publication's commitment to evidence-based research, transparency, and data integrity."
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 space-y-10">
@@ -31,7 +31,7 @@ export default function EditorialPolicyPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">Foundational Rule</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Editorial Independence</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            Reviews_CXO maintains strict editorial independence in all research conclusions, vendor scores, benchmark methodology, and publication decisions. No sponsor, advertiser, or commercial vendor controls our evaluation findings.
+            Reviews_CXO maintains editorial independence in all research conclusions, vendor scores, benchmark methodology, and publication decisions. No sponsor, advertiser, or commercial vendor controls evaluation findings.
           </p>
         </div>
 
@@ -42,19 +42,19 @@ export default function EditorialPolicyPage() {
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>All research adheres to the published 12-dimension ASCS methodology without exception.</span>
+                <span>All research adheres to the published 12-dimension ASCS methodology.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Vendor scores are determined solely by empirical evidence, never commercial relationships.</span>
+                <span>Vendor scores are determined solely by documented evidence, not commercial relationships.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Negative findings and system bottlenecks are published with equal prominence to strengths.</span>
+                <span>Limitations and strengths are published with equal prominence.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Limitations, caveats, and test environments are documented openly in every report.</span>
+                <span>Caveats and test environments are documented openly in every report.</span>
               </li>
             </ul>
           </div>
@@ -64,15 +64,15 @@ export default function EditorialPolicyPage() {
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>All analysts must formally disclose personal, financial, or consulting relationships with evaluated vendors.</span>
+                <span>All analysts must disclose personal, financial, or consulting relationships with evaluated vendors.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Sponsoring entities are evaluated under the exact same standardized methodology as all peers.</span>
+                <span>Sponsoring entities are evaluated under the same standardized methodology as all peers.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Any dimension where a sponsor scores exceptionally undergoes mandatory secondary advisory review.</span>
+                <span>Any dimension where a sponsor scores in the top tier undergoes mandatory secondary advisory review.</span>
               </li>
             </ul>
           </div>
@@ -82,15 +82,15 @@ export default function EditorialPolicyPage() {
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Vendors may review technical specs for factual accuracy prior to final scorecard publishing.</span>
+                <span>Vendors may review technical specifications for factual accuracy prior to final scorecard publishing.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Vendor feedback never obligates Reviews_CXO to alter editorial ratings or critical teardowns.</span>
+                <span>Vendor feedback does not obligate Reviews_CXO to alter editorial assessments or critical teardowns.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>All vendor communications, challenges, and clarifications are archived for audit.</span>
+                <span>All vendor communications, challenges, and clarifications are archived for audit purposes.</span>
               </li>
             </ul>
           </div>
@@ -104,11 +104,11 @@ export default function EditorialPolicyPage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Raw evaluation logs and scoring telemetry are retained for reproducible peer inspection.</span>
+                <span>Raw evaluation logs and scoring telemetry are retained for peer inspection.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Methodology modifications across quarterly releases are tracked in public changelogs.</span>
+                <span>Methodology modifications across quarterly releases are tracked in published changelogs.</span>
               </li>
             </ul>
           </div>

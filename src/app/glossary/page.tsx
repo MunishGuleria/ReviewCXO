@@ -3,11 +3,11 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Glossary",
-  description: "Enterprise AI terminology defined with evidence-backed explanations.",
+  description: "Enterprise AI terminology defined with research-backed explanations.",
   alternates: { canonical: "https://reviews-cxo.com/glossary" },
   openGraph: {
     title: "Enterprise AI Glossary",
-    description: "Enterprise AI terminology defined with evidence-backed explanations.",
+    description: "Enterprise AI terminology defined with research-backed explanations.",
     url: "https://reviews-cxo.com/glossary",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -33,7 +33,7 @@ export default function GlossaryPage() {
     <>
       <PageHeader
         title="Glossary"
-        description="Enterprise AI terminology defined with evidence-backed explanations."
+        description="Enterprise AI terminology defined with research-backed explanations."
       />
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="space-y-8">

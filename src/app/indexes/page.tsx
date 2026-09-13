@@ -22,7 +22,7 @@ export default function IndexesPage() {
     <>
       <PageHeader
         title="Indexes"
-        description="Composite scores and rankings using the ASCS 12-dimension framework. Evidence-based evaluations of enterprise AI sales platforms."
+        description="Composite scores and rankings using the ASCS 12-dimension framework. Evaluations of enterprise AI sales platforms."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

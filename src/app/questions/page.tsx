@@ -9,11 +9,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Community Questions — AI Sales Platform Research",
-  description: "Expert answers to real enterprise AI questions. Independent research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews_CXO analysts.",
+  description: "Answers to enterprise AI questions. Research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews_CXO analysts.",
   alternates: { canonical: "https://reviews-cxo.com/questions" },
   openGraph: {
     title: "Community Questions — AI Sales Platform Research",
-    description: "Expert answers to real enterprise AI questions from Reviews_CXO analysts.",
+    description: "Answers to enterprise AI questions from Reviews_CXO analysts.",
     url: "https://reviews-cxo.com/questions",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -25,19 +25,19 @@ const questions = getPublishedQuestions();
 
 export default function QuestionsPage() {
   return (
-    <ResearchLayout
-      badge="Research Archive"
-      title="Enterprise AI Questions, Answered"
-      description="Real questions from enterprise teams evaluating AI sales platforms. Our analysts provide independent, evidence-based answers grounded in the ASCS framework — no vendor bias, no marketing fluff."
-      backHref="/"
-      backLabel="Home"
-    >
+      <ResearchLayout
+        badge="Research Archive"
+        title="Enterprise AI Questions, Answered"
+        description="Real questions from enterprise teams evaluating AI sales platforms. Analysts provide evidence-based answers grounded in the ASCS framework — no vendor bias, no marketing fluff."
+        backHref="/"
+        backLabel="Home"
+      >
       <div className="space-y-6">
         <DisclosureBanner />
 
         <SectionCard title="How It Works">
           <p className="text-xs sm:text-sm text-muted leading-relaxed">
-            Enterprise teams face tough decisions when evaluating AI sales platforms. We collect real questions from across the industry and our analysts produce independent, evidence-based responses. Every answer is grounded in our ASCS framework, references verified data sources, and provides actionable recommendations. No fabricated questions, no paid placements, no vendor influence.
+            Enterprise teams face difficult decisions when evaluating AI sales platforms. Reviews_CXO collects questions from across the industry and produces research-based responses. Every answer is grounded in the ASCS framework, references documented data sources, and provides actionable recommendations. No fabricated questions, no paid placements, no vendor influence.
           </p>
         </SectionCard>
 

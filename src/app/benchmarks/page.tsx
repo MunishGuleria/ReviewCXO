@@ -5,11 +5,11 @@ import { Card } from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "Benchmarks",
   description:
-    "Reproducible, controlled evaluations of AI sales platform capabilities on specific enterprise tasks.",
+    "Controlled evaluations of AI sales platform capabilities on specific enterprise tasks with published methodology.",
   alternates: { canonical: "https://reviews-cxo.com/benchmarks" },
   openGraph: {
     title: "AI Sales Platform Benchmarks",
-    description: "Reproducible evaluations of AI sales platform capabilities.",
+    description: "Controlled evaluations of AI sales platform capabilities.",
     url: "https://reviews-cxo.com/benchmarks",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -22,7 +22,7 @@ export default function BenchmarksPage() {
     <>
       <PageHeader
         title="Benchmarks"
-        description="Reproducible, controlled evaluations of AI sales platform capabilities on specific enterprise tasks. Every benchmark includes published datasets, code, and methodology."
+        description="Controlled evaluations of AI sales platform capabilities on specific enterprise tasks. Every benchmark includes published datasets, code, and methodology."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

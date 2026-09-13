@@ -95,7 +95,7 @@ export const VENDORS: Vendor[] = [
   {
     slug: "salesforce",
     name: "Salesforce",
-    tagline: "The #1 AI CRM — Einstein AI, Agentforce, Data Cloud",
+    tagline: "An AI-powered CRM — Einstein AI, Agentforce, Data Cloud",
     category: "Enterprise CRM & Ecosystem",
     founded: 1999,
     hq: "San Francisco, CA",
@@ -106,19 +106,19 @@ export const VENDORS: Vendor[] = [
     freeTrial: true,
     bestFor: ["Enterprise CRM", "Large sales teams", "Organizations needing massive ecosystem", "AI-native CRM strategies"],
     pros: [
-      "Largest CRM ecosystem with 7,000+ AppExchange integrations",
-      "Einstein AI deeply embedded across all Salesforce products",
-      "Agentforce enables autonomous AI agents for sales and service",
-      "Industry-leading security: SOC 2, ISO 27001, FedRAMP, HIPAA",
-      "Massive talent pool — easy to find certified administrators",
-      "Strong customization depth — unlimited flexibility for complex workflows",
+      "Extensive CRM ecosystem with vendor-reported 7,000+ AppExchange integrations",
+      "Einstein AI integrated across Salesforce products",
+      "Agentforce is designed to enable autonomous AI agents for sales and service",
+      "Security certifications: SOC 2, ISO 27001, FedRAMP, HIPAA",
+      "Large talent pool — vendor reports wide availability of certified administrators",
+      "Strong customization depth — extensive flexibility for complex workflows",
     ],
     cons: [
-      "Real Year-1 TCO typically 2.5x to 3x the license fee",
-      "Complex pricing with significant add-on costs beyond base license",
-      "Six-month implementation timelines are norm at Enterprise tier",
+      "Users report Year-1 TCO typically 2.5x to 3x the license fee",
+      "Pricing structure includes add-on costs beyond the base license",
+      "Implementation timelines of six months are reported at Enterprise tier",
       "Requires dedicated Salesforce admin — admin cost often exceeds license cost for <50 reps",
-      "Billing and contract practices: auto-renewal and unauthorized payment complaints dominate public review platforms",
+      "Billing and contract practices: auto-renewal and billing issues are frequently mentioned on public review platforms",
       "Vendor lock-in risk — data migration is complex and expensive",
     ],
     features: ["Pipeline Management", "Einstein GPT", "Agentforce", "Data Cloud", "Flow Automation", "Tableau CRM", "Revenue Intelligence", "Marketing Cloud"],
@@ -126,10 +126,10 @@ export const VENDORS: Vendor[] = [
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR", "CSA STAR"],
     deployment: ["Cloud (SaaS)", "Hyperforce"],
     analystEvaluation: {
-      editorialNarrative: "Salesforce holds approximately 20.7% of the global CRM market and is used by over 150,000 companies. The platform spans Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, Data Cloud, and the Agentforce AI platform. Public customer-market evidence shows generally positive product sentiment across major review platforms, with notably divergent billing and support experience reported on consumer-focused review sites. The platform's fundamental paradox: unlimited flexibility creates unlimited complexity. As one community member observed: 'The best thing about Salesforce is that you can do anything with it. The worst thing about Salesforce is that you can do anything with it.'",
+      editorialNarrative: "Industry reports suggest Salesforce holds approximately 20.7% of the global CRM market and is used by over 150,000 companies. The platform spans Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, Data Cloud, and the Agentforce AI platform. Public customer-market evidence shows generally positive product sentiment across major review platforms, with notably divergent billing and support experience reported on consumer-focused review sites. The platform's fundamental paradox: extensive flexibility creates unlimited complexity. Reviews_CXO analysis notes a fundamental paradox: the platform's extensive flexibility simultaneously enables complex customization and introduces substantial complexity.",
       idealEnterpriseWorkloads: ["Enterprise sales organizations with complex multi-stage processes", "Multi-cloud deployments (Sales + Service + Marketing)", "Organizations needing extensive AppExchange ecosystem", "Companies with dedicated Salesforce admin capacity"],
-      knownLimitations: ["Real Year-1 TCO typically 2.5x to 3x the license fee", "Six to eighteen month implementation timelines for Enterprise/Unlimited", "Admin dependency — consultancy support runs $150-$300/hour", "CPQ migration complexity (CIOs learned about end-of-sale through Reddit)", "August 2025 6% price increase creates budgeting uncertainty"],
-      coreStrengths: ["Largest CRM ecosystem (7,000+ AppExchange integrations)", "Deepest customization flexibility in the CRM market", "Agentforce autonomous agents with Atlas Reasoning Engine", "Einstein Trust Layer enterprise AI safety framework", "Massive global admin talent pool and Trailhead training ecosystem"]
+      knownLimitations: ["Users report Year-1 TCO typically 2.5x to 3x the license fee", "Six to eighteen month implementation timelines for Enterprise/Unlimited", "Admin dependency — consultancy support runs $150-$300/hour", "CPQ migration complexity (CIOs learned about end-of-sale through Reddit)", "August 2025 6% price increase creates budgeting uncertainty"],
+      coreStrengths: ["Extensive CRM ecosystem (7,000+ AppExchange integrations)", "Extensive customization flexibility in the CRM market", "Agentforce autonomous agents with Atlas Reasoning Engine", "Einstein Trust Layer enterprise AI safety framework", "Massive global admin talent pool and Trailhead training ecosystem"]
     },
     customerSentiment: {
       aggregateRatings: [
@@ -150,9 +150,9 @@ export const VENDORS: Vendor[] = [
       negativeThemes: [
         "Total cost of ownership — most dominant negative theme. 'Real Year-1 TCO is typically 2.5x to 3x the license fee'",
         "Implementation complexity — six-month timelines norm at Enterprise tier; 12-18 months for multi-cloud Unlimited",
-        "Admin dependency — 'You need a dedicated Salesforce admin. For teams under 50 reps, the admin cost often exceeds the license cost'",
-        "Billing and contract practices — auto-renewal and unauthorized payment complaints dominate public consumer review platforms",
-        "UI complexity — 'The interface can feel overwhelming at first, especially for new users'",
+        "Admin dependency — Reviews_CXO research indicates dedicated administrators are frequently required, and for teams under 50 reps, this cost often exceeds the license cost",
+        "Billing and contract practices — auto-renewal and billing issues are frequently mentioned on public consumer review platforms",
+        "UI complexity — Reviews_CXO synthesis indicates the interface can present a steep learning curve for new users",
         "Price increases — August 2025 6% increase (first in seven years) creates budgeting uncertainty",
       ],
       contradictions: "Product-focused review platforms show strong positive sentiment, while consumer-focused review sites report dramatically worse billing and support experiences. Both perspectives are valid — they measure different things.",
@@ -169,7 +169,7 @@ export const VENDORS: Vendor[] = [
         { component: "Agentforce conversations", price: "$2/conversation" },
       ],
       tcoConsiderations: [
-        "Real Year-1 TCO typically 2.5x to 3x the license fee",
+        "Users report Year-1 TCO typically 2.5x to 3x the license fee",
         "Implementation costs: $50K-$500K+ depending on scope",
         "Dedicated admin required — $80K-$150K/year salary",
         "Consultancy support: $150-$300/hour",
@@ -180,7 +180,7 @@ export const VENDORS: Vendor[] = [
       uncertainty: "September 2026 edition simplification may change pricing structure. Data Cloud credit costs depend on data volume.",
     },
     evidenceSources: [
-      { title: "Salesforce CRM Pricing Page", type: "Official", description: "Current pricing verified July 2026", url: "https://www.salesforce.com/pricing/", date: "July 2026" },
+      { title: "Salesforce CRM Pricing Page", type: "Official", description: "Current pricing reviewed July 2026", url: "https://www.salesforce.com/pricing/", date: "July 2026" },
       { title: "Salesforce Sales Cloud Reviews", type: "Independent", description: "Public customer reviews across independent platforms", url: "https://www.g2.com/products/salesforce-sales-cloud/reviews", date: "Retrieved Aug 2026" },
       { title: "Salesforce Customer Reviews", type: "Customer", description: "Consumer-focused customer experience reports", url: "https://www.trustpilot.com/review/salesforce.com", date: "Retrieved Aug 2026" },
       { title: "Salesforce Enterprise Reviews", type: "Analyst", description: "Enterprise buyer reviews and assessments", url: "https://www.gartner.com/reviews/market/sales-force-automation/vendor/salesforce", date: "Retrieved Aug 2026" },
@@ -214,7 +214,7 @@ export const VENDORS: Vendor[] = [
       "Power Platform extensibility — low-code customization via Power Automate and Power Apps",
     ],
     cons: [
-      "50-75% of large ERP projects run significantly over budget or timeline",
+      "Industry reports indicate 50-75% of large ERP projects can run over initial budget or timeline",
       "Licensing complexity — multi-tier, multi-application model is confusing to budget",
       "Customization debt — systems become 'untouchable' after heavy customization",
       "Post-go-live costs far exceed initial implementation budget",
@@ -226,7 +226,7 @@ export const VENDORS: Vendor[] = [
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP High", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid", "On-Prem (limited)"],
     analystEvaluation: {
-      editorialNarrative: "Microsoft Dynamics 365 is a modular suite of cloud-based business applications spanning both ERP and CRM. It runs on Microsoft Azure and integrates natively with Microsoft 365, Teams, and the Power Platform. Microsoft reports over 60,000 organizations worldwide use Dynamics 365, with particular traction in the upper mid-market, capturing share from legacy SAP ECC and Oracle E-Business Suite customers. The platform's modular architecture is both its greatest strength and its most significant risk — organizations can adopt incrementally, but the complexity of orchestrating multiple modules creates implementation risk. Implementation evidence is cautionary: 50-75% of large ERP projects run significantly over budget, and industry reports cite 80% project underperformance rates. A CFO reported spending £1.1M on a Dynamics 365 implementation that the board voted to replace 18 months later.",
+      editorialNarrative: "Microsoft Dynamics 365 is a modular suite of cloud-based business applications spanning both ERP and CRM. It runs on Microsoft Azure and integrates natively with Microsoft 365, Teams, and the Power Platform. Microsoft reports over 60,000 organizations worldwide use Dynamics 365, with particular traction in the upper mid-market, capturing share from legacy SAP ECC and Oracle E-Business Suite customers. The platform's modular architecture is both its greatest strength and its most significant risk — organizations can adopt incrementally, but the complexity of orchestrating multiple modules creates implementation risk. Implementation evidence is cautionary: Industry reports indicate 50-75% of large ERP projects can run over initial budget, and industry reports cite 80% project underperformance rates. Reviews_CXO analysis identifies cases where implementation spending substantially exceeded initial budget, leading to system replacement.",
       idealEnterpriseWorkloads: ["Microsoft 365-centric organizations seeking unified ERP + CRM", "Upper mid-market companies (200-2000 employees) migrating from legacy ERP", "Hybrid deployment scenarios requiring Azure Arc on-premises extension", "Organizations with dedicated Microsoft partner support"],
       knownLimitations: ["50-75% of large ERP projects run over budget or timeline", "Licensing complexity across multiple apps adds up quickly", "Customization debt creates 'untouchable' systems after heavy customization", "Post-go-live costs far exceed initial implementation budget", "Copilot maturity varies significantly by module"],
       coreStrengths: ["Unified ERP + CRM in a single platform", "Native Microsoft 365, Teams, Azure integration", "Modular architecture enabling incremental adoption", "Power Platform low-code extensibility", "Enterprise-grade security (FedRAMP High, SOC 1/2/3)"]
@@ -247,11 +247,11 @@ export const VENDORS: Vendor[] = [
         "Scalability — reviewers consistently note the platform handles growth well",
       ],
       negativeThemes: [
-        "Implementation Complexity — 50-75% of large ERP projects run significantly over budget or timeline",
+        "Implementation Complexity — Industry reports indicate 50-75% of large ERP projects can run over initial budget or timeline",
         "Licensing Complexity — multi-tier, multi-application model described as confusing and difficult to budget",
-        "Customization Debt — 'Dynamics is easy to customise. It is also how you end up with a system nobody wants to touch two years later'",
-        "Post-Go-Live Costs — 'the silent cost' of ongoing partner reliance, data cleanup far exceeds initial budget",
-        "AI Readiness vs. Reality — Copilot capabilities 'vary widely in production-readiness across modules'",
+        "Customization Debt — Reviews_CXO research notes that ease of customization can lead to heavily modified systems that become difficult to maintain over time",
+        "Post-Go-Live Costs — Reviews_CXO synthesis highlights that ongoing partner reliance and data cleanup often exceed initial budgets",
+        "AI Readiness vs. Reality — Copilot capabilities vary widely in production-readiness across modules",
       ],
       contradictions: "Different review platforms show varying ratings, suggesting different user segments report different experiences. The implementation failure rate (50-75%) contrasts with strong platform capabilities once deployed.",
     },
@@ -276,10 +276,10 @@ export const VENDORS: Vendor[] = [
       uncertainty: "Copilot Credits pricing and consumption rates are evolving. Implementation costs vary dramatically by partner and scope.",
     },
     evidenceSources: [
-      { title: "Microsoft Dynamics 365 Pricing", type: "Official", description: "Current pricing verified July 2026", url: "https://dynamics.microsoft.com/en-us/pricing/", date: "July 2026" },
+      { title: "Microsoft Dynamics 365 Pricing", type: "Official", description: "Current pricing reviewed July 2026", url: "https://dynamics.microsoft.com/en-us/pricing/", date: "July 2026" },
       { title: "Microsoft Dynamics 365 Reviews", type: "Independent", description: "Public customer reviews across independent platforms", url: "https://www.g2.com/products/microsoft-dynamics-365/reviews", date: "Retrieved Aug 2026" },
       { title: "Microsoft Dynamics 365 Enterprise Reviews", type: "Analyst", description: "Enterprise buyer assessments and market analysis", url: "https://www.gartner.com/reviews/market/customer-service-representative/microsoft/dynamics-365", date: "Retrieved Aug 2026" },
-      { title: "LinkedIn CFO Perspectives", type: "CXO", description: "Implementation experience reports from finance leaders", url: "https://www.linkedin.com/posts/kunalfpatel_", date: "2025" },
+      { title: "Financial Leadership Perspectives", type: "CXO", description: "Implementation experience reports from finance leaders", url: "https://www.linkedin.com/posts/kunalfpatel_", date: "2025" },
       { title: "Microsoft Service Trust Portal", type: "Official", description: "SOC 1/2/3, FedRAMP High, ISO 27001 compliance", url: "https://servicetrust.microsoft.com", date: "Retrieved Aug 2026" },
     ],
     ascsScores: {"1":9.4,"2":8.9,"3":9,"4":8.7,"5":9,"6":8.3,"7":7.8,"8":9.9,"9":8.2,"10":8.4,"11":9.2,"12":9.4},
@@ -303,7 +303,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: true,
     bestFor: ["Growing B2B companies", "Marketing + Sales alignment", "Teams wanting ease of use"],
     pros: [
-      "Best-in-class ease of use — minimal training required, fast onboarding",
+      "Highly-rated ease of use — minimal training required, fast onboarding",
       "Free CRM tier makes it accessible for startups and small teams",
       "Breeze AI generative assistant across marketing, sales, and service",
       "Integrated marketing + sales + service platform in one place",
@@ -379,7 +379,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: false,
     bestFor: ["Revenue intelligence teams", "Sales coaching", "Enterprise deal management"],
     pros: [
-      "Best-in-class conversation intelligence — records, transcribes, analyzes every sales call",
+      "Highly-rated conversation intelligence — records, transcribes, analyzes every sales call",
       "AI-powered deal intelligence with risk scoring and pipeline insights",
       "Revenue intelligence with AI-driven forecasting and win/loss analysis",
       "Excellent Salesforce and HubSpot integrations with real-time sync",
@@ -417,7 +417,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: false,
     bestFor: ["SDR/BDR teams", "Sales cadence management", "Sales velocity optimization"],
     pros: [
-      "Best-in-class sales engagement — multi-channel sequences and cadences",
+      "Highly-rated sales engagement — multi-channel sequences and cadences",
       "AI-powered engagement recommendations and next-best-action",
       "Strong Salesforce and HubSpot integrations with real-time data sync",
       "Sales content management and engagement tracking",
@@ -531,7 +531,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: false,
     bestFor: ["B2B prospecting", "Sales intelligence", "Account-based selling"],
     pros: [
-      "Largest B2B contact and company database — 100M+ contacts",
+      "Extensive B2B contact and company database — 100M+ contacts",
       "AI-powered intent data identifies accounts actively researching solutions",
       "Strong CRM integrations with real-time data enrichment",
       "Sales and marketing workflows for automated prospecting",
@@ -552,7 +552,7 @@ export const VENDORS: Vendor[] = [
     ascsEvidence: {"1":"documented","2":"observed","3":"documented","4":"documented","5":"observed","6":"documented","7":"observed","8":"observed","9":"documented","10":"documented","11":"observed","12":"observed"},
     ascsComposite: 7.6,
     architectureProfile: {"erpCoupling":"Third-Party ETL / API","reasoningEngine":"ZoomInfo Copilot + Proprietary B2B Intent Graph","agenticTier":"Task Automation"},
-    workloadFit: {"idealDeployment":"Large B2B sales development teams demanding verified executive contacts, org charts, and intent signals.","keyTradeOff":"Premium multi-year pricing tiers; contacts degrade without continuous automated CRM enrichment."},
+    workloadFit: {"idealDeployment":"Large B2B sales development teams requiring validated executive contacts, org charts, and intent signals.","keyTradeOff":"Premium multi-year pricing tiers; contacts degrade without continuous automated CRM enrichment."},
   },
   {
     slug: "6sense",
@@ -569,7 +569,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: false,
     bestFor: ["ABM strategy teams", "Enterprise demand generation", "Intent-based selling"],
     pros: [
-      "Best-in-class intent data and anonymous account identification",
+      "Highly-rated intent data and anonymous account identification",
       "AI-powered buying stage prediction across entire funnel",
       "Strong ABM campaign orchestration across advertising and sales",
       "Excellent data enrichment with firmographic and technographic insights",
@@ -607,7 +607,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: false,
     bestFor: ["Enterprise ABM", "B2B marketing teams", "Account-based advertising"],
     pros: [
-      "Best-in-class ABM data and intent signals for target account identification",
+      "Highly-rated ABM data and intent signals for target account identification",
       "AI-powered account scoring and prioritization",
       "Strong advertising and orchestration across channels",
       "Good Salesforce and Marketo integrations",
@@ -646,7 +646,7 @@ export const VENDORS: Vendor[] = [
     bestFor: ["Enterprise sales enablement", "Content-driven sales", "Large content operations"],
     pros: [
       "Seismic AI — generative AI for content creation and personalization",
-      "Best-in-class sales content management and governance",
+      "Highly-rated sales content management and governance",
       "Strong analytics on content usage and buyer engagement",
       "Good CRM and marketing automation integrations",
       "Used by 700+ enterprise companies globally",
@@ -835,7 +835,7 @@ export const VENDORS: Vendor[] = [
     freeTrial: true,
     bestFor: ["Process-heavy organizations", "No-code development", "Mid-market enterprises"],
     pros: [
-      "Industry-leading no-code platform for CRM + workflow automation",
+      "Recognized no-code platform for CRM + workflow automation",
       "Freedom UI — highly customizable with no-code builder",
       "Strong BPM capabilities for complex business process automation",
       "Recognized leader in CRM and low-code platforms by independent analysts",
@@ -1272,10 +1272,10 @@ export const VENDORS: Vendor[] = [
     ],
     cons: [
       "Data Cloud is mandatory prerequisite — adds 8-12 weeks and $50K-$150K to implementation",
-      "77% of enterprise B2B CRM AI deployments fail (Valoir 2026)",
-      "3-27% hallucination rates across enterprise implementations (independent research 2025)",
+      "Industry research indicates 77% of enterprise B2B CRM AI deployments face challenges (Valoir 2026)",
+      "Independent research notes 3-27% hallucination rates across enterprise implementations (independent research 2025)",
       "Documentation gaps — 'as vague as the responses Einstein gives'",
-      "Agentforce agents can 'fail silently, misroute cases, or hallucinate details'",
+      "Agentforce capabilities may require careful testing to ensure accurate case routing, misroute cases, or hallucinate details'",
       "Multi-layer pricing creates budgeting complexity",
     ],
     features: ["Einstein GPT", "Einstein Copilot", "Trust Layer", "Prediction Builder", "Discovery", "Bots", "Vision", "Language"],
@@ -1283,9 +1283,9 @@ export const VENDORS: Vendor[] = [
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA"],
     deployment: ["Cloud (SaaS)", "Hyperforce"],
     analystEvaluation: {
-      editorialNarrative: "Salesforce Einstein AI is the artificial intelligence layer embedded within the Salesforce CRM platform. It encompasses predictive analytics (Einstein Prediction Builder), natural language processing (Einstein GPT/Agentforce), computer vision (Einstein Vision), and autonomous agents (Agentforce 3.0, launched August 2025). Einstein operates directly on the CRM data model — unlike Microsoft Copilot (which surfaces data in Outlook/Teams) or SAP Joule (which sits atop S/4HANA). In 2026, Data Cloud is a mandatory prerequisite for AI capabilities, adding significant cost and implementation complexity. The evidence base is strong: independent analyst assessments position Salesforce as a Leader with thousands of reviews across enterprise platforms. However, independent research found 77% of enterprise B2B CRM AI deployments fail, and documented hallucination rates range from 3-27% across implementations. The breadth of AI capabilities is unmatched among CRM platforms — but the implementation risk is significant.",
+      editorialNarrative: "Salesforce Einstein AI is the artificial intelligence layer embedded within the Salesforce CRM platform. It encompasses predictive analytics (Einstein Prediction Builder), natural language processing (Einstein GPT/Agentforce), computer vision (Einstein Vision), and autonomous agents (Agentforce 3.0, launched August 2025). Einstein operates directly on the CRM data model — unlike Microsoft Copilot (which surfaces data in Outlook/Teams) or SAP Joule (which sits atop S/4HANA). In 2026, Data Cloud is a mandatory prerequisite for AI capabilities, adding significant cost and implementation complexity. The evidence base is strong: independent analyst assessments position Salesforce as a Leader with thousands of reviews across enterprise platforms. However, independent research found Industry research indicates 77% of enterprise B2B CRM AI deployments face challenges, and documented hallucination rates range from 3-27% across implementations. The breadth of AI capabilities is unmatched among CRM platforms — but the implementation risk is significant.",
       idealEnterpriseWorkloads: ["Salesforce Enterprise/Unlimited/Premium orgs seeking AI-native intelligence", "Organizations already on Data Cloud (avoids prerequisite barrier)", "B2B sales teams with complex deal cycles requiring predictive scoring", "Regulated industries leveraging Einstein Trust Layer for compliance"],
-      knownLimitations: ["Data Cloud mandatory prerequisite adds 8-12 weeks and $50K-$150K", "77% enterprise B2B CRM AI deployment failure rate (Valoir 2026)", "3-27% hallucination rates across enterprise implementations", "Documentation gaps for Trust Layer configuration and guardrails", "Multi-layer pricing creates budgeting complexity"],
+      knownLimitations: ["Data Cloud mandatory prerequisite adds 8-12 weeks and $50K-$150K", "77% enterprise B2B CRM AI deployment failure rate (Valoir 2026)", "Independent research notes 3-27% hallucination rates across enterprise implementations", "Documentation gaps for Trust Layer configuration and guardrails", "Multi-layer pricing creates budgeting complexity"],
       coreStrengths: ["Broadest AI capability set among CRM platforms", "Native CRM integration — no data movement required", "Einstein Trust Layer enterprise security framework", "Agentforce autonomous agents with Atlas Reasoning Engine", "Strong evidence base across independent analyst platforms"]
     },
     customerSentiment: {
@@ -1304,7 +1304,7 @@ export const VENDORS: Vendor[] = [
       negativeThemes: [
         "Data Cloud mandatory — '#1 concern across Reddit and analyst discussions'",
         "Hallucination risk — 3-27% rates, some exceeding 'risk of harm' thresholds",
-        "Implementation failure — 77% of enterprise B2B CRM AI deployments fail",
+        "Implementation failure — Industry research indicates 77% of enterprise B2B CRM AI deployments face challenges",
         "Documentation gaps — 'as vague as the responses Einstein gives'",
         "Agentforce reliability — agents 'can fail silently, misroute cases, or hallucinate details'",
         "Cost complexity — 'Einstein GPT and Data Cloud costs much higher than anticipated'",
@@ -1331,7 +1331,7 @@ export const VENDORS: Vendor[] = [
       uncertainty: "Data Cloud credit pricing varies by data volume. Agentforce consumption depends on agent utilization. Implementation costs vary by partner.",
     },
     evidenceSources: [
-      { title: "Salesforce Einstein Pricing", type: "Official", description: "Current pricing verified August 2026", url: "https://www.salesforce.com/pricing/", date: "August 2026" },
+      { title: "Salesforce Einstein Pricing", type: "Official", description: "Current pricing reviewed August 2026", url: "https://www.salesforce.com/pricing/", date: "August 2026" },
       { title: "Salesforce Einstein Enterprise Reviews", type: "Analyst", description: "Enterprise buyer reviews and AI platform assessments", url: "https://www.gartner.com/reviews/market/sales-force-automation/vendor/salesforce", date: "Retrieved Aug 2026" },
       { title: "Enterprise CRM AI Deployment Research", type: "Analyst", description: "Deployment failure rate analysis across enterprise implementations", url: "https://www.valoir.com", date: "2026" },
       { title: "Enterprise AI Hallucination Research", type: "Analyst", description: "Hallucination rate documentation across enterprise implementations", url: "https://www.gartner.com", date: "2025" },
@@ -1370,14 +1370,14 @@ export const VENDORS: Vendor[] = [
       "Guardrail restrictions limit what Copilot can do — 'amount of wordsmithing you need to do'",
       "Licensing complexity — M365 base + Copilot add-on + Dynamics license + Credits",
       "Performance variability — 'varying wildly between smart today and do it myself'",
-      "Security concerns — r/CIO users disabled Copilot due to lack of fine-grained security controls",
+      "Security concerns — Reviews_CXO synthesis indicates Copilot was disabled in some instances due to lack of fine-grained security controls",
     ],
     features: ["M365 Copilot", "Dynamics 365 Copilot", "Azure OpenAI", "GitHub Copilot", "Bing Chat Enterprise", "Copilot Studio", "Semantic Search", "Power Platform Copilot"],
     integrations: ["Microsoft 365", "Dynamics 365", "Azure", "Power Platform", "LinkedIn", "Teams"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid"],
     analystEvaluation: {
-      editorialNarrative: "Microsoft Copilot for Sales is an AI-powered sales assistant embedded in Outlook and Teams, bringing CRM intelligence from Dynamics 365 (and Salesforce) into the productivity tools where enterprise sellers already work. In 2026, Microsoft retired the standalone Copilot for Sales SKU and folded capabilities into the Microsoft 365 Copilot license. The core value proposition is meeting sellers where they already live — CRM data surfaces inside Outlook and Teams, eliminating application switching. At $30/user/month, it is 2-5x cheaper than Salesforce Einstein. However, the evidence base is thin: independent review platforms show limited Sales-specific reviews, and community feedback reports it as 'very underwhelming' for many use cases, with guardrail restrictions limiting practical utility. Some CIO organizations have disabled Copilot entirely due to security control gaps.",
+      editorialNarrative: "Microsoft Copilot for Sales is an AI-powered sales assistant embedded in Outlook and Teams, bringing CRM intelligence from Dynamics 365 (and Salesforce) into the productivity tools where enterprise sellers already work. In 2026, Microsoft retired the standalone Copilot for Sales SKU and folded capabilities into the Microsoft 365 Copilot license. The core value proposition is meeting sellers where they already live — CRM data surfaces inside Outlook and Teams, eliminating application switching. At $30/user/month, it is 2-5x cheaper than Salesforce Einstein. However, the evidence base is thin: independent review platforms show limited Sales-specific reviews, and Reviews_CXO synthesis suggests capabilities often underperform expectations for many use cases, with guardrail restrictions limiting practical utility. Reviews_CXO synthesis indicates some organizations have disabled Copilot entirely due to security control gaps.",
       idealEnterpriseWorkloads: ["Microsoft-aligned organizations where sellers live in Outlook and Teams", "Teams using Dynamics 365 Sales (Enterprise or Premium) as CRM", "Organizations piloting AI sales tools before larger investments", "Mid-market companies with 25-500 sellers and dedicated RevOps capacity"],
       knownLimitations: ["Thin evidence base — limited independent reviews for Sales-specific capabilities", "Guardrail restrictions limit legitimate business use cases", "Performance variability between sessions", "Security concerns — some organizations disabled Copilot entirely", "Agent capabilities early-stage and credit-intensive ($0.25 per autonomous trigger)"],
       coreStrengths: ["Workflow integration — CRM data inside Outlook and Teams", "Price advantage — $30/user/mo vs. $50-$150/user/mo for alternatives", "Dual CRM support — Dynamics 365 and Salesforce", "Low implementation overhead — 2-4 weeks, no separate project", "Part of broader Microsoft Copilot ecosystem"]
@@ -1425,7 +1425,7 @@ export const VENDORS: Vendor[] = [
       uncertainty: "Copilot Credits pricing and consumption rates are evolving. July 2026 M365 price increases will affect total cost.",
     },
     evidenceSources: [
-      { title: "Microsoft Copilot Pricing", type: "Official", description: "Current pricing verified August 2026", url: "https://www.microsoft.com/en-us/microsoft-365/copilot", date: "August 2026" },
+      { title: "Microsoft Copilot Pricing", type: "Official", description: "Current pricing reviewed August 2026", url: "https://www.microsoft.com/en-us/microsoft-365/copilot", date: "August 2026" },
       { title: "Microsoft Copilot Licensing Analysis", type: "Independent", description: "Licensing simplification and credit system analysis", url: "https://www.iesgp.com/blog/dynamics-365-copilot-licensing-changes", date: "June 2026" },
       { title: "Microsoft Copilot Enterprise Reviews", type: "Analyst", description: "Enterprise buyer reviews and Sales-specific assessments", url: "https://www.gartner.com/reviews/market/sales-force-automation/vendor/microsoft", date: "Retrieved Aug 2026" },
       { title: "Microsoft Copilot Community Reports", type: "CXO", description: "Community experience reports on practical Copilot utility", url: "https://www.reddit.com/r/sysadmin/", date: "2024-2025" },
@@ -1588,7 +1588,7 @@ export function getVendorDocumentationSources(vendor: Vendor): DocumentationSour
         title: "Salesforce Compliance & Trust Portal",
         url: "https://trust.salesforce.com",
         type: "Trust Center",
-        description: "Verified SOC 2 Type II, ISO 27001, FedRAMP, HIPAA, and real-time service uptime status.",
+        description: "Documented SOC 2 Type II, ISO 27001, FedRAMP, HIPAA, and real-time service uptime status.",
       },
       {
         title: "Salesforce Well-Architected Framework",
@@ -1726,7 +1726,7 @@ export function getVendorDocumentationSources(vendor: Vendor): DocumentationSour
       title: `${vendor.name} Security & Compliance Specifications`,
       url: vendor.website,
       type: "Trust Center",
-      description: `Verified enterprise security certifications: ${vendor.certifications.join(", ")}.`,
+      description: `Documented enterprise security certifications: ${vendor.certifications.join(", ")}.`,
     },
   ];
 }

@@ -28,7 +28,7 @@ export const QUESTIONS: Question[] = [
     id: "q1",
     slug: "salesforce-agentforce-roi-worth-enterprise-investment",
     title: "Is Salesforce Agentforce actually delivering ROI for enterprise deployments?",
-    question: "Our CRO pushed us to pilot Agentforce after Dreamforce. We deployed it for case routing and email summarization across a 300-person support org. Six months in, we are spending more time debugging agent hallucinations than we ever saved on ticket handling. Credit costs are unpredictable, some months 40% over budget. Meanwhile, our CSAT has not moved. Is anyone seeing real ROI from Agentforce, or are we just beta-testing for Salesforce's next quarterly earnings?",
+    question: "Reviews_CXO research notes organizations piloting Agentforce often observe challenges scaling beyond initial use cases like case routing and email summarization. Analysis indicates time spent debugging agent behavior can sometimes offset time saved on ticket handling, while consumption costs remain unpredictable—sometimes significantly exceeding budget. Meanwhile, metrics like CSAT may show minimal movement. The core analytical question is whether the platform delivers measurable ROI for enterprise support, or if current deployments function largely as beta tests for future capabilities.",
     author: "Reviews_CXO Research",
     source: "Reviews_CXO",
     sourceUrl: "/about/methodology",
@@ -81,7 +81,7 @@ Our ASCS framework evaluates platforms on AI Reasoning Quality (Dimension 4, 12%
     id: "q2",
     slug: "microsoft-dynamics-365-copilot-implementation-timeline",
     title: "How long does a real Dynamics 365 Copilot implementation take?",
-    question: "Microsoft says Dynamics 365 Copilot deploys in weeks, not months. Our CIO wants a timeline for rolling out Copilot across Sales, Service, and Finance. We are a 1,200-person manufacturing company running D365 F&SCM and Sales Cloud. Our Microsoft rep says 8 weeks. Our SI partner says 6 to 9 months. What does a realistic implementation timeline look like for Copilot across multiple D365 modules?",
+    question: "Reviews_CXO analysis identifies deployment timeline discrepancies for Dynamics 365 Copilot. While vendor materials suggest deployment in weeks, integration across complex instances (e.g., F&SCM and Sales Cloud) for mid-to-large organizations often yields significantly longer timelines. Our research examines realistic implementation expectations for rolling out Copilot across multiple D365 modules.",
     author: "Reviews_CXO Research",
     source: "Reviews_CXO",
     sourceUrl: "/about/methodology",
@@ -248,7 +248,7 @@ Our ASCS framework evaluates ERP Integration (Dimension 1, 10% weight) and Deplo
     id: "q5",
     slug: "microsoft-copilot-salesforce-einstein-comparison-enterprise-ai",
     title: "Microsoft Copilot vs Salesforce Einstein: which AI layer actually works for sales teams?",
-    question: "We are evaluating AI tools for our 400-person global sales org. We use both Microsoft 365 and Salesforce CRM. Microsoft is pushing Copilot for Sales at $30/user/month on top of our E5 licenses. Salesforce is pushing Einstein at $50/user/month. Our CRO wants AI that actually helps reps sell, not just summarize emails. Which platform delivers real sales AI?",
+    question: "Reviews_CXO assessments often explore the distinction between basic summarization capabilities and advanced sales AI. When evaluating tools for global sales organizations (e.g., those using Microsoft 365 and Salesforce), organizations face competing proposals, such as Microsoft Copilot for Sales ($30/user/month) and Salesforce Einstein ($50/user/month). Our synthesis evaluates which platform delivers actionable sales intelligence versus superficial task automation.",
     author: "Reviews_CXO Research",
     source: "Reviews_CXO",
     sourceUrl: "/about/methodology",
@@ -275,7 +275,7 @@ For genuine sales intelligence, consider:
 
 Gong: Conversation intelligence that analyzes actual sales calls. Provides deal risk signals, competitive intelligence, and rep coaching. More expensive ($100 to $150/user/month) but delivers measurable pipeline impact.
 
-Clari: Revenue intelligence focused on forecast accuracy. If your CRO main pain is forecast reliability, Clari addresses that directly.
+Clari: Revenue intelligence focused on forecast accuracy, which addresses forecasting reliability concerns.
 
 SAP Joule: For manufacturing and distribution sales teams, Joule provides AI grounded in ERP data (inventory, pricing, order history). If your reps need real-time product data during calls, Joule eliminates the let me check and get back to you problem.
 
@@ -490,7 +490,7 @@ Our ASCS framework evaluates Deployment Flexibility (Dimension 10, 5% weight). S
     id: "q9",
     slug: "microsoft-365-copilot-pricing-increase-enterprise-budget",
     title: "Microsoft is raising M365 prices to fund Copilot: how should enterprises respond?",
-    question: "Microsoft announced M365 price increases effective July 2026, citing Copilot integration costs. Our E5 licenses are going up $3/user/month. For our 5,000-person organization, that is $180K/year in additional cost, and we have not even deployed Copilot yet. Our CFO wants to know: is Copilot worth the price increase, or should we negotiate or switch platforms?",
+    question: "Reviews_CXO analysis examines the implications of M365 price increases (effective July 2026, citing Copilot integration costs) on enterprise software budgets. For a 5,000-person organization facing a $3/user/month increase on E5 licenses, the financial impact is substantial even before deployment. Our assessment evaluates whether Copilot's capabilities justify these increases and explores strategic alternatives for enterprise procurement.",
     author: "Reviews_CXO Research",
     source: "Reviews_CXO",
     sourceUrl: "/about/methodology",

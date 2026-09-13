@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `Enterprise AI Sales Platforms — Directory & ASCS Scores`,
-  description: `Independent evaluations of enterprise AI platforms. Architecture analysis, ASCS scores, and integration capabilities for Salesforce, Microsoft, SAP, and more.`,
+  description: `Evaluations of enterprise AI platforms. Architecture analysis, ASCS scores, and integration capabilities for Salesforce, Microsoft, SAP, and more.`,
   alternates: { canonical: "https://reviews-cxo.com/vendors" },
   openGraph: {
     title: `Enterprise AI Sales Platforms`,
-    description: `Independent evaluations of enterprise AI platforms with ASCS scores.`,
+    description: `Evaluations of enterprise AI platforms with ASCS scores.`,
     url: "https://reviews-cxo.com/vendors",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -26,8 +26,8 @@ export default function VendorsPage() {
     <>
       <PageHeader
         badge="Platform Directory"
-        title="Every Enterprise AI Platform, Independently Evaluated"
-        description="No vendor pays for placement. No sponsored rankings. Just architecture analysis, deployment specs, and ASCS scores across every platform that matters."
+        title="Every Enterprise AI Platform, Assessed"
+        description="No vendor pays for placement. No sponsored rankings. Architecture analysis, deployment specs, and ASCS scores across every platform evaluated."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">

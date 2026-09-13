@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://reviews-cxo.com/about" },
   openGraph: {
     title: "About Reviews_CXO",
-    description: "Independent research initiative focused on AI for enterprise sales.",
+    description: "Research initiative focused on AI for enterprise sales.",
     url: "https://reviews-cxo.com/about",
     siteName: "Reviews_CXO",
     locale: "en_US",
@@ -22,9 +22,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        badge="Independent Research Initiative"
+        badge="Research Initiative"
         title="About Reviews_CXO"
-        description="The premier global research hub where verified CxOs evaluate enterprise AI sales platforms and implementation architectures."
+        description="A research hub where enterprise professionals evaluate AI sales platforms and implementation architectures."
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
@@ -36,10 +36,10 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Reviews_CXO exists to fill a critical gap in the enterprise AI landscape: credible, independent, evidence-based research on AI platforms for sales.
+              Reviews_CXO exists to address a gap in the enterprise AI landscape: research on AI platforms for sales that is transparent, structured, and editorially independent.
             </p>
             <p className="mt-3 text-base leading-relaxed text-muted">
-              We are not a competitor-bashing site, fake review aggregator, or disguised product landing page. We earn credibility through transparent methodology, reproducible benchmarks, and genuine CxO intelligence.
+              Reviews_CXO is not a competitor-bashing site, review aggregator, or disguised product landing page. The publication aims to earn credibility through transparent methodology, structured benchmarks, and CXO-sourced intelligence.
             </p>
           </div>
 
@@ -49,10 +49,10 @@ export default function AboutPage() {
               Why Evidence Matters Now
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              The enterprise AI sales market is moving out of &ldquo;pilot purgatory&rdquo; into multi-million dollar core system replacements. Procurement leaders need architectural facts, not marketing hype.
+              The enterprise AI sales market is moving from pilot phases into multi-million dollar core system replacements. Procurement leaders need architectural assessments, not marketing claims.
             </p>
             <p className="mt-3 text-base leading-relaxed text-muted">
-              With over 80% of B2B evaluations factoring in autonomous execution depth and security postures, reproducible technical benchmarks are the gold standard for procurement decisions.
+              With reported 80%+ of B2B evaluations factoring in autonomous execution depth and security postures, structured technical assessments are increasingly used as a reference point for procurement decisions.
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div>
           <div className="mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">Pillars</span>
-            <h2 className="mt-1 text-xl sm:text-2xl font-black text-foreground">Our Research Methodology</h2>
+            <h2 className="mt-1 text-xl sm:text-2xl font-black text-foreground">Our Research Approach</h2>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -73,18 +73,18 @@ export default function AboutPage() {
               },
               {
                 step: "02",
-                title: "Reproducible Benchmarks",
-                desc: "Synthetic test datasets, evaluation code, and environment specs are open and inspectable.",
+                title: "Controlled Benchmarks",
+                desc: "Synthetic test datasets, evaluation code, and environment specs are published and inspectable.",
               },
               {
                 step: "03",
                 title: "Strict Evidence Tiers",
-                desc: "Every claim cites its tier: Observed (lab-tested), Documented, Third-Party Confirmed, or Inferred.",
+                desc: "Every claim cites its tier: Observed, Documented, Third-Party Confirmed, or Inferred.",
               },
               {
                 step: "04",
-                title: "Zero Editorial Control",
-                desc: "Sponsors cannot alter rankings, scores, methodology weights, or critical teardowns.",
+                title: "Editorial Firewalls",
+                desc: "Sponsors do not control rankings, scores, methodology weights, or editorial decisions.",
               },
             ].map((pillar) => (
               <div key={pillar.step} className="card-hover rounded-2xl border border-border bg-surface p-6 shadow-sm">
@@ -111,7 +111,7 @@ export default function AboutPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Methodology", desc: "12-dimension rubric & evidence hierarchy", href: "/about/methodology" },
-              { title: "Editorial Policy", desc: "Standards for independence & accuracy", href: "/about/editorial-policy" },
+              { title: "Editorial Policy", desc: "Standards for editorial integrity & accuracy", href: "/about/editorial-policy" },
               { title: "Disclosure", desc: "Funding transparency & sponsor boundaries", href: "/about/disclosure" },
               { title: "Corrections", desc: "Protocol for dispute resolution & updates", href: "/about/corrections" },
             ].map((p) => (

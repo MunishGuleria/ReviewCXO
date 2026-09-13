@@ -6,7 +6,7 @@ import { CitationBlock } from "@/components/ui/CitationBlock";
 
 export const metadata: Metadata = {
   title: "Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?",
-  description: "A controlled evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.",
+  description: "A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.",
   alternates: { canonical: "https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1" },
   openGraph: {
     title: "CRM+ERP At-Risk Accounts Benchmark",
@@ -23,7 +23,7 @@ export default function BenchmarkV1Page() {
     <ResearchLayout
       badge="Benchmark v1 · Published Sep 2026"
       title="Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?"
-      description="A controlled evaluation of cross-system reasoning capabilities across representative AI sales platform architectures."
+      description="A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures."
       backHref="/benchmarks"
       backLabel="All Benchmarks"
     >
@@ -70,7 +70,7 @@ export default function BenchmarkV1Page() {
             </InfoCard>
             <InfoCard title="The Test">
               <p className="text-sm text-muted">
-                We created a controlled test with 400 accounts, realistic edge cases, and ground truth labels to
+                We created a structured assessment with 400 accounts, realistic edge cases, and ground truth labels to
                 measure cross-system reasoning.
               </p>
             </InfoCard>
@@ -232,7 +232,7 @@ export default function BenchmarkV1Page() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-warning">⚠</span>
-                Latency measurements were taken in a controlled lab environment.
+                Latency measurements were taken in an assessment environment.
               </li>
             </ul>
           </InfoCard>
@@ -241,7 +241,7 @@ export default function BenchmarkV1Page() {
         {/* REPRODUCIBILITY */}
         <section>
           <h2 className="mb-4 text-xl font-bold text-foreground">Reproducibility</h2>
-          <InfoCard title="This Benchmark Is Fully Reproducible">
+          <InfoCard title="Reproducibility">
             <div className="grid gap-4 text-sm sm:grid-cols-3">
               <div>
                 <p className="font-bold">Dataset</p>

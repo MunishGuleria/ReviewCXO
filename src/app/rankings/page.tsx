@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ASCS 2026 Platform Rankings — Top Enterprise AI Sales Engines",
-  description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS architecture framework. Evidence-based rankings for enterprise buyers.",
+  description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS architecture framework. Research-based rankings for enterprise buyers.",
   alternates: { canonical: "https://reviews-cxo.com/rankings" },
   openGraph: {
     title: "ASCS 2026 Platform Rankings",
@@ -36,7 +36,7 @@ export default function RankingsPage() {
 
         <InfoCard title="Ranking Methodology: The ASCS Framework">
           <p className="text-xs sm:text-sm text-muted leading-relaxed">
-            Platforms are evaluated and ranked using the 12-dimension Architecture, Security, Connectivity, and Scalability (ASCS) rubric. Dimension scores range from 0 to 10 and are weighted according to enterprise workload requirements (e.g. ERP connectivity 10%, Cross-system reasoning 12%, AI reasoning accuracy 12%). Review aggregation scores from external platforms are provided as secondary context.
+            Platforms are assessed and ranked using the 12-dimension Architecture, Security, Connectivity, and Scalability (ASCS) rubric. Dimension scores range from 0 to 10 and are weighted according to enterprise workload requirements (e.g. ERP connectivity 10%, Cross-system reasoning 12%, AI reasoning accuracy 12%). Aggregated scores from external platforms are provided as secondary context.
           </p>
         </InfoCard>
 

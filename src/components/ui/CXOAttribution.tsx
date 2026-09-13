@@ -22,7 +22,7 @@ export function CXOAttribution({ cxo, size = "md" }: CXOAttributionProps) {
         <span className={`${titleSize}`}> · {cxo.title}, {cxo.companyName}</span>
       </div>
       {cxo.isVerified && (
-        <StatusBadge variant="verified">Verified CxO</StatusBadge>
+        <StatusBadge variant="verified">Email Validated</StatusBadge>
       )}
     </div>
   );
