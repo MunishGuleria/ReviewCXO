@@ -155,7 +155,7 @@ export default function NewQuestionPage() {
     <ResearchLayout
       badge="Admin — New Question"
       title="Create Question"
-      description="Publish a new community question with Reviews_CXO analysis."
+      description="Publish a new community question with Reviews CXO analysis."
       backHref="/admin/questions"
       backLabel="Back to Questions"
     >
@@ -260,7 +260,7 @@ export default function NewQuestionPage() {
         </Section>
 
         <Section title="Research / Analysis">
-          <Field label="Reviews_CXO Analysis" required>
+          <Field label="Reviews CXO Analysis" required>
             <p className="text-[11px] text-muted mb-2">
               Use markdown formatting. Supports ## headings, ### subheadings, - bullet lists, 1. numbered lists, **bold**, and plain paragraphs.
             </p>

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
 
-export const alt = "Reviews_CXO — AI Enterprise Sales Research Lab";
+export const alt = "Reviews CXO — AI Enterprise Sales Research Lab";
 export const size = {
   width: 1200,
   height: 630,
@@ -62,7 +62,7 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", alignItems: "center", fontSize: "28px", fontWeight: 900, letterSpacing: "-0.5px" }}>
             <span>Reviews</span>
-            <span style={{ color: "#38bdf8" }}>_CXO</span>
+            <span style={{ color: "#38bdf8" }}> CXO</span>
           </div>
           <div
             style={{

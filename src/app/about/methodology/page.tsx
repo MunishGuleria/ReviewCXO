@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "ASCS Research Methodology",
     description: "12-dimension evaluation methodology for enterprise AI sales platforms.",
     url: "https://reviews-cxo.com/about/methodology",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -270,7 +270,7 @@ export default function MethodologyPage() {
             </div>
             <div className="mt-4 pt-3 border-t border-border/60">
               <p className="text-[11px] text-muted leading-relaxed">
-                Reviews_CXO considers documented capabilities, architecture, enterprise fit, customer-market evidence, cost considerations, strengths, limitations, and uncertainty when forming its assessment.
+                Reviews CXO considers documented capabilities, architecture, enterprise fit, customer-market evidence, cost considerations, strengths, limitations, and uncertainty when forming its assessment.
               </p>
             </div>
           </div>

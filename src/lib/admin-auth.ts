@@ -1,23 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
+import { jwtVerify } from "jose";
 
-export function checkAdminAuth(request: NextRequest): NextResponse | null {
-  const expectedToken = process.env.ADMIN_AUTH_TOKEN;
-  const authCookie = request.cookies.get("admin_auth")?.value;
-  const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") || request.headers.get("x-admin-token");
-  const providedToken = authCookie || authHeader;
+const SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET || process.env.ADMIN_AUTH_TOKEN || "fallback-dev-secret-change-in-production"
+);
 
-  // Never allow access if ADMIN_AUTH_TOKEN is unset or empty, or if no valid token was provided
-  const isAdmin = Boolean(
-    expectedToken &&
-    expectedToken.trim().length > 0 &&
-    providedToken &&
-    providedToken === expectedToken
-  );
-
-  if (!isAdmin) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+export async function checkAdminAuth(request: NextRequest): Promise<NextResponse | null> {
+  const token = request.cookies.get("auth_token")?.value;
+  if (!token) {
+    return NextResponse.json({ error: "Authentication required" }, { status: 401 });
   }
 
-  return null;
+  try {
+    const { payload } = await jwtVerify(token, SECRET, { algorithms: ["HS256"] });
+    if (payload.role !== "admin") {
+      return NextResponse.json({ error: "Admin access required" }, { status: 403 });
+    }
+    return null;
+  } catch {
+    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
 }
-

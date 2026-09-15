@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "AI Sales Platform Indexes",
     description: "Composite scores and rankings using the ASCS 12-dimension framework.",
     url: "https://reviews-cxo.com/indexes",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },

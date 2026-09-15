@@ -4,13 +4,13 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Disclosure",
   description:
-    "Reviews_CXO sponsorship disclosure and conflict of interest transparency.",
+    "Reviews CXO sponsorship disclosure and conflict of interest transparency.",
   alternates: { canonical: "https://reviews-cxo.com/about/disclosure" },
   openGraph: {
-    title: "Disclosure — Reviews_CXO",
+    title: "Disclosure — Reviews CXO",
     description: "Sponsorship disclosure and conflict of interest transparency.",
     url: "https://reviews-cxo.com/about/disclosure",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -35,7 +35,7 @@ export default function DisclosurePage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">Official Sponsorship Statement</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-                Reviews_CXO is an independently operated research initiative focused on enterprise AI for sales.
+                Reviews CXO is an independently operated research initiative focused on enterprise AI for sales.
                 The publication receives financial support from a technology company active in the enterprise software sector.
                 Sponsors do not control individual research conclusions, vendor scores, benchmark methodology, or editorial decisions.
               </p>
@@ -116,7 +116,7 @@ export default function DisclosurePage() {
             <h3 className="section-heading text-lg font-bold text-foreground">Zero Pay-to-Play Advertising</h3>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted">
               <p>
-                Reviews_CXO strictly prohibits paid vendor placement in rankings, benchmarks, or search results.
+                Reviews CXO strictly prohibits paid vendor placement in rankings, benchmarks, or search results.
               </p>
               <p>
                 Vendor claims cannot overwrite documented lab observations. All evidence tiers are publicly cited in accordance with the 7-tier hierarchy.

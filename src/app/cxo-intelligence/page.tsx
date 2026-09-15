@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "CXO Intelligence — Enterprise AI Research",
     description: "Original primary research with enterprise leaders on AI adoption.",
     url: "https://reviews-cxo.com/cxo-intelligence",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },

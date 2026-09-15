@@ -14,7 +14,7 @@ export function DisclosureBanner({ className = "" }: DisclosureBannerProps) {
         Disclosure
       </p>
       <p className="mt-1.5 text-xs leading-relaxed text-muted pl-6">
-        Reviews_CXO is an independently operated research initiative focused on
+        Reviews CXO is an independently operated research initiative focused on
         AI for enterprise sales. The publication receives financial support from
         a technology company active in the enterprise software sector. Sponsors
         do not control individual research conclusions, vendor scores, benchmark

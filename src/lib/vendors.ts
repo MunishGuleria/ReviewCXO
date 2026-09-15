@@ -126,7 +126,7 @@ export const VENDORS: Vendor[] = [
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR", "CSA STAR"],
     deployment: ["Cloud (SaaS)", "Hyperforce"],
     analystEvaluation: {
-      editorialNarrative: "Industry reports suggest Salesforce holds approximately 20.7% of the global CRM market and is used by over 150,000 companies. The platform spans Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, Data Cloud, and the Agentforce AI platform. Public customer-market evidence shows generally positive product sentiment across major review platforms, with notably divergent billing and support experience reported on consumer-focused review sites. The platform's fundamental paradox: extensive flexibility creates unlimited complexity. Reviews_CXO analysis notes a fundamental paradox: the platform's extensive flexibility simultaneously enables complex customization and introduces substantial complexity.",
+      editorialNarrative: "Industry reports suggest Salesforce holds approximately 20.7% of the global CRM market and is used by over 150,000 companies. The platform spans Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, Data Cloud, and the Agentforce AI platform. Public customer-market evidence shows generally positive product sentiment across major review platforms, with notably divergent billing and support experience reported on consumer-focused review sites. The platform's fundamental paradox: extensive flexibility creates unlimited complexity. Reviews CXO analysis notes a fundamental paradox: the platform's extensive flexibility simultaneously enables complex customization and introduces substantial complexity.",
       idealEnterpriseWorkloads: ["Enterprise sales organizations with complex multi-stage processes", "Multi-cloud deployments (Sales + Service + Marketing)", "Organizations needing extensive AppExchange ecosystem", "Companies with dedicated Salesforce admin capacity"],
       knownLimitations: ["Users report Year-1 TCO typically 2.5x to 3x the license fee", "Six to eighteen month implementation timelines for Enterprise/Unlimited", "Admin dependency — consultancy support runs $150-$300/hour", "CPQ migration complexity (CIOs learned about end-of-sale through Reddit)", "August 2025 6% price increase creates budgeting uncertainty"],
       coreStrengths: ["Extensive CRM ecosystem (7,000+ AppExchange integrations)", "Extensive customization flexibility in the CRM market", "Agentforce autonomous agents with Atlas Reasoning Engine", "Einstein Trust Layer enterprise AI safety framework", "Massive global admin talent pool and Trailhead training ecosystem"]
@@ -150,9 +150,9 @@ export const VENDORS: Vendor[] = [
       negativeThemes: [
         "Total cost of ownership — most dominant negative theme. 'Real Year-1 TCO is typically 2.5x to 3x the license fee'",
         "Implementation complexity — six-month timelines norm at Enterprise tier; 12-18 months for multi-cloud Unlimited",
-        "Admin dependency — Reviews_CXO research indicates dedicated administrators are frequently required, and for teams under 50 reps, this cost often exceeds the license cost",
+        "Admin dependency — Reviews CXO research indicates dedicated administrators are frequently required, and for teams under 50 reps, this cost often exceeds the license cost",
         "Billing and contract practices — auto-renewal and billing issues are frequently mentioned on public consumer review platforms",
-        "UI complexity — Reviews_CXO synthesis indicates the interface can present a steep learning curve for new users",
+        "UI complexity — Reviews CXO synthesis indicates the interface can present a steep learning curve for new users",
         "Price increases — August 2025 6% increase (first in seven years) creates budgeting uncertainty",
       ],
       contradictions: "Product-focused review platforms show strong positive sentiment, while consumer-focused review sites report dramatically worse billing and support experiences. Both perspectives are valid — they measure different things.",
@@ -226,7 +226,7 @@ export const VENDORS: Vendor[] = [
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP High", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid", "On-Prem (limited)"],
     analystEvaluation: {
-      editorialNarrative: "Microsoft Dynamics 365 is a modular suite of cloud-based business applications spanning both ERP and CRM. It runs on Microsoft Azure and integrates natively with Microsoft 365, Teams, and the Power Platform. Microsoft reports over 60,000 organizations worldwide use Dynamics 365, with particular traction in the upper mid-market, capturing share from legacy SAP ECC and Oracle E-Business Suite customers. The platform's modular architecture is both its greatest strength and its most significant risk — organizations can adopt incrementally, but the complexity of orchestrating multiple modules creates implementation risk. Implementation evidence is cautionary: Industry reports indicate 50-75% of large ERP projects can run over initial budget, and industry reports cite 80% project underperformance rates. Reviews_CXO analysis identifies cases where implementation spending substantially exceeded initial budget, leading to system replacement.",
+      editorialNarrative: "Microsoft Dynamics 365 is a modular suite of cloud-based business applications spanning both ERP and CRM. It runs on Microsoft Azure and integrates natively with Microsoft 365, Teams, and the Power Platform. Microsoft reports over 60,000 organizations worldwide use Dynamics 365, with particular traction in the upper mid-market, capturing share from legacy SAP ECC and Oracle E-Business Suite customers. The platform's modular architecture is both its greatest strength and its most significant risk — organizations can adopt incrementally, but the complexity of orchestrating multiple modules creates implementation risk. Implementation evidence is cautionary: Industry reports indicate 50-75% of large ERP projects can run over initial budget, and industry reports cite 80% project underperformance rates. Reviews CXO analysis identifies cases where implementation spending substantially exceeded initial budget, leading to system replacement.",
       idealEnterpriseWorkloads: ["Microsoft 365-centric organizations seeking unified ERP + CRM", "Upper mid-market companies (200-2000 employees) migrating from legacy ERP", "Hybrid deployment scenarios requiring Azure Arc on-premises extension", "Organizations with dedicated Microsoft partner support"],
       knownLimitations: ["50-75% of large ERP projects run over budget or timeline", "Licensing complexity across multiple apps adds up quickly", "Customization debt creates 'untouchable' systems after heavy customization", "Post-go-live costs far exceed initial implementation budget", "Copilot maturity varies significantly by module"],
       coreStrengths: ["Unified ERP + CRM in a single platform", "Native Microsoft 365, Teams, Azure integration", "Modular architecture enabling incremental adoption", "Power Platform low-code extensibility", "Enterprise-grade security (FedRAMP High, SOC 1/2/3)"]
@@ -249,8 +249,8 @@ export const VENDORS: Vendor[] = [
       negativeThemes: [
         "Implementation Complexity — Industry reports indicate 50-75% of large ERP projects can run over initial budget or timeline",
         "Licensing Complexity — multi-tier, multi-application model described as confusing and difficult to budget",
-        "Customization Debt — Reviews_CXO research notes that ease of customization can lead to heavily modified systems that become difficult to maintain over time",
-        "Post-Go-Live Costs — Reviews_CXO synthesis highlights that ongoing partner reliance and data cleanup often exceed initial budgets",
+        "Customization Debt — Reviews CXO research notes that ease of customization can lead to heavily modified systems that become difficult to maintain over time",
+        "Post-Go-Live Costs — Reviews CXO synthesis highlights that ongoing partner reliance and data cleanup often exceed initial budgets",
         "AI Readiness vs. Reality — Copilot capabilities vary widely in production-readiness across modules",
       ],
       contradictions: "Different review platforms show varying ratings, suggesting different user segments report different experiences. The implementation failure rate (50-75%) contrasts with strong platform capabilities once deployed.",
@@ -1146,7 +1146,7 @@ export const VENDORS: Vendor[] = [
       "Specialized in Sales Force Automation (SFA) and Dealer Management Systems (DMS)",
     ],
     cons: [
-      "Currently awaiting independent community CXO review submissions on Reviews_CXO",
+      "Currently awaiting independent community CXO review submissions on Reviews CXO",
       "Integration marketplace still growing with fewer pre-built connectors",
       "Limited brand recognition in traditional US enterprise procurement",
       "Requires organizational readiness for autonomous AI agent workflows",
@@ -1370,14 +1370,14 @@ export const VENDORS: Vendor[] = [
       "Guardrail restrictions limit what Copilot can do — 'amount of wordsmithing you need to do'",
       "Licensing complexity — M365 base + Copilot add-on + Dynamics license + Credits",
       "Performance variability — 'varying wildly between smart today and do it myself'",
-      "Security concerns — Reviews_CXO synthesis indicates Copilot was disabled in some instances due to lack of fine-grained security controls",
+      "Security concerns — Reviews CXO synthesis indicates Copilot was disabled in some instances due to lack of fine-grained security controls",
     ],
     features: ["M365 Copilot", "Dynamics 365 Copilot", "Azure OpenAI", "GitHub Copilot", "Bing Chat Enterprise", "Copilot Studio", "Semantic Search", "Power Platform Copilot"],
     integrations: ["Microsoft 365", "Dynamics 365", "Azure", "Power Platform", "LinkedIn", "Teams"],
     certifications: ["SOC 2 Type II", "ISO 27001", "FedRAMP", "HIPAA", "GDPR"],
     deployment: ["Cloud (SaaS)", "Hybrid"],
     analystEvaluation: {
-      editorialNarrative: "Microsoft Copilot for Sales is an AI-powered sales assistant embedded in Outlook and Teams, bringing CRM intelligence from Dynamics 365 (and Salesforce) into the productivity tools where enterprise sellers already work. In 2026, Microsoft retired the standalone Copilot for Sales SKU and folded capabilities into the Microsoft 365 Copilot license. The core value proposition is meeting sellers where they already live — CRM data surfaces inside Outlook and Teams, eliminating application switching. At $30/user/month, it is 2-5x cheaper than Salesforce Einstein. However, the evidence base is thin: independent review platforms show limited Sales-specific reviews, and Reviews_CXO synthesis suggests capabilities often underperform expectations for many use cases, with guardrail restrictions limiting practical utility. Reviews_CXO synthesis indicates some organizations have disabled Copilot entirely due to security control gaps.",
+      editorialNarrative: "Microsoft Copilot for Sales is an AI-powered sales assistant embedded in Outlook and Teams, bringing CRM intelligence from Dynamics 365 (and Salesforce) into the productivity tools where enterprise sellers already work. In 2026, Microsoft retired the standalone Copilot for Sales SKU and folded capabilities into the Microsoft 365 Copilot license. The core value proposition is meeting sellers where they already live — CRM data surfaces inside Outlook and Teams, eliminating application switching. At $30/user/month, it is 2-5x cheaper than Salesforce Einstein. However, the evidence base is thin: independent review platforms show limited Sales-specific reviews, and Reviews CXO synthesis suggests capabilities often underperform expectations for many use cases, with guardrail restrictions limiting practical utility. Reviews CXO synthesis indicates some organizations have disabled Copilot entirely due to security control gaps.",
       idealEnterpriseWorkloads: ["Microsoft-aligned organizations where sellers live in Outlook and Teams", "Teams using Dynamics 365 Sales (Enterprise or Premium) as CRM", "Organizations piloting AI sales tools before larger investments", "Mid-market companies with 25-500 sellers and dedicated RevOps capacity"],
       knownLimitations: ["Thin evidence base — limited independent reviews for Sales-specific capabilities", "Guardrail restrictions limit legitimate business use cases", "Performance variability between sessions", "Security concerns — some organizations disabled Copilot entirely", "Agent capabilities early-stage and credit-intensive ($0.25 per autonomous trigger)"],
       coreStrengths: ["Workflow integration — CRM data inside Outlook and Teams", "Price advantage — $30/user/mo vs. $50-$150/user/mo for alternatives", "Dual CRM support — Dynamics 365 and Salesforce", "Low implementation overhead — 2-4 weeks, no separate project", "Part of broader Microsoft Copilot ecosystem"]

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: `Enterprise AI Sales Platforms`,
     description: `Evaluations of enterprise AI platforms with ASCS scores.`,
     url: "https://reviews-cxo.com/vendors",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },

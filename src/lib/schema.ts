@@ -1,6 +1,16 @@
 import db from './db'
 
 db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    id TEXT PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    name TEXT NOT NULL,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('user', 'admin')),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
+
   CREATE TABLE IF NOT EXISTS newsletter_subscribers (
     id TEXT PRIMARY KEY,
     email TEXT NOT NULL UNIQUE,
@@ -71,6 +81,21 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_submitted_reviews_verification ON submitted_reviews(verification_token);
   CREATE INDEX IF NOT EXISTS idx_evidence_entity ON evidence_records(entity_type, entity_id);
   CREATE INDEX IF NOT EXISTS idx_evidence_status ON evidence_records(verification_status);
+
+  CREATE TABLE IF NOT EXISTS submitted_questions (
+    id TEXT PRIMARY KEY,
+    user_id TEXT,
+    author_name TEXT NOT NULL,
+    author_email TEXT NOT NULL,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    category TEXT NOT NULL DEFAULT 'General',
+    status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
+    admin_notes TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_submitted_questions_status ON submitted_questions(status);
 `);
 
 // Migration safeguard: Ensure all required columns exist in submitted_reviews

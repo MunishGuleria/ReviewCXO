@@ -39,7 +39,7 @@ export function NewsletterForm({
 
       if (res.ok && data.success) {
         setStatus("success");
-        setMessage(data.message || "Thank you for subscribing to Reviews_CXO Research Dispatch.");
+        setMessage(data.message || "Thank you for subscribing to Reviews CXO Research Dispatch.");
         setEmail("");
       } else {
         setStatus("error");

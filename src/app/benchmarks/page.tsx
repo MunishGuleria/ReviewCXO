@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "AI Sales Platform Benchmarks",
     description: "Controlled evaluations of AI sales platform capabilities.",
     url: "https://reviews-cxo.com/benchmarks",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },

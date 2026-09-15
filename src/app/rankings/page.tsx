@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "ASCS 2026 Platform Rankings",
     description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS framework.",
     url: "https://reviews-cxo.com/rankings",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Architecture & Security Index 2026",
     description: "12-dimension evaluation of enterprise AI platforms.",
     url: "https://reviews-cxo.com/indexes/architecture-security-index-2026",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -118,7 +118,7 @@ export default function ArchitectureSecurityIndexPage() {
         </div>
 
         <CitationBlock
-          authors="Reviews_CXO Research Team"
+          authors="Reviews CXO Research Team"
           title="Architecture & Security Index 2026"
           date="September 2026"
           url="https://reviews-cxo.com/indexes/architecture-security-index-2026"

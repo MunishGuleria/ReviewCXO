@@ -4,13 +4,13 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Editorial Policy",
   description:
-    "Reviews_CXO editorial policy — how the publication maintains research integrity and editorial independence.",
+    "Reviews CXO editorial policy — how the publication maintains research integrity and editorial independence.",
   alternates: { canonical: "https://reviews-cxo.com/about/editorial-policy" },
   openGraph: {
-    title: "Editorial Policy — Reviews_CXO",
+    title: "Editorial Policy — Reviews CXO",
     description: "How the publication maintains research integrity and editorial independence.",
     url: "https://reviews-cxo.com/about/editorial-policy",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -31,7 +31,7 @@ export default function EditorialPolicyPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">Foundational Rule</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Editorial Independence</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            Reviews_CXO maintains editorial independence in all research conclusions, vendor scores, benchmark methodology, and publication decisions. No sponsor, advertiser, or commercial vendor controls evaluation findings.
+            Reviews CXO maintains editorial independence in all research conclusions, vendor scores, benchmark methodology, and publication decisions. No sponsor, advertiser, or commercial vendor controls evaluation findings.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function EditorialPolicyPage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>
-                <span>Vendor feedback does not obligate Reviews_CXO to alter editorial assessments or critical teardowns.</span>
+                <span>Vendor feedback does not obligate Reviews CXO to alter editorial assessments or critical teardowns.</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-primary font-bold">▪</span>

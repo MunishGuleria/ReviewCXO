@@ -1,6 +1,6 @@
 <div align="center">
 
-# Reviews_CXO
+# Reviews CXO
 
 ### AI Enterprise Sales Research Platform
 
@@ -19,7 +19,7 @@ Independent, evidence-based research on enterprise AI sales platforms for CTOs, 
 
 ## Overview
 
-**Reviews_CXO** is a Next.js research platform that evaluates enterprise AI sales platforms using the proprietary **ASCS (AI Sales Capability Score)** framework — weighted dimensions, evidence-classified scoring, and analyst-written evaluations.
+**Reviews CXO** is a Next.js research platform that evaluates enterprise AI sales platforms using the proprietary **ASCS (AI Sales Capability Score)** framework — weighted dimensions, evidence-classified scoring, and analyst-written evaluations.
 
 It is not a review aggregator or vendor marketing site. Content is curated for enterprise buyers who need architecture depth, realistic TCO context, and transparent methodology.
 
@@ -27,13 +27,20 @@ It is not a review aggregator or vendor marketing site. Content is curated for e
 
 ## Key Features
 
-- **ASCS rankings and scorecards** — dimensional scoring with evidence classification, architecture profiles, pricing context, AI capability assessment, customer sentiment, and cited sources
+- **ASCS rankings and scorecards** — 12-dimension scoring with evidence classification, architecture profiles, pricing context, AI capability assessment, customer sentiment, and cited sources
 - **Independent analyst evaluations** — editorial research narratives, not star-rating dumps
 - **Enterprise Q&A** — buyer questions answered with ASCS-grounded recommendations
 - **Published methodology** — full ASCS framework documentation and trust pages (editorial policy, disclosure, corrections)
-- **Newsletter** — subscription and unsubscribe flows
-- **Admin CMS** — token-protected moderation for research operations
-- **Production polish** — dark/light theme, dynamic sitemap, JSON-LD, RSS, and LLM-oriented discovery
+- **Platform comparisons** — head-to-head 12-dimension breakdowns and custom two-platform comparisons
+- **Benchmarks** — controlled evaluations with published datasets, code, and methodology (CRM-ERP At-Risk Accounts v1 live)
+- **Indexes** — Architecture & Security Index, ASCS Scorecard composite rankings
+- **CXO Intelligence** — primary research based on interviews and surveys with enterprise leaders
+- **User accounts** — signup, login, and session-based authentication
+- **Question submission** — registered users can submit enterprise AI questions for analyst research
+- **Review submission** — users can submit platform reviews for verification and moderation
+- **Newsletter** — subscription and unsubscribe flows with email verification
+- **Admin CMS** — token-protected moderation for reviews, questions, companies, and content operations
+- **Production polish** — dark/light theme, dynamic sitemap, JSON-LD, RSS, LLM-oriented discovery (`llms.txt`)
 
 ---
 
@@ -83,7 +90,7 @@ Full methodology: [reviews-cxo.com/about/methodology](https://reviews-cxo.com/ab
 | Styling | Tailwind CSS 4 |
 | Database | SQLite via better-sqlite3 |
 | Email | Resend (optional) |
-| Auth | Custom admin token |
+| Auth | Custom session-based (jose JWT) |
 | Fonts | Inter + JetBrains Mono |
 | Deploy | Vercel-oriented |
 
@@ -115,6 +122,7 @@ cp .env.example .env.local
 | `ADMIN_AUTH_TOKEN` | Yes (for admin) | Secure random admin token |
 | `NEXT_PUBLIC_SITE_URL` | Yes for email links | Public site URL (local or production) |
 | `RESEND_API_KEY` | No | Resend API key; emails are skipped if unset |
+| `JWT_SECRET` | Yes (for auth) | Secret key for session tokens |
 
 ### Database
 
@@ -161,9 +169,15 @@ reviews-cxo/
 │   │   ├── compare/        # Platform comparisons and deep dives
 │   │   ├── benchmarks/     # Evaluation protocols
 │   │   ├── indexes/        # Research indexes
+│   │   ├── cxo-intelligence/ # Primary CXO research
+│   │   ├── glossary/       # Enterprise AI terminology
 │   │   ├── newsletter/     # Subscription
+│   │   ├── login/          # User login
+│   │   ├── signup/         # User registration
+│   │   ├── submit-question/ # Question submission
+│   │   ├── submit-review/  # Review submission
 │   │   ├── admin/          # Protected CMS
-│   │   └── api/            # Newsletter, reviews, verification, admin
+│   │   └── api/            # Auth, newsletter, reviews, questions, admin
 │   ├── components/
 │   │   ├── layout/         # Header, footer, navigation
 │   │   └── ui/             # Shared UI primitives
@@ -171,10 +185,12 @@ reviews-cxo/
 │   │   ├── site.ts         # Brand, navigation, ASCS definitions
 │   │   ├── vendors.ts      # Vendor data and scoring
 │   │   ├── questions.ts    # Q&A content
+│   │   ├── reviews.ts      # Review data access
+│   │   ├── auth.ts         # Session-based authentication
 │   │   ├── db.ts           # SQLite connection
 │   │   ├── schema.ts       # Schema and migrations
 │   │   └── admin-auth.ts   # Admin authentication
-│   └── middleware.ts       # Admin route protection
+│   └── middleware.ts       # Admin + auth route protection
 ├── .env.example
 ├── next.config.ts
 └── package.json
@@ -194,7 +210,23 @@ Platform directory and detailed scorecards covering analyst evaluation, ASCS bre
 
 ### Questions — `/questions`
 
-Enterprise buyer questions with independent, evidence-based analyst responses.
+Enterprise buyer questions with independent, evidence-based analyst responses. Registered users can submit new questions via `/submit-question`.
+
+### Comparisons — `/compare`
+
+Head-to-head platform comparisons with 12-dimension score breakdowns and custom two-platform selector.
+
+### Benchmarks — `/benchmarks`
+
+Controlled evaluations with published datasets, code, and methodology. CRM-ERP At-Risk Accounts v1 is live.
+
+### Indexes — `/indexes`
+
+Composite scores and rankings: Architecture & Security Index 2026, ASCS Scorecard 2026.
+
+### CXO Intelligence — `/cxo-intelligence`
+
+Original primary research based on interviews and surveys with enterprise leaders.
 
 ### Methodology & trust — `/about`
 
@@ -202,7 +234,16 @@ Mission, ASCS methodology, editorial policy, disclosure, and corrections.
 
 ### Research & operations
 
-Comparisons, benchmarks, indexes, glossary, newsletter, and a token-protected admin CMS for moderation and content operations.
+Glossary, newsletter, and a token-protected admin CMS for moderation and content operations.
+
+---
+
+## User Accounts
+
+- **Signup** — `/signup` — register with email and password
+- **Login** — `/login` — session-based JWT authentication
+- **Submit question** — `/submit-question` — propose enterprise AI questions for analyst research
+- **Submit review** — `/submit-review` — submit platform reviews for moderation
 
 ---
 
@@ -215,6 +256,13 @@ Visit `/admin` with `ADMIN_AUTH_TOKEN` supplied as one of:
 3. Header: `X-Admin-Token: <token>`
 
 Middleware protects all `/admin` routes.
+
+### Admin capabilities
+
+- Review moderation (approve / reject)
+- Question management (approve / reject / create)
+- Company management
+- Content operations
 
 ---
 
@@ -230,7 +278,7 @@ Middleware protects all `/admin` routes.
 
 #### `POST /api/reviews`
 
-Submit a project review for verification and moderation.
+Submit a platform review for verification and moderation.
 
 #### `POST /api/verify-review`
 
@@ -244,6 +292,19 @@ Submit a project review for verification and moderation.
 { "email": "user@example.com" }
 ```
 
+#### `POST /api/questions/submit`
+
+Submit a question for analyst research (requires authentication).
+
+### Auth
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/api/auth/register` | Create account |
+| `POST` | `/api/auth/login` | Sign in |
+| `POST` | `/api/auth/logout` | Sign out |
+| `GET` | `/api/auth/me` | Get current user |
+
 ### Admin (authentication required)
 
 | Method | Path | Purpose |
@@ -251,6 +312,9 @@ Submit a project review for verification and moderation.
 | `GET` | `/api/admin/reviews` | List pending reviews |
 | `POST` | `/api/admin/reviews/:id/approve` | Approve a review |
 | `POST` | `/api/admin/reviews/:id/reject` | Reject a review |
+| `GET` | `/api/admin/questions` | List questions |
+| `POST` | `/api/admin/questions/:id/approve` | Approve a question |
+| `POST` | `/api/admin/questions/:id/reject` | Reject a question |
 
 ---
 
@@ -261,7 +325,10 @@ SQLite at `data/reviews-cxo.db`.
 | Table | Purpose |
 |---|---|
 | `newsletter_subscribers` | Newsletter subscribe / unsubscribe |
-| `submitted_reviews` | Project reviews, verification, and moderation |
+| `submitted_reviews` | Platform reviews, verification, and moderation |
+| `submitted_questions` | User-submitted questions for analyst research |
+| `users` | User accounts (email, password hash) |
+| `sessions` | JWT session tokens |
 | `evidence_records` | Claim and source evidence |
 
 Full schema: [`src/lib/schema.ts`](src/lib/schema.ts)
@@ -272,11 +339,12 @@ Full schema: [`src/lib/schema.ts`](src/lib/schema.ts)
 
 | Control | Implementation |
 |---|---|
+| User auth | Session-based JWT with httpOnly cookies |
 | Admin auth | Middleware with cookie / Bearer / custom header token |
 | Rate limiting | Per-IP limits on sensitive routes |
 | Input validation | Length limits, email checks, sanitization |
 | SQL safety | Parameterized queries |
-| Payload limits | Request size caps on review submission |
+| Payload limits | Request size caps on submissions |
 | HTTP headers | Configured in `next.config.ts` |
 
 ---
@@ -325,7 +393,7 @@ Licensing inquiries: [research@reviews-cxo.com](mailto:research@reviews-cxo.com)
 
 <div align="center">
 
-**[Reviews_CXO](https://reviews-cxo.com)** — Independent AI Enterprise Sales Research
+**[Reviews CXO](https://reviews-cxo.com)** — Independent AI Enterprise Sales Research
 
 [Rankings](https://reviews-cxo.com/rankings) · [Platforms](https://reviews-cxo.com/vendors) · [Questions](https://reviews-cxo.com/questions) · [Methodology](https://reviews-cxo.com/about/methodology) · [About](https://reviews-cxo.com/about)
 

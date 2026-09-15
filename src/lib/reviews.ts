@@ -187,11 +187,11 @@ export const EVIDENCE_TYPE_LABELS: Record<EvidenceType, string> = {
 };
 
 export const EVIDENCE_TYPE_DESCRIPTIONS: Record<EvidenceType, string> = {
-  verified_cxo_review: "Submission confirmed via Reviews_CXO email validation process",
+  verified_cxo_review: "Submission confirmed via Reviews CXO email validation process",
   public_review_evidence: "Information from G2, Capterra, Clutch, Trustpilot, or public testimonials",
   public_customer_evidence: "Customer case studies, announcements, or public project documentation",
   vendor_provided_evidence: "Information published by the software vendor itself",
   third_party_research: "Independent publications, analyst reports, or industry research",
-  observed_evidence: "Directly tested or observed by Reviews_CXO",
+  observed_evidence: "Directly tested or observed by Reviews CXO",
   inferred: "Reasonable conclusion based on related evidence but not directly confirmed",
 };

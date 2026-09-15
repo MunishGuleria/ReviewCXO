@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Reviews_CXO",
-  title: "Reviews_CXO — AI Enterprise Sales Research",
+  name: "Reviews CXO",
+  title: "Reviews CXO — AI Enterprise Sales Research",
   description:
     "Architecture analysis, and CXO insights on AI sales platforms. Editorial research for enterprise buyers.",
   url: "https://reviews-cxo.com",
@@ -24,7 +24,7 @@ export const NAVIGATION = [
   {
     label: "Platforms",
     href: "/vendors",
-    description: "Enterprise platforms evaluated by Reviews_CXO",
+    description: "Enterprise platforms evaluated by Reviews CXO",
     hidden: false,
   },
   {
@@ -62,7 +62,7 @@ export const NAV_GROUPS = [
       {
         label: "Platforms",
         href: "/vendors",
-        description: "Enterprise AI sales platforms evaluated by Reviews_CXO",
+        description: "Enterprise AI sales platforms evaluated by Reviews CXO",
         icon: "grid",
         hidden: false,
       },

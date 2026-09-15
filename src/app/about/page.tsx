@@ -6,13 +6,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Reviews_CXO — an independently operated research initiative focused on AI for enterprise sales.",
+    "About Reviews CXO — an independently operated research initiative focused on AI for enterprise sales.",
   alternates: { canonical: "https://reviews-cxo.com/about" },
   openGraph: {
-    title: "About Reviews_CXO",
+    title: "About Reviews CXO",
     description: "Research initiative focused on AI for enterprise sales.",
     url: "https://reviews-cxo.com/about",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },
@@ -23,7 +23,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         badge="Research Initiative"
-        title="About Reviews_CXO"
+        title="About Reviews CXO"
         description="A research hub where enterprise professionals evaluate AI sales platforms and implementation architectures."
       />
 
@@ -36,10 +36,10 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Reviews_CXO exists to address a gap in the enterprise AI landscape: research on AI platforms for sales that is transparent, structured, and editorially independent.
+              Reviews CXO exists to address a gap in the enterprise AI landscape: research on AI platforms for sales that is transparent, structured, and editorially independent.
             </p>
             <p className="mt-3 text-base leading-relaxed text-muted">
-              Reviews_CXO is not a competitor-bashing site, review aggregator, or disguised product landing page. The publication aims to earn credibility through transparent methodology, structured benchmarks, and CXO-sourced intelligence.
+              Reviews CXO is not a competitor-bashing site, review aggregator, or disguised product landing page. The publication aims to earn credibility through transparent methodology, structured benchmarks, and CXO-sourced intelligence.
             </p>
           </div>
 

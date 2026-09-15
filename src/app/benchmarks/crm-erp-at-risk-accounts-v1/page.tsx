@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "CRM+ERP At-Risk Accounts Benchmark",
     description: "Controlled evaluation of cross-system reasoning capabilities.",
     url: "https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -270,7 +270,7 @@ export default function BenchmarkV1Page() {
         </section>
 
         <CitationBlock
-          authors="Reviews_CXO Research Team"
+          authors="Reviews CXO Research Team"
           title="Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?"
           date="September 2026"
           url="https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1"

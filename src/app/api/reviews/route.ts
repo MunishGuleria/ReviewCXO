@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { submitProjectReview } from "@/lib/db-queries";
 import db from "@/lib/db";
-import crypto from "crypto";
 import { checkRateLimit, getRateLimitHeaders } from "@/lib/rate-limit";
+import { getVisibleVendors } from "@/lib/vendors";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
@@ -59,6 +59,14 @@ export async function POST(request: Request) {
       );
     }
 
+    const visibleNames = getVisibleVendors().map((v) => v.name);
+    if (!visibleNames.includes(it_company_name)) {
+      return NextResponse.json(
+        { error: "Reviews are only accepted for visible platforms." },
+        { status: 400 }
+      );
+    }
+
     const ratingFields = ["delivery_quality_rating", "ai_effectiveness_rating", "communication_rating", "value_for_money_rating", "overall_rating"];
     for (const field of ratingFields) {
       if (data[field] !== undefined && data[field] !== null) {
@@ -104,31 +112,40 @@ export async function POST(request: Request) {
 
     const reviewId = submitProjectReview(sanitizedData);
 
-    const verificationToken = crypto.randomBytes(32).toString("hex");
-    db.prepare(
-      "UPDATE submitted_reviews SET verification_token = ?, status = 'pending_verification', updated_at = CURRENT_TIMESTAMP WHERE id = ?"
-    ).run(verificationToken, reviewId);
-
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-    const verificationUrl = `${siteUrl}/verify-review?token=${verificationToken}`;
+    const adminEmail = "harsh078976@gmail.com";
 
     try {
       const { Resend } = await import("resend");
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
+
+        // Notify admin
         await resend.emails.send({
-          from: "Reviews_CXO <onboarding@resend.dev>",
+          from: "Reviews CXO <onboarding@resend.dev>",
+          to: adminEmail,
+          subject: `New Review Submission: ${it_company_name} — ${project_title}`,
+          html: `<h2>New Review Submitted</h2>
+<p><strong>${sanitizedData.cxo_full_name}</strong> (${sanitizedData.cxo_title}, ${sanitizedData.cxo_company_name}) submitted a review.</p>
+<table style="border-collapse:collapse;width:100%;margin:16px 0">
+<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:bold">Platform</td><td style="padding:6px 12px;border:1px solid #ddd">${it_company_name}</td></tr>
+<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:bold">Project</td><td style="padding:6px 12px;border:1px solid #ddd">${project_title}</td></tr>
+<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:bold">Category</td><td style="padding:6px 12px;border:1px solid #ddd">${sanitizedData.project_category}</td></tr>
+<tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:bold">Rating</td><td style="padding:6px 12px;border:1px solid #ddd">${data.overall_rating || "N/A"}/5</td></tr>
+</table>
+<p><a href="${siteUrl}/admin/reviews" style="background:#0070f3;color:#fff;padding:12px 24px;text-decoration:none;border-radius:4px;display:inline-block">Review in Admin Panel</a></p>`,
+        });
+
+        // Notify submitter
+        await resend.emails.send({
+          from: "Reviews CXO <onboarding@resend.dev>",
           to: cxo_email,
-          subject: "Verify Your Review Submission - Reviews_CXO",
-          html: `<h2>Thank you for submitting your review!</h2>
-<p>Hi ${cxo_full_name},</p>
-<p>You submitted a review for <strong>${it_company_name}</strong> about "<strong>${project_title}</strong>".</p>
-<p>Please verify your email by clicking below:</p>
-<p><a href="${verificationUrl}" style="background:#0070f3;color:#fff;padding:12px 24px;text-decoration:none;border-radius:4px;display:inline-block">Verify Email</a></p>
-<p style="font-size:12px;word-break:break-all">${verificationUrl}</p>
-<p>This link expires in 24 hours.</p>
+          subject: "Review Received - Reviews CXO",
+          html: `<h2>Thank you, ${cxo_full_name}!</h2>
+<p>Your review for <strong>${it_company_name}</strong> has been received.</p>
+<p>Our analysts will review it and you&apos;ll be notified once it&apos;s published.</p>
 <hr/>
-<p style="font-size:12px;color:#666">If you didn't submit this review, ignore this email.</p>`,
+<p style="font-size:12px;color:#666">Reviews CXO Research Team</p>`,
         });
       }
     } catch {
@@ -137,7 +154,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "Review submitted! Please check your email to verify.",
+      message: "Review submitted! Our team will review it and notify you by email.",
       review_id: reviewId,
     });
   } catch (error) {

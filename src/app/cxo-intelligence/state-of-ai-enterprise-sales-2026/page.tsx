@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "State of AI in Enterprise Sales 2026",
     description: "Original primary research with enterprise decision-makers.",
     url: "https://reviews-cxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },

@@ -21,14 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const vendor = getVendorBySlug(slug);
   if (!vendor) return { title: "Not Found" };
   return {
-    title: `${vendor.name} — Reviews_CXO Assessment (${vendor.ascsComposite}/10)`,
-    description: `Reviews_CXO assessment of ${vendor.name}: ${vendor.tagline}. Assessed ${vendor.ascsComposite}/10 on the ASCS enterprise framework.`,
+    title: `${vendor.name} — Reviews CXO Assessment (${vendor.ascsComposite}/10)`,
+    description: `Reviews CXO assessment of ${vendor.name}: ${vendor.tagline}. Assessed ${vendor.ascsComposite}/10 on the ASCS enterprise framework.`,
     alternates: { canonical: `https://reviews-cxo.com/vendors/${vendor.slug}` },
     openGraph: {
-      title: `${vendor.name} — Reviews_CXO Assessment`,
-      description: `Reviews_CXO assessment of ${vendor.name}. Assessed ${vendor.ascsComposite}/10.`,
+      title: `${vendor.name} — Reviews CXO Assessment`,
+      description: `Reviews CXO assessment of ${vendor.name}. Assessed ${vendor.ascsComposite}/10.`,
       url: `https://reviews-cxo.com/vendors/${vendor.slug}`,
-      siteName: "Reviews_CXO",
+      siteName: "Reviews CXO",
       locale: "en_US",
       type: "website",
     },
@@ -74,7 +74,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
     <>
       <JsonLd data={softwareSchema} />
 
-      {/* HEADER — Reviews_CXO Assessment Dominant */}
+      {/* HEADER — Reviews CXO Assessment Dominant */}
       <div className="py-10 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
@@ -129,7 +129,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
             {/* REVIEWS_CXO ASSESSMENT — Visually Dominant */}
             <div className="flex flex-col items-start lg:items-end gap-4">
               <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-6 sm:p-8 text-center lg:text-right">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Assessment</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews CXO Assessment</span>
                 <div className="mt-2 flex items-baseline gap-1.5 justify-center lg:justify-end">
                   <span className="text-5xl sm:text-6xl font-black font-mono text-primary">{vendor.ascsComposite}</span>
                   <span className="text-lg font-bold text-muted font-mono">/10</span>
@@ -197,7 +197,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
             <section className="mt-auto rounded-2xl border border-border bg-surface p-6 sm:p-8 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-border pb-4 mb-6">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Research</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews CXO Research</span>
                   <h2 className="text-xl font-black text-foreground mt-1">ASCS Scorecard</h2>
                   <p className="text-xs text-muted mt-1">Twelve-dimension assessment of enterprise capability, architecture, AI, security, scalability, usability, economics, and strategic fit.</p>
                 </div>
@@ -395,7 +395,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6 shadow-sm">
             <div className="border-b border-border pb-3 mb-4">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews_CXO Research</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Reviews CXO Research</span>
               <h2 className="text-lg font-black text-foreground mt-1">Synthesized Analyst Evaluation</h2>
             </div>
 
@@ -457,7 +457,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
           <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-5 sm:p-6 shadow-sm">
             <div className="border-b border-primary/10 pb-4 mb-6">
               <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Editorial Assessment</span>
-              <h2 className="text-xl font-black text-foreground mt-1">Reviews_CXO Verdict</h2>
+              <h2 className="text-xl font-black text-foreground mt-1">Reviews CXO Verdict</h2>
             </div>
 
             <div className="space-y-6">
@@ -491,7 +491,7 @@ export default async function VendorPage({ params }: { params: Promise<{ slug: s
               <div className="border-t border-primary/10 pt-4">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Overall Assessment</h3>
                 <p className="text-sm text-muted leading-relaxed">
-                  <strong>Reviews_CXO assesses</strong> {vendor.name} as a {scoreLabel.toLowerCase()} for {vendor.bestFor[0]?.toLowerCase() || 'enterprise organizations'}. The platform demonstrates strength in {vendor.analystEvaluation?.coreStrengths[0]?.toLowerCase() || 'its core capabilities'}, while teams should carefully evaluate {vendor.analystEvaluation?.knownLimitations[0]?.toLowerCase() || 'implementation complexity'} before committing.
+                  <strong>Reviews CXO assesses</strong> {vendor.name} as a {scoreLabel.toLowerCase()} for {vendor.bestFor[0]?.toLowerCase() || 'enterprise organizations'}. The platform demonstrates strength in {vendor.analystEvaluation?.coreStrengths[0]?.toLowerCase() || 'its core capabilities'}, while teams should carefully evaluate {vendor.analystEvaluation?.knownLimitations[0]?.toLowerCase() || 'implementation complexity'} before committing.
                 </p>
               </div>
             </div>

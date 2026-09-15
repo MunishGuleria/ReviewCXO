@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "ASCS Scorecard 2026",
     description: "Composite ASCS scores for all evaluated platforms.",
     url: "https://reviews-cxo.com/indexes/ascs-scorecard-2026",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },

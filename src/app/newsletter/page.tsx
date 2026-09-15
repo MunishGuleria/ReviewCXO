@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: "Get new research delivered to your inbox.",
   alternates: { canonical: "https://reviews-cxo.com/newsletter" },
   openGraph: {
-    title: "Reviews_CXO Newsletter",
+    title: "Reviews CXO Newsletter",
     description: "Get new AI enterprise sales research delivered to your inbox.",
     url: "https://reviews-cxo.com/newsletter",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },
@@ -26,7 +26,7 @@ export default function NewsletterPage() {
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="card-premium p-8 sm:p-10">
           <h2 className="text-2xl font-bold text-foreground mb-4">
-            Subscribe to Reviews_CXO
+            Subscribe to Reviews CXO
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground mb-6">
             We publish research-only content — benchmarks, architecture

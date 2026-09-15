@@ -90,7 +90,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-lg">
-                Reviews_CXO evaluates enterprise AI platforms that connect ERPs and CRMs into autonomous workflows. Editorial research for CTOs, CIOs, and procurement leaders.
+                Reviews CXO evaluates enterprise AI platforms that connect ERPs and CRMs into autonomous workflows. Editorial research for CTOs, CIOs, and procurement leaders.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -275,7 +275,7 @@ export default function Home() {
               Architectural Fit & Workload Profiles
             </h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Reviews_CXO does not assign arbitrary &quot;best overall&quot; awards. Enterprise software selection depends on existing back-office systems, latency tolerances, and operational data integration architecture.
+              Reviews CXO does not assign arbitrary &quot;best overall&quot; awards. Enterprise software selection depends on existing back-office systems, latency tolerances, and operational data integration architecture.
             </p>
           </div>
 
@@ -319,7 +319,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-              How Reviews_CXO Evaluates Platforms
+              How Reviews CXO Evaluates Platforms
             </h2>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
               Our evaluation methodology is designed for enterprise CTOs, CIOs, and procurement leaders who require structured technical assessments rather than vendor promotional claims.

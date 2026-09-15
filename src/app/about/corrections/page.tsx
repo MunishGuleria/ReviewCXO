@@ -4,13 +4,13 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Corrections",
   description:
-    "How Reviews_CXO handles errors, updates, and score recalculations.",
+    "How Reviews CXO handles errors, updates, and score recalculations.",
   alternates: { canonical: "https://reviews-cxo.com/about/corrections" },
   openGraph: {
-    title: "Corrections & Retractions — Reviews_CXO",
+    title: "Corrections & Retractions — Reviews CXO",
     description: "How the publication handles errors, updates, and score recalculations.",
     url: "https://reviews-cxo.com/about/corrections",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
   },
@@ -31,7 +31,7 @@ export default function CorrectionsPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary">SLA & Protocol</span>
           <h2 className="mt-2 text-2xl font-black text-foreground">Transparent Correction Policy</h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            Reviews_CXO commits to prompt and auditable error correction. When factual discrepancies or scoring calculation errors are confirmed, the publication updates research artifacts and provides public disclosures.
+            Reviews CXO commits to prompt and auditable error correction. When factual discrepancies or scoring calculation errors are confirmed, the publication updates research artifacts and provides public disclosures.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-3">

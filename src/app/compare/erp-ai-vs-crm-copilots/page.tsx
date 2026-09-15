@@ -151,7 +151,7 @@ export default function ERPAIvsCRMCopilotsPage() {
           </section>
 
           <CitationBlock
-            authors="Reviews_CXO Research Team"
+            authors="Reviews CXO Research Team"
             title="Specialized ERP-AI vs Generic CRM Copilots"
             date="September 2026"
             url="https://reviews-cxo.com/compare/erp-ai-vs-crm-copilots"

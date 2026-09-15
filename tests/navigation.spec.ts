@@ -108,7 +108,7 @@ test.describe("Question Detail Pages", () => {
     await expect(page.locator("h1")).toBeVisible();
     
     // Check Analysis section exists
-    const analysisSection = page.locator("text=Reviews_CXO Analysis");
+    const analysisSection = page.locator("text=Reviews CXO Analysis");
     await expect(analysisSection).toBeVisible();
   });
 

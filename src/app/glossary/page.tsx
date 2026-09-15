@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Enterprise AI Glossary",
     description: "Enterprise AI terminology defined with research-backed explanations.",
     url: "https://reviews-cxo.com/glossary",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 
 const terms = [
   { term: "Agentic AI", definition: "AI systems that can autonomously plan, execute, and coordinate multi-step tasks using tools and sub-agents, rather than just providing recommendations." },
-  { term: "ASCS (AI Sales Capability Score)", definition: "Reviews_CXO's 12-dimension evaluation framework for assessing enterprise AI sales platforms on architecture, security, and capability maturity." },
+  { term: "ASCS (AI Sales Capability Score)", definition: "Reviews CXO's 12-dimension evaluation framework for assessing enterprise AI sales platforms on architecture, security, and capability maturity." },
   { term: "Cross-System Reasoning", definition: "The ability of an AI system to combine data from multiple enterprise systems (CRM, ERP, external) in a single reasoning chain to produce insights." },
   { term: "CRM Data Grounding", definition: "The process of anchoring AI outputs to actual CRM data records, ensuring recommendations are based on real customer and pipeline information." },
   { term: "ERP Connectivity", definition: "The depth and quality of native integration between an AI platform and enterprise ERP systems (SAP, Oracle, NetSuite)." },
-  { term: "Evidence Classification", definition: "Reviews_CXO's taxonomy for categorizing the strength of evidence behind a claim: Observed, Documented, Partially Documented, Third-Party Confirmed, Simulated, Inferred, or Not Tested." },
+  { term: "Evidence Classification", definition: "Reviews CXO's taxonomy for categorizing the strength of evidence behind a claim: Observed, Documented, Partially Documented, Third-Party Confirmed, Simulated, Inferred, or Not Tested." },
   { term: "Generative Engine Optimization (GEO)", definition: "Optimizing content to be cited and quoted by AI search engines (ChatGPT, Gemini, Perplexity) rather than just ranked in traditional search results." },
   { term: "Workflow Automation", definition: "AI systems that can complete end-to-end business tasks autonomously, not just provide recommendations for human action." },
   { term: "Model Transparency", definition: "The degree to which an AI platform discloses which LLMs it uses, versioning, model cards, and architectural details." },

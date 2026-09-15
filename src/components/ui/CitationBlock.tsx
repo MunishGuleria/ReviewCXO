@@ -7,7 +7,7 @@ interface CitationBlockProps {
 }
 
 export function CitationBlock({
-  authors = "Reviews_CXO Research Lab",
+  authors = "Reviews CXO Research Lab",
   title,
   date,
   url = "https://reviews-cxo.com",
@@ -26,7 +26,7 @@ export function CitationBlock({
         )}
       </div>
       <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-foreground/90 font-mono">
-        {authors}. &ldquo;{title}.&rdquo; <em>Reviews_CXO Enterprise Research</em>, {date}. Available at:{" "}
+        {authors}. &ldquo;{title}.&rdquo; <em>Reviews CXO Enterprise Research</em>, {date}. Available at:{" "}
         <a href={url} className="text-primary hover:underline break-all">
           {url}
         </a>

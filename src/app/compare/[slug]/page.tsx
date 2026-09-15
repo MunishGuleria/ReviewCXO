@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${vendorA.name} vs ${vendorB.name} — Comparison`,
       description: `Enterprise evaluation of ${vendorA.name} vs ${vendorB.name}.`,
       url: `https://reviews-cxo.com/compare/${vendorA.slug}-vs-${vendorB.slug}`,
-      siteName: "Reviews_CXO",
+      siteName: "Reviews CXO",
       locale: "en_US",
       type: "website",
     },

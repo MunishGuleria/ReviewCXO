@@ -9,13 +9,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Community Questions — AI Sales Platform Research",
-  description: "Answers to enterprise AI questions. Research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews_CXO analysts.",
+  description: "Answers to enterprise AI questions. Research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews CXO analysts.",
   alternates: { canonical: "https://reviews-cxo.com/questions" },
   openGraph: {
     title: "Community Questions — AI Sales Platform Research",
-    description: "Answers to enterprise AI questions from Reviews_CXO analysts.",
+    description: "Answers to enterprise AI questions from Reviews CXO analysts.",
     url: "https://reviews-cxo.com/questions",
-    siteName: "Reviews_CXO",
+    siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
   },
@@ -37,7 +37,7 @@ export default function QuestionsPage() {
 
         <SectionCard title="How It Works">
           <p className="text-xs sm:text-sm text-muted leading-relaxed">
-            Enterprise teams face difficult decisions when evaluating AI sales platforms. Reviews_CXO collects questions from across the industry and produces research-based responses. Every answer is grounded in the ASCS framework, references documented data sources, and provides actionable recommendations. No fabricated questions, no paid placements, no vendor influence.
+            Enterprise teams face difficult decisions when evaluating AI sales platforms. Reviews CXO collects questions from across the industry and produces research-based responses. Every answer is grounded in the ASCS framework, references documented data sources, and provides actionable recommendations. No fabricated questions, no paid placements, no vendor influence.
           </p>
         </SectionCard>
 

@@ -7,25 +7,24 @@ import { NavIcon } from "./NavIcon";
 interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
+  user: { id: string; email: string; name: string; role: string } | null;
+  onLogout: () => void;
 }
 
-export function MobileNav({ isOpen, onClose }: MobileNavProps) {
+export function MobileNav({ isOpen, onClose, user, onLogout }: MobileNavProps) {
   if (!isOpen) return null;
 
   return (
     <>
-      {/* Backdrop */}
       <div
         className="fixed inset-0 z-40 bg-black/60 transition-opacity"
         onClick={onClose}
       />
 
-      {/* Drawer */}
       <div className="fixed inset-y-0 right-0 z-50 w-[min(88vw,380px)] bg-surface border-l border-border shadow-xl overflow-y-auto flex flex-col">
-        {/* Sticky Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-surface px-5 py-4 pb-4">
           <span className="text-base font-bold text-foreground">
-            Reviews<span className="text-primary-text">_CXO</span>
+            Reviews <span className="text-primary-text">CXO</span>
           </span>
           <button
             type="button"
@@ -39,7 +38,6 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           </button>
         </div>
 
-        {/* Scrollable Nav Content */}
         <nav className="flex-1 overflow-y-auto px-5 py-5 space-y-5">
           {NAV_GROUPS.map((group) => {
             if (group.directLink && group.href) {
@@ -85,15 +83,35 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           })}
         </nav>
 
-        {/* Fixed Bottom CTA */}
         <div className="sticky bottom-0 border-t border-border bg-surface px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <Link
-            href="/newsletter"
-            className="btn-primary w-full flex items-center justify-center"
+            href="/submit-review"
+            className={`btn-primary w-full flex items-center justify-center ${user ? 'mb-4' : ''}`}
             onClick={onClose}
           >
-            Subscribe to Research
+            Submit Review
           </Link>
+          
+          {user && (
+            <div className="flex items-center justify-between p-3 rounded-xl border border-border bg-surface-alt">
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-surface border border-border font-mono text-xs font-bold text-secondary-foreground uppercase">
+                  {user.name.charAt(0)}
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-foreground leading-tight">{user.name}</span>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{user.role}</span>
+                </div>
+              </div>
+              <button
+                onClick={() => { onLogout(); onClose(); }}
+                className="inline-flex h-8 w-8 items-center justify-center rounded text-muted-foreground hover:bg-surface hover:text-foreground transition-colors"
+                title="Sign out"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>
