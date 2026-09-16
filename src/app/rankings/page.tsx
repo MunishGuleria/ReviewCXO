@@ -3,6 +3,7 @@ import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { InfoCard } from "@/components/ui/ResearchComponents";
 import { StarRating } from "@/components/ui/StarRating";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
 
@@ -23,6 +24,29 @@ export const metadata: Metadata = {
 const rankedVendors = [...getVisibleVendors()].sort((a, b) => b.ascsComposite - a.ascsComposite);
 
 export default function RankingsPage() {
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "ASCS 2026 Enterprise AI Sales Platform Rankings",
+    description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS architecture framework.",
+    url: "https://reviewscxo.com/rankings",
+    itemListElement: rankedVendors.slice(0, 10).map((v, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: v.name,
+        url: `https://reviewscxo.com/vendors/${v.slug}`,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: v.rating.toString(),
+          bestRating: "5",
+          worstRating: "1",
+        },
+      },
+    })),
+  };
+
   return (
     <ResearchLayout
       badge="ASCS Index Rankings"
@@ -31,6 +55,7 @@ export default function RankingsPage() {
       backHref="/vendors"
       backLabel="All Platforms"
     >
+      <JsonLd data={itemList} />
       <div className="space-y-8">
         <DisclosureBanner />
 

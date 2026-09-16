@@ -4,6 +4,7 @@ import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { getQuestionBySlug, getPublishedQuestions } from "@/lib/questions";
 import { getVisibleVendors } from "@/lib/vendors";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
+import { JsonLd } from "@/components/ui/JsonLd";
 import Link from "next/link";
 
 interface Props {
@@ -42,12 +43,37 @@ export default async function QuestionPage({ params }: Props) {
     .map((vSlug) => getVisibleVendors().find((v) => v.slug === vSlug))
     .filter(Boolean);
 
+  const qaSchema = {
+    "@context": "https://schema.org",
+    "@type": "QAPage",
+    mainEntity: {
+      "@type": "Question",
+      name: question.title,
+      text: question.question,
+      dateCreated: question.publishedAt,
+      author: {
+        "@type": "Person",
+        name: question.author,
+      },
+      answer: {
+        "@type": "Answer",
+        text: question.answer.slice(0, 500),
+        author: {
+          "@type": "Organization",
+          name: "Reviews CXO",
+        },
+      },
+    },
+  };
+
   return (
-    <ResearchLayout
-      badge="Community Question"
-      title={question.title}
-      description={question.excerpt}
-      backHref="/questions"
+    <>
+      <JsonLd data={qaSchema} />
+      <ResearchLayout
+        badge="Community Question"
+        title={question.title}
+        description={question.excerpt}
+        backHref="/questions"
       backLabel="All Questions"
     >
       <div className="space-y-8">
@@ -262,5 +288,6 @@ export default async function QuestionPage({ params }: Props) {
         )}
       </div>
     </ResearchLayout>
+    </>
   );
 }

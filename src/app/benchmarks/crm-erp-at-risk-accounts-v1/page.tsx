@@ -3,6 +3,7 @@ import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { InfoCard, DataTable, BestFor } from "@/components/ui/ResearchComponents";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { CitationBlock } from "@/components/ui/CitationBlock";
+import { JsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?",
@@ -19,14 +20,35 @@ export const metadata: Metadata = {
 };
 
 export default function BenchmarkV1Page() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?",
+    description: "A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.",
+    url: "https://reviewscxo.com/benchmarks/crm-erp-at-risk-accounts-v1",
+    author: {
+      "@type": "Organization",
+      name: "Reviews CXO",
+      url: "https://reviewscxo.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Reviews CXO",
+      url: "https://reviewscxo.com",
+    },
+    datePublished: "2026-09-05",
+  };
+
   return (
-    <ResearchLayout
-      badge="Benchmark v1 · Published Sep 2026"
-      title="Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?"
-      description="A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures."
-      backHref="/benchmarks"
-      backLabel="All Benchmarks"
-    >
+    <>
+      <JsonLd data={articleSchema} />
+      <ResearchLayout
+        badge="Benchmark v1 · Published Sep 2026"
+        title="Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?"
+        description="A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures."
+        backHref="/benchmarks"
+        backLabel="All Benchmarks"
+      >
       <div className="space-y-10">
         {/* EXECUTIVE SUMMARY */}
         <InfoCard title="Executive Summary" variant="primary">
@@ -277,5 +299,6 @@ export default function BenchmarkV1Page() {
         />
       </div>
     </ResearchLayout>
+    </>
   );
 }

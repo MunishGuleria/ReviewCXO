@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
+import { JsonLd } from "@/components/ui/JsonLd";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -19,8 +20,23 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Reviews CXO",
+    description: "About Reviews CXO — an independently operated research initiative focused on AI for enterprise sales.",
+    url: "https://reviewscxo.com/about",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Reviews CXO",
+      url: "https://reviewscxo.com",
+      description: "Independent AI enterprise sales research platform.",
+    },
+  };
+
   return (
     <>
+      <JsonLd data={aboutSchema} />
       <PageHeader
         badge="Research Initiative"
         title="About Reviews CXO"

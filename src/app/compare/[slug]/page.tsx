@@ -6,6 +6,7 @@ import { ASCS_DIMENSIONS, EVIDENCE_TYPES } from "@/lib/site";
 import { StarRating } from "@/components/ui/StarRating";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { CitationBlock } from "@/components/ui/CitationBlock";
+import { JsonLd } from "@/components/ui/JsonLd";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -68,10 +69,30 @@ export default async function ComparisonDetailPage({ params }: Props) {
 
   if (!vA || !vB) notFound();
 
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${vA.name} vs ${vB.name} — ASCS Architecture & Benchmark Comparison`,
+    description: `Enterprise evaluation of ${vA.name} vs ${vB.name} across 12 ASCS dimensions.`,
+    url: `https://reviewscxo.com/compare/${slug}`,
+    author: {
+      "@type": "Organization",
+      name: "Reviews CXO",
+      url: "https://reviewscxo.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Reviews CXO",
+      url: "https://reviewscxo.com",
+    },
+  };
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      {/* BREADCRUMB */}
-      <nav className="mb-6 flex items-center gap-2 text-xs font-medium text-muted">
+    <>
+      <JsonLd data={comparisonSchema} />
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        {/* BREADCRUMB */}
+        <nav className="mb-6 flex items-center gap-2 text-xs font-medium text-muted">
         <Link href="/compare" className="hover:text-foreground">Comparisons</Link>
         <span>/</span>
         <span className="text-foreground font-semibold">{vA.name} vs {vB.name}</span>
@@ -306,5 +327,6 @@ export default async function ComparisonDetailPage({ params }: Props) {
         />
       </div>
     </div>
+    </>
   );
 }

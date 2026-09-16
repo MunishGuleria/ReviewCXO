@@ -25,6 +25,7 @@ const RSS_ITEMS = `
 `;
 
 export function GET(_request: NextRequest) {
+  const buildDate = new Date().toUTCString();
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -32,7 +33,7 @@ export function GET(_request: NextRequest) {
     <link>https://reviewscxo.com</link>
     <description>Benchmarks, architecture analysis, and CXO insights on AI sales platforms.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>${buildDate}</lastBuildDate>
     <atom:link href="https://reviewscxo.com/rss.xml" rel="self" type="application/rss+xml" />
     ${RSS_ITEMS}
   </channel>
