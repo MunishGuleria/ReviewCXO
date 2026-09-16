@@ -21,7 +21,7 @@ export function MobileNav({ isOpen, onClose, user, onLogout }: MobileNavProps) {
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0 z-50 w-[min(88vw,380px)] bg-surface border-l border-border shadow-xl overflow-y-auto flex flex-col">
+      <div className="fixed inset-y-0 right-0 z-50 w-full bg-surface border-l border-border shadow-xl overflow-y-auto flex flex-col">
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-surface px-5 py-4 pb-4">
           <span className="text-base font-bold text-foreground">
             Reviews <span className="text-primary-text">CXO</span>
