@@ -21,13 +21,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Password must be at least 8 characters." }, { status: 400 });
     }
 
-    const existing = findUserByEmail(email);
+    const existing = await findUserByEmail(email);
     if (existing) {
       return NextResponse.json({ error: "An account with this email already exists." }, { status: 409 });
     }
 
     const hash = await hashPassword(password);
-    const user = createUser(email, name.trim(), hash);
+    const user = await createUser(email, name.trim(), hash);
     const token = await createToken(user);
 
     const res = NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role } });

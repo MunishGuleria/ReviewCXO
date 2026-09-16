@@ -122,8 +122,20 @@ COPYRIGHT-CONTENT-AUDIT.md
 LEGAL1_SUMMARY.md
 AGENTS.md
 CLAUDE.md
+EDITORIAL-REPHRASE-LOG.md
+UI-CONTENT-AUDIT.md
 
 # test files
 *.spec.*
 *.test.*
 __tests__/
+
+# supabase skills
+.agents/
+
+# scratch scripts
+replace_text.js
+
+# lockfile
+package-lock.json
+skills-lock.json

@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import { checkAdminAuth } from "@/lib/admin-auth";
 
 export async function POST(
@@ -11,9 +11,10 @@ export async function POST(
 
   try {
     const { id } = await params;
-    db.prepare(
-      "UPDATE submitted_reviews SET status = 'approved', updated_at = CURRENT_TIMESTAMP WHERE id = ?"
-    ).run(id);
+    await supabase
+      .from("submitted_reviews")
+      .update({ status: "approved", updated_at: new Date().toISOString() })
+      .eq("id", id);
     return Response.json({ success: true });
   } catch (error) {
     console.error("Error approving review:", error);

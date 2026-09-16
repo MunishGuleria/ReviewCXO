@@ -1,16 +1,8 @@
-import Database from 'better-sqlite3'
-import path from 'path'
-import fs from 'fs'
+import { createClient } from '@supabase/supabase-js'
 
-const dataDir = path.join(process.cwd(), 'data')
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true })
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
 
-const dbPath = path.join(dataDir, 'reviews-cxo.db')
-const db = new Database(dbPath)
+const supabase = createClient(supabaseUrl, supabaseKey)
 
-db.pragma('journal_mode = WAL')
-db.pragma('foreign_keys = ON')
-
-export default db
+export default supabase

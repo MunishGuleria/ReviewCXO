@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import { checkAdminAuth } from "@/lib/admin-auth";
 
 export async function GET(request: NextRequest) {
@@ -7,10 +7,12 @@ export async function GET(request: NextRequest) {
   if (authError) return authError;
 
   try {
-    const pending = db
-      .prepare("SELECT * FROM submitted_questions WHERE status = 'pending' ORDER BY created_at DESC")
-      .all();
-    return Response.json(pending);
+    const { data: pending } = await supabase
+      .from("submitted_questions")
+      .select("*")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false });
+    return Response.json(pending || []);
   } catch (error) {
     console.error("Error fetching pending questions:", error);
     return Response.json({ error: "Failed to fetch questions" }, { status: 500 });

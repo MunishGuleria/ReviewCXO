@@ -3,7 +3,7 @@ import { ResearchLayout } from "@/components/layout/ResearchLayout";
 import { getAllQuestions } from "@/lib/questions";
 import { getPendingReviews, getApprovedReviews } from "@/lib/reviews";
 import { getVisibleVendors } from "@/lib/vendors";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,16 +11,19 @@ export const metadata: Metadata = {
   description: "Secure administration and content management workspace.",
 };
 
-export default function AdminPage() {
+export default async function AdminPage() {
   const questions = getAllQuestions();
   const publishedCount = questions.filter((q) => q.status === "published").length;
   const draftCount = questions.filter((q) => q.status === "draft").length;
   const pendingReviews = getPendingReviews();
   const approvedReviews = getApprovedReviews();
-  const pendingQuestions = db.prepare("SELECT COUNT(*) as cnt FROM submitted_questions WHERE status = 'pending'").get() as { cnt: number };
+  const { count: pendingQuestionsCount } = await supabase
+    .from("submitted_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("status", "pending");
   const vendors = getVisibleVendors();
 
-  const totalPending = pendingReviews.length + pendingQuestions.cnt;
+  const totalPending = pendingReviews.length + (pendingQuestionsCount || 0);
 
   return (
     <ResearchLayout
@@ -95,7 +98,7 @@ export default function AdminPage() {
               
               <div className="flex gap-4 items-center bg-background/50 p-3 rounded-lg border border-border/50">
                 <div className="flex flex-col">
-                  <span className="text-2xl font-black text-yellow-500 leading-none">{pendingQuestions.cnt}</span>
+                  <span className="text-2xl font-black text-yellow-500 leading-none">{pendingQuestionsCount}</span>
                   <span className="text-[10px] font-bold uppercase text-muted-foreground mt-1 tracking-wider">Pending</span>
                 </div>
                 <div className="w-px h-8 bg-border"></div>

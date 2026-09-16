@@ -1,6 +1,6 @@
+import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { submitProjectReview } from "@/lib/db-queries";
-import db from "@/lib/db";
 import { checkRateLimit, getRateLimitHeaders } from "@/lib/rate-limit";
 import { getVisibleVendors } from "@/lib/vendors";
 
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
       budget_range: sanitizeString(data.budget_range, 50) || undefined,
     };
 
-    const reviewId = submitProjectReview(sanitizedData);
+    const reviewId = await submitProjectReview(sanitizedData);
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
     const adminEmail = "harsh078976@gmail.com";
@@ -120,7 +120,6 @@ export async function POST(request: Request) {
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
 
-        // Notify admin
         await resend.emails.send({
           from: "Reviews CXO <onboarding@resend.dev>",
           to: adminEmail,
@@ -136,7 +135,6 @@ export async function POST(request: Request) {
 <p><a href="${siteUrl}/admin/reviews" style="background:#0070f3;color:#fff;padding:12px 24px;text-decoration:none;border-radius:4px;display:inline-block">Review in Admin Panel</a></p>`,
         });
 
-        // Notify submitter
         await resend.emails.send({
           from: "Reviews CXO <onboarding@resend.dev>",
           to: cxo_email,

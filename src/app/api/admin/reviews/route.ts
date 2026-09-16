@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import { checkAdminAuth } from "@/lib/admin-auth";
 import { getVisibleVendors } from "@/lib/vendors";
 
@@ -9,11 +9,13 @@ export async function GET(request: NextRequest) {
 
   try {
     const visibleNames = getVisibleVendors().map((v) => v.name);
-    const placeholders = visibleNames.map(() => "?").join(",");
-    const pending = db
-      .prepare(`SELECT * FROM submitted_reviews WHERE status = 'pending' AND it_company_name IN (${placeholders}) ORDER BY created_at DESC`)
-      .all(...visibleNames);
-    return Response.json(pending);
+    const { data: pending } = await supabase
+      .from("submitted_reviews")
+      .select("*")
+      .eq("status", "pending")
+      .in("it_company_name", visibleNames)
+      .order("created_at", { ascending: false });
+    return Response.json(pending || []);
   } catch (error) {
     console.error("Error fetching pending reviews:", error);
     return Response.json({ error: "Failed to fetch reviews" }, { status: 500 });

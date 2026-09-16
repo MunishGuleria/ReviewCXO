@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import { verifyToken } from "@/lib/auth";
 import crypto from "crypto";
 
@@ -27,11 +27,17 @@ export async function POST(request: Request) {
     }
 
     const id = `q-${Date.now()}-${crypto.randomBytes(4).toString("hex")}`;
-    db.prepare(
-      "INSERT INTO submitted_questions (id, user_id, author_name, author_email, title, body, category, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending')"
-    ).run(id, user.id, user.name, user.email, title, body, category);
+    await supabase.from("submitted_questions").insert({
+      id,
+      user_id: user.id,
+      author_name: user.name,
+      author_email: user.email,
+      title,
+      body,
+      category,
+      status: "pending",
+    });
 
-    // Notify admin
     try {
       const { Resend } = await import("resend");
       if (process.env.RESEND_API_KEY) {

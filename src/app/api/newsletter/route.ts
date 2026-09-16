@@ -13,14 +13,14 @@ export async function POST(request: Request) {
       );
     }
 
-    if (isEmailSubscribed(email)) {
+    if (await isEmailSubscribed(email)) {
       return NextResponse.json(
         { error: "This email is already subscribed." },
         { status: 409 }
       );
     }
 
-    const success = subscribeToNewsletter(email);
+    const success = await subscribeToNewsletter(email);
 
     if (success) {
       return NextResponse.json({

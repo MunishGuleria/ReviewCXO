@@ -88,9 +88,9 @@ Full methodology: [reviews-cxo.com/about/methodology](https://reviews-cxo.com/ab
 | UI | React 19 |
 | Language | TypeScript 5 |
 | Styling | Tailwind CSS 4 |
-| Database | SQLite via better-sqlite3 |
+| Database | Supabase (PostgreSQL) |
 | Email | Resend (optional) |
-| Auth | Custom session-based (jose JWT) |
+| Auth | Custom session-based (jose JWT + bcryptjs) |
 | Fonts | Inter + JetBrains Mono |
 | Deploy | Vercel-oriented |
 
@@ -106,8 +106,8 @@ Full methodology: [reviews-cxo.com/about/methodology](https://reviews-cxo.com/ab
 ### Install
 
 ```bash
-git clone https://github.com/MPK15KPK/Reviews_CXO.git
-cd Reviews_CXO/reviews-cxo
+git clone https://github.com/MunishGuleria/ReviewCXO.git
+cd ReviewCXO/reviews-cxo
 npm install
 ```
 
@@ -119,24 +119,12 @@ cp .env.example .env.local
 
 | Variable | Required | Description |
 |---|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Yes | Supabase project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Yes | Supabase service role key |
+| `JWT_SECRET` | Yes | Secret key for session tokens |
 | `ADMIN_AUTH_TOKEN` | Yes (for admin) | Secure random admin token |
 | `NEXT_PUBLIC_SITE_URL` | Yes for email links | Public site URL (local or production) |
 | `RESEND_API_KEY` | No | Resend API key; emails are skipped if unset |
-| `JWT_SECRET` | Yes (for auth) | Secret key for session tokens |
-
-### Database
-
-```bash
-npm run db:init
-```
-
-Database file: `data/reviews-cxo.db` (WAL mode).
-
-```bash
-npm run db:reset
-```
-
-> On Windows PowerShell, delete `data/reviews-cxo.db` manually if `db:reset` fails, then run `npm run db:init`.
 
 ### Run
 
@@ -158,8 +146,6 @@ npm run lint
 ```
 reviews-cxo/
 ├── public/                 # Static assets, favicon, llms.txt
-├── data/                   # SQLite database
-├── scripts/                # QA audit utilities
 ├── src/
 │   ├── app/                # App Router pages and API routes
 │   │   ├── rankings/       # ASCS leaderboard
@@ -187,8 +173,8 @@ reviews-cxo/
 │   │   ├── questions.ts    # Q&A content
 │   │   ├── reviews.ts      # Review data access
 │   │   ├── auth.ts         # Session-based authentication
-│   │   ├── db.ts           # SQLite connection
-│   │   ├── schema.ts       # Schema and migrations
+│   │   ├── db.ts           # Supabase client
+│   │   ├── db-queries.ts   # Database query functions
 │   │   └── admin-auth.ts   # Admin authentication
 │   └── middleware.ts       # Admin + auth route protection
 ├── .env.example
@@ -320,18 +306,17 @@ Submit a question for analyst research (requires authentication).
 
 ## Database
 
-SQLite at `data/reviews-cxo.db`.
+Supabase (PostgreSQL) hosted at `wewrijwmeqdzrshdrkyo.supabase.co`.
 
 | Table | Purpose |
 |---|---|
+| `users` | User accounts (email, password hash, role) |
 | `newsletter_subscribers` | Newsletter subscribe / unsubscribe |
 | `submitted_reviews` | Platform reviews, verification, and moderation |
 | `submitted_questions` | User-submitted questions for analyst research |
-| `users` | User accounts (email, password hash) |
-| `sessions` | JWT session tokens |
 | `evidence_records` | Claim and source evidence |
 
-Full schema: [`src/lib/schema.ts`](src/lib/schema.ts)
+RLS enabled on all tables. Schema managed in Supabase SQL Editor.
 
 ---
 
@@ -366,11 +351,9 @@ With the development server running:
 
 ```bash
 npm run dev
-# separate terminal
-node scripts/qa_audit.js
 ```
 
-Covers validation defenses, rate limits, admin auth, newsletter flow, review lifecycle, and route health checks.
+Test all flows manually: signup, login, submit question, submit review, admin moderation, newsletter subscription.
 
 ---
 

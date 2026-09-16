@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
@@ -9,17 +9,25 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Token required" }, { status: 400 });
     }
 
-    const review = db
-      .prepare("SELECT id FROM submitted_reviews WHERE verification_token = ? AND status = 'pending_verification'")
-      .get(token) as { id: string } | undefined;
+    const { data: review } = await supabase
+      .from("submitted_reviews")
+      .select("id")
+      .eq("verification_token", token)
+      .eq("status", "pending_verification")
+      .single();
 
     if (!review) {
       return NextResponse.json({ error: "Invalid or expired token" }, { status: 404 });
     }
 
-    db.prepare(
-      "UPDATE submitted_reviews SET status = 'pending', verified_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE verification_token = ?"
-    ).run(token);
+    await supabase
+      .from("submitted_reviews")
+      .update({
+        status: "pending",
+        verified_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("verification_token", token);
 
     return NextResponse.json({ success: true });
   } catch (error) {

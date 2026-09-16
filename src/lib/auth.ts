@@ -1,6 +1,6 @@
 import { SignJWT, jwtVerify } from "jose";
 import bcrypt from "bcryptjs";
-import db from "./db";
+import supabase from "./db";
 import crypto from "crypto";
 
 const SECRET = new TextEncoder().encode(
@@ -29,28 +29,34 @@ export async function verifyPassword(password: string, hash: string): Promise<bo
   return bcrypt.compare(password, hash);
 }
 
-export function findUserByEmail(email: string) {
-  return db.prepare("SELECT * FROM users WHERE email = ?").get(email.toLowerCase()) as
-    | { id: string; email: string; name: string; password_hash: string; role: string; created_at: string }
-    | undefined;
+export async function findUserByEmail(email: string) {
+  const { data } = await supabase
+    .from("users")
+    .select("id, email, name, password_hash, role, created_at")
+    .eq("email", email.toLowerCase())
+    .single();
+  return data || undefined;
 }
 
-export function findUserById(id: string) {
-  return db.prepare("SELECT id, email, name, role FROM users WHERE id = ?").get(id) as
-    | { id: string; email: string; name: string; role: string }
-    | undefined;
+export async function findUserById(id: string) {
+  const { data } = await supabase
+    .from("users")
+    .select("id, email, name, role")
+    .eq("id", id)
+    .single();
+  return data || undefined;
 }
 
-export function createUser(email: string, name: string, passwordHash: string) {
+export async function createUser(email: string, name: string, passwordHash: string) {
   const id = `user-${Date.now()}-${crypto.randomBytes(4).toString("hex")}`;
   const role = isAdmin(email) ? "admin" : "user";
-  db.prepare("INSERT INTO users (id, email, name, password_hash, role) VALUES (?, ?, ?, ?, ?)").run(
+  await supabase.from("users").insert({
     id,
-    email.toLowerCase(),
+    email: email.toLowerCase(),
     name,
-    passwordHash,
-    role
-  );
+    password_hash: passwordHash,
+    role,
+  });
   return { id, email: email.toLowerCase(), name, role: role as "user" | "admin" };
 }
 

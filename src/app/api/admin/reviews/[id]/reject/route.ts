@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import db from "@/lib/db";
+import supabase from "@/lib/db";
 import { checkAdminAuth } from "@/lib/admin-auth";
 
 export async function POST(
@@ -11,7 +11,7 @@ export async function POST(
 
   try {
     const { id } = await params;
-    db.prepare("DELETE FROM submitted_reviews WHERE id = ?").run(id);
+    await supabase.from("submitted_reviews").delete().eq("id", id);
     return Response.json({ success: true });
   } catch (error) {
     console.error("Error rejecting review:", error);
