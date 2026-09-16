@@ -11,7 +11,7 @@ Independent, evidence-based research on enterprise AI sales platforms for CTOs, 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](#license)
 
-[Live site](https://reviews-cxo.com) · [Rankings](https://reviews-cxo.com/rankings) · [Methodology](https://reviews-cxo.com/about/methodology)
+[Live site](https://reviewscxo.com) · [Rankings](https://reviewscxo.com/rankings) · [Methodology](https://reviewscxo.com/about/methodology)
 
 </div>
 
@@ -76,7 +76,7 @@ Published platforms are scored on a **0–10** scale across weighted evaluation 
 | 7–8 | Strong / well-documented / differentiated |
 | 9–10 | Industry-leading / best-in-class evidence |
 
-Full methodology: [reviews-cxo.com/about/methodology](https://reviews-cxo.com/about/methodology) · source of truth in code: [`src/lib/site.ts`](src/lib/site.ts)
+Full methodology: [reviewscxo.com/about/methodology](https://reviewscxo.com/about/methodology) · source of truth in code: [`src/lib/site.ts`](src/lib/site.ts)
 
 ---
 
@@ -370,14 +370,14 @@ Test all flows manually: signup, login, submit question, submit review, admin mo
 
 Proprietary. All rights reserved.
 
-Licensing inquiries: [research@reviews-cxo.com](mailto:research@reviews-cxo.com)
+Licensing inquiries: [research@reviewscxo.com](mailto:research@reviewscxo.com)
 
 ---
 
 <div align="center">
 
-**[Reviews CXO](https://reviews-cxo.com)** — Independent AI Enterprise Sales Research
+**[Reviews CXO](https://reviewscxo.com)** — Independent AI Enterprise Sales Research
 
-[Rankings](https://reviews-cxo.com/rankings) · [Platforms](https://reviews-cxo.com/vendors) · [Questions](https://reviews-cxo.com/questions) · [Methodology](https://reviews-cxo.com/about/methodology) · [About](https://reviews-cxo.com/about)
+[Rankings](https://reviewscxo.com/rankings) · [Platforms](https://reviewscxo.com/vendors) · [Questions](https://reviewscxo.com/questions) · [Methodology](https://reviewscxo.com/about/methodology) · [About](https://reviewscxo.com/about)
 
 </div>

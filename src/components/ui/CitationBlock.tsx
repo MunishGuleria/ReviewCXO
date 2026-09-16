@@ -10,7 +10,7 @@ export function CitationBlock({
   authors = "Reviews CXO Research Lab",
   title,
   date,
-  url = "https://reviews-cxo.com",
+  url = "https://reviewscxo.com",
   version,
 }: CitationBlockProps) {
   return (

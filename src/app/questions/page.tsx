@@ -10,11 +10,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Community Questions — AI Sales Platform Research",
   description: "Answers to enterprise AI questions. Research on Salesforce, Microsoft, SAP, and AI sales platforms from Reviews CXO analysts.",
-  alternates: { canonical: "https://reviews-cxo.com/questions" },
+  alternates: { canonical: "https://reviewscxo.com/questions" },
   openGraph: {
     title: "Community Questions — AI Sales Platform Research",
     description: "Answers to enterprise AI questions from Reviews CXO analysts.",
-    url: "https://reviews-cxo.com/questions",
+    url: "https://reviewscxo.com/questions",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

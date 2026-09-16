@@ -7,11 +7,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: `Enterprise AI Sales Platforms — Directory & ASCS Scores`,
   description: `Evaluations of enterprise AI platforms. Architecture analysis, ASCS scores, and integration capabilities for Salesforce, Microsoft, SAP, and more.`,
-  alternates: { canonical: "https://reviews-cxo.com/vendors" },
+  alternates: { canonical: "https://reviewscxo.com/vendors" },
   openGraph: {
     title: `Enterprise AI Sales Platforms`,
     description: `Evaluations of enterprise AI platforms with ASCS scores.`,
-    url: "https://reviews-cxo.com/vendors",
+    url: "https://reviewscxo.com/vendors",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

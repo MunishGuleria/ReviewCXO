@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Benchmarks",
   description:
     "Controlled evaluations of AI sales platform capabilities on specific enterprise tasks with published methodology.",
-  alternates: { canonical: "https://reviews-cxo.com/benchmarks" },
+  alternates: { canonical: "https://reviewscxo.com/benchmarks" },
   openGraph: {
     title: "AI Sales Platform Benchmarks",
     description: "Controlled evaluations of AI sales platform capabilities.",
-    url: "https://reviews-cxo.com/benchmarks",
+    url: "https://reviewscxo.com/benchmarks",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

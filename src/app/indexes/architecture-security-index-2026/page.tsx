@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: "Architecture & Security Index 2026",
   description:
     "12-dimension evaluation of enterprise AI platforms on architecture, security, and governance maturity.",
-  alternates: { canonical: "https://reviews-cxo.com/indexes/architecture-security-index-2026" },
+  alternates: { canonical: "https://reviewscxo.com/indexes/architecture-security-index-2026" },
   openGraph: {
     title: "Architecture & Security Index 2026",
     description: "12-dimension evaluation of enterprise AI platforms.",
-    url: "https://reviews-cxo.com/indexes/architecture-security-index-2026",
+    url: "https://reviewscxo.com/indexes/architecture-security-index-2026",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
@@ -121,7 +121,7 @@ export default function ArchitectureSecurityIndexPage() {
           authors="Reviews CXO Research Team"
           title="Architecture & Security Index 2026"
           date="September 2026"
-          url="https://reviews-cxo.com/indexes/architecture-security-index-2026"
+          url="https://reviewscxo.com/indexes/architecture-security-index-2026"
         />
 
         <div className="pt-2">

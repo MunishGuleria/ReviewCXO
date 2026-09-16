@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Disclosure",
   description:
     "Reviews CXO sponsorship disclosure and conflict of interest transparency.",
-  alternates: { canonical: "https://reviews-cxo.com/about/disclosure" },
+  alternates: { canonical: "https://reviewscxo.com/about/disclosure" },
   openGraph: {
     title: "Disclosure — Reviews CXO",
     description: "Sponsorship disclosure and conflict of interest transparency.",
-    url: "https://reviews-cxo.com/about/disclosure",
+    url: "https://reviewscxo.com/about/disclosure",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",

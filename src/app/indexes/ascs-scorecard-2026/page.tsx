@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   title: "ASCS Scorecard 2026",
   description:
     "Composite ASCS scores for all evaluated enterprise AI sales platforms.",
-  alternates: { canonical: "https://reviews-cxo.com/indexes/ascs-scorecard-2026" },
+  alternates: { canonical: "https://reviewscxo.com/indexes/ascs-scorecard-2026" },
   openGraph: {
     title: "ASCS Scorecard 2026",
     description: "Composite ASCS scores for all evaluated platforms.",
-    url: "https://reviews-cxo.com/indexes/ascs-scorecard-2026",
+    url: "https://reviewscxo.com/indexes/ascs-scorecard-2026",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",

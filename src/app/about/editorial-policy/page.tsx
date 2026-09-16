@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Editorial Policy",
   description:
     "Reviews CXO editorial policy — how the publication maintains research integrity and editorial independence.",
-  alternates: { canonical: "https://reviews-cxo.com/about/editorial-policy" },
+  alternates: { canonical: "https://reviewscxo.com/about/editorial-policy" },
   openGraph: {
     title: "Editorial Policy — Reviews CXO",
     description: "How the publication maintains research integrity and editorial independence.",
-    url: "https://reviews-cxo.com/about/editorial-policy",
+    url: "https://reviewscxo.com/about/editorial-policy",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",

@@ -3,9 +3,9 @@ export const SITE = {
   title: "Reviews CXO — AI Enterprise Sales Research",
   description:
     "Architecture analysis, and CXO insights on AI sales platforms. Editorial research for enterprise buyers.",
-  url: "https://reviews-cxo.com",
+  url: "https://reviewscxo.com",
   ogImage: "/og-image.png",
-  email: "research@reviews-cxo.com",
+  email: "research@reviewscxo.com",
 } as const;
 
 export const NAVIGATION = [

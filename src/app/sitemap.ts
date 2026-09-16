@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getVisibleVendors } from "@/lib/vendors";
 import { getPublishedQuestions } from "@/lib/questions";
 
-const BASE_URL = "https://reviews-cxo.com";
+const BASE_URL = "https://reviewscxo.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [

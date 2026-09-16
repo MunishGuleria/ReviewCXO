@@ -7,11 +7,11 @@ import { CitationBlock } from "@/components/ui/CitationBlock";
 export const metadata: Metadata = {
   title: "Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?",
   description: "A structured evaluation of cross-system reasoning capabilities across representative AI sales platform architectures.",
-  alternates: { canonical: "https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1" },
+  alternates: { canonical: "https://reviewscxo.com/benchmarks/crm-erp-at-risk-accounts-v1" },
   openGraph: {
     title: "CRM+ERP At-Risk Accounts Benchmark",
     description: "Controlled evaluation of cross-system reasoning capabilities.",
-    url: "https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1",
+    url: "https://reviewscxo.com/benchmarks/crm-erp-at-risk-accounts-v1",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
@@ -273,7 +273,7 @@ export default function BenchmarkV1Page() {
           authors="Reviews CXO Research Team"
           title="Can AI Combine CRM Churn Signals with ERP Supply Delays to Identify At-Risk Enterprise Accounts?"
           date="September 2026"
-          url="https://reviews-cxo.com/benchmarks/crm-erp-at-risk-accounts-v1"
+          url="https://reviewscxo.com/benchmarks/crm-erp-at-risk-accounts-v1"
         />
       </div>
     </ResearchLayout>

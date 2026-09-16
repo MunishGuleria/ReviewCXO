@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "State of AI in Enterprise Sales 2026",
   description:
     "Original primary research based on interviews and surveys with enterprise decision-makers.",
-  alternates: { canonical: "https://reviews-cxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026" },
+  alternates: { canonical: "https://reviewscxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026" },
   openGraph: {
     title: "State of AI in Enterprise Sales 2026",
     description: "Original primary research with enterprise decision-makers.",
-    url: "https://reviews-cxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026",
+    url: "https://reviewscxo.com/cxo-intelligence/state-of-ai-enterprise-sales-2026",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
@@ -105,8 +105,8 @@ export default function StateOfAIReportPage() {
             <p>
               If you are a VP+ enterprise leader involved in AI sales
               decisions, we invite you to participate. Contact us at{" "}
-              <a href="mailto:research@reviews-cxo.com">
-                research@reviews-cxo.com
+              <a href="mailto:research@reviewscxo.com">
+                research@reviewscxo.com
               </a>{" "}
               for research participation.
             </p>

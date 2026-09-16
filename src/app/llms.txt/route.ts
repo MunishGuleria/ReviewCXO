@@ -6,8 +6,8 @@ export async function GET() {
   const vendors = getVisibleVendors();
   const questions = getPublishedQuestions();
 
-  const vendorList = vendors.map(v => `- [${v.name}](https://reviews-cxo.com/vendors/${v.slug}): ${v.tagline}`).join("\n");
-  const questionList = questions.map(q => `- [${q.title}](https://reviews-cxo.com/questions/${q.slug})`).join("\n");
+  const vendorList = vendors.map(v => `- [${v.name}](https://reviewscxo.com/vendors/${v.slug}): ${v.tagline}`).join("\n");
+  const questionList = questions.map(q => `- [${q.title}](https://reviewscxo.com/questions/${q.slug})`).join("\n");
 
   const content = `# Reviews CXO — Independent Enterprise AI & Software Vendor Research
 
@@ -35,11 +35,11 @@ ${questionList}
 
 ## Key Directories
 
-- [Vendors](https://reviews-cxo.com/vendors)
-- [Rankings](https://reviews-cxo.com/rankings)
-- [Comparisons](https://reviews-cxo.com/compare)
-- [CXO Intelligence](https://reviews-cxo.com/cxo-intelligence)
-- [Methodology](https://reviews-cxo.com/about/methodology)
+- [Vendors](https://reviewscxo.com/vendors)
+- [Rankings](https://reviewscxo.com/rankings)
+- [Comparisons](https://reviewscxo.com/compare)
+- [CXO Intelligence](https://reviewscxo.com/cxo-intelligence)
+- [Methodology](https://reviewscxo.com/about/methodology)
 `;
 
   return new NextResponse(content, {

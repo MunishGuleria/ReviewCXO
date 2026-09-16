@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Indexes",
   description:
     "Composite scores and rankings using the ASCS 12-dimension framework.",
-  alternates: { canonical: "https://reviews-cxo.com/indexes" },
+  alternates: { canonical: "https://reviewscxo.com/indexes" },
   openGraph: {
     title: "AI Sales Platform Indexes",
     description: "Composite scores and rankings using the ASCS 12-dimension framework.",
-    url: "https://reviews-cxo.com/indexes",
+    url: "https://reviewscxo.com/indexes",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

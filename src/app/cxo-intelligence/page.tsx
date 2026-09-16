@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "CXO Intelligence",
   description:
     "Original primary research with enterprise leaders on AI adoption, barriers, and ROI.",
-  alternates: { canonical: "https://reviews-cxo.com/cxo-intelligence" },
+  alternates: { canonical: "https://reviewscxo.com/cxo-intelligence" },
   openGraph: {
     title: "CXO Intelligence — Enterprise AI Research",
     description: "Original primary research with enterprise leaders on AI adoption.",
-    url: "https://reviews-cxo.com/cxo-intelligence",
+    url: "https://reviewscxo.com/cxo-intelligence",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

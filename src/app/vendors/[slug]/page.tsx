@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${vendor.name} — Reviews CXO Assessment (${vendor.ascsComposite}/10)`,
     description: `Reviews CXO assessment of ${vendor.name}: ${vendor.tagline}. Assessed ${vendor.ascsComposite}/10 on the ASCS enterprise framework.`,
-    alternates: { canonical: `https://reviews-cxo.com/vendors/${vendor.slug}` },
+    alternates: { canonical: `https://reviewscxo.com/vendors/${vendor.slug}` },
     openGraph: {
       title: `${vendor.name} — Reviews CXO Assessment`,
       description: `Reviews CXO assessment of ${vendor.name}. Assessed ${vendor.ascsComposite}/10.`,
-      url: `https://reviews-cxo.com/vendors/${vendor.slug}`,
+      url: `https://reviewscxo.com/vendors/${vendor.slug}`,
       siteName: "Reviews CXO",
       locale: "en_US",
       type: "website",

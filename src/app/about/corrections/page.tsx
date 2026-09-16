@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Corrections",
   description:
     "How Reviews CXO handles errors, updates, and score recalculations.",
-  alternates: { canonical: "https://reviews-cxo.com/about/corrections" },
+  alternates: { canonical: "https://reviewscxo.com/about/corrections" },
   openGraph: {
     title: "Corrections & Retractions — Reviews CXO",
     description: "How the publication handles errors, updates, and score recalculations.",
-    url: "https://reviews-cxo.com/about/corrections",
+    url: "https://reviewscxo.com/about/corrections",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "article",
@@ -64,7 +64,7 @@ export default function CorrectionsPage() {
               <p>• URL & section heading</p>
               <p>• Specific claim or metric in dispute</p>
               <p>• Primary source or documentation link</p>
-              <p className="text-primary font-bold pt-2">research@reviews-cxo.com</p>
+              <p className="text-primary font-bold pt-2">research@reviewscxo.com</p>
             </div>
           </div>
 

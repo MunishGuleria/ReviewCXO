@@ -9,11 +9,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "ASCS 2026 Platform Rankings — Top Enterprise AI Sales Engines",
   description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS architecture framework. Research-based rankings for enterprise buyers.",
-  alternates: { canonical: "https://reviews-cxo.com/rankings" },
+  alternates: { canonical: "https://reviewscxo.com/rankings" },
   openGraph: {
     title: "ASCS 2026 Platform Rankings",
     description: "Enterprise AI sales platform rankings based on the 12-dimension ASCS framework.",
-    url: "https://reviews-cxo.com/rankings",
+    url: "https://reviewscxo.com/rankings",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",

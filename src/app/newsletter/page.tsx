@@ -5,11 +5,11 @@ import { NewsletterForm } from "@/components/ui/NewsletterForm";
 export const metadata: Metadata = {
   title: "Newsletter",
   description: "Get new research delivered to your inbox.",
-  alternates: { canonical: "https://reviews-cxo.com/newsletter" },
+  alternates: { canonical: "https://reviewscxo.com/newsletter" },
   openGraph: {
     title: "Reviews CXO Newsletter",
     description: "Get new AI enterprise sales research delivered to your inbox.",
-    url: "https://reviews-cxo.com/newsletter",
+    url: "https://reviewscxo.com/newsletter",
     siteName: "Reviews CXO",
     locale: "en_US",
     type: "website",
