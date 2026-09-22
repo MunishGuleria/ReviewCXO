@@ -3,6 +3,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { ASCS_DIMENSIONS } from "@/lib/site";
 import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
+import { loadResearchFromMarkdown } from "@/lib/content-loader";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "ASCS Scorecard 2026",
@@ -20,40 +22,18 @@ export const metadata: Metadata = {
 };
 
 export default function ASCSScorecardPage() {
-  const vendorScores = [
-    {
-      name: "Microsoft Dynamics 365",
-      composite: "8.9",
-      scores: [9.5, 9.2, 9.0, 9.0, 8.8, 8.5, 8.5, 9.5, 8.0, 8.5, 9.0, 9.0],
-    },
-    {
-      name: "Salesforce",
-      composite: "8.7",
-      scores: [7.2, 9.8, 8.2, 8.8, 9.4, 8.8, 7.5, 9.9, 8.2, 7.8, 9.9, 9.9],
-    },
-    {
-      name: "Microsoft Copilot for Sales",
-      composite: "8.7",
-      scores: [8.5, 9.0, 8.5, 9.0, 8.0, 7.5, 8.0, 9.5, 8.5, 9.0, 9.0, 9.0],
-    },
-    {
-      name: "Salesforce Einstein AI",
-      composite: "8.6",
-      scores: [7.0, 9.5, 8.5, 9.0, 9.0, 8.5, 7.5, 9.5, 8.0, 7.5, 9.5, 9.5],
-    },
-    {
-      name: "SAP Joule",
-      composite: "8.5",
-      scores: [9.5, 7.0, 8.0, 8.5, 7.5, 7.0, 7.0, 9.5, 7.5, 8.0, 8.0, 8.5],
-    },
-  ];
+  const data = loadResearchFromMarkdown("ascs-scorecard-2026", "indexes");
+  if (!data) return notFound();
+
+  const vendorScores: any[] = data.bodyData.VENDOR_SCORES || [];
+  const insights: any[] = data.bodyData.INSIGHTS || [];
 
   return (
     <>
       <PageHeader
-        title="ASCS Scorecard 2026"
-        badge="Index"
-        description="Composite ASCS scores for all evaluated enterprise AI sales platforms with dimension-level breakdowns."
+        title={data.title}
+        badge={data.badge}
+        description={data.description}
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-12">
@@ -83,7 +63,7 @@ export default function ASCSScorecardPage() {
                 </tr>
               </thead>
               <tbody>
-                {vendorScores.map((v) => (
+                {vendorScores.map((v: any) => (
                   <tr key={v.name}>
                     <td className="font-bold">
                       <Link
@@ -98,7 +78,7 @@ export default function ASCSScorecardPage() {
                         {v.composite}
                       </span>
                     </td>
-                    {v.scores.map((s, i) => (
+                    {v.scores.map((s: number, i: number) => (
                       <td key={i} className="text-center font-mono text-xs">
                         <span className={s >= 8 ? "font-bold text-accent" : s >= 6 ? "text-foreground" : "text-muted"}>
                           {s}
@@ -124,38 +104,16 @@ export default function ASCSScorecardPage() {
           <h3 className="mt-1 text-xl font-black text-foreground">Strategic Architectural Takeaways</h3>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">01. ERP Grounding Lead</span>
-              <h4 className="mt-1 font-bold text-foreground">Microsoft Dynamics 365</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Leads in ERP Connectivity and native Microsoft Graph grounding — the defining capabilities for autonomous execution across operations.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">02. CRM Ecosystem Monolith</span>
-              <h4 className="mt-1 font-bold text-foreground">Salesforce</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Excels in CRM Data Grounding (9.8), Security & Governance (9.9), and Integrations Ecosystem (9.9) — the gold standard for global CRM consolidation.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">03. Native ERP Backbone</span>
-              <h4 className="mt-1 font-bold text-foreground">SAP Joule</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Matches top-tier marks on native ERP Connectivity (9.8) but demonstrates lower agility in CRM-native reasoning.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-surface-alt/30 p-5">
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">04. Productivity & Co-Pilot Scale</span>
-              <h4 className="mt-1 font-bold text-foreground">Microsoft Copilot</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
-                Provides strong usability and fast time-to-value for daily productivity, seamlessly integrated with M365 and Teams.
-              </p>
-            </div>
-          </div>
+            {insights.map((insight: any, i: number) => (
+              <div key={i} className="rounded-xl border border-border bg-surface-alt/30 p-5">
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">{insight.category}</span>
+                <h4 className="mt-1 font-bold text-foreground">{insight.title}</h4>
+                <p className="mt-2 text-xs leading-relaxed text-muted">
+                  {insight.description}
+                </p>
+              </div>
+            ))}
+</div>
         </div>
 
         <div>

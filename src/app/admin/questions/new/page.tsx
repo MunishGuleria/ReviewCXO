@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ResearchLayout } from "@/components/layout/ResearchLayout";
-import { QUESTION_CATEGORIES } from "@/lib/questions";
+import { QUESTION_CATEGORIES } from "@/lib/site";
 
 interface FormData {
   title: string;

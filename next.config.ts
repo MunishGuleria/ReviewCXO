@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: ["gray-matter"],
   images: {
     formats: ["image/avif", "image/webp"],
   },

@@ -25,7 +25,7 @@ export function Footer() {
             {/* Social Icons */}
             <div className="mt-5 flex items-center gap-3">
               <a
-                href="https://github.com/reviews-cxo"
+                href="https://github.com/reviewscxo"
                 className="group flex h-8 w-8 items-center justify-center rounded-lg bg-surface/50 border border-border/60 transition-all hover:border-primary/50 hover:bg-primary/10 hover:shadow-[0_0_15px_rgba(56,189,248,0.15)]"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,7 +36,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/reviews-cxo"
+                href="https://linkedin.com/company/reviewscxo"
                 className="group flex h-8 w-8 items-center justify-center rounded-lg bg-surface/50 border border-border/60 transition-all hover:border-primary/50 hover:bg-primary/10 hover:shadow-[0_0_15px_rgba(56,189,248,0.15)]"
                 target="_blank"
                 rel="noopener noreferrer"

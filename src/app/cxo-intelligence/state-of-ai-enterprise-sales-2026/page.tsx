@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { loadResearchFromMarkdown } from "@/lib/content-loader";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "State of AI in Enterprise Sales 2026",
@@ -19,6 +21,9 @@ export const metadata: Metadata = {
 };
 
 export default function StateOfAIReportPage() {
+  const data = loadResearchFromMarkdown("state-of-ai-enterprise-sales-2026", "cxo-intelligence");
+  if (!data) return notFound();
+
   const reportSchema = {
     "@context": "https://schema.org",
     "@type": "Report",
@@ -42,9 +47,9 @@ export default function StateOfAIReportPage() {
     <>
       <JsonLd data={reportSchema} />
       <PageHeader
-        title="State of AI in Enterprise Sales 2026"
-        badge="CXO Report"
-        description="Original primary research based on interviews and surveys with enterprise decision-makers."
+        title={data.title}
+        badge={data.badge || "CXO Report"}
+        description={data.description}
       />
 
       <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

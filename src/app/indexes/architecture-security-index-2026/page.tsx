@@ -4,6 +4,8 @@ import { DisclosureBanner } from "@/components/ui/DisclosureBanner";
 import { CitationBlock } from "@/components/ui/CitationBlock";
 import { getVisibleVendors } from "@/lib/vendors";
 import Link from "next/link";
+import { loadResearchFromMarkdown } from "@/lib/content-loader";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Architecture & Security Index 2026",
@@ -21,15 +23,19 @@ export const metadata: Metadata = {
 };
 
 export default function ArchitectureSecurityIndexPage() {
+  const data = loadResearchFromMarkdown("architecture-security-index-2026", "indexes");
+  if (!data) return notFound();
+
   const visibleVendors = getVisibleVendors();
+
   const sortedVendors = [...visibleVendors].sort((a, b) => b.ascsComposite - a.ascsComposite);
 
   return (
     <>
       <PageHeader
-        title="Architecture & Security Index 2026"
-        badge="Index"
-        description="12-dimension evaluation of enterprise AI platforms on architecture, security, and governance maturity."
+        title={data.title}
+        badge={data.badge || "Index"}
+        description={data.description}
       />
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 space-y-10">
@@ -119,7 +125,7 @@ export default function ArchitectureSecurityIndexPage() {
 
         <CitationBlock
           authors="Reviews CXO Research Team"
-          title="Architecture & Security Index 2026"
+          title={data.title}
           date="September 2026"
           url="https://reviewscxo.com/indexes/architecture-security-index-2026"
         />

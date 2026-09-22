@@ -65,13 +65,17 @@ temp/
 # dev server logs
 dev-out.log
 dev-err.log
+dev-output.log
 
 # next.js build cache
 .turbo/
 
-# markdown / docs (keep only README.md)
+# markdown / docs (keep only README.md and content templates)
 *.md
 !README.md
+!content/templates/*.md
+!content/HOW-TO-PUBLISH.md
+docs/
 
 # plan & summary files
 CODEBASE_ARCHITECTURE.md
@@ -106,22 +110,19 @@ simple.txt
 # generated data
 visible_vendors.json
 
+# build artifacts
+tsconfig.tsbuildinfo
+
 # test results
 test-results/
 
 # audit / analysis docs (generated, not source)
 SESSION-FINDINGS.md
-CONTENT-AUDIT-FINDINGS.md
-PROJECT-COMPREHENSIVE-ANALYSIS.md
-REVIEWS_CXO_DEEP_CODEBASE_LEGAL_AUDIT.md
-CONTENT-STATUS-REPORT.md
 RESEARCH_STANDARDS_STRUCTURED.md
 REVIEW_PRESENTATION_AUDIT.md
 SEETHROUGH_AUDIT.md
 COPYRIGHT-CONTENT-AUDIT.md
 LEGAL1_SUMMARY.md
-AGENTS.md
-CLAUDE.md
 EDITORIAL-REPHRASE-LOG.md
 UI-CONTENT-AUDIT.md
 

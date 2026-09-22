@@ -276,3 +276,9 @@ export const SCORING_RUBRIC = [
     meaning: "Recognized / extensive evidence / highly-rated",
   },
 ];
+
+export const QUESTION_CATEGORIES = [
+  "AI Strategy", "AI Platforms", "AI Comparison", "AI Governance",
+  "Implementation", "Pricing & TCO", "Data & Pricing", "ERP AI",
+  "Security & Trust", "Vendor Management",
+];
